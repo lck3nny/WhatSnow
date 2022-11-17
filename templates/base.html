@@ -8,15 +8,24 @@
     </head>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">What Board</a>
+            <a class="navbar-brand" href="/">What Board</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Pricing</a>
-                <a class="nav-link disabled">Disabled</a>
+                <a class="nav-link" href="/import">Add a Board</a>
+                <a class="nav-link" href="/learn">Learn</a>
+                <a class="nav-link" href="/login">Login/Signup</a>
+                <a class="nav-link" href="/account" hidden>Account</a>
+                <a class="nav-link dropdown-toggle" href="/account" role="button" data-bs-toggle="dropdown" aria-expanded="false" hidden>
+                    Account
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/account">My Account</a></li>
+                    <li><a class="dropdown-item" href="/account/quiver">My Quiver</a></li>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                  </ul>
             </div>
             </div>
         </div>
