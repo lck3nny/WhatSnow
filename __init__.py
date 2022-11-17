@@ -12,7 +12,7 @@ if __name__ == '__main__':
 # --------------------------------------------------
 app.add_url_rule(rule='/', view_func=HomePageHandler.as_view('home'), methods=['GET'])
 
-# Define static routes
+# Define static routes 
 # --------------------------------------------------
 @app.route('/robots.txt')
 @app.route('/sitemap.xml')

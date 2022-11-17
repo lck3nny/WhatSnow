@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>WhatBoard</title>
-    </head>
-    <body>
-        <div id="home_banner">
-            <h1>Welcome to What Board</h1>
-            <h2>The best place to compare snowboards online</h2>
-        </div>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %}What Board{% endblock %}
+{% block top_content %}
+<div id="home_banner">
+    <h1>Welcome to What Board</h1>
+    <p>The best place to compare snowboards online</p>
+</div>
+{% endblock %}
