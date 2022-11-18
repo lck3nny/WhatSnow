@@ -5,4 +5,4 @@ __author__ = 'liamkenny'
 
 class HomePageHandler(MethodView):
     def get(request):
-        return render_template('index.html')
+        return render_template('index.html', page_name='index')

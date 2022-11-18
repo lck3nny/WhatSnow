@@ -3,36 +3,62 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link href="/static/style/index.css" rel="stylesheet" type="text/css">
         <title>{% block title %}{% endblock %}</title>
     </head>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">What Board</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="/import">Add a Board</a>
-                <a class="nav-link" href="/learn">Learn</a>
-                <a class="nav-link" href="/login">Login/Signup</a>
-                <a class="nav-link" href="/account" hidden>Account</a>
-                <a class="nav-link dropdown-toggle" href="/account" role="button" data-bs-toggle="dropdown" aria-expanded="false" hidden>
-                    Account
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/account">My Account</a></li>
-                    <li><a class="dropdown-item" href="/account/quiver">My Quiver</a></li>
-                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                  </ul>
+    <body class="{{page_name}}">
+            <div class="row nav">
+                <div class="col-md-12">
+                    <div class="container-fluid">
+                        {% if page_name in ['index'] %}
+                        <nav class="navbar navbar-dark navbar-expand-md">
+                        {% else %}
+                        <nav class="navbar navbar-light navbar-expand-md">
+                        {% endif %}
+                            <a class="navbar-brand" href="/">What Board</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                                <div class="navbar-nav mr-auto">
+                                    <div class="btn-group"></div>
+                                        <a class="nav-link mr-auto" href="/import">Add</a>
+                                        <a class="nav-link" href="/learn">Learn</a>
+                                        {% if 'user' in session %}
+                                        <div class="dropdown">
+                                            <a class="nav-link dropdown-toggle" href="/account" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Account
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                                <li><a class="dropdown-item" href="/account">Account</a></li>
+                                                <li><a class="dropdown-item" href="/account/quiver">Quiver</a></li>
+                                                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                                            </ul>
+                                        </div>
+                                        {% else %}
+                                        <a class="nav-link" href="/login">Login</a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
             </div>
-            </div>
+        </div> 
+        <div class="row body">
+            {% with messages =  get_flashed_messages() %}
+                {% if messages %}
+                    {% for msg in messages %}
+                        <p>{{msg}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {% block top_content %}{% endblock %}
         </div>
-    </nav>
-    <body>
-        {% block top_content %}
-        {% endblock %}
+        
     </body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>

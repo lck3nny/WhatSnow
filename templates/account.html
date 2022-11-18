@@ -2,7 +2,7 @@
 {% block title %}My Account{% endblock %}
 {% block top_content %}
 <div id="login_banner">
-    <h1>Hello {{user.first_name}}</h1>
+    <h1>Hello {{session.user.first_name}}</h1>
     <p>Welcome to your What Board account. Here you can see update your personal information and access your quiver.</p>
 </div>
 {% endblock %}

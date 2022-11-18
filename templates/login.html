@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Log In{% endblock %}
 {% block top_content %}
-<div id="login_banner">
-    <h1>Sign In</h1>
-    <p>Already have an account? Enter your details below to sign in.</p>
-    <form action="#" method="post">
-        <p><input type="text" name="name" placeholder="Email"></p>
-        <p><input type="password" name="password" placeholder="Password"></p>
-        <p><input type="submit" name="submit" value="Login"\></p>
-    </form>
-    <a href="/signup"><p>Don't have an account? Sign up here!</p></a>
+<div class="container banner">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1>Sign In</h1>
+            <p>Already have an account? Enter your details below to sign in.</p>
+            <form action="#" method="post">
+                <p><input type="text" name="name" placeholder="email"></p>
+                <p><input type="password" name="password" placeholder="password"></p>
+                <p><input class="submit" type="submit" name="submit" value="Login"\></p>
+            </form>
+            <a href="/login/forgot"><p>Forgot your password?</p></a>
+            <a href="/signup"><p>Don't have an account? Sign up here!</p></a>
+        </div>
+    </div>
 </div>
 {% endblock %}

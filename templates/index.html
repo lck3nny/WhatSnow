@@ -1,8 +1,27 @@
 {% extends "base.html" %}
 {% block title %}What Board{% endblock %}
 {% block top_content %}
-<div id="home_banner">
-    <h1>Welcome to What Board</h1>
-    <p>The best place to compare snowboards online</p>
+<div class="container">
+    <div class="row banner home_banner">
+        <div class="col-md-6 offset-md-3">
+            <h1>Welcome to What Board</h1>
+            <p>The best place to compare snowboards online</p>
+            <div class="form-outline">
+                <input type="search" id="form1" class="form-control search" placeholder="search..." aria-label="Search" />
+            </div>
+        </div>
+    </div>
+    <div class="row results">
+        <div class="col-md-6 offset-md-3">
+            <h1>Search Results</h1>
+            <p>Here's what we found</p>
+            <br>
+            <table>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+            </table>
+        </div>
+    </div>
 </div>
 {% endblock %}
