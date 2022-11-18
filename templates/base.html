@@ -17,7 +17,12 @@
                         {% else %}
                         <nav class="navbar navbar-light navbar-expand-md">
                         {% endif %}
-                            <a class="navbar-brand" href="/">What Board</a>
+                        {% if site %}
+                        <a class="navbar-brand" href="/">What {{site}}</a>
+                        {% else %}
+                        <a class="navbar-brand" href="/">What Snow</a>
+                        {% endif %}
+                            
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -29,11 +34,11 @@
                                         {% if 'user' in session %}
                                         <div class="dropdown">
                                             <a class="nav-link dropdown-toggle" href="/account" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Account
+                                                {{session.user.first_name}}
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                                                 <li><a class="dropdown-item" href="/account">Account</a></li>
-                                                <li><a class="dropdown-item" href="/account/quiver">Quiver</a></li>
+                                                <li><a class="dropdown-item" href="/quiver">Quiver</a></li>
                                                 <li><a class="dropdown-item" href="/logout">Logout</a></li>
                                             </ul>
                                         </div>

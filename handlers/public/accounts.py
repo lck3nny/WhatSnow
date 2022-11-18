@@ -21,6 +21,24 @@ class LoginHandler(MethodView):
         session['user'] = user
         return redirect('/account')
 
+class ForgotPasswordHandler(MethodView):
+    def get(request):
+        if 'user' in session:
+            return redirect('/account')
+        return render_template('password.html', session=session, page_name='forgot')
+
+    def post(request):
+        user = {
+            'first_name': 'Liam',
+            'last_name': 'Kenny',
+            'email': 'lck3nny.dev@gmail.com',
+            'role': 'admin'
+        }
+        flash('You have been successfully logged in as {} {}'.format(user['first_name'], user['last_name']))
+        session.permanent = True
+        session['user'] = user
+        return redirect('/account')
+
 class LogoutHandler(MethodView):
     def get(request):
         if 'user' in session:

@@ -1,6 +1,6 @@
 from flask import Flask, request, send_from_directory
 from .handlers.public.home import HomePageHandler
-from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler
+from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
 from .handlers.public.imports import NewImportHandler
 from .handlers.public.learning import LearningHandler
 
@@ -19,6 +19,7 @@ if __name__ == '__main__':
 # --------------------------------------------------
 app.add_url_rule(rule='/', view_func=HomePageHandler.as_view('home'), methods=['GET'])
 app.add_url_rule(rule='/login/', view_func=LoginHandler.as_view('login'), methods=['GET', 'POST'])
+app.add_url_rule(rule='/login/forgot/', view_func=ForgotPasswordHandler.as_view('forgot'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/logout/', view_func=LogoutHandler.as_view('logout'), methods=['GET'])
 app.add_url_rule(rule='/signup/', view_func=SignupHandler.as_view('signup'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), methods=['GET'])

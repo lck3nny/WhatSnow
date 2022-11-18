@@ -24,7 +24,7 @@ body{
     background: var(--v-light)
 }
 
-.index .body, .login .body, .signup .body{
+.body{
     text-align: center;
 }
 
@@ -46,13 +46,11 @@ body{
 
 .login{
     color: var(--mid);
-    
 }
 
 .login .nav-link, .login .navbar-brand{
     color: var(--dark);
 }
-
 
 nav{
     margin-top: 2%;
@@ -92,7 +90,6 @@ nav{
 }
 
 
-
 .banner{
     margin-top: 10%;
     transform: translateY(-10%);
@@ -100,11 +97,13 @@ nav{
 
 .home_banner{
     color: var(--light);
-    margin-top: 15%;
-    transform: translateY(-15%);
+    margin-top: 30vh;
+    height: 65vh;
 }
 
-
+.results{
+    min-height: 50vh;
+}
 
 h1{
     font-weight: 100;
@@ -118,9 +117,3 @@ p{
 .submit{
     text-transform: uppercase;
 }
-
-input .search{
-    border-radius: 0;
-}
-
-
