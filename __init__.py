@@ -1,7 +1,8 @@
+import logging
 from flask import Flask, request, send_from_directory
 from .handlers.public.home import HomePageHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
-from .handlers.public.imports import NewImportHandler
+from .handlers.public.imports import NewImportHandler, ImportDetailsHandler
 from .handlers.public.learning import LearningHandler
 
 from datetime import timedelta
@@ -11,6 +12,8 @@ __author__ = 'liamkenny'
 app = Flask(__name__)
 app.secret_key = "3537251460"
 app.permanent_session_lifetime = timedelta(days=7)
+
+logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -23,7 +26,8 @@ app.add_url_rule(rule='/login/forgot/', view_func=ForgotPasswordHandler.as_view(
 app.add_url_rule(rule='/logout/', view_func=LogoutHandler.as_view('logout'), methods=['GET'])
 app.add_url_rule(rule='/signup/', view_func=SignupHandler.as_view('signup'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), methods=['GET'])
-app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET'])
+app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
+app.add_url_rule(rule='/import/<id>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
 
 # Define static routes 

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}My Account{% endblock %}
+{% block top_content %}
+<div class="container">
+    <div class="row banner">
+        <div class="col-md-6 offset-md-3">
+            <h1>Import Details</h1>
+            <p>Let's get into the numbers</p>
+            <br>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <form id="import_details" action="#" method="post">
+                <p>Paste your size chart below</p>
+                <textarea id="data" name="data_table"class="form-control" rows="12"></textarea>
+                <br>
+                <input type="submit" value="Upload">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

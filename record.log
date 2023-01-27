@@ -1,0 +1,281 @@
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:41] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:41] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:59] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:59] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:59] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:10:59] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:11:04] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:11:04] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:11:04] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:11:07] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:11:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:13:35] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:13:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:Size Chart Submitted: 
+ImmutableMultiDict([('data', 'app.logger.debug("debug log info")\r\n        app.logger.info("Info log information")\r\n        app.logger.warning("Warning log info")\r\n        app.logger.error("Error log info")\r\n        app.logger.critical("Critical log info")')])
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:41] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Size Chart Submitted: 
+ImmutableMultiDict([])
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:43] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:43] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Size Chart Submitted: 
+ImmutableMultiDict([])
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:44] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:44] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Size Chart Submitted: 
+ImmutableMultiDict([])
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:55] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:20:55] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:
+Size Chart Submitted: 
+ImmutableMultiDict([])
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:22:08] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:22:08] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:25:19] "[31m[1mPOST /import/123/ HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:24] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:26] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:30] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:56] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:26:56] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:30:07] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:30:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:31:04] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:31:04] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:31:40] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:31:40] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:ImmutableMultiDict([])
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:33:21] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:33:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:ImmutableMultiDict([])
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:34:17] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:34:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:ImmutableMultiDict([])
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:35:03] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:35:03] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:ImmutableMultiDict([])
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:35:22] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:35:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:ImmutableMultiDict([])
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:35:43] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:35:43] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:18] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:18] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:18] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:18] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:20] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:20] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:20] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:28] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:28] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:40:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:WhatSnow:Printing request variables:
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:33] "[35m[1mPOST /import/123/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:33] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:33] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:33] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:33] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:43] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:43] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:43] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:45] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:45] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:45] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:45] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:48] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:48] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:48] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Printing request variables:
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:49] "[35m[1mPOST /import/123/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:49] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:49] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:50] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Printing request variables:
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:59] "[35m[1mPOST /import/123/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:59] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:59] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:59] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:42:59] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:01] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:04] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:04] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:04] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:07] "[35m[1mPOST /import/123/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:07] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:07] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:07] "[36mGET /import/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:44] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:44] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+INFO:WhatSnow:
+Size Chart Submitted: 
+None
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:46] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:43:46] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:44:34] "GET /import/123/ HTTP/1.1" 200 -
+INFO:WhatSnow:Printing request variables:
+INFO:WhatSnow:
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:44:37] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:44:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 14:44:38] "GET /import/123/ HTTP/1.1" 200 -

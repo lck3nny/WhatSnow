@@ -1,0 +1,143 @@
+2023-01-27 13:46:39.201177LOGGING: 
+Size Chart Submitted: 
+None
+
+2023-01-27 13:47:16.056887
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 13:49:34.687789
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([])
+
+2023-01-27 13:51:13.805292
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([])
+
+2023-01-27 13:54:01.872268
+LOGGING... 
+Size Chart Submitted: 
+{}
+
+2023-01-27 13:54:38.184748
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([])
+
+2023-01-27 14:11:07.306461
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([('data', 'app.logger.debug("debug log info")\r\n        app.logger.info("Info log information")\r\n        app.logger.warning("Warning log info")\r\n        app.logger.error("Error log info")\r\n        app.logger.critical("Critical log info")')])
+
+2023-01-27 14:13:35.097010
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([('data', 'app.logger.debug("debug log info")\r\n        app.logger.info("Info log information")\r\n        app.logger.warning("Warning log info")\r\n        app.logger.error("Error log info")\r\n        app.logger.critical("Critical log info")')])
+
+2023-01-27 14:20:41.841266
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([('data', 'app.logger.debug("debug log info")\r\n        app.logger.info("Info log information")\r\n        app.logger.warning("Warning log info")\r\n        app.logger.error("Error log info")\r\n        app.logger.critical("Critical log info")')])
+
+2023-01-27 14:20:43.134290
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([])
+
+2023-01-27 14:20:44.445586
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([])
+
+2023-01-27 14:20:55.052730
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([])
+
+2023-01-27 14:22:08.408524
+LOGGING... 
+Size Chart Submitted: 
+ImmutableMultiDict([])
+
+2023-01-27 14:26:24.107052
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:26:26.291539
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:26:30.580938
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:26:56.697372
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:30:07.358881
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:31:04.181896
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:31:40.403599
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:33:21.382200
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:34:17.896571
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:35:03.178114
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:35:22.654030
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:35:43.185758
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:43:46.206625
+LOGGING... 
+Size Chart Submitted: 
+None
+
+2023-01-27 14:44:37.164067
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+

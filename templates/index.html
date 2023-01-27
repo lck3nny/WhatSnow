@@ -8,7 +8,7 @@ Snow
 What Board{% endblock %}
 {% block top_content %}
 <div class="container">
-    <div class="row banner home_banner">
+    <div class="row banner main_banner_light">
         <div class="col-md-6 offset-md-3">
             {% if site == 'board' %}
             <h1>Welcome to What {{site}}</h1>
@@ -21,11 +21,11 @@ What Board{% endblock %}
             <p>The best place to compare skis and snowboards online</p>
             {% endif %}
             <div class="form-outline">
-                <input type="search" id="form1" class="form-control search" placeholder="search..." aria-label="Search" />
+                <input onkeyup="triggerSearch(event)" type="search" id="search_bar" class="form-control search" placeholder="search..." aria-label="Search" />
             </div>
         </div>
     </div>
-    <div class="row results">
+    <div id="search_results" class="row results" hidden>
         <div class="col-md-6 offset-md-3">
             <h1>Search Results</h1>
             <p>Here's what we found</p>
@@ -53,5 +53,6 @@ What Board{% endblock %}
             </table>
         </div>
     </div>
+    <script src="/static/scripts/index.js"></script>
 </div>
 {% endblock %}

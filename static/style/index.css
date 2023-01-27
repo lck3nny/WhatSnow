@@ -40,6 +40,18 @@ body{
     background-position: top;
 }
 
+.imports{
+    color: var(--light);
+    width: 100vw;
+    height: 100vh;
+    background: url('/static/img/light_snow_background_cropped.webp');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
 .index .nav-link, .index .navbar-brand{
     color: var(--light);
 }
@@ -95,8 +107,15 @@ nav{
     transform: translateY(-10%);
 }
 
-.home_banner{
+
+.main_banner_light{
     color: var(--light);
+    margin-top: 30vh;
+    height: 65vh;
+}
+
+.main_banner_dark{
+    color: var(--dark);
     margin-top: 30vh;
     height: 65vh;
 }
