@@ -141,3 +141,1297 @@ Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
 Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
 Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
 
+2023-01-27 14:56:56.276008
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 14:56:56.276309
+EXTRACTING...\S\i\z\e\ \(\c\m\)\	\1\5\0\	\1\5\4\	\1\5\4\W\	\1\5\6\	\1\5\8\	\1\5\8\W\	\1\6\2\	\1\6\2\W\	\1\6\6\W\	\1\7\0\W\\
+\E\f\f\e\c\t\i\v\e\ \E\d\g\e\ \(\m\m\)\	\1\1\3\5\	\1\1\7\5\	\1\1\7\5\	\1\1\9\5\	\1\2\1\5\	\1\2\1\5\1\2\5\5\	\1\2\5\5\	\1\2\5\5\	\1\2\9\5\	\1\3\3\5\\
+\T\i\p\ \W\i\d\t\h\ \(\m\m\)\	\2\8\8\.\1\	\2\9\1\.\5\	\2\9\9\.\5\	\2\9\4\.\3\	\2\9\7\	\3\0\5\	\3\0\0\.\5\	\3\0\8\.\5\	\3\1\2\	\3\1\7\.\4\\
+\W\a\i\s\t\ \W\i\d\t\h\ \(\m\m\)\	\2\4\8\	\2\5\0\	\2\5\8\	\2\5\2\	\2\5\4\	\2\6\2\	\2\5\6\	\2\6\4\	\2\6\6\	\2\7\1\\
+\T\a\i\l\ \W\i\d\t\h\ \(\m\m\)\	\2\8\8\.\1\	\2\9\1\.\5\	\2\9\9\.\5\	\2\9\4\.\3\	\2\9\7\	\3\0\5\	\3\0\0\.\5\	\3\0\8\.\5\	\3\1\2\	\3\1\7\.\4\\
+\S\i\d\e\c\u\t\ \R\a\d\i\u\s\ \(\m\)\	\7\.\4\	\7\.\6\	\7\.\6\	\7\.\8\	\7\.\9\	\7\.\9\	\8\.\2\	\8\.\2\	\8\.\4\	\8\.\7\\
+\S\t\a\n\c\e\ \S\e\t\b\a\c\k\ \(\m\m\)\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\	\1\2\.\5\\
+\S\t\a\n\c\e\ \R\a\n\g\e\ \(\m\m\)\	\5\0\5\	\5\3\0\	\5\3\0\	\5\6\0\	\5\6\0\	\5\6\0\	\5\6\0\	\5\6\0\	\5\6\0\	\5\6\0\\
+\R\i\d\e\r\ \W\e\i\g\h\t\ \(\l\b\s\)\	\1\2\0\-\1\8\0\	\1\2\0\-\1\8\0\	\1\2\0\-\1\8\0\	\1\5\0\-\2\0\0\	\1\5\0\-\2\0\0\	\1\5\0\-\2\0\0\	\1\8\0\-\2\6\0\​\+\	\1\8\0\-\2\6\0\​\+\	\1\8\0\-\2\6\0\​\+\	\1\8\0\-\2\6\0\​\+\\
+\W\i\d\t\h\	\R\e\g\u\l\a\r\	\R\e\g\u\l\a\r\	\W\i\d\e\	\R\e\g\u\l\a\r\	\R\e\g\u\l\a\r\	\W\i\d\e\	\R\e\g\u\l\a\r\	\W\i\d\e\	\W\i\d\e\	\W\i\d\e2023-01-27 14:58:53.583688
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 14:58:53.584716
+EXTRACTING...\Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W\Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335\Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4\Waist Width (mm)	248	250	258	252	254	262	256	264	266	271\Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4\Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7\Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5\Stance Range (mm)	505	530	530	560	560	560	560	560	560	560\Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+\Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide2023-01-27 14:59:33.294179
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 14:59:33.294409
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide2023-01-27 15:06:23.639566
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:07:34.576792
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:08:57.721031
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:09:19.601317
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:09:25.117798
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:10:38.352867
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:10:38.353149
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W5
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	133515
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.410
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	27112
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.411
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.715
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.515
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	56013
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+13
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide-12023-01-27 15:12:08.453121
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:12:08.453507
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W58(cm
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	13351518(mm
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.41013(mm
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	2711215(mm
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.41114(mm
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.71517(m
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.51518(mm
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	5601316(mm
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+1317(lbs
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide-1-12023-01-27 15:13:34.174535
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:13:34.174859
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W58cm
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	13351518mm
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.41013mm
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	2711215mm
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.41114mm
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.71517m
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.51518mm
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	5601316mm
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+1317lbs
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide-1-1Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid2023-01-27 15:14:47.911893
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:14:47.912136
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Units: cm
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Units: mm
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: mm
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Units: mm
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: mm
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Units: m
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Units: mm
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Units: mm
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Units: lbs
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid2023-01-27 15:21:15.201513
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:21:15.202596
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Units: cm
+Name: 
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Units: mm
+Name: 
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: mm
+Name: 
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Units: mm
+Name: 
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: mm
+Name: 
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Units: m
+Name: 
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Units: mm
+Name: 
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Units: mm
+Name: 
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Units: lbs
+Name: 
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Units: 
+Name: 2023-01-27 15:21:52.813899
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:21:52.814160
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Units: (cm)
+Name: 
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Units: (mm)
+Name: 
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)
+Name: 
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Units: (mm)
+Name: 
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)
+Name: 
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Units: (m)
+Name: 
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Units: (mm)
+Name: 
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Units: (mm)
+Name: 
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Units: (lbs)
+Name: 
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Units: 
+Name: 2023-01-27 15:22:28.235661
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:22:28.235905
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Units: (cm)\Substring: Size\Substring: (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: 
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Units: (mm)\Substring: Effective\Substring: Edge\Substring: (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: 
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)\Substring: Tip\Substring: Width\Substring: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: 
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Units: (mm)\Substring: Waist\Substring: Width\Substring: (mm)	248	250	258	252	254	262	256	264	266	271
+Name: 
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)\Substring: Tail\Substring: Width\Substring: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: 
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Units: (m)\Substring: Sidecut\Substring: Radius\Substring: (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: 
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Units: (mm)\Substring: Stance\Substring: Setback\Substring: (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: 
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Units: (mm)\Substring: Stance\Substring: Range\Substring: (mm)	505	530	530	560	560	560	560	560	560	560
+Name: 
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Units: (lbs)\Substring: Rider\Substring: Weight\Substring: (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: 
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Units: \Substring: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 2023-01-27 15:22:42.006946
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:22:42.007194
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Units: (cm)
+Substring: Size
+Substring: (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: 
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Units: (mm)
+Substring: Effective
+Substring: Edge
+Substring: (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: 
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)
+Substring: Tip
+Substring: Width
+Substring: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: 
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Units: (mm)
+Substring: Waist
+Substring: Width
+Substring: (mm)	248	250	258	252	254	262	256	264	266	271
+Name: 
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)
+Substring: Tail
+Substring: Width
+Substring: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: 
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Units: (m)
+Substring: Sidecut
+Substring: Radius
+Substring: (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: 
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Units: (mm)
+Substring: Stance
+Substring: Setback
+Substring: (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: 
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Units: (mm)
+Substring: Stance
+Substring: Range
+Substring: (mm)	505	530	530	560	560	560	560	560	560	560
+Name: 
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Units: (lbs)
+Substring: Rider
+Substring: Weight
+Substring: (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: 
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Units: 
+Substring: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 2023-01-27 15:24:22.274213
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:24:22.274636
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Units: (cm)
+Substring: Size
+Substring: (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Units: (mm)
+Substring: Effective
+Substring: Edge
+Substring: (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)
+Substring: Tip
+Substring: Width
+Substring: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Units: (mm)
+Substring: Waist
+Substring: Width
+Substring: (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Units: (mm)
+Substring: Tail
+Substring: Width
+Substring: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Units: (m)
+Substring: Sidecut
+Substring: Radius
+Substring: (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Units: (mm)
+Substring: Stance
+Substring: Setback
+Substring: (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Units: (mm)
+Substring: Stance
+Substring: Range
+Substring: (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Units: (lbs)
+Substring: Rider
+Substring: Weight
+Substring: (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Units: 
+Substring: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 2023-01-27 15:26:56.537943
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:26:56.538190
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: (cm)
+Values: (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: (mm)
+Values: (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: (mm)
+Values: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: (mm)
+Values: (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: (mm)
+Values: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: (m)
+Values: (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: (mm)
+Values: (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: (mm)
+Values: (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: (lbs)
+Values: (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: 
+Values: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide2023-01-27 15:27:35.348102
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:27:35.348513
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: (cm)
+Values: []
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: (mm)
+Values: ['Edge']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: (mm)
+Values: ['Width']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: (mm)
+Values: ['Width']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: (mm)
+Values: ['Width']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: (m)
+Values: ['Radius']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: (mm)
+Values: ['Setback']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: (mm)
+Values: ['Range']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: (lbs)
+Values: ['Weight']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: 
+Values: []2023-01-27 15:28:19.641947
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:28:19.642117
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: (cm)
+Values: ['(cm)\t150\t154\t154W\t156\t158\t158W\t162\t162W\t166W\t170W\r']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: (mm)
+Values: ['Edge', '(mm)\t1135\t1175\t1175\t1195\t1215\t12151255\t1255\t1255\t1295\t1335\r']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: (mm)
+Values: ['Width', '(mm)\t288.1\t291.5\t299.5\t294.3\t297\t305\t300.5\t308.5\t312\t317.4\r']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: (mm)
+Values: ['Width', '(mm)\t248\t250\t258\t252\t254\t262\t256\t264\t266\t271\r']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: (mm)
+Values: ['Width', '(mm)\t288.1\t291.5\t299.5\t294.3\t297\t305\t300.5\t308.5\t312\t317.4\r']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: (m)
+Values: ['Radius', '(m)\t7.4\t7.6\t7.6\t7.8\t7.9\t7.9\t8.2\t8.2\t8.4\t8.7\r']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: (mm)
+Values: ['Setback', '(mm)\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\r']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: (mm)
+Values: ['Range', '(mm)\t505\t530\t530\t560\t560\t560\t560\t560\t560\t560\r']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: (lbs)
+Values: ['Weight', '(lbs)\t120-180\t120-180\t120-180\t150-200\t150-200\t150-200\t180-260\u200b+\t180-260\u200b+\t180-260\u200b+\t180-260\u200b+\r']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: 
+Values: []2023-01-27 15:29:27.559325
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:29:27.560525
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: (cm)
+Values: ['Size', '(cm)\t150\t154\t154W\t156\t158\t158W\t162\t162W\t166W\t170W\r']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: (mm)
+Values: ['Effective', 'Edge', '(mm)\t1135\t1175\t1175\t1195\t1215\t12151255\t1255\t1255\t1295\t1335\r']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: (mm)
+Values: ['Tip', 'Width', '(mm)\t288.1\t291.5\t299.5\t294.3\t297\t305\t300.5\t308.5\t312\t317.4\r']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: (mm)
+Values: ['Waist', 'Width', '(mm)\t248\t250\t258\t252\t254\t262\t256\t264\t266\t271\r']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: (mm)
+Values: ['Tail', 'Width', '(mm)\t288.1\t291.5\t299.5\t294.3\t297\t305\t300.5\t308.5\t312\t317.4\r']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: (m)
+Values: ['Sidecut', 'Radius', '(m)\t7.4\t7.6\t7.6\t7.8\t7.9\t7.9\t8.2\t8.2\t8.4\t8.7\r']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: (mm)
+Values: ['Stance', 'Setback', '(mm)\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\t12.5\r']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: (mm)
+Values: ['Stance', 'Range', '(mm)\t505\t530\t530\t560\t560\t560\t560\t560\t560\t560\r']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: (lbs)
+Values: ['Rider', 'Weight', '(lbs)\t120-180\t120-180\t120-180\t150-200\t150-200\t150-200\t180-260\u200b+\t180-260\u200b+\t180-260\u200b+\t180-260\u200b+\r']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: 
+Values: ['Width\tRegular\tRegular\tWide\tRegular\tRegular\tWide\tRegular\tWide\tWide\tWide']2023-01-27 15:35:06.903499
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:35:06.904372
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: (cm)
+Values: (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: (mm)
+Values: (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: (mm)
+Values: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: (mm)
+Values: (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: (mm)
+Values: (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: (m)
+Values: (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: (mm)
+Values: (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: (mm)
+Values: (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: (lbs)
+Values: (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: 
+Values: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide2023-01-27 15:36:58.778461
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:36:58.778744
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: (cm)
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W\r']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: (mm)
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335\r']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: (mm)
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4\r']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: (mm)
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271\r']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: (mm)
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4\r']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: (m)
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7\r']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: (mm)
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5\r']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: (mm)
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560\r']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: (lbs)
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+\r']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: 
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 15:39:31.001450
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:39:31.001906
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: (cm)
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: (mm)
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: (mm)
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: (mm)
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: (mm)
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: (m)
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: (mm)
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: (mm)
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: (lbs)
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: 
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 15:40:37.201911
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:40:37.202312
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 15:56:16.281921
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:56:16.283681
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 15:56:47.266346
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:56:47.266684
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 15:58:01.749418
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:58:01.749952
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 15:58:24.012205
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 15:58:24.012603
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 16:00:15.274557
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 16:00:15.274805
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']2023-01-27 16:00:27.168693
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-01-27 16:00:27.169282
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']
