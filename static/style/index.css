@@ -111,17 +111,16 @@ nav{
 .main_banner_light{
     color: var(--light);
     margin-top: 30vh;
-    height: 65vh;
 }
 
 .main_banner_dark{
     color: var(--dark);
     margin-top: 30vh;
-    height: 65vh;
 }
 
 .results{
-    min-height: 50vh;
+    padding-top: 50vh;
+    padding-bottom: 20vh;
 }
 
 h1{
@@ -135,4 +134,13 @@ p{
 
 .submit{
     text-transform: uppercase;
+}
+
+.btn{
+    min-width: 150px;
+    border-radius: 0px;
+}
+
+.search-bar{
+    border-radius: 0px;
 }

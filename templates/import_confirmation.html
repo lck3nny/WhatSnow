@@ -4,14 +4,15 @@
 <div class="container">
     <div class="row banner">
         <div class="col-md-6 offset-md-3">
-            <h1>Import Details</h1>
-            <p>Let's get into the numbers</p>
+            <h1>Confirm your Import</h1>
+            <p>Does everything look correct here?</p>
             <br>
         </div>
         <div class="col-md-6 offset-md-3">
             <form id="import_details" action="#" method="post">
-                <p>Paste your size chart below</p>
-                <textarea id="data" name="data_table"class="form-control" rows="12"></textarea>
+                {% for param in import_params %}
+                <label for={{param.name}}>{{param.name}}</label><input id={{param.name}} name={{param.name}} type="text">{{param.value}}</input>
+                {% endfor %}
                 <br>
                 <input class="btn btn-light" type="submit" value="Upload">
             </form>

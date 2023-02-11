@@ -2,7 +2,8 @@ import logging
 from flask import Flask, request, send_from_directory
 from .handlers.public.home import HomePageHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
-from .handlers.public.imports import NewImportHandler, ImportDetailsHandler
+from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler
+from .handlers.public.view import ViewItemHandler, CompareItemsHandler
 from .handlers.public.learning import LearningHandler
 
 from datetime import timedelta
@@ -26,9 +27,15 @@ app.add_url_rule(rule='/login/forgot/', view_func=ForgotPasswordHandler.as_view(
 app.add_url_rule(rule='/logout/', view_func=LogoutHandler.as_view('logout'), methods=['GET'])
 app.add_url_rule(rule='/signup/', view_func=SignupHandler.as_view('signup'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), methods=['GET'])
+
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<id>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
+app.add_url_rule(rule='/import/<id>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
+app.add_url_rule(rule='/import/<id>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
+
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
+app.add_url_rule(rule='/view/<id>/', view_func=ViewItemHandler.as_view('view'), methods=['GET'])
+app.add_url_rule(rule='/compare/<ids>/', view_func=CompareItemsHandler.as_view('compare'), methods=['GET'])
 
 # Define static routes 
 # --------------------------------------------------

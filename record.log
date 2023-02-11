@@ -944,3 +944,698 @@ Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	1
 Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
 INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:00:27] "POST /import/123/ HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:00:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:16] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:16] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:16] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:16] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:19] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:19] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:19] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:19] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:28] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:28] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:37] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:55] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:02:55] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:21] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:36] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:44] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:44] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:56] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:56] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:56] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:03:56] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:01] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:01] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:01] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:01] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:07] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:07] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:08] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:04:08] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:16] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:16] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:16] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:16] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:16] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:17] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:17] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:17] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:29] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:29] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:29] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:43] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:43] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:05:43] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 998-510-929
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 998-510-929
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 998-510-929
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:15] "[35m[1mGET /import/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:15] "[36mGET /import/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:15] "[36mGET /import/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:15] "[36mGET /import/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:15] "[36mGET /import/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:46] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:46] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:46] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:46] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:48] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:48] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:48] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:55] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:55] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:12:56] "[33mGET /123 HTTP/1.1[0m" 404 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:13:18] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:13:19] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:13:20] "[32mGET /view/123 HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:13:20] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:13:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:13:20] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:13:20] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:36] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:36] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:36] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:51] "[35m[1mGET /view/123/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:51] "GET /view/123/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:51] "GET /view/123/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:51] "GET /view/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:18:51] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:19:02] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:19:04] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:19:04] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:19:05] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:19:05] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:19:06] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:19:06] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:26] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:29] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:29] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:34] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:37] "[35m[1mGET /view/123/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:37] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:37] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:44:37] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:45:09] "[35m[1mGET /view/123/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:45:09] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:45:09] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:45:09] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:45:09] "[36mGET /view/123/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:45:52] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:45:52] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:00] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:02] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:02] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:02] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:02] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:03] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:03] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:04] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:04] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:04] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:04] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:05] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:05] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:06] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:06] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:41] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:51] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:46:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:47:08] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:47:08] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:47:19] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:47:19] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:48:27] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:48:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:49:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:49:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:49:30] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:49:30] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:49:32] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:50:22] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:50:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:51:36] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:51:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:51:36] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:51:36] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:51:40] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:56:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:56:23] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:56:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:56:23] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:56:38] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:58:20] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:58:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:58:20] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 16:58:20] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:00:31] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:07] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:07] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:07] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:13] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:13] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:13] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:15] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:15] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:20] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:20] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:20] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:54] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:02:54] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:03:06] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:03:06] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:03:06] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:06:21] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:06:21] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:06:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:06:21] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:06:26] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:06:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:09:21] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:09:21] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:09:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:09:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:09:58] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:09:58] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:04] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:04] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:47] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:47] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:56] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:59] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:59] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:10:59] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:11:37] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:11:37] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:11:37] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:11:37] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:30] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:30] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:45] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:45] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:45] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:52] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:52] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:52] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:12:52] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:13:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:13:00] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:13:00] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:13:00] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:13:08] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:13:09] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:02] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:02] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:02] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:23] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:23] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:23] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:27] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:27] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:27] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:27] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:42] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:42] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:42] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:57] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:57] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:57] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:18:58] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:42] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:42] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:42] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:51] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:51] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:19:51] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:15] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:15] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:15] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:23] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:23] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:23] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:33] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:33] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:33] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:33] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:38] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:38] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:38] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:20:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:13] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:13] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:13] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:15] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:15] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:23] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:23] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:23] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:23] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:48] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:48] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:48] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:21:48] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:11] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:11] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:11] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:11] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:41] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:41] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:41] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:49] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:49] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:49] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:49] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:59] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:59] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:59] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:22:59] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:04] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:04] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:07] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:07] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:07] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:09] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:09] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:09] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:13] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:13] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:15] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:18] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:18] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:21] "[32mGET /logout/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:21] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:21] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:21] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:22] "GET /login/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:25] "[32mPOST /login/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:25] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:25] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:27] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:27] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:27] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:31] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:31] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:23:33] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:18] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:18] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:18] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:18] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:19] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:20] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:34] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:34] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:34] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:25:34] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:06] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:06] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:06] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:06] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:10] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:10] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:10] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:10] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:15] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:15] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:15] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:15] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:44] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:44] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:44] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:26:44] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:17] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:17] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:17] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:17] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:47] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:47] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:47] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:27:47] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:28:51] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:28:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:28:51] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:28:51] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:40] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:40] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:40] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:40] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:46] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:46] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:29:46] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:04] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:04] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:04] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:29] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:29] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:29] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:30] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:30] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:30] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:42] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:31:42] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:32:47] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:32:47] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:32:47] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:32:47] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:26] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:26] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:26] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:27] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:27] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:27] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:31] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:31] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:31] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:41] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:41] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:41] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:48] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:48] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:48] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:33:48] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:34:00] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:34:00] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:34:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:34:00] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:39:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:39:42] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:39:42] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:39:42] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:40:11] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:40:11] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:40:11] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:40:11] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:40:15] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:40:15] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:40:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+bnm,
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:41:17] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:41:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:41:29] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:41:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:41:32] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:44:06] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:44:06] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:44:06] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:44:06] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:57:28] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:57:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:57:28] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:57:28] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 17:57:31] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:24] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:24] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:24] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:32] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:32] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:32] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:34] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:34] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:48] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:48] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:49] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:03:49] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:19:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:19:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:19:35] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:19:35] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:19:36] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:46:01] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:46:01] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:46:01] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:46:01] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:50:51] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:50:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:50:51] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 18:50:51] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:03:25] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:03:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:03:25] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:03:25] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:14] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:17] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:25] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:25] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:25] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:28] "[32mPOST /import/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:28] "GET /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:WhatSnow:Submitted Data:
+INFO:WhatSnow:
+Size Chart Submitted: 
+
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:30] "POST /import/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:33] "GET /view/123/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Jan/2023 19:48:33] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 10:40:15] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 10:40:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 10:40:15] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 10:40:15] "GET /static/img/dark_snow_background.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:00] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:00] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:00] "GET /static/img/light_snow_background_cropped.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:21] "GET /login/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:23] "[32mPOST /login/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:23] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:23] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:24] "[32mGET /login/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Feb/2023 11:18:24] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229

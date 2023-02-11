@@ -7,7 +7,7 @@ Snow
 {% endif %}
 What Board{% endblock %}
 {% block top_content %}
-<div class="container">
+<div class="container full_screen">
     <div class="row banner main_banner_light">
         <div class="col-md-6 offset-md-3">
             {% if site == 'board' %}
@@ -21,7 +21,7 @@ What Board{% endblock %}
             <p>The best place to compare skis and snowboards online</p>
             {% endif %}
             <div class="form-outline">
-                <input onkeyup="triggerSearch(event)" type="search" id="search_bar" class="form-control search" placeholder="search..." aria-label="Search" />
+                <input onkeyup="triggerSearch(event)" type="search" id="search_bar" class="form-control search search-bar" placeholder="search..." aria-label="Search" />
             </div>
         </div>
     </div>

@@ -9,10 +9,10 @@
             <p>Let's start with the basics. What would you like to import?</p>
         </div>
         <div class="col-md-3 offset-md-3">
-            <button class="btn btn-dark btn-block" onclick="startImport('ski')">Ski</button>
+            <button class="btn btn-dark btn-block upload" onclick="startImport('ski')">Ski</button>
         </div>
         <div class="col-md-3">
-            <button class="btn btn-dark btn-block" onclick="startImport('board')">Snowboard</button>
+            <button class="btn btn-dark btn-block upload" onclick="startImport('board')">Snowboard</button>
             
         </div>
         <div class="col-sm-6 offset-sm-3"></div>
@@ -29,7 +29,7 @@
                 <input type="text" id="model" name="model" placeholder="Model">
                 <input type="text" id="year" name="year" placeholder="Year">
                 <br><input type="hidden" type="text" id="type" name="type" value="Snowboard"><br>
-                <input type="submit" value="Start">
+                <input class="btn btn-light" type="submit" value="Start">
             </form>
         </div>
     </div>
@@ -44,18 +44,7 @@
                 <input type="text" id="model" name="model" placeholder="Model">
                 <input type="text" id="year" name="year" placeholder="Year">
                 <br><input type="hidden" type="text" id="type" name="type" value="Ski"><br>
-                <input type="submit" value="Start">
-            </form>
-        </div>
-    </div>
-
-    <div id="import_details" c,ass="row" hidden>
-        <div class="col-md-6 offset-md-3">
-            <form>
-                <p>Paste your size chart below</p>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
-                <br>
-                <input type="submit" value="Upload">
+                <input class="btn btn-light" type="submit" value="Start">
             </form>
         </div>
     </div>
