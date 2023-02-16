@@ -1,6 +1,7 @@
 function showResults() {
     let results = document.getElementById('search_results');
     results.removeAttribute("hidden");
+    results.scrollIntoView();
 }
 
 function triggerSearch(event){
