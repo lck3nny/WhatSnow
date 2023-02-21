@@ -27,7 +27,7 @@ class ViewItemHandler(MethodView):
     def get(self, id):
         item  = get_item_by_id(id)
 
-        return render_template('view.html', page_name='view', data=item)
+        return render_template('views/view.html', page_name='view', data=item)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # C O M P A R E   I T E M              H A N D L E R

@@ -24,7 +24,7 @@ class LoginHandler(MethodView):
     def get(self):
         if 'user' in session:
             return redirect('/account')
-        return render_template('login.html', session=session, page_name='login')
+        return render_template('accounts/login.html', session=session, page_name='login')
 
     # -------------------------------------- P O S T
     def post(self):
@@ -82,7 +82,7 @@ class SignupHandler(MethodView):
             f.close()
             return redirect('/account')
         
-        return render_template('signup.html', session=session, page_name='signup')
+        return render_template('accounts/signup.html', session=session, page_name='signup')
 
     # -------------------------------------- P O S T
     def post(self):
@@ -130,7 +130,7 @@ class SignupHandler(MethodView):
 class ForgotPasswordHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
-        return render_template('password_reset.html', session=session, page_name='password_reset')
+        return render_template('accounts/password_reset.html', session=session, page_name='password_reset')
 
     # -------------------------------------- P O S T
     def post(self):
@@ -167,6 +167,6 @@ class AccountHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
         if 'user' in session:
-            return render_template('account.html', session=session, page_name='account')
+            return render_template('accounts/account.html', session=session, page_name='account')
         
         return redirect('/login')

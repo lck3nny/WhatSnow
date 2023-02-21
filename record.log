@@ -2404,3 +2404,12 @@ INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 22:08:06] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 22:08:06] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 22:08:06] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [20/Feb/2023 22:08:06] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/imports.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/view.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229

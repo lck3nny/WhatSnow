@@ -47,7 +47,7 @@ class NewImportHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r):
         #return redirect('/')
-        return render_template('imports.html', page_name='imports')
+        return render_template('imports/import.html', page_name='imports')
 
     # -------------------------------------- P O S T
     def post(r):
@@ -80,7 +80,7 @@ class ImportDetailsHandler(MethodView):
             'model': 'Custom',
             'year': '2022'
         }
-        return render_template('import_details.html', page_name='import_details', import_item=item)
+        return render_template('imports/import_details.html', page_name='import_details', import_item=item)
 
     # -------------------------------------- P O S T
     def post(r, id):
@@ -133,7 +133,7 @@ class ImportDetailsHandler(MethodView):
         }
         
 
-        return render_template('import_complete.html', page_name='import_complete', item_type=data['type'], item_id=id)
+        return render_template('imports/import_complete.html', page_name='import_complete', item_type=data['type'], item_id=id)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R
@@ -148,7 +148,7 @@ class ImportConfirmationHandler(MethodView):
 
         item = get_stats_for_item(item)
 
-        return render_template('import_confirmation.html', page_name='import_conf', item=item)
+        return render_template('imports/import_confirmation.html', page_name='import_conf', item=item)
 
     # -------------------------------------- P O S T
     def post(r, id):
@@ -167,5 +167,5 @@ class ImportCompleteHandler(MethodView):
 
         item = get_stats_for_item(item)
 
-        return render_template('import_complete.html', page_name='import_complete', item=item)
+        return render_template('imports/import_complete.html', page_name='import_complete', item=item)
 
