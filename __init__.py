@@ -1,12 +1,15 @@
+from datetime import timedelta
 import logging
 from flask import Flask, request, send_from_directory
+
+# Import Handlers
+# --------------------------------------------------
 from .handlers.public.home import HomePageHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
 from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler
 from .handlers.public.view import ViewItemHandler, CompareItemsHandler
 from .handlers.public.learning import LearningHandler
 
-from datetime import timedelta
 
 __author__ = 'liamkenny'
 
