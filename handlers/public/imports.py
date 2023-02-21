@@ -44,13 +44,12 @@ def get_stats_for_item(item):
 # N E W   I M P O R T                  H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class NewImportHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(r):
         #return redirect('/')
         return render_template('imports.html', page_name='imports')
-    # ----------------------------------------------
 
-    # P O S T --------------------------------------
+    # -------------------------------------- P O S T
     def post(r):
         import_type = request.form.get('type')
         brand = request.form.get('brand')
@@ -63,13 +62,12 @@ class NewImportHandler(MethodView):
         # Save ski / board to database
         id = 123
         return redirect('/import/{}/'.format(id))
-    # ----------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   D E T A I L S          H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportDetailsHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(r, id):
         new_item = get_item_by_id(id)
         if not new_item:
@@ -83,9 +81,8 @@ class ImportDetailsHandler(MethodView):
             'year': '2022'
         }
         return render_template('import_details.html', page_name='import_details', import_item=item)
-    # ----------------------------------------------
 
-    # P O S T --------------------------------------
+    # -------------------------------------- P O S T
     def post(r, id):
         from ... import app
         raw_data = request.form['data_table']
@@ -137,13 +134,12 @@ class ImportDetailsHandler(MethodView):
         
 
         return render_template('import_complete.html', page_name='import_complete', item_type=data['type'], item_id=id)
-    # ----------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportConfirmationHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(r, id):
         new_item = get_item_by_id(id)
         if not new_item:
@@ -153,18 +149,16 @@ class ImportConfirmationHandler(MethodView):
         item = get_stats_for_item(item)
 
         return render_template('import_confirmation.html', page_name='import_conf', item=item)
-    # ----------------------------------------------
 
-    # P O S T --------------------------------------
+    # -------------------------------------- P O S T
     def post(r, id):
         return redirect('/import/{}/'.format(id))
-    # ----------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O M P L E T E        H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportCompleteHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(r, id):
         new_item = get_item_by_id(id)
         if not new_item:
@@ -174,6 +168,4 @@ class ImportCompleteHandler(MethodView):
         item = get_stats_for_item(item)
 
         return render_template('import_complete.html', page_name='import_complete', item=item)
-    # ----------------------------------------------
-
 

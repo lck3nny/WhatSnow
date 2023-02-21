@@ -20,14 +20,13 @@ f.close()
 # L O G I N                            H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class LoginHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(self):
         if 'user' in session:
             return redirect('/account')
         return render_template('login.html', session=session, page_name='login')
-    # ----------------------------------------------
 
-    # P O S T --------------------------------------
+    # -------------------------------------- P O S T
     def post(self):
         # Get user info
         email = request.form.get('email', 'error@problem.com')
@@ -56,26 +55,24 @@ class LoginHandler(MethodView):
         user['lname'] = 'User'
         session['user'] = user
         return redirect('/account')
-    # ----------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G O U T                          H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class LogoutHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(self):
         if 'user' in session:
             flash('You have been successfully logged out.', 'info')
 
         session.pop('user', None)
         return redirect('/')
-    # ----------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # S I G N U P                          H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class SignupHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(self):
         if 'user' in session:
             msg = "User already in session - redirecting}"
@@ -86,9 +83,8 @@ class SignupHandler(MethodView):
             return redirect('/account')
         
         return render_template('signup.html', session=session, page_name='signup')
-    # ----------------------------------------------
 
-    # P O S T --------------------------------------
+    # -------------------------------------- P O S T
     def post(self):
         # Get user info
         email = request.form.get('email', 'error@problem.com')
@@ -127,18 +123,16 @@ class SignupHandler(MethodView):
         session['user'] = user
 
         return redirect('/account')
-    # ----------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # F O R G O T   P W D                  H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ForgotPasswordHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(self):
         return render_template('password_reset.html', session=session, page_name='password_reset')
-    # ----------------------------------------------
 
-    # P O S T --------------------------------------
+    # -------------------------------------- P O S T
     def post(self):
         # Get user's email
         email = request.form.get('email')
@@ -163,17 +157,16 @@ class ForgotPasswordHandler(MethodView):
             flash('There was an issue resetting your password, please try again.')
             return redirect('/login/forgot')
 
+        flash('Check your email for a password reset link.')
         return redirect('/login')
-    # ----------------------------------------------
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # A C C O U N T                        H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class AccountHandler(MethodView):
-    # G E T ----------------------------------------
+    # ---------------------------------------- G E T
     def get(self):
         if 'user' in session:
             return render_template('account.html', session=session, page_name='account')
         
         return redirect('/login')
-    # ----------------------------------------------
