@@ -32,7 +32,7 @@ class LoginHandler(MethodView):
         email = request.form.get('email', 'error@problem.com')
         password = request.form.get('password', 'password')
         if not email or not password:
-            flash('You must provide an email and password to sign in!')
+            flash('You must provide an email and password to sign in!', 'error')
             return redirect('/login')
 
         # Initialise firebase connection
@@ -46,11 +46,11 @@ class LoginHandler(MethodView):
             user['info'] = user_info
         # Catch unsuccessful sign in 
         except:
-            flash('No account found with this username and password.')
+            flash('No account found with this username and password.', 'error')
             return redirect('/login')         
  
         # Process successful sign in
-        flash('You have been successfully logged in as {} {}'.format(user['fname'], user['lname']))
+        flash('You have been successfully logged in as {} {}'.format(user['fname'], user['lname']), 'info')
         user['fname'] = 'Test'
         user['lname'] = 'User'
         session['user'] = user
@@ -90,7 +90,7 @@ class SignupHandler(MethodView):
         email = request.form.get('email', 'error@problem.com')
         password = request.form.get('password', 'password')
         if not email or not password:
-            flash('You must provide an email and password to sign up!')
+            flash('You must provide an email and password to sign up!', 'error')
             return redirect('/signup')
 
         # Initialise firebase connection
@@ -108,7 +108,7 @@ class SignupHandler(MethodView):
             user = auth.create_user_with_email_and_password(email, password)
             # auth.send_email_verification(user['idToken'])
         except:
-            flash('There was an issue creating your account.')
+            flash('There was an issue creating your account.', 'error')
             return redirect('/login')
 
         # Logging...
@@ -137,7 +137,7 @@ class ForgotPasswordHandler(MethodView):
         # Get user's email
         email = request.form.get('email')
         if not email:
-            flash('There was an issue collecting your email, please try again.')
+            flash('There was an issue collecting your email, please try again.', 'error')
             return redirect('/login/forgot')
     
         # Initialise firebase connection
@@ -154,10 +154,10 @@ class ForgotPasswordHandler(MethodView):
         try:
             auth.send_password_reset_email(email)
         except:
-            flash('There was an issue resetting your password, please try again.')
+            flash('There was an issue resetting your password, please try again.', 'error')
             return redirect('/login/forgot')
 
-        flash('Check your email for a password reset link.')
+        flash('Check your email for a password reset link.', 'info')
         return redirect('/login')
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

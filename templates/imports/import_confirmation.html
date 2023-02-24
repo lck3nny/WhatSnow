@@ -5,18 +5,48 @@
     <div class="row banner">
         <div class="col-md-6 offset-md-3">
             <h1>Confirm your Import</h1>
-            <p>Does everything look correct here?</p>
+            <p>How did we do?</p>
             <br>
         </div>
-        <div class="col-md-6 offset-md-3">
-            <form id="import_details" action="#" method="post">
-                {% for param in import_params %}
-                <label for={{param.name}}>{{param.name}}</label><input id={{param.name}} name={{param.name}} type="text">{{param.value}}</input>
-                {% endfor %}
-                <br>
-                <input class="btn btn-light" type="submit" value="Upload">
-            </form>
-        </div>
+        <form id="import_details" action="#" method="post">
+            <div class="col-md-6 offset-md-3">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                    {% if data['type'] == "skis" %}
+                    <option value="skis" selected>Skis</option>
+                    <option value="snowboard">Snowboard</option>
+                    {% else %}
+                    <option value="skis">Skis</option>
+                    <option value="snowboard" selected>Snowboard</option>
+                    {% endif %}
+                </select>
+            </div>
+            <br>
+            <div class="col-md-6 offset-md-3">
+                <table>
+                    {% for param in data['params'] %}
+                    <th><select>
+                        {% for option in options %}
+                            {% if option == param.matched %}
+                            <option selected>{{ option }}</option>
+                            {% else %}
+                            <option>{{ option }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select></th>
+                    {% endfor %}
+                    {% for x in sizes %}
+                    <tr>
+                        {% for param in data['params'] %}
+                        <td>{{ param.vals[x] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <br>
+            <input class="btn btn-light" type="submit" value="Import">
+        </form>
     </div>
 </div>
 {% endblock %}
