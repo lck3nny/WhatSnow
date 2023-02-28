@@ -1072,3 +1072,266 @@ Unformatted params:
 Formatted params:
 {"size": "", "nose_width": "", "waist_width": "", "tail_width": "", "sidecut": "", "bend": "", "flex": "Size"}
 
+2023-02-24 20:51:41.225927
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-02-24 20:52:19.225154
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-02-24 20:52:19.226543
+LOGGING... Finding best param match...
+flex : {'Size': 0.75}
+
+
+
+2023-02-24 20:52:19.227064
+LOGGING... Finding best param match...
+flex : {'Effective_Edge': 0.2857142857142857}
+
+
+
+2023-02-24 20:52:19.227427
+LOGGING... Finding best param match...
+flex : {'Tip_Width': 0.6666666666666666}
+
+
+
+2023-02-24 20:52:19.227806
+LOGGING... Finding best param match...
+flex : {'Waist_Width': 0.7272727272727273}
+
+
+
+2023-02-24 20:52:19.228165
+LOGGING... Finding best param match...
+flex : {'Tail_Width': 0.7}
+
+
+
+2023-02-24 20:52:19.228543
+LOGGING... Finding best param match...
+flex : {'Sidecut_Radius': 0.5714285714285714}
+
+
+
+2023-02-24 20:52:19.228951
+LOGGING... Finding best param match...
+flex : {'Stance_Setback': 0.2608695652173913}
+
+
+
+2023-02-24 20:52:19.229328
+LOGGING... Finding best param match...
+flex : {'Stance_Range': 0.3333333333333333}
+
+
+
+2023-02-24 20:52:19.229707
+LOGGING... Finding best param match...
+flex : {'Rider_Weight': 0.42105263157894735}
+
+
+
+2023-02-24 20:52:19.225846
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']
+Unformatted params:
+{"Size": ["150", "154", "154W", "156", "158", "158W", "162", "162W", "166W", "170W"], "Effective_Edge": ["1135", "1175", "1175", "1195", "1215", "12151255", "1255", "1255", "1295", "1335"], "Tip_Width": ["288.1", "291.5", "299.5", "294.3", "297", "305", "300.5", "308.5", "312", "317.4"], "Waist_Width": ["248", "250", "258", "252", "254", "262", "256", "264", "266", "271"], "Tail_Width": ["288.1", "291.5", "299.5", "294.3", "297", "305", "300.5", "308.5", "312", "317.4"], "Sidecut_Radius": ["7.4", "7.6", "7.6", "7.8", "7.9", "7.9", "8.2", "8.2", "8.4", "8.7"], "Stance_Setback": ["12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5"], "Stance_Range": ["505", "530", "530", "560", "560", "560", "560", "560", "560", "560"], "Rider_Weight": ["120-180", "120-180", "120-180", "150-200", "150-200", "150-200", "180-260\u200b+", "180-260\u200b+", "180-260\u200b+", "180-260\u200b+"], "": ["Regular", "Regular", "Wide", "Regular", "Regular", "Wide", "Regular", "Wide", "Wide", "Wide"]}
+
+Formatted params:
+{"size": "", "nose_width": "", "waist_width": "", "tail_width": "", "sidecut": "", "bend": "", "flex": "Size"}
+
+2023-02-24 20:52:51.593216
+LOGGING... 
+Size Chart Submitted: 
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+
+2023-02-24 20:52:51.594242
+LOGGING... 
+Finding best param match...
+flex : {'Size': 0.75}
+
+
+
+2023-02-24 20:52:51.595864
+LOGGING... 
+Finding best param match...
+flex : {'Effective_Edge': 0.2857142857142857}
+
+
+
+2023-02-24 20:52:51.597681
+LOGGING... 
+Finding best param match...
+flex : {'Tip_Width': 0.6666666666666666}
+
+
+
+2023-02-24 20:52:51.598594
+LOGGING... 
+Finding best param match...
+flex : {'Waist_Width': 0.7272727272727273}
+
+
+
+2023-02-24 20:52:51.598957
+LOGGING... 
+Finding best param match...
+flex : {'Tail_Width': 0.7}
+
+
+
+2023-02-24 20:52:51.599331
+LOGGING... 
+Finding best param match...
+flex : {'Sidecut_Radius': 0.5714285714285714}
+
+
+
+2023-02-24 20:52:51.599728
+LOGGING... 
+Finding best param match...
+flex : {'Stance_Setback': 0.2608695652173913}
+
+
+
+2023-02-24 20:52:51.600102
+LOGGING... 
+Finding best param match...
+flex : {'Stance_Range': 0.3333333333333333}
+
+
+
+2023-02-24 20:52:51.600542
+LOGGING... 
+Finding best param match...
+flex : {'Rider_Weight': 0.42105263157894735}
+
+
+
+2023-02-24 20:52:51.593571
+EXTRACTING...
+Size (cm)	150	154	154W	156	158	158W	162	162W	166W	170W
+Name: Size
+Units: cm
+Values: ['150', '154', '154W', '156', '158', '158W', '162', '162W', '166W', '170W']
+Effective Edge (mm)	1135	1175	1175	1195	1215	12151255	1255	1255	1295	1335
+Name: Effective Edge
+Units: mm
+Values: ['1135', '1175', '1175', '1195', '1215', '12151255', '1255', '1255', '1295', '1335']
+Tip Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tip Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Waist Width (mm)	248	250	258	252	254	262	256	264	266	271
+Name: Waist Width
+Units: mm
+Values: ['248', '250', '258', '252', '254', '262', '256', '264', '266', '271']
+Tail Width (mm)	288.1	291.5	299.5	294.3	297	305	300.5	308.5	312	317.4
+Name: Tail Width
+Units: mm
+Values: ['288.1', '291.5', '299.5', '294.3', '297', '305', '300.5', '308.5', '312', '317.4']
+Sidecut Radius (m)	7.4	7.6	7.6	7.8	7.9	7.9	8.2	8.2	8.4	8.7
+Name: Sidecut Radius
+Units: m
+Values: ['7.4', '7.6', '7.6', '7.8', '7.9', '7.9', '8.2', '8.2', '8.4', '8.7']
+Stance Setback (mm)	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5	12.5
+Name: Stance Setback
+Units: mm
+Values: ['12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5', '12.5']
+Stance Range (mm)	505	530	530	560	560	560	560	560	560	560
+Name: Stance Range
+Units: mm
+Values: ['505', '530', '530', '560', '560', '560', '560', '560', '560', '560']
+Rider Weight (lbs)	120-180	120-180	120-180	150-200	150-200	150-200	180-260​+	180-260​+	180-260​+	180-260​+
+Name: Rider Weight
+Units: lbs
+Values: ['120-180', '120-180', '120-180', '150-200', '150-200', '150-200', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+', '180-260\u200b+']
+Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wide
+Name: 
+Units: Width	Regular	Regular	Wide	Regular	Regular	Wide	Regular	Wide	Wide	Wid
+Values: ['Regular', 'Regular', 'Wide', 'Regular', 'Regular', 'Wide', 'Regular', 'Wide', 'Wide', 'Wide']
+Unformatted params:
+{"Size": ["150", "154", "154W", "156", "158", "158W", "162", "162W", "166W", "170W"], "Effective_Edge": ["1135", "1175", "1175", "1195", "1215", "12151255", "1255", "1255", "1295", "1335"], "Tip_Width": ["288.1", "291.5", "299.5", "294.3", "297", "305", "300.5", "308.5", "312", "317.4"], "Waist_Width": ["248", "250", "258", "252", "254", "262", "256", "264", "266", "271"], "Tail_Width": ["288.1", "291.5", "299.5", "294.3", "297", "305", "300.5", "308.5", "312", "317.4"], "Sidecut_Radius": ["7.4", "7.6", "7.6", "7.8", "7.9", "7.9", "8.2", "8.2", "8.4", "8.7"], "Stance_Setback": ["12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5", "12.5"], "Stance_Range": ["505", "530", "530", "560", "560", "560", "560", "560", "560", "560"], "Rider_Weight": ["120-180", "120-180", "120-180", "150-200", "150-200", "150-200", "180-260\u200b+", "180-260\u200b+", "180-260\u200b+", "180-260\u200b+"], "": ["Regular", "Regular", "Wide", "Regular", "Regular", "Wide", "Regular", "Wide", "Wide", "Wide"]}
+
+Formatted params:
+{"size": "", "nose_width": "", "waist_width": "", "tail_width": "", "sidecut": "", "bend": "", "flex": "Size"}
+
+2023-02-27 17:29:29.417284
+LOGGING... Signing up new user: 
+lck3nny.dev@gmail.com --- N!tr0sbP0w
+
+2023-02-27 17:29:30.252991
+LOGGING... New User Created!: 
+{'kind': 'identitytoolkit#SignupNewUserResponse', 'idToken': 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImY4NzZiNzIxNDAwYmZhZmEyOWQ0MTFmZTYwODE2YmRhZWMyM2IzODIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vd2hhdHNub3ctMDEiLCJhdWQiOiJ3aGF0c25vdy0wMSIsImF1dGhfdGltZSI6MTY3NzU0Nzc3MCwidXNlcl9pZCI6Im5aWmpWUnNHSE9hS2dkWjVTUVI0aHBleUxubjEiLCJzdWIiOiJuWlpqVlJzR0hPYUtnZFo1U1FSNGhwZXlMbm4xIiwiaWF0IjoxNjc3NTQ3NzcwLCJleHAiOjE2Nzc1NTEzNzAsImVtYWlsIjoibGNrM25ueS5kZXZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImxjazNubnkuZGV2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.HPlLtqlDNwvahyplgt1qTqwZoaV-jZjOT1gQLWJLlCINsZojzsj9GC3pWK8o5S5gyd-65sYUbLkZVFiDzIhmsD05owmZ9EtiD9dAIrdPUBKPznhHHSio6oDWcFZMbYcQm3n75lFEK7auZoi7LStLzTdF2wO0uySmobD0PDUuvb7XazTdh5vuEM1FM_kIP0vrqRUYy1n8xdsxyIpOkbiEGO2khBrpCXdwCUGYYznh_pSGx5wcsDMabmfOg8NU-VuqxJwvk7Dr3maFKaFr5Zt3Pa9mw0xZDSkPbvjECoobBwanBFLSrWCL146wNpS6cDi4JJtyACA3tq02F_wAxool4g', 'email': 'lck3nny.dev@gmail.com', 'refreshToken': 'APJWN8fmlQoEUx2fKi-AdzljDjXN4muW9E4p5LPNJU4QFovQn_demTN6aWpy4_U8XsCk2SjgCL6KHcUvAD4A4RKyQoVfC8_XGkR1fVNLmmKb13UEkJoSHe1Ce3ljscHgn8c-wYalgh9kLC3OMs7-kQAA4vTlD1zdifmFqPvgOOBZoFmm0DSJhBUSrlkR_Jfe7AZ5nQ9AzdHX9QwiqLDMnEAeOaTc4UYFbw', 'expiresIn': '3600', 'localId': 'nZZjVRsGHOaKgdZ5SQR4hpeyLnn1'}
+

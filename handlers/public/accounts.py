@@ -2,6 +2,8 @@ from datetime import datetime
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
 import pyrebase
+import firebase_admin
+from firebase_admin import credentials, db
 import json
 
 __author__ = 'liamkenny'
@@ -16,6 +18,14 @@ f = open("logs.txt", "a")
 f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
 f.close()
 '''
+
+# --------------------------------------------------
+# Validate User                      F U N C T I O N
+# --------------------------------------------------
+def validate_user(user):
+    return True
+
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G I N                            H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,8 +97,8 @@ class SignupHandler(MethodView):
     # -------------------------------------- P O S T
     def post(self):
         # Get user info
-        email = request.form.get('email', 'error@problem.com')
-        password = request.form.get('password', 'password')
+        email = request.form.get('email')
+        password = request.form.get('password')
         if not email or not password:
             flash('You must provide an email and password to sign up!', 'error')
             return redirect('/signup')
@@ -111,16 +121,31 @@ class SignupHandler(MethodView):
             flash('There was an issue creating your account.', 'error')
             return redirect('/login')
 
+        
+
+        # Complete user object and save in session
+        user['f_name'] = request.form.get('fname', 'Test')
+        user['l_name'] = request.form.get('lname', 'User')
+        session['user'] = user
+        
+
         # Logging...
-        msg = "New User Created!: \n{}".format(user)
+        msg = "New User Created!: \n{}\n".format(json.dumps(user))
         f = open("logs.txt", "a")
         f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
         f.close()
 
-        # Redirect user to account
-        user['fname'] = request.form.get('fname', 'Test')
-        user['lname'] = request.form.get('lname', 'User')
-        session['user'] = user
+        # Validate user before creating db object
+        if not validate_user(user):
+            flash('Something went wrong with your signup! Please try again.', 'error')
+            return redirect('/signup')
+        
+        # Create db object
+        #cred_obj = credentials.Certificate(firebase_config)
+        cred = credentials.Certificate('fb_config.json')
+        firebase_admin.initialize_app(cred)
+        db_ref = db.reference("/Users/")
+        db_ref.push().set(user)
 
         return redirect('/account')
 

@@ -2,7 +2,7 @@ from datetime import timedelta
 import logging
 from flask import Flask, request, send_from_directory
 
-# Import Handlers
+# Import Handlers                             Public
 # --------------------------------------------------
 from .handlers.public.home import HomePageHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
@@ -10,6 +10,9 @@ from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, Imp
 from .handlers.public.view import ViewItemHandler, CompareItemsHandler
 from .handlers.public.learning import LearningHandler
 
+# Import Handlers                              Admin
+# --------------------------------------------------
+from .handlers.admin.portal import AdminPortalHandler, AdminViewUsersHandler
 
 __author__ = 'liamkenny'
 
@@ -21,6 +24,15 @@ logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# Define static routes 
+# --------------------------------------------------
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+@app.route('/ads.txt')
+def serve_static_files():
+    return send_from_directory(app.static_folder, request.path[1:])
+    
 
 # Define public routes
 # --------------------------------------------------
@@ -40,10 +52,10 @@ app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), 
 app.add_url_rule(rule='/view/<id>/', view_func=ViewItemHandler.as_view('view'), methods=['GET'])
 app.add_url_rule(rule='/compare/<ids>/', view_func=CompareItemsHandler.as_view('compare'), methods=['GET'])
 
-# Define static routes 
+# Define admin routes
 # --------------------------------------------------
-@app.route('/robots.txt')
-@app.route('/sitemap.xml')
-@app.route('/ads.txt')
-def serve_static_files():
-    return send_from_directory(app.static_folder, request.path[1:])
+app.add_url_rule(rule='/admin/', view_func=AdminPortalHandler.as_view('admin_portal'), methods=['GET'])
+app.add_url_rule(rule='/admin/users/', view_func=AdminViewUsersHandler.as_view('adimin_view_users'), methods=['GET'])
+app.add_url_rule(rule='/admin/users/<id>/', view_func=AdminViewUsersHandler.as_view('adimin_view_user'), methods=['GET'])
+
+
