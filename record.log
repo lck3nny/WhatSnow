@@ -3589,3 +3589,258 @@ INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 21:59:58] "[36mGET /static/scripts/aut
 INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:00:18] "GET /signup/ HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:00:18] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:00:18] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:29:51] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:29:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:29:51] "GET /static/scripts/auth.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:29:58] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:29:58] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:29:58] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:07] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:07] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:16] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:16] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:16] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:41] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:41] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:41] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:41] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:46] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:46] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:30:46] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:28] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:28] "GET /static/img/dark_snow_background.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:31] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:31] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:35] "[32mGET /import HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:35] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:35] "GET /static/scripts/imports.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:35] "GET /static/img/light_snow_background_cropped.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:39] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:39] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [27/Feb/2023 22:33:39] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:32:54] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:32:54] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:32:54] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:37] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:37] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:38] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:38] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:38] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:55] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:55] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:55] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:56] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:56] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:35:56] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:36:31] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:36:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:36:31] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:36:52] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:36:52] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:36:52] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:38:26] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:38:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:38:26] "GET /static/scripts/auth.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:39:05] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:39:05] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:39:05] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:41:48] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:41:48] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:41:48] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:20] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:20] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:32] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:32] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:59] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:59] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:42:59] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:07] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:07] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:52] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:52] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:52] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:53] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:53] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:43:53] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:00] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:00] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:22] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:22] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:23] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:23] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:28] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:28] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:59] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:59] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:45:59] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:43] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:43] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:43] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:49] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:50] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:50] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:55] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:55] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:46:55] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:47:46] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:47:46] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:47:46] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:00] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:00] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:11] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:11] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:11] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:23] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:49:23] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:51:46] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:51:46] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:51:46] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:51:51] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:51:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:51:51] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:44] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:44] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:44] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:45] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:45] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:45] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:54] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:54] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:52:54] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:04] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:04] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:04] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:11] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:11] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:11] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:24] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:24] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:25] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:25] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:32] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:32] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:33] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:33] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:53:33] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:54:23] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:54:23] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:54:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:54:24] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:54:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:54:24] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:11] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:11] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:11] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:18] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:18] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:18] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:31] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:31] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:32] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:55:32] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:56:00] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:56:00] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:56:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:57:00] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:57:00] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:57:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:59:42] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:59:42] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 07:59:42] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:19] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:19] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:19] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:23] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:23] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:32] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:32] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:32] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:02:32] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:03:13] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:03:13] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:03:13] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:03:13] "GET /static/img/light_snow_background_cropped.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:03:16] "GET /login/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:03:16] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:04:00] "GET /login/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:04:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:04:15] "[32mGET /login/forgot HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:04:15] "GET /login/forgot/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:04:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:04:53] "GET /login/forgot/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:04:53] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:09] "GET /login/forgot/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:09] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:13] "GET /login/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:13] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:18] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:18] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:18] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:20] "GET /login/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:21] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:05:21] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:06:19] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:06:19] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:06:19] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:26] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:26] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:26] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "GET /static/scripts/signup.js HTTP/1.1" 200 -

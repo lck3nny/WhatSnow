@@ -25,7 +25,6 @@ f.close()
 def validate_user(user):
     return True
 
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G I N                            H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -99,8 +98,14 @@ class SignupHandler(MethodView):
         # Get user info
         email = request.form.get('email')
         password = request.form.get('password')
+        conf = request.form.get('password2')
+
+        # Validate form data
         if not email or not password:
             flash('You must provide an email and password to sign up!', 'error')
+            return redirect('/signup')
+        elif password != conf:
+            flash('Your passwords do not match.', 'error')
             return redirect('/signup')
 
         # Initialise firebase connection
@@ -121,13 +126,10 @@ class SignupHandler(MethodView):
             flash('There was an issue creating your account.', 'error')
             return redirect('/login')
 
-        
-
         # Complete user object and save in session
         user['f_name'] = request.form.get('fname', 'Test')
         user['l_name'] = request.form.get('lname', 'User')
         session['user'] = user
-        
 
         # Logging...
         msg = "New User Created!: \n{}\n".format(json.dumps(user))
@@ -135,7 +137,7 @@ class SignupHandler(MethodView):
         f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
         f.close()
 
-        # Validate user before creating db object
+        # Validate firebase user before creating db object
         if not validate_user(user):
             flash('Something went wrong with your signup! Please try again.', 'error')
             return redirect('/signup')

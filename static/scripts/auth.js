@@ -8,7 +8,7 @@ function validateName(name, type=""){
 }
 
 function validateEmail(email){
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if(!email.match(validRegex)){
         return [false, "Please enter a valid email address"]
     }
@@ -62,8 +62,6 @@ signupForm.addEventListener('submit', (e)=>{
     const goofyreg = signupForm['goofyreg'].value;
     */
 
-    // valid[true, 'successful validation']
-    // valid[false, 'Please enter a value for XXX']
     const valid = validateSignup(fname, lname, email, pwd, conf);
     if(!valid[0]){
         e.preventDefault();

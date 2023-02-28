@@ -3,29 +3,51 @@
 {% block top_content %}
 <div class="container">
     <div class="row banner">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3 form-group">
             <h1>Sign Up</h1>
             <p>Fill in your details below to create a new account</p>
+            <br>
             <form action="/signup" method="post" id="signup_form">
-                <input required type="text" name="fname" placeholder="first name">
-                <input required type="text" name="lname" placeholder="last name">
-                <br><br>
-                <input required type="text" name="email" placeholder="email">
-                <br><br>
-                <input required type="password" name="password" placeholder="password">
-                <input required type="password" name="password2" placeholder="confirm">
-                <br><br>
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="text" name="fname" placeholder="first name">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" name="lname" placeholder="last name">
+                    </div>
+                </div>
+                <br>
+                <input class="form-control" type="email" name="email" placeholder="email">
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="password" name="password" placeholder="password">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="password" name="password2" id="sbrd_check" placeholder="confirm">
+                    </div>
+                </div>
+                <br>
                 <p>Do you ski or snowboard?</p>
-                <label for="ski">Ski</label><input type="checkbox" id="ski" name="ski" value="Ski">
-                <label for="snowboard">Snowboard</label><input type="checkbox" id="snowboard" name="snowbaord" value="Snowboard">
-                <select name="goofyreg" id="goofyreg" hidden>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="ski">Ski</label>
+                    <input class="form-check-input" type="checkbox" id="ski" name="ski" value="Ski">
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="snowboard">Snowboard</label>
+                    <input class="form-check-input" type="checkbox" id="snowboard" name="snowbaord" value="Snowboard">
+                </div>
+                <br><br>
+                <select class="form-control" name="goofyreg" id="goofyreg" hidden>
+                    <option value="" disabled selected>What is your stance?</option>
                     <option value="regular">Regular</option>
                     <option value="goofy">Goofy</option>
-                    <option value="unknown" selected>Unknown</option>
+                    <option value="unknown">Unknown</option>
                 </select>   
-                <br><br>    
-                <input class="submit" type="submit" name="submit" value="Signup"\>
-                <br><br id="err_break" hidden>
+                
+                <br>  
+                <input class="submit form-control" type="submit" name="submit" value="Signup"\>
+                <br id="err_break" hidden>
                 <p class="alert" id="error_msg"></p>
             </form>
             <a href="/login"><p>Already have an account? Sign in here!</p></a>
@@ -33,4 +55,5 @@
     </div>
 </div>
 <script type="module" src="/static/scripts/auth.js"></script>
+<script type="module" src="/static/scripts/signup.js"></script>
 {% endblock %}
