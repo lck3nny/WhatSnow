@@ -1,6 +1,10 @@
-const snowboard_check = document.querySelector('#sbrd_check');
-const goofyreg = document.querySelector('#goofyreg');
+const snowboard_check = document.querySelector('#snowboard_check');
 
 snowboard_check.addEventListener('click', (e)=>{
-    goofyreg.removeAttribute('hidden');
+    const goofyreg = document.querySelector('#goofyreg');
+    if(snowboard_check.checked){
+        goofyreg.hidden = false;
+    }else{
+        goofyreg.hidden = true;
+    }
 });

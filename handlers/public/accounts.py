@@ -53,6 +53,7 @@ class LoginHandler(MethodView):
             user = auth.sign_in_with_email_and_password(email, password)
             user_info = auth.get_account_info(user ['idToken'])
             user['info'] = user_info
+        
         # Catch unsuccessful sign in 
         except:
             flash('No account found with this username and password.', 'error')
@@ -139,6 +140,8 @@ class SignupHandler(MethodView):
 
         # Validate firebase user before creating db object
         if not validate_user(user):
+            # ToDo...
+            # Delete user from firebase???
             flash('Something went wrong with your signup! Please try again.', 'error')
             return redirect('/signup')
         

@@ -3844,3 +3844,46 @@ INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "GET /signup/ HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 08:19:45] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:19:07] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:19:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:19:07] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:19:07] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:19:14] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:21:32] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:21:32] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:21:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:21:32] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:30] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:30] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:30] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:37] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:37] "GET /static/scripts/auth.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:37] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:37] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:45] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:45] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:45] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:28:45] "[36mGET /static/scripts/signup.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:29:20] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:29:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:29:20] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:29:20] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:30:16] "GET /signup/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:30:16] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:30:16] "[36mGET /static/scripts/auth.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:30:16] "GET /static/scripts/signup.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:36:56] "GET /login/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:36:56] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:36:59] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:39:39] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:39:39] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:39:39] "GET /static/scripts/index.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [28/Feb/2023 20:39:39] "GET /static/img/dark_snow_background.webp HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
