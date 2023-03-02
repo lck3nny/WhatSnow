@@ -6,14 +6,17 @@
         <div class="col-md-6 offset-md-3">
             <h1>Login</h1>
             <p>Already have an account? Enter your details below to sign in.</p>
-            <form action="#" method="post">
-                <p><input class="form-control" type="email" name="email" placeholder="email"></p>
-                <p><input class="form-control" type="password" name="password" placeholder="password"></p>
+            <form action="#" method="post" id="login-form">
+                <p><input class="form-control" type="email" name="email" placeholder="email" id="email"></p>
+                <p><input class="form-control" type="password" name="password" placeholder="password" id="password"></p>
                 <p><input class="submit form-control" type="submit" name="submit" value="Login"\></p>
+                <br id="err-break" hidden>
+                <p class="alert" id="error-msg"></p>
             </form>
             <a href="/login/forgot"><p>Forgot your password?</p></a>
             <a href="/signup"><p>Don't have an account? Sign up here!</p></a>
         </div>
     </div>
 </div>
+<script type="module" src="/static/scripts/accounts/login.js"></script>
 {% endblock %}
