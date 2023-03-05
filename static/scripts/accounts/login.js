@@ -21,5 +21,6 @@ loginForm.addEventListener('submit', (e)=>{
         err.innerHTML = valid[1];
         err.classList.add('alert-danger');
         document.getElementById('err-break').removeAttribute('hidden');
+        document.getElementById('err-msg').removeAttribute('hidden');
     }
 });

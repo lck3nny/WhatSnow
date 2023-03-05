@@ -1335,3 +1335,42 @@ lck3nny.dev@gmail.com --- N!tr0sbP0w
 LOGGING... New User Created!: 
 {'kind': 'identitytoolkit#SignupNewUserResponse', 'idToken': 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImY4NzZiNzIxNDAwYmZhZmEyOWQ0MTFmZTYwODE2YmRhZWMyM2IzODIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vd2hhdHNub3ctMDEiLCJhdWQiOiJ3aGF0c25vdy0wMSIsImF1dGhfdGltZSI6MTY3NzU0Nzc3MCwidXNlcl9pZCI6Im5aWmpWUnNHSE9hS2dkWjVTUVI0aHBleUxubjEiLCJzdWIiOiJuWlpqVlJzR0hPYUtnZFo1U1FSNGhwZXlMbm4xIiwiaWF0IjoxNjc3NTQ3NzcwLCJleHAiOjE2Nzc1NTEzNzAsImVtYWlsIjoibGNrM25ueS5kZXZAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImxjazNubnkuZGV2QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.HPlLtqlDNwvahyplgt1qTqwZoaV-jZjOT1gQLWJLlCINsZojzsj9GC3pWK8o5S5gyd-65sYUbLkZVFiDzIhmsD05owmZ9EtiD9dAIrdPUBKPznhHHSio6oDWcFZMbYcQm3n75lFEK7auZoi7LStLzTdF2wO0uySmobD0PDUuvb7XazTdh5vuEM1FM_kIP0vrqRUYy1n8xdsxyIpOkbiEGO2khBrpCXdwCUGYYznh_pSGx5wcsDMabmfOg8NU-VuqxJwvk7Dr3maFKaFr5Zt3Pa9mw0xZDSkPbvjECoobBwanBFLSrWCL146wNpS6cDi4JJtyACA3tq02F_wAxool4g', 'email': 'lck3nny.dev@gmail.com', 'refreshToken': 'APJWN8fmlQoEUx2fKi-AdzljDjXN4muW9E4p5LPNJU4QFovQn_demTN6aWpy4_U8XsCk2SjgCL6KHcUvAD4A4RKyQoVfC8_XGkR1fVNLmmKb13UEkJoSHe1Ce3ljscHgn8c-wYalgh9kLC3OMs7-kQAA4vTlD1zdifmFqPvgOOBZoFmm0DSJhBUSrlkR_Jfe7AZ5nQ9AzdHX9QwiqLDMnEAeOaTc4UYFbw', 'expiresIn': '3600', 'localId': 'nZZjVRsGHOaKgdZ5SQR4hpeyLnn1'}
 
+2023-03-04 20:27:12.871045
+LOGGING... Signing up new user: 
+lck3nny@gmail.com --- password
+
+2023-03-04 20:29:21.952640
+LOGGING... Signing up new user: 
+lck3nny@gmail.com --- password
+
+2023-03-04 20:29:22.513749
+LOGGING... ERROR: 
+[Errno 400 Client Error: Bad Request for url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyB_Nh57hoWEmfIdczyN2aWz-LmKOOf2rJY] {
+  "error": {
+    "code": 400,
+    "message": "EMAIL_EXISTS",
+    "errors": [
+      {
+        "message": "EMAIL_EXISTS",
+        "domain": "global",
+        "reason": "invalid"
+      }
+    ]
+  }
+}
+
+
+
+2023-03-04 20:32:25.669720
+LOGGING... Signing up new user: 
+lck3nny@gmail.com --- password
+
+2023-03-04 20:51:25.833400
+LOGGING... Signing up new user: 
+l.ck3nny@gmail.com --- password
+
+2023-03-04 20:51:26.542577
+LOGGING... New User Created!: 
+{"kind": "identitytoolkit#SignupNewUserResponse", "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImY4NzZiNzIxNDAwYmZhZmEyOWQ0MTFmZTYwODE2YmRhZWMyM2IzODIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vd2hhdHNub3ctMDEiLCJhdWQiOiJ3aGF0c25vdy0wMSIsImF1dGhfdGltZSI6MTY3Nzk5MTg4NiwidXNlcl9pZCI6IjNzdzBaN21mWERUVkJ2UE9mWkR1M1NJY1l2NDIiLCJzdWIiOiIzc3cwWjdtZlhEVFZCdlBPZlpEdTNTSWNZdjQyIiwiaWF0IjoxNjc3OTkxODg2LCJleHAiOjE2Nzc5OTU0ODYsImVtYWlsIjoibC5jazNubnlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImwuY2szbm55QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.QZQDqGIGgT6uiFLXs5ySt0CWIuTaN99CZYZc0Ke-evy0ESidouWjSrT2s6eE6x0F1T3tpia6b2Cb7DjBXE4Sl0dvGKf6f5eXJ6vz5ft3V_wVC2wbIcMO9MqBbqNUBZAU2dnPyxTR2pWLeDFoNL5KCeMIu9UXmaKbOMO3xxexgCGo1u-4htI2M8M7ed_wjWdGUO1dcQyRoQy6XkIamWijEQuoZ39lSTyOY01ArqE8Ko0_oyWFI-cotBgwIbYkRlZcJ5HJse5jV1KmdqLxKY2dtgsAwqu7tPQuVgX5gOGNWcfVA0BrAgDTgINGOBczykcIKYAxaOZVrkNGmEFSaO9utQ", "email": "l.ck3nny@gmail.com", "refreshToken": "APJWN8dja8MfRiUPg11PxR4TTZPh3eq3N6FAMP4OxaZ8Kx9EVjNuElVpfdBNz30tLAOzsKVoIPvEQDkb8blaBhWZAa-QeN24KDVRXfLC_0y61WbL6Ia2YBtAOLpV4FsxmKJfpc-VVVNbfkWGF9CtdwDw9s91p1anvOpPh3OTKM5HuJn8tVWkzLzj_WChhlX0iOX11ZHJdYWi", "expiresIn": "3600", "localId": "3sw0Z7mfXDTVBvPOfZDu3SIcYv42", "f_name": "Liam", "l_name": "Kenny"}
+
+

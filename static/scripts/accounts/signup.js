@@ -12,7 +12,7 @@ function validateEmail(email){
     if(!email.match(validRegex)){
         return [false, 'Please enter a valid email address']
     }
-    return true
+    return [true, 'Email is valid']
 }
 
 function validatepassword(password, conf){
@@ -25,26 +25,31 @@ function validatepassword(password, conf){
 }
 
 function validateSignup(fname, lname, email, password, conf){
+    console.log('Validating fname');
     const isValidFName = validateName(fname, 'First');
     if(! isValidFName[0]){
         return isValidFName;
     }
     
+    console.log('Validating lname');
     const isValidLName = validateName(lname, 'Last');
     if(! isValidLName[0]){
         return isValidLName;
     }
 
+    console.log('Validating email');
     const isValidEmail = validateEmail(email);
     if(! isValidEmail[0]){
         return isValidEmail;
     }
     
+    console.log('Validating passwords');
     const isValidpassword = validatepassword(password, conf);
     if(! isValidpassword[0]){
         return isValidpassword;
     }
 
+    console.log('Validation Complete!');
     return [true, 'Successful Validation'];
 }
 
@@ -62,10 +67,16 @@ signupForm.addEventListener('submit', (e)=>{
     const goofyreg = signupForm['goofyreg'].value;
     */
 
+    console.log('First Name: ' + fname);
+    console.log('Last Name: ' + lname);
+    console.log('Email: ' + email);
+    console.log('Password: ' + password);
+    console.log('Conf: ' + conf);
+
     const valid = validateSignup(fname, lname, email, password, conf);
     if(!valid[0]){
         e.preventDefault();
-        console.log('Validation Error');
+        console.log('Validation Error:\n' + valid[1]);
         const err = document.getElementById('error-msg');
         err.innerHTML = valid[1];
         err.classList.add('alert-danger');

@@ -1,14 +1,14 @@
 from datetime import datetime
-from flask import render_template, redirect, session, flash, request
+from flask import render_template, redirect, session, flash, request, jsonify
 from flask.views import MethodView
 import pyrebase
 import firebase_admin
-from firebase_admin import credentials, db
+from firebase_admin import credentials, db, firestore 
 import json
 
 __author__ = 'liamkenny'
 
-f = open('fb_config.json')
+f = open('firebase_config.json')
 firebase_config = json.load(f) 
 f.close()
 
@@ -18,12 +18,6 @@ f = open("logs.txt", "a")
 f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
 f.close()
 '''
-
-# --------------------------------------------------
-# Validate User                      F U N C T I O N
-# --------------------------------------------------
-def validate_user(user):
-    return True
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G I N                            H A N D L E R
@@ -37,6 +31,9 @@ class LoginHandler(MethodView):
 
     # -------------------------------------- P O S T
     def post(self):
+        if 'user' in session:
+            return redirect('/account')
+             
         # Get user info
         email = request.form.get('email', 'error@problem.com')
         password = request.form.get('password', 'password')
@@ -72,7 +69,7 @@ class LoginHandler(MethodView):
 class LogoutHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
-        if 'user' in session:
+        if 'user' in session: 
             flash('You have been successfully logged out.', 'info')
 
         session.pop('user', None)
@@ -97,9 +94,14 @@ class SignupHandler(MethodView):
     # -------------------------------------- P O S T
     def post(self):
         # Get user info
+        fname = request.form.get('fname', 'Test')
+        lname = request.form.get('lname', 'User')
         email = request.form.get('email')
         password = request.form.get('password')
         conf = request.form.get('password2')
+        ski = request.form.get('ski', False)
+        snowboard = request.form.get('snowboard', False)
+        stance = request.form.get('goofyref', False)
 
         # Validate form data
         if not email or not password:
@@ -109,7 +111,24 @@ class SignupHandler(MethodView):
             flash('Your passwords do not match.', 'error')
             return redirect('/signup')
 
-        # Initialise firebase connection
+        # Logging...
+        msg = "Checking if user exists: {}\n".format(email)
+        f = open("logs.txt", "a")
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.close()
+
+        # Initialize firebase database connection
+        #cred_obj = credentials.Certificate(firebase_config)
+        cred = credentials.Certificate('service_account_key.json')
+        firebase_admin.initialize_app(cred)  
+        db = firestore.client()
+
+        existing_user = db.collection('Users').where('email', '==', email).get()
+        if existing_user.exists:
+            flash('A user already exists with this email address.', 'error')
+            return redirect('/signup')
+
+        # Initialise firebase auth connection
         firebase = pyrebase.initialize_app(firebase_config)
         auth = firebase.auth()
 
@@ -123,34 +142,55 @@ class SignupHandler(MethodView):
         try:
             user = auth.create_user_with_email_and_password(email, password)
             # auth.send_email_verification(user['idToken'])
-        except:
+        except Exception as e:
+            # ToDo...
+            # Handle different firebase resposnes
+
+            msg = "ERROR: \n{}\n".format(e)
+            f = open("logs.txt", "a")
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.close()
             flash('There was an issue creating your account.', 'error')
-            return redirect('/login')
+            return redirect('/signup')
 
         # Complete user object and save in session
-        user['f_name'] = request.form.get('fname', 'Test')
-        user['l_name'] = request.form.get('lname', 'User')
+        user['f_name'] = fname
+        user['l_name'] = lname
+        user['email'] = email
         session['user'] = user
 
         # Logging...
         msg = "New User Created!: \n{}\n".format(json.dumps(user))
         f = open("logs.txt", "a")
         f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
-        f.close()
-
-        # Validate firebase user before creating db object
-        if not validate_user(user):
-            # ToDo...
-            # Delete user from firebase???
-            flash('Something went wrong with your signup! Please try again.', 'error')
-            return redirect('/signup')
+        f.close()        
+    
+        # Creating a document using 'add'
+        db.collection('Users').add({
+            'email': email,
+            'fname': user['f_name'],
+            'lname': user['l_name'],
+            'ski': ski,
+            'snowboard': [snowboard, stance]
+            })
         
-        # Create db object
-        #cred_obj = credentials.Certificate(firebase_config)
-        cred = credentials.Certificate('fb_config.json')
-        firebase_admin.initialize_app(cred)
-        db_ref = db.reference("/Users/")
-        db_ref.push().set(user)
+        # Creating document using a 'document reference'
+        '''
+        db.collection('Users').document().set({
+            'email': email,
+            'fname': user['f_name'],
+            'lname': user['l_name'],
+            'ski': ski,
+            'snowboard': [snowboard, stance]
+            })
+        '''
+
+        # Adding additional info at a later date
+        '''
+        id = 'abc'
+        db.collection('Users').document(id).set({'biker': True}, merge = True)
+        '''
+        
 
         return redirect('/account')
 
