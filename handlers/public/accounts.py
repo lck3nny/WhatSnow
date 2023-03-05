@@ -1,9 +1,8 @@
 from datetime import datetime
-from flask import render_template, redirect, session, flash, request, jsonify
+from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
 import pyrebase
-import firebase_admin
-from firebase_admin import credentials, db, firestore 
+from firebase_admin import firestore 
 import json
 
 __author__ = 'liamkenny'
@@ -18,6 +17,7 @@ f = open("logs.txt", "a")
 f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
 f.close()
 '''
+    
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G I N                            H A N D L E R
@@ -27,6 +27,7 @@ class LoginHandler(MethodView):
     def get(self):
         if 'user' in session:
             return redirect('/account')
+
         return render_template('accounts/login.html', session=session, page_name='login')
 
     # -------------------------------------- P O S T
@@ -41,7 +42,7 @@ class LoginHandler(MethodView):
             flash('You must provide an email and password to sign in!', 'error')
             return redirect('/login')
 
-        # Initialise firebase connection
+        # Initialise firebase auth connection
         firebase = pyrebase.initialize_app(firebase_config)
         auth = firebase.auth()
     
@@ -50,17 +51,36 @@ class LoginHandler(MethodView):
             user = auth.sign_in_with_email_and_password(email, password)
             user_info = auth.get_account_info(user ['idToken'])
             user['info'] = user_info
+            user['email'] = email
         
         # Catch unsuccessful sign in 
         except:
             flash('No account found with this username and password.', 'error')
             return redirect('/login')         
  
+        # Initialise firestore client
+        db = firestore.client()
+        firebase_user = db.collection('Users').where('email', '==', email).get()
+
+        if not firebase_user:
+            # Logging...
+            msg = "Logged in user does not exist in firestore: {}\n".format(email)
+            f = open("logs.txt", "a")
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.close()
+
+            user['fname'] = 'Test'
+            user['lname'] = 'User'
+        else:
+            firebase_user = firebase_user[0].to_dict()
+
+            user['fname'] = firebase_user['fname']
+            user['lname'] = firebase_user['lname']
+
         # Process successful sign in
-        flash('You have been successfully logged in as {} {}'.format(user['fname'], user['lname']), 'info')
-        user['fname'] = 'Test'
-        user['lname'] = 'User'
         session['user'] = user
+
+        flash('You have been successfully logged in as {} {}'.format(user['fname'], user['lname']), 'info')
         return redirect('/account')
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,8 +91,8 @@ class LogoutHandler(MethodView):
     def get(self):
         if 'user' in session: 
             flash('You have been successfully logged out.', 'info')
+            session.pop('user', None)
 
-        session.pop('user', None)
         return redirect('/')
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,6 +113,9 @@ class SignupHandler(MethodView):
 
     # -------------------------------------- P O S T
     def post(self):
+        if 'user' in session:
+            return redirect('/account')
+
         # Get user info
         fname = request.form.get('fname', 'Test')
         lname = request.form.get('lname', 'User')
@@ -117,12 +140,8 @@ class SignupHandler(MethodView):
         f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
         f.close()
 
-        # Initialize firebase database connection
-        #cred_obj = credentials.Certificate(firebase_config)
-        cred = credentials.Certificate('service_account_key.json')
-        firebase_admin.initialize_app(cred)  
+        # Initialise firestore client
         db = firestore.client()
-
         existing_user = db.collection('Users').where('email', '==', email).get()
         if existing_user.exists:
             flash('A user already exists with this email address.', 'error')
@@ -172,7 +191,7 @@ class SignupHandler(MethodView):
             'lname': user['l_name'],
             'ski': ski,
             'snowboard': [snowboard, stance]
-            })
+            }) 
         
         # Creating document using a 'document reference'
         '''
@@ -200,10 +219,16 @@ class SignupHandler(MethodView):
 class ForgotPasswordHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
+        if 'user' in session:
+            return redirect('/account')
+
         return render_template('accounts/password_reset.html', session=session, page_name='password_reset')
 
     # -------------------------------------- P O S T
     def post(self):
+        if 'user' in session:
+            return redirect('/account')
+
         # Get user's email
         email = request.form.get('email')
         if not email:
@@ -236,7 +261,26 @@ class ForgotPasswordHandler(MethodView):
 class AccountHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
-        if 'user' in session:
-            return render_template('accounts/account.html', session=session, page_name='account')
+        if not 'user' in session:
+            return redirect('/login')
+
+        # Initialize firestore client 
+        db = firestore.client()
+        firebase_user = db.collection('Users').where('email', '==', session['user']['email']).get()
+
+        if not firebase_user:
+            firebase_user = firebase_user[0].to_dict()
+            # Logging...
+            msg = "User in session does not exist within Firestore: {}\n".format(session['user']['email'])
+            f = open("logs.txt", "a")
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.close()
+
+            session.pop('user', None)
+            return redirect('/login')
+
+        return render_template('accounts/account.html', session=session, page_name='account')
         
-        return redirect('/login')
+        
+
+        

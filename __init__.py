@@ -1,6 +1,8 @@
 from datetime import timedelta
 import logging
 from flask import Flask, request, send_from_directory
+import firebase_admin
+from firebase_admin import credentials
 
 # Import Handlers                             Public
 # --------------------------------------------------
@@ -21,6 +23,10 @@ app.secret_key = "3537251460"
 app.permanent_session_lifetime = timedelta(days=7)
 
 logging.basicConfig(filename='record.log', level=logging.DEBUG)
+
+# Initialize firebase database connection
+cred = credentials.Certificate('service_account_key.json')
+firebase_admin.initialize_app(cred)
 
 if __name__ == '__main__':
     app.run(debug=True)
