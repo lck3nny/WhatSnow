@@ -1,6 +1,6 @@
 from datetime import timedelta
 import logging
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, render_template
 import firebase_admin
 from firebase_admin import credentials
 
@@ -38,6 +38,18 @@ if __name__ == '__main__':
 @app.route('/ads.txt')
 def serve_static_files():
     return send_from_directory(app.static_folder, request.path[1:])
+
+# Define error routes 
+# --------------------------------------------------
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('error/404.html', page_name='error'), 404
+
+@app.errorhandler(500)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('error/500.html', page_name='error'), 500
     
 
 # Define public routes

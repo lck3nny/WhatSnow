@@ -28,6 +28,22 @@ body{
     text-align: center;
 }
 
+.error{
+    color: var(--dark);
+    width: 100vw;
+    height: 100vh;
+    background: url('/static/img/ski_area_boundary_cropped.webp');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.error h1{
+    font-size: 150px;
+}
+
 .index{
     color: var(--light);
     width: 100vw;

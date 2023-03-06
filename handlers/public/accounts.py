@@ -8,16 +8,9 @@ import json
 __author__ = 'liamkenny'
 
 f = open('firebase_config.json')
-firebase_config = json.load(f) 
+firebase_config = json.load(f)
 f.close()
 
-'''
-msg = "Firebase Auth: ({})\n\n{}".format(type(firebase_config), firebase_config)
-f = open("logs.txt", "a")
-f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
-f.close()
-'''
-    
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G I N                            H A N D L E R

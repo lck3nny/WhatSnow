@@ -4617,3 +4617,167 @@ DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapi
 DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
 INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:14:58] "GET /account/ HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:14:58] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:27:10] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:05] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:05] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:07] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:07] "GET /static/img/ski_area_boundary.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:20] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:20] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:48:20] "[36mGET /static/img/ski_area_boundary.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:54:23] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:54:23] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:54:23] "GET /static/img/ski_area_cropped.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:59:31] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:59:31] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:59:31] "GET /static/img/ski_area_boundary_cropped.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:59:38] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:59:38] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 15:59:38] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 16:00:00] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 16:00:00] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 16:00:00] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:44:27] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:44:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:44:27] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:44:58] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:44:58] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:44:59] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:07] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:14] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:14] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:35] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:42] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:42] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:50] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:45:50] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:00] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:00] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:00] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:00] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:00] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:00] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:14] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:14] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:14] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:34] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:34] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:34] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:34] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:35] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:54] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:54] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:47:54] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:05] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:05] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:05] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:12] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:12] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:12] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:18] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:18] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:18] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:42] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:42] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:42] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:57] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:57] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:48:57] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:49:10] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:49:10] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:49:10] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:49:18] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:49:18] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:49:24] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:49:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:13] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:13] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:13] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/__init__.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:35] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:35] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:41] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 20:50:41] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:07] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:07] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:07] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:10] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:10] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:10] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:32] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:32] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:32] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:37] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:37] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:37] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:38] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:38] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:38] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:38] "GET /static/img/light_snow_background_cropped.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:51] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:52] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:53] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:53] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:53] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:55] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:55] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:55] "GET /static/scripts/index.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:55] "GET /static/img/dark_snow_background.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:02:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:32] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:32] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:32] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:32] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:34] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:55] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:55] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:55] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:55] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:56] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:56] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:56] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Mar/2023 21:04:56] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/handlers/public/accounts.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
