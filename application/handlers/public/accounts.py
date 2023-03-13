@@ -263,6 +263,7 @@ class AccountHandler(MethodView):
 
         if not firebase_user:
             firebase_user = firebase_user[0].to_dict()
+            
             # Logging...
             msg = "User in session does not exist within Firestore: {}\n".format(session['user']['email'])
             f = open("logs.txt", "a")

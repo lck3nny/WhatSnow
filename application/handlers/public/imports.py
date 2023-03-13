@@ -4,9 +4,11 @@ from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
 from difflib import SequenceMatcher
 
+# Model Imports
+# --------------------------------------------------
+import application.models.skiboard as skiboard
 
 __author__ = 'liamkenny'
-
 
 unit_names = {
     'size':         ['size', 'length'],
@@ -14,45 +16,13 @@ unit_names = {
     'waist_width':  ['waist width'],
     'tail_width':   ['tail width'],
     'sidecut':      ['sidecut', 'sidecut radius' 'turning radius'],
-    'bend':         ['bend', 'profile'],
-    'flex':         ['flex', 'stiffness']
+    'setback':      ['stance setback'],
+    'stance range': ['stance range'],
+    'profile':      ['bend', 'profile'],
+    'flex':         ['flex', 'stiffness'],
+    'asym':         False
 }
 
-# --------------------------------------------------
-# Is Duplicate                       F U N C T I O N
-# --------------------------------------------------
-def is_duplicate(type, brand, model, year):
-    return False
-
-# --------------------------------------------------
-# Get Stats By ID                    F U N C T I O N
-# --------------------------------------------------
-def get_item_by_id(id):
-    item = {
-            'id': id,
-            'type': 'Snowboard',
-            'brand': 'Burton',
-            'model': 'Custom',
-            'year': '2022'
-        }
-    return item
-
-# --------------------------------------------------
-# Get Stats For Item                 F U N C T I O N
-# --------------------------------------------------
-def get_stats_for_item(item):
-    item = {
-            'id': id,
-            'type': 'Snowboard',
-            'brand': 'Burton',
-            'model': 'Custom',
-            'year': '2022',
-            'nose_width': 300,
-            'waist_width': 255,
-            'tail_width': 292,
-            'sidecut': 7.2
-        }
-    return item
 
 # --------------------------------------------------
 # Find Best Param Name Match         F U N C T I O N
@@ -94,24 +64,15 @@ def find_best_param_match(param):
 # Match Import Params                F U N C T I O N
 # --------------------------------------------------
 def match_params(params, units):
-    return_params = {
-        'size': None,
-        'nose_width': None,
-        'waist_width': None,
-        'tail_width': None,
-        'sidecut': None,
-        'bend': None,
-        'flex': None
-    }
 
     best_matches = {
-        'size': [],
-        'nose_width': [],
-        'waist_width': [],
-        'tail_width': [],
-        'sidecut': [],
-        'bend': [],
-        'flex': []
+        'size': {},
+        'nose_width': {},
+        'waist_width': {},
+        'tail_width': {},
+        'sidecut': {},
+        'bend': {},
+        'flex': {}
     }
 
     # Generate list of best matches for each valid param name
@@ -120,21 +81,9 @@ def match_params(params, units):
             key, match_score = find_best_param_match(param)
             best_matches[key].append(match_score)
 
-
-    # Find the highest scoring match for each valid param name
-    for param in best_matches:
-        best_match = ""
-        best_score = 0
-        for match in best_matches[param]:
-            for name in match:
-                if match[name] > best_score:
-                    best_score = match[name]
-                    best_match = name
-
-        return_params[param] = best_match
         
     # Return best matching input param names for each valid param name
-    return return_params
+    return best_matches
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # N E W   I M P O R T                  H A N D L E R
@@ -151,8 +100,12 @@ class NewImportHandler(MethodView):
         brand = request.form.get('brand')
         model = request.form.get('model')
         year = request.form.get('year')
-        if is_duplicate(import_type, brand, model, year):
-            flash('Looks like we already have a listing for this item. Check it out <a href="/" class="alert-link">here</a>')
+
+        is_duplicate = skiboard.is_duplicate(import_type, brand, model, year)
+        if is_duplicate[0]:
+            link = '/view/{}'.format(is_duplicate[1].id)
+            link = '/'
+            flash('Looks like we already have a listing for this item. Check it out <a href="{}" class="alert-link">here</a>'.format(link))
             return redirect('/import')
 
         # Save ski / board to database
@@ -165,24 +118,19 @@ class NewImportHandler(MethodView):
 class ImportDetailsHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, id):
-        new_item = get_item_by_id(id)
+        new_item = skiboard.get_item_by_id(id)
         if not new_item:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
+
         
-        item = {
-            'type': 'Snowboard',
-            'brand': 'Burton',
-            'model': 'Custom',
-            'year': '2022'
-        }
-        return render_template('imports/import_details.html', page_name='import_details', import_item=item)
+        return render_template('imports/import_details.html', page_name='import_details', skiboard=new_item)
 
     # -------------------------------------- P O S T
     def post(r, id):
         from ... import app
         raw_data = request.form['data_table']
-        item = get_item_by_id(id)
+        item = skiboard.get_item_by_id(id)
 
         # Logging imported data
         msg = "\nSize Chart Submitted: \n{}".format(raw_data)
@@ -246,9 +194,9 @@ class ImportDetailsHandler(MethodView):
 
             data['params'].append(new_param)
 
+        unit_options = list(unit_names.keys())
         
-        
-        return render_template('imports/import_confirmation.html', page_name='import_conf', data=data, options=unit_names, sizes=sizes)
+        return render_template('imports/import_confirmation.html', page_name='import_conf', data=data, options=unit_options, sizes=sizes)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R
@@ -270,12 +218,10 @@ class ImportConfirmationHandler(MethodView):
 class ImportCompleteHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, id):
-        new_item = get_item_by_id(id)
+        new_item = skiboard.get_item_by_id(id)
         if not new_item:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
 
-        item = get_stats_for_item(item)
-
-        return render_template('imports/import_complete.html', page_name='import_complete', item=item)
+        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=new_item)
 

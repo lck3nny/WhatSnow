@@ -4,6 +4,7 @@ from flask import Flask, request, send_from_directory, render_template
 import firebase_admin
 from firebase_admin import credentials
 
+
 # Import Handlers                             Public
 # --------------------------------------------------
 from .handlers.public.home import HomePageHandler
@@ -12,12 +13,15 @@ from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, Imp
 from .handlers.public.view import ViewItemHandler, CompareItemsHandler
 from .handlers.public.learning import LearningHandler
 
+
 # Import Handlers                              Admin
 # --------------------------------------------------
 from .handlers.admin.portal import AdminPortalHandler, AdminViewUsersHandler
 
-__author__ = 'liamkenny'
 
+# Initialise app
+# --------------------------------------------------
+__author__ = 'liamkenny'
 app = Flask(__name__)
 app.secret_key = "3537251460"
 app.permanent_session_lifetime = timedelta(days=7)
@@ -31,6 +35,7 @@ firebase_admin.initialize_app(cred)
 if __name__ == '__main__':
     app.run(debug=True)
 
+
 # Define static routes 
 # --------------------------------------------------
 @app.route('/robots.txt')
@@ -38,6 +43,7 @@ if __name__ == '__main__':
 @app.route('/ads.txt')
 def serve_static_files():
     return send_from_directory(app.static_folder, request.path[1:])
+
 
 # Define error routes 
 # --------------------------------------------------
@@ -69,6 +75,7 @@ app.add_url_rule(rule='/import/<id>/complete/', view_func=ImportCompleteHandler.
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
 app.add_url_rule(rule='/view/<id>/', view_func=ViewItemHandler.as_view('view'), methods=['GET'])
 app.add_url_rule(rule='/compare/<ids>/', view_func=CompareItemsHandler.as_view('compare'), methods=['GET'])
+
 
 # Define admin routes
 # --------------------------------------------------

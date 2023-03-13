@@ -1,19 +1,19 @@
 {% extends "base.html" %}
-{% block title %}{{data['brand']}} {{data['model']}}{% endblock %}
+{% block title %}{{skiboard['brand']}} {{skiboard['model']}}{% endblock %}
 {% block top_content %}
 <div class="container">
     <div class="row banner">
         <div class="col-md-6 offset-md-3">
-            <h1>{{data['brand']}} {{data['model']}}</h1>
-            <h3>{{data['year']}}</h3>
+            <h1>{{skiboard['brand']}} {{skiboard['model']}}</h1>
+            <h3>{{skiboard['year']}}</h3>
             <br><br>
             <table class='table table-dark'>
-            {% for param_set in data['params'] %}
+            {% for param_set in skiboard['collections'] %}
             <tr>
-                <td><b>{{param_set['key']}}</b></td>
-                {% for param in param_set['values'] %}
-                <td>{{param}}</td>
+                {% for key in param_set %}
+                <th>{{ key }}</th>
                 {% endfor %}
+                
             </tr>
             {% endfor %}
             </table>
