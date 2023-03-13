@@ -8,12 +8,12 @@
             <h3>{{skiboard['year']}}</h3>
             <br><br>
             <table class='table table-dark'>
-            {% for param_set in skiboard['collections'] %}
+            {% for key in skiboard['collections'][0].keys() %}
             <tr>
-                {% for key in param_set %}
-                <th>{{ key }}</th>
+                <th>{{ key }}</th>   
+                {% for collection in skiboard['collections'] %}
+                <td>{{  collection[key]  }}</td>
                 {% endfor %}
-                
             </tr>
             {% endfor %}
             </table>
