@@ -262,7 +262,6 @@ class AccountHandler(MethodView):
         firebase_user = db.collection('Users').where('email', '==', session['user']['email']).get()
 
         if not firebase_user:
-            firebase_user = firebase_user[0].to_dict()
             
             # Logging...
             msg = "User in session does not exist within Firestore: {}\n".format(session['user']['email'])
@@ -273,7 +272,23 @@ class AccountHandler(MethodView):
             session.pop('user', None)
             return redirect('/login')
 
-        return render_template('accounts/account.html', session=session, page_name='account')
+        firebase_user = firebase_user[0].to_dict()
+
+        return render_template('accounts/account.html', session=session, page_name='account', user=firebase_user)
+
+
+class UpdateUserDetailsHandler(MethodView):
+    def post(self):
+
+        fname = request.form.get('fname')
+        lname = request.form.get('lname')
+        
+        if not fname and not lname:
+            flash('No changes were made')
+            return redirect('/account')
+
+        flash('Details successfully updated')
+        return redirect('/account')
         
         
 

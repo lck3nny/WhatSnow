@@ -44,4 +44,31 @@ class ViewItemHandler(MethodView):
 class CompareItemsHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self, ids):
-        return render_template('index.html', page_name='index')
+
+        if not ids:
+            return False
+
+        msg = "Collecting SkiBoard Data:"
+        # Collect each item to be compared
+        items = []
+        for id in ids:
+            item, collections = skiboard.get_item_by_id(id)
+
+            if not item:
+                flash('We had trouble finding one or more of your comparisons.')
+            else:
+                item = item.to_dict()
+                if collections:
+                    item['collections'] = collections
+
+                items.append(item)
+
+                msg += '\n{}'.format(item)
+    
+        f = open("logs.txt", "a")
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.close()
+        if not items:
+            return redirect('/')
+        
+        return render_template('index.html', page_name='index', skiboards=items)

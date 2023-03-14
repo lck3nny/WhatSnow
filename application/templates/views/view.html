@@ -9,12 +9,14 @@
             <br><br>
             <table class='table table-dark'>
             {% for key in skiboard['collections'][0].keys() %}
+            {% if key != 'updated' %}
             <tr>
                 <th>{{ key }}</th>   
                 {% for collection in skiboard['collections'] %}
                 <td>{{  collection[key]  }}</td>
                 {% endfor %}
             </tr>
+            {% endif %}
             {% endfor %}
             </table>
         </div>

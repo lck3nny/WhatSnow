@@ -22,8 +22,11 @@ def is_duplicate(type, brand, model, year):
 # --------------------------------------------------
 # Get By Item ID                     F U N C T I O N
 # --------------------------------------------------
-def get_item_by_id(id='obeW2NkdphpUYzOrTDDy'):
+def get_item_by_id(id):
 
+    if not id:
+        return False
+    
     # Get firestore doc by ID
     db = firestore.client()
     skiboard = db.collection('SkiBoards').document(id).get()
