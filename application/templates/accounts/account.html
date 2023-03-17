@@ -1,15 +1,20 @@
 {% extends "base.html" %}
 {% block title %}My Account{% endblock %}
 {% block top_content %}
-<div class="container">
+<div class="container fullscreen">
     <div class="row banner">
         <div class="col-md-6 offset-md-3">
             <h1>Hello {{session.user.fname}}</h1>
             <p>Welcome to your What Snow account</p>
             <p>Here you can view or update your personal information and access your quiver</p>
+            <div class="row">
+                <div class="col">
+                    <button id="btn_update_details" onclick="showDetails()">Update Details</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div id="update_details" class="row results" hidden>
+    <div id="update_details" class="row results main_banner_light" hidden>
         <div class="col-md-6 offset-md-3">
             <h1>Update Details</h1>
             <p>Let's make sure we're on the same page.</p>
@@ -27,5 +32,6 @@
             </form>
         </div>
     </div>
+    <script src="/static/scripts/accounts/account.js"></script>
 </div>
 {% endblock %}

@@ -1,9 +1,13 @@
+import json
 from datetime import datetime
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
 import pyrebase
 from firebase_admin import firestore 
-import json
+
+# Model Imports
+# --------------------------------------------------
+import application.models.user as User
 
 __author__ = 'liamkenny'
 
@@ -53,9 +57,9 @@ class LoginHandler(MethodView):
  
         # Initialise firestore client
         db = firestore.client()
-        firebase_user = db.collection('Users').where('email', '==', email).get()
+        user = db.collection('Users').where('email', '==', email).get()
 
-        if not firebase_user:
+        if not user:
             # Logging...
             msg = "Logged in user does not exist in firestore: {}\n".format(email)
             f = open("logs.txt", "a")
@@ -65,10 +69,10 @@ class LoginHandler(MethodView):
             user['fname'] = 'Test'
             user['lname'] = 'User'
         else:
-            firebase_user = firebase_user[0].to_dict()
+            user = user[0].to_dict()
 
-            user['fname'] = firebase_user['fname']
-            user['lname'] = firebase_user['lname']
+            user['fname'] = user['fname']
+            user['lname'] = user['lname']
 
         # Process successful sign in
         session['user'] = user
@@ -259,9 +263,9 @@ class AccountHandler(MethodView):
 
         # Initialize firestore client 
         db = firestore.client()
-        firebase_user = db.collection('Users').where('email', '==', session['user']['email']).get()
+        user = db.collection('Users').where('email', '==', session['user']['email']).get()
 
-        if not firebase_user:
+        if not user:
             
             # Logging...
             msg = "User in session does not exist within Firestore: {}\n".format(session['user']['email'])
@@ -272,7 +276,7 @@ class AccountHandler(MethodView):
             session.pop('user', None)
             return redirect('/login')
 
-        firebase_user = firebase_user[0].to_dict()
+        user = user[0].to_dict()
 
         return render_template('accounts/account.html', session=session, page_name='account', user=firebase_user)
 
@@ -280,16 +284,51 @@ class AccountHandler(MethodView):
 class UpdateUserDetailsHandler(MethodView):
     def post(self):
 
-        fname = request.form.get('fname')
-        lname = request.form.get('lname')
+        if not 'user' in session:
+            return redirect('/login')
+
+        try:
+            user = User.get_user(email=session['user']['email'])
+            user_dict = user.to_dict()
+        except:
+            # Logging...
+            msg = "ERROR: Could not get firebase user from email in session\n{}\n".format(session['user'])
+            f = open("logs.txt", "a")
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.close()
+            flash("There was a problem updating your user info")
+            return redirect('/account')
         
-        if not fname and not lname:
-            flash('No changes were made')
+
+        update_obj = {
+            'fname': request.form.get('fname'),
+            'lname': request.form.get('lname')
+        }
+
+        
+        if not update_obj['fname'] and not update_obj['lname']:
+            flash('You must enter a name to update.')
+            return redirect('/account')
+        
+        if update_obj['fname'] == user_dict['fname'] and update_obj['lname'] == user_dict['lname']:
+            flash('No updates were made to your account')
             return redirect('/account')
 
-        flash('Details successfully updated')
-        return redirect('/account')
-        
-        
+        # Logging...
+        msg = "Updating  user details...\nOLD Name: {} {}\nNEW Name: {} {}\n".format(user_dict['fname'], user_dict['lname'], update_obj['fname'], update_obj['lname'])
+        f = open("logs.txt", "a")
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.close()
 
+        try:
+            User.update_user(user, update_obj)
+            flash('Details successfully updated')
+        except:
+            # Logging...
+            msg = "ERROR - Could not update user details"
+            f = open("logs.txt", "a")
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.close()
+            flash('We could not update your details. Please try again.')
         
+        return redirect('/account')
