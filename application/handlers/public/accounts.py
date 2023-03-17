@@ -58,7 +58,7 @@ class LoginHandler(MethodView):
  
         # Initialise firestore client
         db = firestore.client()
-        user = db.collection('Users').where('email', '==', email).get()
+        user = db.collection('Users').where('email', '==', email).get()[0]
 
         if not user:
             # Logging...
@@ -67,15 +67,23 @@ class LoginHandler(MethodView):
             f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
 
-            user['fname'] = 'Test'
-            user['lname'] = 'User'
+            flash('No users found with those credentials. Please try again.')
+            return redirect('/login')
         else:
-            user = user[0].to_dict()
+            # Process successful sign in
 
-        # Process successful sign in
-        session['user'] = user
+            # Logging...
+            msg = "Logged in user: {}\n".format(user)
+            f = open("logs.txt", "a")
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
+            f.close()
 
-        flash('You have been successfully logged in as {} {}'.format(user['fname'], user['lname']), 'info')
+            session['user'] = user.to_dict()
+            session['user']['id'] = user.id
+
+
+
+        flash('You have been successfully logged in as {} {}'.format(session['user']['fname'], session['user']['lname']), 'info')
         return redirect('/account')
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,7 +163,7 @@ class SignupHandler(MethodView):
 
         # Create new user
         try:
-            user = auth.create_user_with_email_and_password(email, password)
+            auth.create_user_with_email_and_password(email, password)
             # auth.send_email_verification(user['idToken'])
         except Exception as e:
             # ToDo...
@@ -168,12 +176,7 @@ class SignupHandler(MethodView):
             flash('There was an issue creating your account.', 'error')
             return redirect('/signup')
 
-        # Complete user object and save in session
-        user['f_name'] = fname
-        user['l_name'] = lname
-        user['email'] = email
-        session['user'] = user
-
+    
         # Logging...
         msg = "New User Created!: \n{}\n".format(json.dumps(user))
         f = open("logs.txt", "a")
@@ -181,16 +184,19 @@ class SignupHandler(MethodView):
         f.close()        
     
         # Creating a document using 'add'
-        db.collection('Users').add({
+        user = db.collection('Users').add({
             'email': email,
-            'fname': user['f_name'],
-            'lname': user['l_name'],
+            'fname': fname,
+            'lname': lname,
             'ski': ski,
             'snowboard': [snowboard, stance],
             'created': datetime.now(pytz.timezone('Canada/Pacific')),
             'updated': datetime.now(pytz.timezone('Canada/Pacific')),
             'permissions': []
             }) 
+
+        session['user'] = user.to_dict()
+        session['user']['id'] = user.id
         
         # Creating document using a 'document reference'
         '''
@@ -265,7 +271,8 @@ class AccountHandler(MethodView):
 
         # Initialize firestore client 
         db = firestore.client()
-        user = db.collection('Users').where('email', '==', session['user']['email']).get()
+        #user = db.collection('Users').where('email', '==', session['user']['email']).get()
+        user = db.collection('Users').document(session['user']['id']).get()
 
         if not user:
             # Logging...
@@ -277,9 +284,10 @@ class AccountHandler(MethodView):
             session.pop('user', None)
             return redirect('/login')
 
-        user = user[0].to_dict()
+        session['user'] = user.to_dict()
+        session['user']['id'] = user.id
 
-        return render_template('accounts/account.html', session=session, page_name='account', user=user)
+        return render_template('accounts/account.html', session=session, page_name='account')
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # U P D A T E   D E T A I L S          H A N D L E R
@@ -290,9 +298,9 @@ class UpdateUserDetailsHandler(MethodView):
         if not 'user' in session:
             return redirect('/login')
 
-        # Get firestore user from email
+        # Get firestore user from id
         try:
-            user = User.get_user(email=session['user']['email'])
+            user = User.get_user(id=session['user']['id'])
             user_dict = user.to_dict()
         except:
             # Logging...
@@ -336,7 +344,7 @@ class UpdateUserDetailsHandler(MethodView):
         else:
             session.pop('user', None)
             session['user'] = user.to_dict()
+            session['user']['id'] = user.id
             flash('Details successfully updated')
             
-        
         return redirect('/account')

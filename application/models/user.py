@@ -4,7 +4,10 @@ from firebase_admin import firestore
 
 __author__ = 'liamkenny'
 
-def get_user(id=None, email=None):
+# --------------------------------------------------
+# Get User                           F U N C T I O N
+# --------------------------------------------------
+def get_user(id, email):
     if not id and not email:
         return False
 
@@ -24,7 +27,9 @@ def get_user(id=None, email=None):
 
     return user
 
-
+# --------------------------------------------------
+# Update User                        F U N C T I O N
+# --------------------------------------------------
 def update_user(id, obj={}):
     if not id:
         return False, None
@@ -42,8 +47,8 @@ def update_user(id, obj={}):
     f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
     f.close()
 
+    # Collect and update user object
     try:
-        # Update user object
         db = firestore.client()
         col_ref = db.collection('Users')
         user = col_ref.document(id)
@@ -52,6 +57,28 @@ def update_user(id, obj={}):
         return False, None
 
     return True, user.get()
+
+
+# --------------------------------------------------
+# Is Admin User                      F U N C T I O N
+# --------------------------------------------------
+def is_admin(id):
+    if not id:
+        return False
+    
+    # Collect user object
+    try:
+        db = firestore.client()
+        col_ref = db.collection('Users')
+        user = col_ref.document(id)
+    except:
+        return False
+
+    # Check for admin permissions
+    if not 'admin' in user.permissions:
+        return False
+    
+    return True
     
         
     

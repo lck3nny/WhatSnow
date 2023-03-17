@@ -39,6 +39,9 @@
                                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                                                 <li><a class="dropdown-item" href="/account">Account</a></li>
                                                 <li><a class="dropdown-item" href="/quiver">Quiver</a></li>
+                                                {% if 'admin' in session.user.permissions %}
+                                                <li><a class="dropdown-item" href="/admin">Admin</a></li>
+                                                {% endif %}
                                                 <li><a class="dropdown-item" href="/logout">Logout</a></li>
                                             </ul>
                                         </div>

@@ -1,16 +1,13 @@
+import pytz
 from datetime import datetime
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
-import pyrebase
-import json
+
+# Model Imports
+# --------------------------------------------------
+import application.models.user as User
 
 __author__ = 'liamkenny'
-
-# --------------------------------------------------
-# Is Admin User                      F U N C T I O N
-# --------------------------------------------------
-def check_admin_user(user):
-    return True
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,7 +20,13 @@ class AdminPortalHandler(MethodView):
         if not user:
             return redirect('/')
 
-        if not (check_admin_user(user)):
+        # Logging...
+        msg = "Checking user permissions: {}\n".format(user)
+        f = open("logs.txt", "a")
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
+        f.close()
+
+        if not (User.is_admin(user.id)):
             return redirect('/')
 
         return render_template('admin/portal.html', session=session, page_name='admin_portal')
@@ -39,7 +42,7 @@ class AdminViewUsersHandler(MethodView):
         if not user:
             return redirect('/')
 
-        if not (check_admin_user(user)):
+        if not (User.is_admin(user.id)):
             return redirect('/')
 
         return render_template('admin/view_users.html', session=session, page_name='admin_view_users')
@@ -54,7 +57,7 @@ class AdminViewSingleUsersHandler(MethodView):
         if not user:
             return redirect('/')
 
-        if not (check_admin_user(user)):
+        if not (User.is_admin(user.id)):
             return redirect('/')
 
         return render_template('admin/view_single_user.html', session=session, page_name='admin_veiew_single_user')

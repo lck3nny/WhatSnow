@@ -22,10 +22,10 @@
             <form id="user_details" action="/update-user-details" method="post">
                 <div class="row">
                     <div class="col">
-                        <input type="text" id="fname" name="fname" placeholder="First Name" value="{{ user.fname }}">
+                        <input type="text" id="fname" name="fname" placeholder="First Name" value="{{ session.user.fname }}">
                     </div>
                     <div class="col">
-                        <input type="text" id="lname" name="lname" placeholder="Last Name" value="{{ user.lname }}">
+                        <input type="text" id="lname" name="lname" placeholder="Last Name" value="{{ session.user.lname }}">
                     </div>
                 </div>
                 <input class="btn btn-light" type="submit" value="Update">
