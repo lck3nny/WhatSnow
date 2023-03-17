@@ -1,8 +1,14 @@
-from datetime import timedelta
+import os
+from datetime import datetime, timedelta
 import logging
+import pytz
+
+# Infrastructure Imports
+# --------------------------------------------------
 from flask import Flask, request, send_from_directory, render_template
 import firebase_admin
 from firebase_admin import credentials
+import google.cloud.logging
 
 
 # Import Handlers                             Public
@@ -26,15 +32,20 @@ app = Flask(__name__)
 app.secret_key = "3537251460"
 app.permanent_session_lifetime = timedelta(days=7)
 
-logging.basicConfig(filename='record.log', level=logging.DEBUG)
+#logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
-# Initialize firebase database connection
-cred = credentials.Certificate('service_account_key.json')
+
+# Init firebase database connection
+cred = credentials.Certificate('config/firebase_service_account_key.json')
 firebase_admin.initialize_app(cred)
 
+# Init cloud logging
+client = google.cloud.logging.Client.from_service_account_json('config/logging_service_account_key.json')
+client.setup_logging()
+
+# Run the application
 if __name__ == '__main__':
     app.run(debug=True)
-
 
 # Define static routes 
 # --------------------------------------------------

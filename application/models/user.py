@@ -1,4 +1,5 @@
 import pytz
+import logging
 from datetime import datetime
 from firebase_admin import firestore 
 
@@ -32,7 +33,7 @@ def get_user(id, email):
 # --------------------------------------------------
 def update_user(id, obj={}):
     if not id:
-        return False, None
+        return None, "No ID"
 
     # Remove non-editable params
     update_params = ['fname', 'lname']
@@ -42,21 +43,17 @@ def update_user(id, obj={}):
 
     obj['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
 
-    msg = "update_user() - Object:\n{}\n".format(obj)
-    f = open("logs.txt", "a")
-    f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-    f.close()
-
     # Collect and update user object
     try:
+        logging.info("update_user() - Object:\n{}\n".format(obj))
         db = firestore.client()
         col_ref = db.collection('Users')
         user = col_ref.document(id)
         user.update(obj)
-    except:
-        return False, None
+    except Exception as e:
+        return None, e
 
-    return True, user.get()
+    return user.get(), None
 
 
 # --------------------------------------------------

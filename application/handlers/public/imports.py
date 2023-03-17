@@ -1,5 +1,6 @@
 import json
 import pytz
+import logging
 from datetime import datetime
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
@@ -132,16 +133,7 @@ class ImportDetailsHandler(MethodView):
         from ... import app
         raw_data = request.form['data_table']
         item = skiboard.get_item_by_id(id)
-
-        # Logging imported data
-        msg = "\nSize Chart Submitted: \n{}".format(raw_data)
-
-        app.logger.info("Submitted Data:")
-        app.logger.info(msg)
-
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
+        logging.info("Size Chart Submitted: \n{}".format(raw_data))
 
         # Extract Data from raw table
         sizes = 0

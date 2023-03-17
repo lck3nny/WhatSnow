@@ -1,3 +1,4 @@
+import logging
 from flask import render_template
 from flask.views import MethodView
 

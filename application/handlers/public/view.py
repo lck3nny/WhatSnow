@@ -1,4 +1,5 @@
 import pytz
+import logging
 from datetime import datetime
 from flask import render_template, redirect, flash
 from flask.views import MethodView
@@ -19,11 +20,7 @@ class ViewItemHandler(MethodView):
     def get(self, id):
         item, collections = skiboard.get_item_by_id(id)
         if not item:
-            msg = "ERROR collecting SkiBoard: {}".format(id)
-
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
+            logging.error("Could not collect SkiBoard: {}".format(id))
             flash('We could not find a ski or board with that ID. Please try again.')
 
             return redirect('/')
@@ -32,11 +29,8 @@ class ViewItemHandler(MethodView):
 
         if collections:
             item['collections'] = collections
-            
-        msg = "Collecting SkiBoard Data:\n{}".format(item)
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
+
+        logging.info("Collecting SkiBoard Data:\n{}".format(item))
         return render_template('views/view.html', page_name='view', skiboard=item)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,9 +60,7 @@ class CompareItemsHandler(MethodView):
 
                 msg += '\n{}'.format(item)
     
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
+        logging.info(msg)
         if not items:
             return redirect('/')
         

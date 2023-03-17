@@ -1,6 +1,10 @@
 import json
 import pytz
 from datetime import datetime
+import logging
+
+# Infrastructure Imports
+# --------------------------------------------------
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
 import pyrebase
@@ -12,7 +16,7 @@ import application.models.user as User
 
 __author__ = 'liamkenny'
 
-f = open('firebase_config.json')
+f = open('config/firebase_config.json')
 firebase_config = json.load(f)
 f.close()
 
@@ -61,26 +65,14 @@ class LoginHandler(MethodView):
         user = db.collection('Users').where('email', '==', email).get()[0]
 
         if not user:
-            # Logging...
-            msg = "Logged in user does not exist in firestore: {}\n".format(email)
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
-
+            logging.warning("Logged in user does not exist in firestore: {}".format(email))
             flash('No users found with those credentials. Please try again.')
             return redirect('/login')
         else:
             # Process successful sign in
-
-            # Logging...
-            msg = "Logged in user: {}\n".format(user)
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
-
+            logging.info("User successfully logged in:\n{}".format(user))
             session['user'] = user.to_dict()
             session['user']['id'] = user.id
-
 
 
         flash('You have been successfully logged in as {} {}'.format(session['user']['fname'], session['user']['lname']), 'info')
@@ -106,10 +98,7 @@ class SignupHandler(MethodView):
     def get(self):
         if 'user' in session:
             msg = "User already in session - redirecting}"
-
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
+            logging.info("Redirecting...\nUser already signed in: {}".format(session['user']['email']))
             return redirect('/account')
         
         return render_template('accounts/signup.html', session=session, page_name='signup')
@@ -138,13 +127,9 @@ class SignupHandler(MethodView):
             flash('Your passwords do not match.', 'error')
             return redirect('/signup')
 
-        # Logging...
-        msg = "Checking if user exists: {}\n".format(email)
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
 
         # Initialise firestore client
+        logging.info("Checking if user exists: {}\n".format(email))
         db = firestore.client()
         existing_user = db.collection('Users').where('email', '==', email).get()
         if existing_user.exists:
@@ -155,14 +140,9 @@ class SignupHandler(MethodView):
         firebase = pyrebase.initialize_app(firebase_config)
         auth = firebase.auth()
 
-        # Logging...
-        msg = "Signing up new user: \n{} --- {}".format(email, password)
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
-
         # Create new user
         try:
+            logging.info("Signing up new user: \n{} --- {}".format(email, password))
             auth.create_user_with_email_and_password(email, password)
             # auth.send_email_verification(user['idToken'])
         except Exception as e:
@@ -175,13 +155,6 @@ class SignupHandler(MethodView):
             f.close()
             flash('There was an issue creating your account.', 'error')
             return redirect('/signup')
-
-    
-        # Logging...
-        msg = "New User Created!: \n{}\n".format(json.dumps(user))
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()        
     
         # Creating a document using 'add'
         user = db.collection('Users').add({
@@ -194,6 +167,8 @@ class SignupHandler(MethodView):
             'updated': datetime.now(pytz.timezone('Canada/Pacific')),
             'permissions': []
             }) 
+
+        logging.info("New Firestore User Created: \n{}\n".format(json.dumps(user)))     
 
         session['user'] = user.to_dict()
         session['user']['id'] = user.id
@@ -244,14 +219,9 @@ class ForgotPasswordHandler(MethodView):
         firebase = pyrebase.initialize_app(firebase_config)
         auth = firebase.auth()
 
-        # Logging...
-        msg = "Resetting password for: \n{}".format(email)
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
-
         # Reset user password
         try:
+            logging.info("Resetting password for: \n{}".format(email))
             auth.send_password_reset_email(email)
         except:
             flash('There was an issue resetting your password, please try again.', 'error')
@@ -271,16 +241,10 @@ class AccountHandler(MethodView):
 
         # Initialize firestore client 
         db = firestore.client()
-        #user = db.collection('Users').where('email', '==', session['user']['email']).get()
         user = db.collection('Users').document(session['user']['id']).get()
 
         if not user:
-            # Logging...
-            msg = "User in session does not exist within Firestore: {}\n".format(session['user']['email'])
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
-
+            logging.warning("User in session does not exist within Firestore: {}\n".format(session['user']['email']))
             session.pop('user', None)
             return redirect('/login')
 
@@ -303,11 +267,7 @@ class UpdateUserDetailsHandler(MethodView):
             user = User.get_user(id=session['user']['id'])
             user_dict = user.to_dict()
         except:
-            # Logging...
-            msg = "ERROR: Could not get firebase user from email in session\n{}\n".format(session['user'])
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
+            logging.error("Could not get firebase user from email in session\n{}\n".format(session['user']))
             flash("There was a problem updating your user info")
             return redirect('/account')
         
@@ -326,20 +286,11 @@ class UpdateUserDetailsHandler(MethodView):
             flash('No updates were made to your account')
             return redirect('/account')
 
-        # Logging...
-        msg = "Updating  user details...\nOLD Name: {} {}\nNEW Name: {} {}\n".format(user_dict['fname'], user_dict['lname'], update_obj['fname'], update_obj['lname'])
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
-
         # Update the user details
-        success, user = User.update_user(user.id, update_obj)
-        if not success:
-            # Logging...
-            msg = "ERROR - Could not update user details\n{}\n".format(e)
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
+        logging.info("Updating  user details...\nOLD Name: {} {}\nNEW Name: {} {}\n".format(user_dict['fname'], user_dict['lname'], update_obj['fname'], update_obj['lname']))
+        user, error = User.update_user(user.id, update_obj)
+        if error:
+            logging.error("Could not update user details\n{}\n".format(error))
             flash('We could not update your details. Please try again.')
         else:
             session.pop('user', None)
