@@ -1,3 +1,5 @@
+import pytz
+from datetime import datetime
 from firebase_admin import firestore 
 
 __author__ = 'liamkenny'
@@ -9,11 +11,13 @@ def get_user(id=None, email=None):
     db = firestore.client()
     if id:
         # Get user by ID
-        user = db.collection('Users').document(id).get()
+        col_ref = db.collection('Users')
+        doc_ref = col_ref.document(id)
+        user = doc_ref.get()
     else:
         # Get user by email
-        users = db.collection('Users').where('email', '==', email).get()
-        user = users[0]
+        col_ref = db.collection('Users')
+        user = col_ref.where('email', '==', email).get()[0]
 
     if not user.exists:
         return False
@@ -21,9 +25,9 @@ def get_user(id=None, email=None):
     return user
 
 
-def update_user(doc_ref, obj={}):
-    if not doc_ref:
-        return False
+def update_user(id, obj={}):
+    if not id:
+        return False, None
 
     # Remove non-editable params
     update_params = ['fname', 'lname']
@@ -31,8 +35,23 @@ def update_user(doc_ref, obj={}):
         if key not in update_params:
             obj.pop(key)
 
-    # Update user object
-    doc_ref.update(obj)
+    obj['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
+
+    msg = "update_user() - Object:\n{}\n".format(obj)
+    f = open("logs.txt", "a")
+    f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
+    f.close()
+
+    try:
+        # Update user object
+        db = firestore.client()
+        col_ref = db.collection('Users')
+        user = col_ref.document(id)
+        user.update(obj)
+    except:
+        return False, None
+
+    return True, user.get()
     
         
     

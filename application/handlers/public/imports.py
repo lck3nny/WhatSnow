@@ -1,4 +1,5 @@
 import json
+import pytz
 from datetime import datetime
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
@@ -139,7 +140,7 @@ class ImportDetailsHandler(MethodView):
         app.logger.info(msg)
 
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()
 
         # Extract Data from raw table
@@ -147,7 +148,7 @@ class ImportDetailsHandler(MethodView):
         params = {}
         param_units = {}
         f = open("logs.txt", "a")
-        f.write("{}\nEXTRACTING...".format(datetime.now()))
+        f.write("{}\nEXTRACTING...".format(datetime.now(pytz.timezone('Canada/Pacific'))))
         for line in raw_data.split('\n'):
             f.write("\n{}".format(line))
             split_line = line.split(" ")

@@ -1,4 +1,5 @@
 import json
+import pytz
 from datetime import datetime
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
@@ -63,16 +64,13 @@ class LoginHandler(MethodView):
             # Logging...
             msg = "Logged in user does not exist in firestore: {}\n".format(email)
             f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
 
             user['fname'] = 'Test'
             user['lname'] = 'User'
         else:
             user = user[0].to_dict()
-
-            user['fname'] = user['fname']
-            user['lname'] = user['lname']
 
         # Process successful sign in
         session['user'] = user
@@ -102,7 +100,7 @@ class SignupHandler(MethodView):
             msg = "User already in session - redirecting}"
 
             f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
             return redirect('/account')
         
@@ -122,6 +120,7 @@ class SignupHandler(MethodView):
         ski = request.form.get('ski', False)
         snowboard = request.form.get('snowboard', False)
         stance = request.form.get('goofyref', False)
+        
 
         # Validate form data
         if not email or not password:
@@ -134,7 +133,7 @@ class SignupHandler(MethodView):
         # Logging...
         msg = "Checking if user exists: {}\n".format(email)
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()
 
         # Initialise firestore client
@@ -151,7 +150,7 @@ class SignupHandler(MethodView):
         # Logging...
         msg = "Signing up new user: \n{} --- {}".format(email, password)
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()
 
         # Create new user
@@ -164,7 +163,7 @@ class SignupHandler(MethodView):
 
             msg = "ERROR: \n{}\n".format(e)
             f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
             flash('There was an issue creating your account.', 'error')
             return redirect('/signup')
@@ -178,7 +177,7 @@ class SignupHandler(MethodView):
         # Logging...
         msg = "New User Created!: \n{}\n".format(json.dumps(user))
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()        
     
         # Creating a document using 'add'
@@ -187,7 +186,10 @@ class SignupHandler(MethodView):
             'fname': user['f_name'],
             'lname': user['l_name'],
             'ski': ski,
-            'snowboard': [snowboard, stance]
+            'snowboard': [snowboard, stance],
+            'created': datetime.now(pytz.timezone('Canada/Pacific')),
+            'updated': datetime.now(pytz.timezone('Canada/Pacific')),
+            'permissions': []
             }) 
         
         # Creating document using a 'document reference'
@@ -239,7 +241,7 @@ class ForgotPasswordHandler(MethodView):
         # Logging...
         msg = "Resetting password for: \n{}".format(email)
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()
 
         # Reset user password
@@ -266,11 +268,10 @@ class AccountHandler(MethodView):
         user = db.collection('Users').where('email', '==', session['user']['email']).get()
 
         if not user:
-            
             # Logging...
             msg = "User in session does not exist within Firestore: {}\n".format(session['user']['email'])
             f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
 
             session.pop('user', None)
@@ -278,15 +279,18 @@ class AccountHandler(MethodView):
 
         user = user[0].to_dict()
 
-        return render_template('accounts/account.html', session=session, page_name='account', user=firebase_user)
+        return render_template('accounts/account.html', session=session, page_name='account', user=user)
 
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# U P D A T E   D E T A I L S          H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class UpdateUserDetailsHandler(MethodView):
+    # -------------------------------------- P O S T
     def post(self):
-
         if not 'user' in session:
             return redirect('/login')
 
+        # Get firestore user from email
         try:
             user = User.get_user(email=session['user']['email'])
             user_dict = user.to_dict()
@@ -294,18 +298,18 @@ class UpdateUserDetailsHandler(MethodView):
             # Logging...
             msg = "ERROR: Could not get firebase user from email in session\n{}\n".format(session['user'])
             f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
             flash("There was a problem updating your user info")
             return redirect('/account')
         
-
+        # Populate update object with form values
         update_obj = {
             'fname': request.form.get('fname'),
             'lname': request.form.get('lname')
         }
-
         
+        # Prevent updates if not required
         if not update_obj['fname'] and not update_obj['lname']:
             flash('You must enter a name to update.')
             return redirect('/account')
@@ -317,18 +321,22 @@ class UpdateUserDetailsHandler(MethodView):
         # Logging...
         msg = "Updating  user details...\nOLD Name: {} {}\nNEW Name: {} {}\n".format(user_dict['fname'], user_dict['lname'], update_obj['fname'], update_obj['lname'])
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()
 
-        try:
-            User.update_user(user, update_obj)
-            flash('Details successfully updated')
-        except:
+        # Update the user details
+        success, user = User.update_user(user.id, update_obj)
+        if not success:
             # Logging...
-            msg = "ERROR - Could not update user details"
+            msg = "ERROR - Could not update user details\n{}\n".format(e)
             f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
             flash('We could not update your details. Please try again.')
+        else:
+            session.pop('user', None)
+            session['user'] = user.to_dict()
+            flash('Details successfully updated')
+            
         
         return redirect('/account')

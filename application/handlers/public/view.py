@@ -1,3 +1,4 @@
+import pytz
 from datetime import datetime
 from flask import render_template, redirect, flash
 from flask.views import MethodView
@@ -21,7 +22,7 @@ class ViewItemHandler(MethodView):
             msg = "ERROR collecting SkiBoard: {}".format(id)
 
             f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
             f.close()
             flash('We could not find a ski or board with that ID. Please try again.')
 
@@ -34,7 +35,7 @@ class ViewItemHandler(MethodView):
             
         msg = "Collecting SkiBoard Data:\n{}".format(item)
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()
         return render_template('views/view.html', page_name='view', skiboard=item)
 
@@ -66,9 +67,9 @@ class CompareItemsHandler(MethodView):
                 msg += '\n{}'.format(item)
     
         f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(), msg))
+        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
         f.close()
         if not items:
             return redirect('/')
         
-        return render_template('index.html', page_name='index', skiboards=items)
+        return render_template('core/index.html', page_name='index', skiboards=items)

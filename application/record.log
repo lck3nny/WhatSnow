@@ -6189,3 +6189,893 @@ INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/Wha
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:28] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:28] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:31] "[35m[1mGET /account/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:31] "GET /account/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:31] "GET /account/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:31] "[36mGET /account/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:31] "[36mGET /account/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:50] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:50] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:50] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:52] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:52] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:52] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:52] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:52] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:50:52] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:00] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:01] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:01] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:01] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:01] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:01] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:40] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:40] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:40] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:43] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:43] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:43] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:43] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:43] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:51:43] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:54:50] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:54:50] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:54:50] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:54:50] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:54:50] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:54:50] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:55:28] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:55:28] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:55:28] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:55:29] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:55:29] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 20:55:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:16] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:16] "[35m[1mPOST /update-user-details/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:16] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:16] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:16] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:33] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:34] "[35m[1mPOST /update-user-details/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:34] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:34] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:34] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:50] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:51] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:51] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:51] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:05:51] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:10:06] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:10:06] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:10:06] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:10:07] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:10:07] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:10:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:17:42] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:17:42] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:17:42] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:17:42] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:17:42] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:17:42] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:20] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:20] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:22] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:22] "[35m[1mPOST /update-user-details/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:22] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:22] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:20:22] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:21:14] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:21:15] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:21:15] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:21:15] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:21:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:21:15] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:25:17] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:25:17] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:25:17] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:25:18] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:25:18] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:25:18] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:35:27] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:35:27] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:35:27] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:35:27] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:35:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:35:27] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:44:22] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:44:23] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:44:23] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:44:23] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:44:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:44:23] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:49:20] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:49:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:49:20] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:49:20] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:49:48] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:49:48] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:49:48] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:50:15] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:50:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:50:15] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:50:21] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:50:21] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:50:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:51:40] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:51:40] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:51:40] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:12] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:12] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:12] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:12] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:13] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:13] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:13] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:13] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:15] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:15] "GET /static/img/ski_area_boundary_cropped.webp HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:22] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:22] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:34] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:35] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:52:35] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:14] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:14] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:14] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:14] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:17] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:19] "[33mGET /quiver HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:19] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:19] "[36mGET /static/img/ski_area_boundary_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:23] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:53:23] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:36] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:36] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:45] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:45] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:45] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:45] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:53] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:53] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 21:54:53] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/view.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:10] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:10] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:10] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:15] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:17] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:17] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:36] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:36] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:36] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:36] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:00:36] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:19] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:19] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:19] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:19] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:19] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:21] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:21] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:21] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:21] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:21] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:22] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:22] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:22] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:22] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:22] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:35] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:01:35] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:39] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:39] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:39] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:41] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:41] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:41] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:41] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:05:41] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/view.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:11:30] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:11:30] "[35m[1mPOST /update-user-details/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:11:30] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:11:30] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:11:30] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/imports.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/view.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:12:32] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:12:32] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:12:33] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:12:33] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:12:33] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:19:57] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:19:58] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:19:58] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:19:58] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:19:58] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:19:58] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:06] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:06] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:06] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:07] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:07] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:07] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:13] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:13] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:13] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:52] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:52] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:52] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:54] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:54] "[35m[1mPOST /update-user-details/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:54] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:54] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:54] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:20:54] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:23] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:25] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:25] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:25] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:25] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:45] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:45] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:45] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:46] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:46] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:46] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:47] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:47] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:47] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:48] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:49] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:49] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:49] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:49] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:49] "GET /static/scripts/accounts/account.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:50] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:50] "GET /static/style/index.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:50] "GET /static/scripts/accounts/account.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:21:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:22:08] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:22:08] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:22:08] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:22:08] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:22:08] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:22:08] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:47] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:47] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:47] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:47] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:47] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:47] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:49] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:49] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:23:49] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:11] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:11] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:11] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:11] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:11] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:11] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:20] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:20] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:20] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:20] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:21] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:21] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:21] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:21] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:21] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:22] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:23] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:23] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:23] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:23] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:23] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:24] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:25] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:26] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:27] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:28] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:29] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:30] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:31] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:32] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:33] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:35] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:36] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:37] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:38] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:42] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:42] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:42] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:42] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:42] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:24:42] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:25:29] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:25:29] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:25:29] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:26:04] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:26:05] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:26:05] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:26:05] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:26:05] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:26:05] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/handlers/public/accounts.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:28] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:29] "[35m[1mPOST /update-user-details/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:29] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:29] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:29] "[36mGET /update-user-details/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/Users/macbookpro/Documents/Programming/WhatSnow/application/models/user.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 367-490-229
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:52] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+DEBUG:google.auth.transport.requests:Making request: POST https://oauth2.googleapis.com/token
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): oauth2.googleapis.com:443
+DEBUG:urllib3.connectionpool:https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:53] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:53] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:53] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:53] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:53] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:58] "[32mPOST /update-user-details HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:58] "[32mPOST /update-user-details/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:58] "[32mGET /account HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:58] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:58] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:28:58] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:29:20] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:29:20] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:29:20] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:29:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:29:35] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:29:35] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:29:35] "[36mGET /static/img/dark_snow_background.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:31:08] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:31:08] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:31:08] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:31:34] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:31:34] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:31:34] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:31:34] "[36mGET /static/img/light_snow_background_cropped.webp HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:17] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:17] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:36] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:36] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:36] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:40] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:40] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:40] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:41] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:41] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:45] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:45] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:45] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:51] "GET /import/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:51] "[36mGET /static/scripts/imports.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:51] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:56] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:56] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:56] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:56] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:58] "[32mGET /learn/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:58] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:32:58] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:33:02] "GET /account/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:33:02] "[36mGET /static/scripts/accounts/account.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:33:02] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:33:09] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:33:09] "[36mGET /static/style/index.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Mar/2023 22:33:09] "[36mGET /static/scripts/index.js HTTP/1.1[0m" 304 -
