@@ -157,18 +157,20 @@ class SignupHandler(MethodView):
             return redirect('/signup')
     
         # Creating a document using 'add'
-        user = db.collection('Users').add({
-            'email': email,
-            'fname': fname,
-            'lname': lname,
-            'ski': ski,
-            'snowboard': [snowboard, stance],
-            'created': datetime.now(pytz.timezone('Canada/Pacific')),
-            'updated': datetime.now(pytz.timezone('Canada/Pacific')),
-            'permissions': []
+        try:
+            create_time, user = db.collection('Users').add({
+                'email': email,
+                'fname': fname,
+                'lname': lname,
+                'ski': ski,
+                'snowboard': [snowboard, stance],
+                'created': datetime.now(pytz.timezone('Canada/Pacific')),
+                'updated': datetime.now(pytz.timezone('Canada/Pacific')),
+                'permissions': []
             }) 
-
-        logging.info("New Firestore User Created: \n{}\n".format(json.dumps(user)))     
+            logging.info("New Firestore User Created: \n{}\n".format(json.dumps(user)))  
+        except Exception as e:
+            logging.error("Could not create new skiboard:\n{}".format(e))   
 
         session['user'] = user.to_dict()
         session['user']['id'] = user.id

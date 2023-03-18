@@ -2,9 +2,13 @@ import json
 import pytz
 import logging
 from datetime import datetime
-from flask import render_template, redirect, session, flash, request
-from flask.views import MethodView
 from difflib import SequenceMatcher
+
+# Infrastructure Imports
+# --------------------------------------------------
+from flask import render_template, redirect, flash, request
+from flask.views import MethodView
+from firebase_admin import firestore 
 
 # Model Imports
 # --------------------------------------------------
@@ -103,16 +107,29 @@ class NewImportHandler(MethodView):
         model = request.form.get('model')
         year = request.form.get('year')
 
-        is_duplicate = skiboard.is_duplicate(import_type, brand, model, year)
-        if is_duplicate[0]:
-            link = '/view/{}'.format(is_duplicate[1].id)
+        is_duplicate, duplicate = skiboard.is_duplicate(import_type, brand, model, year)
+        if is_duplicate:
+            link = '/view/{}'.format(duplicate.id)
             link = '/'
             flash('Looks like we already have a listing for this item. Check it out <a href="{}" class="alert-link">here</a>'.format(link))
             return redirect('/import')
 
-        # Save ski / board to database
-        id = 123
-        return redirect('/import/{}/'.format(id))
+        # Save ski / board to database        
+        try:
+            db = firestore.client()
+            create_time, new_skiboard = db.collection('SkiBoards').add({
+                'brand': brand,
+                'model': model,
+                'year': year,
+                'type': import_type,
+                'created': datetime.now(pytz.timezone('Canada/Pacific'))
+            })
+            logging.info("New {} created: \n{}\n".format(import_type.capitalize(), new_skiboard))     
+        except Exception as e:
+            logging.error("Could not create new {}:\n{}".format(import_type, e))
+
+        
+        return redirect('/import/{}/'.format(new_skiboard.id))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   D E T A I L S          H A N D L E R

@@ -10,13 +10,13 @@ def is_duplicate(type, brand, model, year):
 
     # Check firestore for duplicate entries
     db = firestore.client()
-    skiboards = db.collection('SkiBoards').where('type', '==', type).where('brand', '==', brand).where('model', '==', model).where('year', '==', year).get()
-    if skiboards.exists:
+    skiboards = db.collection('SkiBoards').where('type', '==', type).where('brand', '==', brand).where('model', '==', model).where('year', '==', year)
+    for skiboard in skiboards.stream():
         # ToDo...
         # Return existing skiboard ID???
-        return [True, skiboards]
+        return True, skiboard
 
-    return False
+    return False, None
 
 
 # --------------------------------------------------
