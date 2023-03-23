@@ -12,7 +12,7 @@ from firebase_admin import firestore
 
 # Model Imports
 # --------------------------------------------------
-import application.models.skiboard as skiboard
+import application.models.skiboard as SkiBoard
 
 __author__ = 'liamkenny'
 
@@ -34,29 +34,31 @@ class NewImportHandler(MethodView):
         model = request.form.get('model')
         year = request.form.get('year')
 
-        is_duplicate, duplicate = skiboard.is_duplicate(import_type, brand, model, year)
+        # Check if ski / board already exists
+        is_duplicate, duplicate = SkiBoard.is_duplicate(import_type, brand, model, year)
         if is_duplicate:
             link = '/view/{}'.format(duplicate.id)
             link = '/'
             flash('Looks like we already have a listing for this item. Check it out <a href="{}" class="alert-link">here</a>'.format(link))
             return redirect('/import')
 
-        # Save ski / board to database        
+               
         try:
+            # Save ski / board to database 
             db = firestore.client()
-            create_time, new_skiboard = db.collection('SkiBoards').add({
+            create_time, skiboard = db.collection('SkiBoards').add({
                 'brand': brand,
                 'model': model,
                 'year': year,
                 'type': import_type,
                 'created': datetime.now(pytz.timezone('Canada/Pacific'))
             })
-            logging.info("New {} created: \n{}\n".format(import_type.capitalize(), new_skiboard))     
+            logging.info("New {} created: \n{}\n".format(import_type.capitalize(), skiboard))     
         except Exception as e:
             logging.error("Could not create new {}:\n{}".format(import_type, e))
 
         
-        return redirect('/import/{}/'.format(new_skiboard.id))
+        return redirect('/import/{}/'.format(skiboard.id))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   D E T A I L S          H A N D L E R
@@ -64,21 +66,21 @@ class NewImportHandler(MethodView):
 class ImportDetailsHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, id):
-        new_item = skiboard.get_item_by_id(id)
-        if not new_item:
+        skiboard = SkiBoard.get_item_by_id(id)
+        if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
 
         
-        return render_template('imports/import_details.html', page_name='import_details', skiboard=new_item)
+        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard)
 
     # -------------------------------------- P O S T
     def post(r, id):
-        item = skiboard.get_item_by_id(id)
+        skiboard = SkiBoard.get_item_by_id(id)
         raw_input = request.form['data_table']
 
         # Prevent incomplete submission
-        if not item or not raw_input:
+        if not skiboard or not raw_input:
             flash("We could not process your import. Please try again.")
             return redirect("/import")
         elif not raw_input:
@@ -86,17 +88,17 @@ class ImportDetailsHandler(MethodView):
             return redirect("/import/{}/".format(id))
 
         logging.info("Size Chart Submitted for skiboard:{}\n{}".format(id, raw_input))
-        params, units, sizes = skiboard.extract_params_from_text(raw_input)
+        params, units, sizes = SkiBoard.extract_params_from_text(raw_input)
         logging.info("Extracted params: {}\n\nExtracted units: {}".format(params, units))
 
         # Normalise params
-        formatted_params = skiboard.format_params(params, units)
-        unit_options = list(skiboard.unit_names.keys())
+        formatted_params, formatted_units = SkiBoard.format_params(params, units)
 
         # Update firebase doc
         
+
                 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', skiboard=item)
+        return render_template('imports/import_confirmation.html', page_name='import_conf', skiboard=skiboard)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R
@@ -118,10 +120,10 @@ class ImportConfirmationHandler(MethodView):
 class ImportCompleteHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, id):
-        new_item = skiboard.get_item_by_id(id)
-        if not new_item:
+        skiboard = SkiBoard.get_item_by_id(id)
+        if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
 
-        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=new_item)
+        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard)
 

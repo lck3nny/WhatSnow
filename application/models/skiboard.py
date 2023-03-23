@@ -1,5 +1,8 @@
+import logging
 from operator import itemgetter
 from firebase_admin import firestore
+from difflib import SequenceMatcher
+
 
 __author__ = 'liamkenny'
 
@@ -13,10 +16,8 @@ unit_names = {
     'stance width': ['stance width', 'stance range'],
     'profile':      ['bend', 'profile'],
     'flex':         ['flex', 'stiffness'],
-    'asym':         False
+    'asym':         ['asym', 'asymetric']
 }
-
-
 
 
 # --------------------------------------------------
@@ -34,12 +35,10 @@ def is_duplicate(type, brand, model, year):
 
     return False, None
 
-
 # --------------------------------------------------
 # Get By Item ID                     F U N C T I O N
 # --------------------------------------------------
 def get_item_by_id(id):
-
     if not id:
         return False
     
@@ -95,6 +94,38 @@ def extract_params_from_text(raw_input):
         
     return params, param_units, sizes
 
-def format_params(unformatted):
-    formatted = None
-    return formatted
+# --------------------------------------------------
+# Format Params                      F U N C T I O N
+# --------------------------------------------------
+def format_params(unformatted, units):
+    formatted_data = {}
+    formatted_units = {}
+
+    # Populate formatted dictionaries with given data
+    for key in unformatted:
+        matched = match_param(key)
+        formatted_data[matched] = unformatted[key]
+        formatted_units[matched] = units[key]
+
+    return formatted_data, formatted_units
+
+
+# --------------------------------------------------
+# Match Param                        F U N C T I O N
+# --------------------------------------------------
+def match_param(param):
+
+    # Calculate best similarity score for each unit name
+    match_scores = {}
+    for unit in unit_names:
+        match_scores[unit] = 0
+        for option in unit_names[unit]:
+            similarity = SequenceMatcher(None, param.replace('_', ' '), option).ratio()
+            if similarity > match_scores[unit]:
+                match_scores[unit] = similarity
+            
+    matched = max(match_scores, key=match_scores.get)
+    logging.info("Parameter Matching for: {} - best match: {}\n{}".format(param, matched, match_scores))
+
+    return matched
+
