@@ -76,7 +76,7 @@ class ImportDetailsHandler(MethodView):
 
     # -------------------------------------- P O S T
     def post(r, id):
-        skiboard = SkiBoard.get_item_by_id(id)
+        skiboard = SkiBoard.get_item_by_id(id)[0]
         raw_input = request.form['data_table']
 
         # Prevent incomplete submission
@@ -86,18 +86,18 @@ class ImportDetailsHandler(MethodView):
         elif not raw_input:
             flash("We could not process your import. Please try again.")
             return redirect("/import/{}/".format(id))
-
+        
+        #skiboard = skiboard.to_dict()
+        logging.info("SkiBoard: {}".format(skiboard))
         logging.info("Size Chart Submitted for skiboard:{}\n{}".format(id, raw_input))
         params, units, sizes = SkiBoard.extract_params_from_text(raw_input)
         logging.info("Extracted params: {}\n\nExtracted units: {}".format(params, units))
 
         # Normalise params
         formatted_params, formatted_units = SkiBoard.format_params(params, units)
+        skiboard['params'] = formatted_params
+        logging.info("Param formatting complete:\n{}".format(formatted_params))
 
-        # Update firebase doc
-        
-
-                
         return render_template('imports/import_confirmation.html', page_name='import_conf', skiboard=skiboard)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

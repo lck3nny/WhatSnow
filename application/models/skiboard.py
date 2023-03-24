@@ -7,16 +7,17 @@ from difflib import SequenceMatcher
 __author__ = 'liamkenny'
 
 unit_names = {
-    'size':         ['size', 'length'],
-    'nose_width':   ['nose width', 'tip width'],
-    'waist_width':  ['waist width'],
-    'tail_width':   ['tail width'],
-    'sidecut':      ['sidecut', 'sidecut radius' 'turning radius'],
-    'setback':      ['stance setback'],
-    'stance width': ['stance width', 'stance range'],
-    'profile':      ['bend', 'profile'],
-    'flex':         ['flex', 'stiffness'],
-    'asym':         ['asym', 'asymetric']
+    'size':             ['size', 'length'],
+    'nose_width':       ['nose width', 'tip width'],
+    'waist_width':      ['waist width'],
+    'tail_width':       ['tail width'],
+    'sidecut':          ['sidecut', 'sidecut radius', 'turning radius'],
+    'effective_edge':   ['effective edge', 'running length'],
+    'setback':          ['stance setback'],
+    'stance width':     ['stance width', 'stance range'],
+    'profile':          ['bend', 'profile'],
+    'flex':             ['flex', 'stiffness'],
+    'asym':             ['asym', 'asymetric']
 }
 
 
@@ -53,7 +54,7 @@ def get_item_by_id(id):
         
         # Sort collections by size parameter
         collections = sorted(collections, key=itemgetter('size'))
-        return skiboard, collections
+        return skiboard.to_dict(), collections
 
     return False
 
@@ -100,12 +101,16 @@ def extract_params_from_text(raw_input):
 def format_params(unformatted, units):
     formatted_data = {}
     formatted_units = {}
+    data_confidence = {}
 
     # Populate formatted dictionaries with given data
     for key in unformatted:
-        matched = match_param(key)
-        formatted_data[matched] = unformatted[key]
-        formatted_units[matched] = units[key]
+        matched, confidence = match_param(key)
+        if matched not in data_confidence or (matched in data_confidence and confidence > data_confidence[matched]):
+            logging.info("Updating param matching...\nKey: {} - Confidence: {}\nDict: {}".format(matched, confidence, data_confidence))
+            data_confidence[matched] = confidence
+            formatted_data[matched] = unformatted[key]
+            formatted_units[matched] = units[key]
 
     return formatted_data, formatted_units
 
@@ -121,11 +126,13 @@ def match_param(param):
         match_scores[unit] = 0
         for option in unit_names[unit]:
             similarity = SequenceMatcher(None, param.replace('_', ' '), option).ratio()
+            #logging.info("param: {} - comparedto: {} - score: {}".format(param, option, similarity))
             if similarity > match_scores[unit]:
                 match_scores[unit] = similarity
             
     matched = max(match_scores, key=match_scores.get)
+    confidence = match_scores[max(match_scores)]
     logging.info("Parameter Matching for: {} - best match: {}\n{}".format(param, matched, match_scores))
 
-    return matched
+    return matched, confidence
 
