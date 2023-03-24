@@ -20,6 +20,15 @@ unit_names = {
     'asym':             ['asym', 'asymetric']
 }
 
+profile_types = {
+    'full_camber': 'url_for_img',
+    'hybrid_camber': 'url_for_img',
+    'directional_camber': 'url_for_img',
+    'flat': 'url_for_img',
+    'directional_flat': 'url_for_img',
+    'hybrid_rocker': 'url_for_img',
+    'full_rocker': 'url_for_img'
+}
 
 # --------------------------------------------------
 # Is Duplicate                       F U N C T I O N

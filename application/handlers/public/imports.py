@@ -72,7 +72,7 @@ class ImportDetailsHandler(MethodView):
             return redirect('/import')
 
         
-        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard)
+        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=SkiBoard.profile_types)
 
     # -------------------------------------- P O S T
     def post(r, id):
@@ -98,7 +98,9 @@ class ImportDetailsHandler(MethodView):
         skiboard['params'] = formatted_params
         logging.info("Param formatting complete:\n{}".format(formatted_params))
 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', skiboard=skiboard)
+        profiles = SkiBoard.profile_types
+
+        return render_template('imports/import_confirmation.html', page_name='import_conf', skiboard=skiboard, profiles=profiles)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R

@@ -18,13 +18,9 @@
                 <input type="range" class="form-range" id="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
                 <select class="form-control" name="profile" id="profile">
                     <option value="" disabled selected>Profile</option>
-                    <option value="regular">Full Camber</option>
-                    <option value="unknown">Hybrid Camber</option>
-                    <option value="goofy">Directional Camber</option>
-                    <option value="goofy">Flat</option>
-                    <option value="goofy">Directional Flat</option>
-                    <option value="unknown">Hybrid Rocker</option>
-                    <option value="unknown">Full Rocker</option>
+                    {% for profile in profiles %}
+                    <option value="{{ profile }}">{{ profile.replace('_', ' ').title() }}</option>
+                    {% endfor %}
                 </select>   
                 <p>Paste your size chart below</p>
                 <textarea id="data" name="data_table"class="form-control" rows="12"></textarea>
