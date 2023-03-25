@@ -72,7 +72,7 @@ class ImportDetailsHandler(MethodView):
             return redirect('/import')
 
         
-        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=SkiBoard.profile_types)
+        return render_template('imports/import_details.html', page_name='import_details', id=id, skiboard=skiboard, profiles=SkiBoard.profile_types)
 
     # -------------------------------------- P O S T
     def post(r, id):
@@ -100,7 +100,7 @@ class ImportDetailsHandler(MethodView):
 
         profiles = SkiBoard.profile_types
 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', skiboard=skiboard, profiles=profiles)
+        return render_template('imports/import_confirmation.html', page_name='import_conf', id=id, skiboard=skiboard, profiles=profiles)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R
@@ -108,12 +108,27 @@ class ImportDetailsHandler(MethodView):
 class ImportConfirmationHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, id):
+        # Should not arrive here
         return redirect('/import')
 
     # -------------------------------------- P O S T
     def post(r, id):
+        skiboard = SkiBoard.get_item_by_id(id)
         import_type = request.form.get('type')
-        return render_template('imports/import_complete.html', page_name='import_complete', item_type=import_type, item_id=id)
+        profile = request.form.get('profile')
+        asym = request.form.get('asym')
+        flex = request.form.get('flex-val')
+        params = {}
+        for key in SkiBoard.param_names:
+            # Retreive data from ID not Name
+            # change which is updated 
+            logging.info("Getting param from table: {}".format(str(key) +'-hidden-vals'))
+            params[key] = request.form.get(str(key) +'-hiddn-vals').split(',')
+
+        logging.info("Import Confirmation...\nType: {}\nProfile: {}\nAsym: {}\nFlex: {}\nParams:\n{}".format(import_type, profile, asym, flex))
+
+
+        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, item_id=id)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

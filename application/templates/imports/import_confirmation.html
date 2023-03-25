@@ -9,7 +9,7 @@
             <br>
         </div>
         <div class="col-auto">
-            <form id="import_details" action="#" method="post">
+            <form id="import_details" action="" method="post">
                 <label for="type"> Type: </label>
                 <select name="type" id="type">
                     {% if skiboard['type'] == "skis" %}
@@ -47,7 +47,7 @@
                 </select>
                 <label for="flex"> Flex: </label>
                 {% if 'flex' in skiboard %}
-                <output id="flex_val">{{ skiboard['flex'] }}</output>
+                <output id="flex-val">{{ skiboard['flex'] }}</output>
                 <input type="range" value="{{ skiboard['flex'] }}" class="form-range" id="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
                 {% else %}
                 <output>5</output>
@@ -56,7 +56,8 @@
                 <br><br>
                 <table>
                     {% for param in skiboard['params'] %}
-                    <th><select>
+                    <th>
+                        <select id="{{loop.index}}-select" name="{{ param.replace(' ', '_') }}-select" onchange="changeColName(this);">
                         <option>Select...</option>
                         {% for option in skiboard['params'] %}
                             {% if option == param %}
@@ -65,7 +66,9 @@
                             <option>{{ option.replace('_', ' ').title() }}</option>
                             {% endif %}
                         {% endfor %}
-                    </select></th>
+                        </select>
+                    </th>
+                    <input hidden id="{{loop.index}}-hidden-vals" name="{{ param.replace(' ', '_') }}-hidden-vals" value="{{ ','.join(skiboard['params'][param]) }}">
                     {% endfor %}
                     {% for x in range(skiboard['params']['size']|length) %}
                     <tr>
@@ -80,5 +83,6 @@
             </form>
         </div>
     </div>
+    <script src="/static/scripts/imports.js"></script>
 </div>
 {% endblock %}

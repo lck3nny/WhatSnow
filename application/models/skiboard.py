@@ -30,6 +30,8 @@ profile_types = {
     'full_rocker': 'url_for_img'
 }
 
+param_names = ['size', 'nose_width', 'waist_width', 'tail_width', 'sidecut', 'effective_edge', 'setback', 'stance_width']
+
 # --------------------------------------------------
 # Is Duplicate                       F U N C T I O N
 # --------------------------------------------------
@@ -116,7 +118,7 @@ def format_params(unformatted, units):
     for key in unformatted:
         matched, confidence = match_param(key)
         if matched not in data_confidence or (matched in data_confidence and confidence > data_confidence[matched]):
-            logging.info("Updating param matching...\nKey: {} - Confidence: {}\nDict: {}".format(matched, confidence, data_confidence))
+            #logging.info("Updating param matching...\nKey: {} - Confidence: {}\nDict: {}".format(matched, confidence, data_confidence))
             data_confidence[matched] = confidence
             formatted_data[matched] = unformatted[key]
             formatted_units[matched] = units[key]
@@ -141,7 +143,7 @@ def match_param(param):
             
     matched = max(match_scores, key=match_scores.get)
     confidence = match_scores[max(match_scores)]
-    logging.info("Parameter Matching for: {} - best match: {}\n{}".format(param, matched, match_scores))
+    #logging.info("Parameter Matching for: {} - best match: {}\n{}".format(param, matched, match_scores))
 
     return matched, confidence
 
