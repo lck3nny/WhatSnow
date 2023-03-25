@@ -118,15 +118,20 @@ class ImportConfirmationHandler(MethodView):
         profile = request.form.get('profile')
         asym = request.form.get('asym')
         flex = request.form.get('flex-val')
+
         params = {}
         for key in SkiBoard.param_names:
-            # Retreive data from ID not Name
-            # change which is updated 
-            logging.info("Getting param from table: {}".format(str(key) +'-hidden-vals'))
-            params[key] = request.form.get(str(key) +'-hiddn-vals').split(',')
+            param_list = request.form.get(key+'-hidden-vals')
+            if param_list:
+                params[key] = param_list.split(',')
 
-        logging.info("Import Confirmation...\nType: {}\nProfile: {}\nAsym: {}\nFlex: {}\nParams:\n{}".format(import_type, profile, asym, flex))
+            # logging.info("Retreiving form data: {}".format(key+'-hidden-vals'))
+            # logging.info(param_list)
 
+        logging.info("Import Confirmation...\nType: {}\nProfile: {}\nAsym: {}\nFlex: {}\nParams:\n{}".format(import_type, profile, asym, flex, params))
+
+        # Update SKiBoard info
+        # Add size collection for each entry
 
         return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, item_id=id)
 

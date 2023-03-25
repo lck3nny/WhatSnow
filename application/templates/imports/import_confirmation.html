@@ -1,5 +1,5 @@
 {% extends "core/base.html" %}
-{% block title %}My Account{% endblock %}
+{% block title %}Import Confirmation{% endblock %}
 {% block top_content %}
 <div class="container">
     <div class="row banner justify-content-center">
@@ -9,7 +9,7 @@
             <br>
         </div>
         <div class="col-auto">
-            <form id="import_details" action="" method="post">
+            <form id="import_details" action="/import/{{ id }}/confirm" method="post">
                 <label for="type"> Type: </label>
                 <select name="type" id="type">
                     {% if skiboard['type'] == "skis" %}

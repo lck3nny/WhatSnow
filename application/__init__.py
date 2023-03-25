@@ -45,7 +45,8 @@ client.setup_logging()
 
 # Run the application
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, use_reloader=False)
+    #app.run(host='127.0.0.1', port=5000, debug=False, use_reloader=False)
 
 # Define static routes 
 # --------------------------------------------------

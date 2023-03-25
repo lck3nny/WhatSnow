@@ -16,10 +16,31 @@ function startImport(type) {
     }
 }
 
+/*
+// Updates ID on change
+function changeColName(select){    
+    var hiddenVals = document.getElementsByName(select.name.replace('-select', '-hidden-vals'))[0];
+    var overwrittenSelect = document.getElementById(select.value.replace(' ', '_').toLowerCase() + '-select');
+    var overwrittenHiddenVals = document.getElementById(select.value.replace(' ', '_').toLowerCase() + '-hidden-vals');
+
+
+    select.id = select.value.replace(' ', '_').toLowerCase() + '-select';
+    hiddenVals.id = select.value.replace(' ', '_').toLowerCase() + '-hidden-vals';
+
+    if(overwrittenSelect !== null){
+        overwrittenSelect.value = 'Select...';
+        overwrittenSelect.id = 'undefined-select';
+        overwrittenHiddenVals.id = 'undefined-hidden-vals';
+    }
+}
+*/
+
+// Updates Name on change
 function changeColName(select){    
     var hiddenVals = document.getElementById(select.id.replace('-select', '-hidden-vals'));
     var overwrittenSelect = document.getElementsByName(select.value.replace(' ', '_').toLowerCase() + '-select')[0];
     var overwrittenHiddenVals = document.getElementsByName(select.value.replace(' ', '_').toLowerCase() + '-hidden-vals')[0];
+
 
     select.name = select.value.replace(' ', '_').toLowerCase() + '-select';
     hiddenVals.name = select.value.replace(' ', '_').toLowerCase() + '-hidden-vals';
@@ -30,3 +51,6 @@ function changeColName(select){
         overwrittenHiddenVals.name = 'undefined-hidden-vals';
     }
 }
+
+// Update value for flex from slider bar
+// animation from 0?
