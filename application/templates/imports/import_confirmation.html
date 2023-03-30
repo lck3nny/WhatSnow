@@ -10,9 +10,9 @@
         </div>
         <div class="col-auto">
             <form id="import_details" action="/import/{{ id }}/confirm" method="post">
-                <label for="type"> Type: </label>
-                <select name="type" id="type">
-                    {% if skiboard['type'] == "skis" %}
+                <label for="category"> Category: </label>
+                <select name="category" id="category">
+                    {% if skiboard['category'] == "skis" %}
                     <option value="skis" selected>Ski</option>
                     <option value="snowboard">Snowboard</option>
                     {% else %}
@@ -46,12 +46,12 @@
                     {% endif %}
                 </select>
                 <label for="flex"> Flex: </label>
-                {% if 'flex' in skiboard %}
+                {% if 'flex' in skiboard and skiboard['flex'] %}
                 <output id="flex-val">{{ skiboard['flex'] }}</output>
-                <input type="range" value="{{ skiboard['flex'] }}" class="form-range" id="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
+                <input type="range" value="{{ skiboard['flex'] }}" class="form-range" id="flex-slider" name="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
                 {% else %}
-                <output>5</output>
-                <input type="range" class="form-range" id="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
+                <output id="flex-val">5</output>
+                <input type="range" class="form-range" id="flex-slider" name="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
                 {% endif %}
                 <br><br>
                 <table>

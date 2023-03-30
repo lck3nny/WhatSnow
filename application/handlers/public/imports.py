@@ -29,33 +29,31 @@ class NewImportHandler(MethodView):
 
     # -------------------------------------- P O S T
     def post(r):
-        import_type = request.form.get('type')
+        category = request.form.get('category')
         brand = request.form.get('brand')
         model = request.form.get('model')
         year = request.form.get('year')
 
         # Check if ski / board already exists
-        is_duplicate, duplicate = SkiBoard.is_duplicate(import_type, brand, model, year)
+        is_duplicate, duplicate = SkiBoard.is_duplicate(category, brand, model, year)
         if is_duplicate:
             link = '/view/{}'.format(duplicate.id)
             link = '/'
             flash('Looks like we already have a listing for this item. Check it out <a href="{}" class="alert-link">here</a>'.format(link))
             return redirect('/import')
-
-               
+        
+        # Save ski / board to database 
         try:
-            # Save ski / board to database 
-            db = firestore.client()
-            create_time, skiboard = db.collection('SkiBoards').add({
-                'brand': brand,
-                'model': model,
-                'year': year,
-                'type': import_type,
-                'created': datetime.now(pytz.timezone('Canada/Pacific'))
-            })
-            logging.info("New {} created: \n{}\n".format(import_type.capitalize(), skiboard))     
+            skiboard = SkiBoard.create(brand, model, year, category)
+            logging.info("New {} created: \n{}\n".format(category.capitalize(), skiboard))  
+            if not skiboard:
+                logging.error("Could not create new {}:\n{}".format(category, e))
+                flash("We had a problem creating your new {}. Please try again.".format(category))
+                return False
         except Exception as e:
-            logging.error("Could not create new {}:\n{}".format(import_type, e))
+            logging.error("Could not create new {}:\n{}".format(category, e))
+            flash("We had a problem creating your new {}. Please try again.".format(category))
+            return False
 
         
         return redirect('/import/{}/'.format(skiboard.id))
@@ -72,7 +70,7 @@ class ImportDetailsHandler(MethodView):
             return redirect('/import')
 
         
-        return render_template('imports/import_details.html', page_name='import_details', id=id, skiboard=skiboard, profiles=SkiBoard.profile_types)
+        return render_template('imports/import_details.html', page_name='import_details', id=id, skiboard=skiboard, profiles=SkiBoard.profile_categorys)
 
     # -------------------------------------- P O S T
     def post(r, id):
@@ -96,7 +94,7 @@ class ImportDetailsHandler(MethodView):
         # Normalise params
         formatted_params, formatted_units = SkiBoard.format_params(params, units)
         skiboard['params'] = formatted_params
-        logging.info("Param formatting complete:\n{}".format(formatted_params))
+        logging.info("Param formatting complete:\n{}".format(skiboard))
 
         profiles = SkiBoard.profile_types
 
@@ -113,26 +111,32 @@ class ImportConfirmationHandler(MethodView):
 
     # -------------------------------------- P O S T
     def post(r, id):
-        skiboard = SkiBoard.get_item_by_id(id)
-        import_type = request.form.get('type')
-        profile = request.form.get('profile')
-        asym = request.form.get('asym')
-        flex = request.form.get('flex-val')
+        skiboard, collections = SkiBoard.get_item_by_id(id)
+        general_info = {
+            'category': request.form.get('category'),
+            'profile': request.form.get('profile'),
+            'asym': request.form.get('asym'),
+            'flex': request.form.get('flex')
+        }
+        logging.info("General Info:\n{}".format(general_info))
 
+        # Retreive hidden params from form
         params = {}
         for key in SkiBoard.param_names:
             param_list = request.form.get(key+'-hidden-vals')
             if param_list:
                 params[key] = param_list.split(',')
 
-            # logging.info("Retreiving form data: {}".format(key+'-hidden-vals'))
-            # logging.info(param_list)
-
-        logging.info("Import Confirmation...\nType: {}\nProfile: {}\nAsym: {}\nFlex: {}\nParams:\n{}".format(import_type, profile, asym, flex, params))
-
-        # Update SKiBoard info
-        # Add size collection for each entry
-
+        logging.info("Params:\n{}".format(params))
+    
+        # Update general info for SkiBoard
+        logging.info("Import Confirmation...\Category: {}\nProfile: {}\nAsym: {}\nFlex: {}\nParams:\n{}".format(general_info['category'], general_info['profile'], general_info['asym'], general_info['flex'], params))
+        logging.info("SkiBoard: {}".format(skiboard))
+        success = SkiBoard.update_info(id, general_info, params)
+        if not success:
+            flash("We were unable to update this {}".format(general_info['category'].title))
+            return False
+ 
         return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, item_id=id)
 
 
@@ -148,4 +152,3 @@ class ImportCompleteHandler(MethodView):
             return redirect('/import')
 
         return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard)
-

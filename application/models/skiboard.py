@@ -1,4 +1,6 @@
 import logging
+from datetime import datetime
+import pytz
 from operator import itemgetter
 from firebase_admin import firestore
 from difflib import SequenceMatcher
@@ -35,11 +37,11 @@ param_names = ['size', 'nose_width', 'waist_width', 'tail_width', 'sidecut', 'ef
 # --------------------------------------------------
 # Is Duplicate                       F U N C T I O N
 # --------------------------------------------------
-def is_duplicate(type, brand, model, year):
+def is_duplicate(category, brand, model, year):
 
     # Check firestore for duplicate entries
     db = firestore.client()
-    skiboards = db.collection('SkiBoards').where('type', '==', type).where('brand', '==', brand).where('model', '==', model).where('year', '==', year)
+    skiboards = db.collection('SkiBoards').where('category', '==', category).where('brand', '==', brand).where('model', '==', model).where('year', '==', year)
     for skiboard in skiboards.stream():
         # ToDo...
         # Return existing skiboard ID???
@@ -147,3 +149,64 @@ def match_param(param):
 
     return matched, confidence
 
+# --------------------------------------------------
+# Create SkiBoard                    F U N C T I O N
+# --------------------------------------------------
+def create(brand, model, year, category):
+    if not brand or not model or not year or not category:
+        return False
+
+    try:
+        db = firestore.client()
+        create_time, skiboard = db.collection('SkiBoards').add({
+            'brand': brand,
+            'model': model,
+            'year': year,
+            'category': category,
+            'created': datetime.now(pytz.timezone('Canada/Pacific')),
+            'updated': datetime.now(pytz.timezone('Canada/Pacific'))
+        })
+    except:
+        return False
+    
+    return skiboard
+
+# --------------------------------------------------
+# Update SkiBoard                    F U N C T I O N
+# --------------------------------------------------
+def update_info(id, update_params={}, sizes={}):
+    if not id and (not update_params or not sizes):
+        return False
+    
+    updatable_params = ['category', 'profile', 'flex','asym']
+
+    # Check firestore for duplicate entries
+    db = firestore.client()
+    doc_ref = db.collection('SkiBoards').document(id)
+    skiboard = doc_ref.get()
+    # collection_docs = db.collection('SkiBoards').document(id).collection('Sizes').get()
+    # collections = []
+    if skiboard.exists:
+        skiboard = skiboard.to_dict()
+        for key in updatable_params:
+            skiboard[key] = update_params[key]
+
+        # Update firestore
+        doc_ref.update(skiboard)
+        for x in range(len(sizes['size'])):
+            id = sizes['size'][x]
+            size = {}
+            for param in sizes:
+                if param != 'size':
+                    size[param] = sizes[param][x]
+
+            # Add size as collection in firestore
+            logging.info("Adding Size to SkiBoard:\n{}".format(size))
+            doc_ref.collection('Sizes').document(id).set(size)
+        
+        # Sort collections by size parameter
+        # collections = sorted(collections, key=itemgetter('size'))
+        # return skiboard.to_dict(), collections
+        return skiboard
+    
+    return False
