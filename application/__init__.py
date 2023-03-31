@@ -1,7 +1,4 @@
-import os
-from datetime import datetime, timedelta
-import logging
-import pytz
+from datetime import timedelta
 
 # Infrastructure Imports
 # --------------------------------------------------
@@ -10,15 +7,13 @@ import firebase_admin
 from firebase_admin import credentials
 import google.cloud.logging
 
-
 # Import Handlers                             Public
 # --------------------------------------------------
 from .handlers.public.home import HomePageHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler, UpdateUserDetailsHandler
 from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler
-from .handlers.public.view import ViewItemHandler, CompareItemsHandler
+from .handlers.public.view import ViewHandler, CompareHandler
 from .handlers.public.learning import LearningHandler
-
 
 # Import Handlers                              Admin
 # --------------------------------------------------
@@ -80,16 +75,14 @@ app.add_url_rule(rule='/signup/', view_func=SignupHandler.as_view('signup'), met
 app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), methods=['GET'])
 app.add_url_rule(rule='/update-user-details/', view_func=UpdateUserDetailsHandler.as_view('update_details'), methods=['POST'])
 
-
-
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<id>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<id>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<id>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
 
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
-app.add_url_rule(rule='/view/<id>/', view_func=ViewItemHandler.as_view('view'), methods=['GET'])
-app.add_url_rule(rule='/compare/<ids>/', view_func=CompareItemsHandler.as_view('compare'), methods=['GET'])
+app.add_url_rule(rule='/view/<id>/', view_func=ViewHandler.as_view('view'), methods=['GET'])
+app.add_url_rule(rule='/compare/<ids>/', view_func=CompareHandler.as_view('compare'), methods=['GET'])
 
 
 # Define admin routes
@@ -97,5 +90,3 @@ app.add_url_rule(rule='/compare/<ids>/', view_func=CompareItemsHandler.as_view('
 app.add_url_rule(rule='/admin/', view_func=AdminPortalHandler.as_view('admin_portal'), methods=['GET'])
 app.add_url_rule(rule='/admin/users/', view_func=AdminViewUsersHandler.as_view('adimin_view_users'), methods=['GET'])
 app.add_url_rule(rule='/admin/users/<id>/', view_func=AdminViewUsersHandler.as_view('adimin_view_user'), methods=['GET'])
-
-

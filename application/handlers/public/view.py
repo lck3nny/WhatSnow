@@ -1,6 +1,4 @@
-import pytz
 import logging
-from datetime import datetime
 from flask import render_template, redirect, flash
 from flask.views import MethodView
 
@@ -15,7 +13,7 @@ item_names = ['asym']
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # V I E W   I T E M                    H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class ViewItemHandler(MethodView):
+class ViewHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self, id):
         skiboard, collections = SkiBoard.get_item_by_id(id)
@@ -34,18 +32,18 @@ class ViewItemHandler(MethodView):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # C O M P A R E   I T E M              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class CompareItemsHandler(MethodView):
+class CompareHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self, ids):
 
         if not ids:
-            return False
+            return redirect('/')
 
         msg = "Collecting SkiBoard Data:"
         # Collect each item to be compared
-        items = []
+        skiboards = []
         for id in ids:
-            item, collections = skiboard.get_item_by_id(id)
+            skiboard, collections = SkiBoard.get_item_by_id(id)
 
             if not item:
                 flash('We had trouble finding one or more of your comparisons.')
@@ -54,12 +52,12 @@ class CompareItemsHandler(MethodView):
                 if collections:
                     item['collections'] = collections
 
-                items.append(item)
+                skiboards.append(item)
 
                 msg += '\n{}'.format(item)
     
         logging.info(msg)
-        if not items:
+        if not skiboards:
             return redirect('/')
         
-        return render_template('core/index.html', page_name='index', skiboards=items)
+        return render_template('core/index.html', page_name='index', skiboards=skiboards)

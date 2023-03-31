@@ -20,7 +20,6 @@ f = open('config/firebase_config.json')
 firebase_config = json.load(f)
 f.close()
 
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G I N                            H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -148,11 +147,7 @@ class SignupHandler(MethodView):
         except Exception as e:
             # ToDo...
             # Handle different firebase resposnes
-
-            msg = "ERROR: \n{}\n".format(e)
-            f = open("logs.txt", "a")
-            f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-            f.close()
+            logging.error("Error creating account:\n{}".format(e))
             flash('There was an issue creating your account.', 'error')
             return redirect('/signup')
     
