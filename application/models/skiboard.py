@@ -63,7 +63,10 @@ def get_item_by_id(id):
     collections = []
     if skiboard.exists:
         for doc in collection_docs:
-            collections.append(doc.to_dict())
+            size = doc.id
+            size_details = doc.to_dict()
+            size_details['size'] = size
+            collections.append(size_details)
         
         # Sort collections by size parameter
         collections = sorted(collections, key=itemgetter('size'))
@@ -194,7 +197,7 @@ def update_info(id, update_params={}, sizes={}):
         # Update firestore
         doc_ref.update(skiboard)
         for x in range(len(sizes['size'])):
-            id = sizes['size'][x]
+            size_id = sizes['size'][x]
             size = {}
             for param in sizes:
                 if param != 'size':
@@ -202,7 +205,7 @@ def update_info(id, update_params={}, sizes={}):
 
             # Add size as collection in firestore
             logging.info("Adding Size to SkiBoard:\n{}".format(size))
-            doc_ref.collection('Sizes').document(id).set(size)
+            doc_ref.collection('Sizes').document(size_id).set(size)
         
         # Sort collections by size parameter
         # collections = sorted(collections, key=itemgetter('size'))
@@ -210,3 +213,25 @@ def update_info(id, update_params={}, sizes={}):
         return skiboard
     
     return False
+
+# --------------------------------------------------
+# Normalise Brand / Model Names      F U N C T I O N
+# --------------------------------------------------
+def normaise_brand_model(s):
+    normalised = ''
+    s_split = s.split(' ')
+    for word in s_split:
+        if len(word) > 1:
+            normalised += word[0].upper() + word[1:] + ''
+        else:
+            normalised += word.upper() + ''
+    
+    return normalised.strip()
+
+
+
+# --------------------------------------------------
+# Add to ElasticSearch               F U N C T I O N
+# --------------------------------------------------
+def add_to_es(skiboard):
+    return True

@@ -8,7 +8,6 @@ from difflib import SequenceMatcher
 # --------------------------------------------------
 from flask import render_template, redirect, flash, request
 from flask.views import MethodView
-from firebase_admin import firestore 
 
 # Model Imports
 # --------------------------------------------------
@@ -29,10 +28,15 @@ class NewImportHandler(MethodView):
 
     # -------------------------------------- P O S T
     def post(r):
-        category = request.form.get('category')
+        category = request.form.get('category').title()
         brand = request.form.get('brand')
         model = request.form.get('model')
-        year = request.form.get('year')
+        year = int(request.form.get('year'))
+
+        # Upper case first letter of each word
+        # Leave all other letters as unchanged
+        brand = SkiBoard.normaise_brand_model(brand)
+        model = SkiBoard.normaise_brand_model(model)
 
         # Check if ski / board already exists
         is_duplicate, duplicate = SkiBoard.is_duplicate(category, brand, model, year)
@@ -45,15 +49,15 @@ class NewImportHandler(MethodView):
         # Save ski / board to database 
         try:
             skiboard = SkiBoard.create(brand, model, year, category)
-            logging.info("New {} created: \n{}\n".format(category.capitalize(), skiboard))  
+            logging.info("New {} created: \n{}\n".format(category.title(), skiboard))  
             if not skiboard:
                 logging.error("Could not create new {}:\n{}".format(category, e))
                 flash("We had a problem creating your new {}. Please try again.".format(category))
-                return False
+                return redirect('/import')
         except Exception as e:
             logging.error("Could not create new {}:\n{}".format(category, e))
-            flash("We had a problem creating your new {}. Please try again.".format(category))
-            return False
+            flash("We had a problem creating your new {}. Please try again.\n{}".format(category, e))
+            return redirect('/import')
 
         
         return redirect('/import/{}/'.format(skiboard.id))
@@ -70,12 +74,17 @@ class ImportDetailsHandler(MethodView):
             return redirect('/import')
 
         
-        return render_template('imports/import_details.html', page_name='import_details', id=id, skiboard=skiboard, profiles=SkiBoard.profile_categorys)
+        return render_template('imports/import_details.html', page_name='import_details', id=id, skiboard=skiboard, profiles=SkiBoard.profile_types)
 
     # -------------------------------------- P O S T
     def post(r, id):
         skiboard = SkiBoard.get_item_by_id(id)[0]
         raw_input = request.form['data_table']
+        general_info = {
+            'asym': request.form.get('asym'),
+            'flex': request.form.get('flex'),
+            'profile': request.form.get('profile')
+        }
 
         # Prevent incomplete submission
         if not skiboard or not raw_input:
@@ -98,7 +107,7 @@ class ImportDetailsHandler(MethodView):
 
         profiles = SkiBoard.profile_types
 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', id=id, skiboard=skiboard, profiles=profiles)
+        return render_template('imports/import_confirmation.html', page_name='import_conf', id=id, skiboard=skiboard, profiles=profiles, general_info=general_info)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R
@@ -113,9 +122,9 @@ class ImportConfirmationHandler(MethodView):
     def post(r, id):
         skiboard, collections = SkiBoard.get_item_by_id(id)
         general_info = {
-            'category': request.form.get('category'),
-            'profile': request.form.get('profile'),
-            'asym': request.form.get('asym'),
+            'category': request.form.get('category').title(),
+            'profile': request.form.get('profile').title(),
+            'asym': request.form.get('asym') == 'True', 
             'flex': request.form.get('flex')
         }
         logging.info("General Info:\n{}".format(general_info))
@@ -135,7 +144,10 @@ class ImportConfirmationHandler(MethodView):
         success = SkiBoard.update_info(id, general_info, params)
         if not success:
             flash("We were unable to update this {}".format(general_info['category'].title))
-            return False
+            return redirect('/import/{}'.format(id))
+        
+        # Add skiboard to ElasticSearch
+        SkiBoard.add_to_es(skiboard)
  
         return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, item_id=id)
 

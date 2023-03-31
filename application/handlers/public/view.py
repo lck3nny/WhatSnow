@@ -6,7 +6,7 @@ from flask.views import MethodView
 
 # Model Imports
 # --------------------------------------------------
-import application.models.skiboard as skiboard
+import application.models.skiboard as SkiBoard
 
 __author__ = 'liamkenny'
 
@@ -18,20 +18,18 @@ item_names = ['asym']
 class ViewItemHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self, id):
-        item, collections = skiboard.get_item_by_id(id)
-        if not item:
+        skiboard, collections = SkiBoard.get_item_by_id(id)
+        if not skiboard:
             logging.error("Could not collect SkiBoard: {}".format(id))
             flash('We could not find a ski or board with that ID. Please try again.')
 
             return redirect('/')
 
-        item = item.to_dict()
-
         if collections:
-            item['collections'] = collections
+            skiboard['collections'] = collections
 
-        logging.info("Collecting SkiBoard Data:\n{}".format(item))
-        return render_template('views/view.html', page_name='view', skiboard=item)
+        logging.info("Collecting SkiBoard Data:\n{}".format(skiboard))
+        return render_template('views/view.html', page_name='view', skiboard=skiboard)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # C O M P A R E   I T E M              H A N D L E R

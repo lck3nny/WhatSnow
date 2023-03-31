@@ -15,7 +15,7 @@
                 </div>
                 <label for="flex" class="form-label">Flex: </label>
                 <output>5</output>
-                <input type="range" class="form-range" id="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
+                <input type="range" class="form-range" id="flex" name="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
                 <select class="form-control" name="profile" id="profile">
                     <option value="" disabled selected>Profile</option>
                     {% for profile in profiles %}
