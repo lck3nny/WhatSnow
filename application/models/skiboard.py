@@ -235,3 +235,4 @@ def normaise_brand_model(s):
 # --------------------------------------------------
 def add_to_es(skiboard):
     return True
+

@@ -22,9 +22,10 @@ class ViewHandler(MethodView):
             flash('We could not find a ski or board with that ID. Please try again.')
 
             return redirect('/')
-
+        
         if collections:
             skiboard['collections'] = collections
+
 
         logging.info("Collecting SkiBoard Data:\n{}".format(skiboard))
         return render_template('views/view.html', page_name='view', skiboard=skiboard)

@@ -24,7 +24,7 @@
             <h1>Import a Snowboard</h1>
             <p>Tell us more!</p>
             <br>
-            <form id="snowboard_import" action="#" method="post">
+            <form id="snowboard-import-form" name="sbForm" action="#" method="post" onsubmit="return validateNewImport('sbForm');">
                 <input type="text" id="brand" name="brand" placeholder="Brand">
                 <input type="text" id="model" name="model" placeholder="Model">
                 <input type="text" id="year" name="year" placeholder="Year">
@@ -39,7 +39,7 @@
             <h1>Import a Ski</h1>
             <p>Tell us more!</p>
             <br>
-            <form id="ski_import" action="#" method="post">
+            <form id="ski-import-form" name="skiForm" action="#" method="post" onsubmit="return validateNewImport('skiForm');">
                 <input type="text" id="brand" name="brand" placeholder="Brand">
                 <input type="text" id="model" name="model" placeholder="Model">
                 <input type="text" id="year" name="year" placeholder="Year">
