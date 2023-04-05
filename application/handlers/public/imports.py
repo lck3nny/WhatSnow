@@ -73,7 +73,7 @@ class ImportDetailsHandler(MethodView):
     # -------------------------------------- P O S T
     def post(r, id):
         skiboard = SkiBoard.get_item_by_id(id)[0]
-        raw_input = request.form['data_table']
+        raw_input = request.form['data-table']
         general_info = {
             'asym': request.form.get('asym'),
             'flex': request.form.get('flex'),
@@ -135,13 +135,17 @@ class ImportConfirmationHandler(MethodView):
         # Update general info for SkiBoard
         logging.info("Import Confirmation...\Category: {}\nProfile: {}\nAsym: {}\nFlex: {}\nParams:\n{}".format(general_info['category'], general_info['profile'], general_info['asym'], general_info['flex'], params))
         logging.info("SkiBoard: {}".format(skiboard))
-        success = SkiBoard.update_info(id, general_info, params)
+        success, es_resp, new_skiboard = SkiBoard.update_info(id, general_info, params)
         if not success:
             flash("We were unable to update this {}".format(general_info['category'].title))
             return redirect('/import/{}'.format(id))
         
-        # Add skiboard to ElasticSearch
-        SkiBoard.add_to_es(skiboard)
+        if not es_resp:
+            flash("We could not add this {} to our ElasticSearch database.")
+            logging.error("ElasticSearch upload error:\n{}".format(es_resp))
+        
+        logging.info("New Skiboard:\n{}".format(new_skiboard))
+        logging.info("ElasticSearch Response:\n{}".format(es_resp))
  
         return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, item_id=id)
 

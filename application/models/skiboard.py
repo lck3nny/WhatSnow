@@ -1,9 +1,17 @@
+import os.path
 import logging
-from datetime import datetime
+import json
 import pytz
+from datetime import datetime
 from operator import itemgetter
-from firebase_admin import firestore
 from difflib import SequenceMatcher
+
+# Infrastructure Imports
+# --------------------------------------------------
+from firebase_admin import firestore
+from elasticsearch import Elasticsearch
+from elasticsearch.client import IndicesClient
+
 
 
 __author__ = 'liamkenny'
@@ -177,9 +185,9 @@ def create(brand, model, year, category):
 # --------------------------------------------------
 # Update SkiBoard                    F U N C T I O N
 # --------------------------------------------------
-def update_info(id, update_params={}, sizes={}):
-    if not id and (not update_params or not sizes):
-        return False
+def update_info(id, update_params={}, size_params={}):
+    if not id and (not update_params or not size_params):
+        return False, None, None
     
     updatable_params = ['category', 'profile', 'flex','asym']
 
@@ -193,26 +201,31 @@ def update_info(id, update_params={}, sizes={}):
         skiboard = skiboard.to_dict()
         for key in updatable_params:
             skiboard[key] = update_params[key]
+        skiboard['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
 
         # Update firestore
         doc_ref.update(skiboard)
-        for x in range(len(sizes['size'])):
-            size_id = sizes['size'][x]
+        sizes = []
+        for x in range(len(size_params['size'])):
+            size_id = size_params['size'][x]
             size = {}
-            for param in sizes:
+            for param in size_params:
                 if param != 'size':
-                    size[param] = sizes[param][x]
+                    size[param] = size_params[param][x]
 
             # Add size as collection in firestore
             logging.info("Adding Size to SkiBoard:\n{}".format(size))
             doc_ref.collection('Sizes').document(size_id).set(size)
+            size['size'] = size_id
+            sizes.append(size)
         
-        # Sort collections by size parameter
-        # collections = sorted(collections, key=itemgetter('size'))
-        # return skiboard.to_dict(), collections
-        return skiboard
+        # Update ElasticSearch with skiboard object
+        skiboard['sizes'] = sizes
+        resp = update_es(id, skiboard)
+
+        return True, resp, skiboard
     
-    return False
+    return False, None, None
 
 # --------------------------------------------------
 # Normalise Brand / Model Names      F U N C T I O N
@@ -231,8 +244,40 @@ def normaise_brand_model(s):
 
 
 # --------------------------------------------------
-# Add to ElasticSearch               F U N C T I O N
+# Update ElasticSearch               F U N C T I O N
 # --------------------------------------------------
-def add_to_es(skiboard):
+def update_es(id, skiboard, es_index='skiboards'):
+    # Collect ElasticSearch credentials
+    f = open(os.path.dirname(__file__) + '/../config/bonsai_config.json')
+    es_config = json.load(f)
+    logging.info("Reading ES config from file:\n{}".format(es_config))
+
+    # Connect to ElasticSearch
+    es_client = Elasticsearch([es_config['url']], basic_auth=(es_config['key'], es_config['secret']))
+    idx_manager = IndicesClient(es_client)
+    active_index = list(idx_manager.get(es_index).keys())[0]
+
+    # Create or Update document
+    if not es_client.exists(index=es_index, id=id):
+        return es_client.index(index=active_index, id=id, body=skiboard)
+
+    return es_client.update(index=active_index, id=id, document=skiboard)
+
+
+# --------------------------------------------------
+# Search                             F U N C T I O N
+# --------------------------------------------------
+def search(query, es_index='skiboards'):
+    # Connect ElasticSearch credentials
+    f = open(os.path.dirname(__file__) + '/../config/bonsai_config.json')
+    es_config = json.load(f)
+    logging.info("Reading ES config from file:\n{}".format(es_config))
+
+    # Connect to ElasticSearch
+    es_client = Elasticsearch([es_config['url']], basic_auth=(es_config['key'], es_config['secret']))
+    idx_manager = IndicesClient(es_client)
+    active_index = list(idx_manager.get(es_index).keys())[0]
+
+
     return True
 
