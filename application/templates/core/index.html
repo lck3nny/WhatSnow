@@ -25,12 +25,12 @@ Snow
             </div>
         </div>
     </div>
-    <div id="search_results" class="row results" hidden>
+    <div id="div-results" class="row results" hidden>
         <div class="col-md-6 offset-md-3">
             <h1>Search Results</h1>
             <p>Here's what we found</p>
             <br>
-            <table class="table table-dark table-hover">
+            <table id="tbl-results" class="table table-dark table-hover">
                 <thead>
                     <tr>
                         <th>Brand</th>
@@ -38,7 +38,7 @@ Snow
                         <th>Year</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="results">
                     <tr>
                         <td>Burton</td>
                         <td>Custom</td>
@@ -53,6 +53,7 @@ Snow
             </table>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="/static/scripts/index.js"></script>
 </div>
 {% endblock %}

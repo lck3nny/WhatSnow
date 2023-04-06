@@ -2,7 +2,7 @@ import logging
 
 # Infrastructure Imports
 # --------------------------------------------------
-from flask import render_template, redirect, flash, request
+from flask import render_template, redirect, flash, request, session
 from flask.views import MethodView
 
 # Model Imports
@@ -40,11 +40,17 @@ class NewImportHandler(MethodView):
             flash('Looks like we already have a listing for this item. Check it out <a href="{}" class="alert-link">here</a>'.format(link))
             return redirect('/import')
         
+        author = None
+        if 'user' in session and 'id' in session['user']:
+            author = session['user']['id']
+        else:
+            logging.warning("User ID missing from session")
+        
         # Save ski / board to database 
         try:
-            skiboard = SkiBoard.create(brand, model, year, category)
+            success, skiboard = SkiBoard.create(brand, model, year, category, author)
             logging.info("New {} created: \n{}\n".format(category.title(), skiboard))  
-            if not skiboard:
+            if not success:
                 logging.error("Could not create new {}:\n{}".format(category, e))
                 flash("We had a problem creating your new {}. Please try again.".format(category))
                 return redirect('/import')
@@ -72,7 +78,12 @@ class ImportDetailsHandler(MethodView):
 
     # -------------------------------------- P O S T
     def post(r, id):
-        skiboard = SkiBoard.get_item_by_id(id)[0]
+        try:
+            skiboard = SkiBoard.get_item_by_id(id)[0]
+        except:
+            logging.error("No SkiBoard found with id: {}".format(id))
+            return redirect('/import')
+        
         raw_input = request.form['data-table']
         general_info = {
             'asym': request.form.get('asym'),

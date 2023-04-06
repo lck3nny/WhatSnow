@@ -15,8 +15,8 @@ item_names = ['asym']
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ViewHandler(MethodView):
     # ---------------------------------------- G E T
-    def get(self, id):
-        skiboard, collections = SkiBoard.get_item_by_id(id)
+    def get(self, slug):
+        skiboard, collections = SkiBoard.get_item_by_slug(slug)
         if not skiboard:
             logging.error("Could not collect SkiBoard: {}".format(id))
             flash('We could not find a ski or board with that ID. Please try again.')

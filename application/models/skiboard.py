@@ -42,14 +42,39 @@ profile_types = {
 
 param_names = ['size', 'nose_width', 'waist_width', 'tail_width', 'sidecut', 'effective_edge', 'setback', 'stance_width']
 
+# Connect ElasticSearch credentials
+f = open(os.path.dirname(__file__) + '/../config/bonsai_config.json')
+es_config = json.load(f)
+
+# --------------------------------------------------
+# Slugify                            F U N C T I O N
+# --------------------------------------------------
+def slugify(strings):
+    return '-'.join(strings).lower()
+
+# --------------------------------------------------
+# Nameify                            F U N C T I O N
+# --------------------------------------------------
+def nameify(strings):
+    for s in strings:
+        try:
+            s = normaise_brand_model(s)
+        except:
+            continue
+
+    return ' '.join(strings)
+
 # --------------------------------------------------
 # Is Duplicate                       F U N C T I O N
 # --------------------------------------------------
 def is_duplicate(category, brand, model, year):
 
+    slug = slugify([brand, model, str(year)])
+
     # Check firestore for duplicate entries
     db = firestore.client()
-    skiboards = db.collection('SkiBoards').where('category', '==', category).where('brand', '==', brand).where('model', '==', model).where('year', '==', year)
+    # skiboards = db.collection('SkiBoards').where('category', '==', category).where('brand', '==', brand).where('model', '==', model).where('year', '==', year)
+    skiboards = db.collection('SkiBoards').where('slug', '==', slug)
     for skiboard in skiboards.stream():
         # ToDo...
         # Return existing skiboard ID???
@@ -68,6 +93,36 @@ def get_item_by_id(id):
     db = firestore.client()
     skiboard = db.collection('SkiBoards').document(id).get()
     collection_docs = db.collection('SkiBoards').document(id).collection('Sizes').get()
+    collections = []
+    if skiboard.exists:
+        for doc in collection_docs:
+            size = doc.id
+            size_details = doc.to_dict()
+            size_details['size'] = size
+            collections.append(size_details)
+        
+        # Sort collections by size parameter
+        collections = sorted(collections, key=itemgetter('size'))
+        return skiboard.to_dict(), collections
+
+    return False
+
+# --------------------------------------------------
+# Get By Item Slug                   F U N C T I O N
+# --------------------------------------------------
+def get_item_by_slug(slug):
+    if not slug:
+        return False
+    
+    # Get firestore doc by slug
+    db = firestore.client()
+    skiboards = db.collection('SkiBoards').where('slug', '==', slug)
+    for doc in skiboards.stream():
+        skiboard_id = doc.id
+        skiboard = doc
+        break
+
+    collection_docs = db.collection('SkiBoards').document(skiboard_id).collection('Sizes').get()
     collections = []
     if skiboard.exists:
         for doc in collection_docs:
@@ -163,9 +218,9 @@ def match_param(param):
 # --------------------------------------------------
 # Create SkiBoard                    F U N C T I O N
 # --------------------------------------------------
-def create(brand, model, year, category):
+def create(brand, model, year, category, author=None):
     if not brand or not model or not year or not category:
-        return False
+        return False, None
 
     try:
         db = firestore.client()
@@ -175,12 +230,16 @@ def create(brand, model, year, category):
             'year': year,
             'category': category,
             'created': datetime.now(pytz.timezone('Canada/Pacific')),
-            'updated': datetime.now(pytz.timezone('Canada/Pacific'))
+            'updated': datetime.now(pytz.timezone('Canada/Pacific')),
+            'author': author,
+            'slug': slugify([brand, model, str(year)]),
+            'name': nameify([brand, model, str(year)])
         })
-    except:
-        return False
+    except Exception as e:
+        logging.error("Could not create SKiBoard:\n{}".format(e))
+        return False, None
     
-    return skiboard
+    return True, skiboard
 
 # --------------------------------------------------
 # Update SkiBoard                    F U N C T I O N
@@ -247,10 +306,9 @@ def normaise_brand_model(s):
 # Update ElasticSearch               F U N C T I O N
 # --------------------------------------------------
 def update_es(id, skiboard, es_index='skiboards'):
-    # Collect ElasticSearch credentials
-    f = open(os.path.dirname(__file__) + '/../config/bonsai_config.json')
-    es_config = json.load(f)
-    logging.info("Reading ES config from file:\n{}".format(es_config))
+
+    if not skiboard:
+        return False
 
     # Connect to ElasticSearch
     es_client = Elasticsearch([es_config['url']], basic_auth=(es_config['key'], es_config['secret']))
@@ -268,16 +326,37 @@ def update_es(id, skiboard, es_index='skiboards'):
 # Search                             F U N C T I O N
 # --------------------------------------------------
 def search(query, es_index='skiboards'):
-    # Connect ElasticSearch credentials
-    f = open(os.path.dirname(__file__) + '/../config/bonsai_config.json')
-    es_config = json.load(f)
-    logging.info("Reading ES config from file:\n{}".format(es_config))
-
+    
     # Connect to ElasticSearch
     es_client = Elasticsearch([es_config['url']], basic_auth=(es_config['key'], es_config['secret']))
     idx_manager = IndicesClient(es_client)
     active_index = list(idx_manager.get(es_index).keys())[0]
 
+    search_body = {
+        "query": {
+            "multi_match": {
+                "query": query,
+                "type": "bool_prefix",
+                "fields": [
+                    "name",
+                    "brand",
+                    "model"
+                ]
+            }
+        }
+    }
+    resp = es_client.search(index=active_index, body=search_body)
+    res = []
+    for hit in resp['hits']['hits']:
+        res.append({
+            'id': hit['_source']['id'],
+            'brand': hit['_source']['brand'],
+            'model': hit['_source']['model'],
+            'year': hit['_source']['year'],
+            'slug': hit['_source']['slug']
+        })
+        
+    logging.info("ElasticSearch:\nQuery: {}\nResponse: {}".format(query, res))
 
-    return True
+    return res
 

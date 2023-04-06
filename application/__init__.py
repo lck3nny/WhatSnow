@@ -9,7 +9,7 @@ import google.cloud.logging
 
 # Import Handlers                             Public
 # --------------------------------------------------
-from .handlers.public.home import HomePageHandler
+from .handlers.public.home import HomePageHandler, SearchHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler, UpdateUserDetailsHandler
 from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler
 from .handlers.public.view import ViewHandler, CompareHandler
@@ -68,6 +68,8 @@ def page_not_found(e):
 # Define public routes
 # --------------------------------------------------
 app.add_url_rule(rule='/', view_func=HomePageHandler.as_view('home'), methods=['GET'])
+app.add_url_rule(rule='/search/', view_func=SearchHandler.as_view('search'), methods=['POST'])
+
 app.add_url_rule(rule='/login/', view_func=LoginHandler.as_view('login'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/login/forgot/', view_func=ForgotPasswordHandler.as_view('forgot'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/logout/', view_func=LogoutHandler.as_view('logout'), methods=['GET'])
@@ -81,8 +83,8 @@ app.add_url_rule(rule='/import/<id>/confirm/', view_func=ImportConfirmationHandl
 app.add_url_rule(rule='/import/<id>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
 
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
-app.add_url_rule(rule='/view/<id>/', view_func=ViewHandler.as_view('view'), methods=['GET'])
-app.add_url_rule(rule='/compare/<ids>/', view_func=CompareHandler.as_view('compare'), methods=['GET'])
+app.add_url_rule(rule='/view/<slug>/', view_func=ViewHandler.as_view('view'), methods=['GET'])
+app.add_url_rule(rule='/compare/<slugs>/', view_func=CompareHandler.as_view('compare'), methods=['GET'])
 
 
 # Define admin routes
