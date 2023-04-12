@@ -26,7 +26,6 @@ class ViewHandler(MethodView):
         if collections:
             skiboard['collections'] = collections
 
-
         logging.info("Collecting SkiBoard Data:\n{}".format(skiboard))
         return render_template('views/view.html', page_name='view', skiboard=skiboard)
 
@@ -35,27 +34,37 @@ class ViewHandler(MethodView):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class CompareHandler(MethodView):
     # ---------------------------------------- G E T
-    def get(self, ids):
+    def get(self, slugs):
 
-        if not ids:
+        if not slugs:
             return redirect('/')
 
         msg = "Collecting SkiBoard Data:"
         # Collect each item to be compared
         skiboards = []
-        for id in ids:
-            skiboard, collections = SkiBoard.get_item_by_id(id)
+        slugs = slugs.split('+')
+        logging.info("Comparing SkiBoards:\n{}".format(slugs))
+        for slug in slugs:
+            sizes = slug[slug.index('[') +1 : slug.index(']')]
+            slug = slug.replace('[{}]'.format(sizes), '')
+            sizes = sizes.split(',')
+            logging.info("Slug: {}".format(slug))
+            logging.info("Sizes: {}".format(sizes))
+            skiboard, collections = SkiBoard.get_item_by_slug(slug)
 
-            if not item:
+            if not skiboard:
                 flash('We had trouble finding one or more of your comparisons.')
+                return redirect('/')
             else:
-                item = item.to_dict()
                 if collections:
-                    item['collections'] = collections
+                    skiboard['collections'] = []
+                    for collection in collections:
+                        if 'size' in collection.keys() and collection['size'] in sizes:
+                            skiboard['collections'].append(collection)
 
-                skiboards.append(item)
+                skiboards.append(skiboard)
 
-                msg += '\n{}'.format(item)
+                msg += '\n{}'.format(skiboard)
     
         logging.info(msg)
         if not skiboards:

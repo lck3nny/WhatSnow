@@ -112,15 +112,20 @@ def get_item_by_id(id):
 # --------------------------------------------------
 def get_item_by_slug(slug):
     if not slug:
-        return False
+        return None, None
     
     # Get firestore doc by slug
     db = firestore.client()
+    skiboard = None
+    skiboard_id = None
     skiboards = db.collection('SkiBoards').where('slug', '==', slug)
     for doc in skiboards.stream():
         skiboard_id = doc.id
         skiboard = doc
         break
+
+    if not skiboard or not skiboard_id:
+        return None, None
 
     collection_docs = db.collection('SkiBoards').document(skiboard_id).collection('Sizes').get()
     collections = []
@@ -135,7 +140,7 @@ def get_item_by_slug(slug):
         collections = sorted(collections, key=itemgetter('size'))
         return skiboard.to_dict(), collections
 
-    return False
+    return None, None
 
 # --------------------------------------------------
 # Extract Params from Text           F U N C T I O N

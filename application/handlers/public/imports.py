@@ -37,8 +37,8 @@ class NewImportHandler(MethodView):
         if is_duplicate:
             link = '/view/{}'.format(duplicate.id)
             link = '/'
-            flash('Looks like we already have a listing for this item. Check it out <a href="{}" class="alert-link">here</a>'.format(link))
-            return redirect('/import')
+            flash('It looks lke you were trying to add a {} we already have. Check it out here!'.format(category))
+            return redirect('/view/{}'.format(duplicate.to_dict()['slug']))
         
         author = None
         if 'user' in session and 'id' in session['user']:
