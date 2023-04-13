@@ -45,6 +45,8 @@ class CompareHandler(MethodView):
         slugs = slugs.split('+')
         logging.info("Comparing SkiBoards:\n{}".format(slugs))
         for slug in slugs:
+            if '[' not in slug or '[' not in slug:
+                continue
             sizes = slug[slug.index('[') +1 : slug.index(']')]
             slug = slug.replace('[{}]'.format(sizes), '')
             sizes = sizes.split(',')
@@ -53,8 +55,7 @@ class CompareHandler(MethodView):
             skiboard, collections = SkiBoard.get_item_by_slug(slug)
 
             if not skiboard:
-                flash('We had trouble finding one or more of your comparisons.')
-                return redirect('/')
+                continue
             else:
                 if collections:
                     skiboard['collections'] = []
@@ -68,6 +69,7 @@ class CompareHandler(MethodView):
     
         logging.info(msg)
         if not skiboards:
+            flash('We had trouble finding your comparisons.')
             return redirect('/')
         
-        return render_template('core/index.html', page_name='index', skiboards=skiboards)
+        return render_template('views/compare.html', page_name='compare', skiboards=skiboards)

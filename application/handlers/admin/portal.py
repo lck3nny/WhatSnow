@@ -1,4 +1,5 @@
 import pytz
+import logging
 from datetime import datetime
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
@@ -17,14 +18,9 @@ class AdminPortalHandler(MethodView):
     # ---------------------------------------- G E T    
     def get(self):
         if 'user' not in session:
-            return redirect('/')
+            return redirect('/login')
 
-        # Logging...
-        msg = "Checking user permissions: {}\n".format(session['user'])
-        f = open("logs.txt", "a")
-        f.write("{}\nLOGGING... {}\n\n".format(datetime.now(pytz.timezone('Canada/Pacific')), msg))
-        f.close()
-
+        logging.info("Checking user permissions: {}".format(session['user']))
         if not (User.is_admin(session['user']['id'])):
             return redirect('/')
 
