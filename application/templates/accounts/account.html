@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <div id="update_details" class="row results main_banner_light" hidden>
+    <div id="update_details" class="row results main-banner-light" hidden>
         <div class="col-md-6 offset-md-3">
             <h1>Update Details</h1>
             <p>Let's make sure we're on the same page</p>
@@ -30,6 +30,19 @@
                 </div>
                 <input class="btn btn-light" type="submit" value="Update">
             </form>
+        </div>
+    </div>
+    <div id="quiver" class="row results main-banner-light">
+        <div class="col-md-6 offset-md-3">
+            <h1>My Quiver</h1>
+            <p>Here's what you've got listed in your collection</p>
+            <br>
+            <ul class="list-group-flush">
+                <li class="list-group-item">My Quiver Item<span class="badge badge-error badge-pill"> [ remove ] </span></li>
+                {% for skiboard in quiver %}
+                <li class="list-group-item">My Quiver Item<span class="badge badge-error badge-pill">-</span></li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     <script src="/static/scripts/accounts/account.js"></script>

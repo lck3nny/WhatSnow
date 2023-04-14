@@ -124,12 +124,12 @@ nav{
 }
 
 
-.main_banner_light{
+.main-banner-light{
     color: var(--light);
     margin-top: 30vh;
 }
 
-.main_banner_dark{
+.main-banner-dark{
     color: var(--dark);
     margin-top: 30vh;
 }

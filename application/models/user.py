@@ -8,7 +8,7 @@ __author__ = 'liamkenny'
 # --------------------------------------------------
 # Get User                           F U N C T I O N
 # --------------------------------------------------
-def get_user(id=None, email=None):
+def get_user(id=None, email=None, quiver=False):
     if not id and not email:
         return False
 
@@ -25,6 +25,9 @@ def get_user(id=None, email=None):
 
     if not user.exists:
         return False
+    
+    if quiver:
+        collection_docs = db.collection('Users').document(id).collection('Quiver').get()
 
     return user
 
