@@ -235,11 +235,11 @@ class AccountHandler(MethodView):
     def get(self):
         if not 'user' in session:
             return redirect('/login')
-
+        
         # Initialize firestore client 
-        db = firestore.client()
-        user = db.collection('Users').document(session['user']['id']).get()
-
+        # db = firestore.client()
+        # user = db.collection('Users').document(session['user']['id']).get()
+        user = User.get_user(id=session['user']['id'])
         if not user:
             logging.warning("User in session does not exist within Firestore: {}\n".format(session['user']['email']))
             session.pop('user', None)
@@ -260,13 +260,13 @@ class UpdateUserDetailsHandler(MethodView):
             return redirect('/login')
 
         # Get firestore user from id
-        try:
-            user = User.get_user(id=session['user']['id'])
-            user_dict = user.to_dict()
-        except:
-            logging.error("Could not get firebase user from email in session\n{}\n".format(session['user']))
+        user = User.get_user(id=session['user']['id'])
+        if not user:
+            logging.error("Could not get firebase user from id in session\n{}\n".format(session['user']))
             flash("There was a problem updating your user info")
             return redirect('/account')
+        
+        user_dict = user.to_dict()
         
         # Populate update object with form values
         update_obj = {

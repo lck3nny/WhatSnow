@@ -17,8 +17,17 @@ __author__ = 'liamkenny'
 class NewImportHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r):
-        #return redirect('/')
-        return render_template('imports/import.html', page_name='imports')
+        active_import = {}
+        if 'import' in session and 'skiboard' in session['import']:
+            skiboard = SkiBoard.get_item_by_id(session['import']['skiboard'])[0]
+            if skiboard:
+                logging.info("Active import found in session: {}".format(skiboard))
+                active_import['id'] = session['import']['skiboard']
+                active_import['name'] = skiboard['name']
+            else:
+                session.pop('import', None)
+
+        return render_template('imports/import.html', page_name='imports', active_import=active_import)
 
     # -------------------------------------- P O S T
     def post(r):
@@ -47,19 +56,15 @@ class NewImportHandler(MethodView):
             logging.warning("User ID missing from session")
         
         # Save ski / board to database 
-        try:
-            success, skiboard = SkiBoard.create(brand, model, year, category, author)
-            logging.info("New {} created: \n{}\n".format(category.title(), skiboard))  
-            if not success:
-                logging.error("Could not create new {}:\n{}".format(category, e))
-                flash("We had a problem creating your new {}. Please try again.".format(category))
-                return redirect('/import')
-        except Exception as e:
-            logging.error("Could not create new {}:\n{}".format(category, e))
-            flash("We had a problem creating your new {}. Please try again.\n{}".format(category, e))
+        success, skiboard = SkiBoard.create(brand, model, year, category, author)
+        logging.info("New {} created: \n{}\n".format(category.title(), skiboard))  
+        if not success:
+            logging.error("Could not create new {}".format(category))
+            flash("We had a problem creating your new {}. Please try again.".format(category))
             return redirect('/import')
-
         
+        session['import'] = {'skiboard': id}
+
         return redirect('/import/{}/'.format(skiboard.id))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -73,7 +78,6 @@ class ImportDetailsHandler(MethodView):
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
 
-        
         return render_template('imports/import_details.html', page_name='import_details', id=id, skiboard=skiboard, profiles=SkiBoard.profile_types)
 
     # -------------------------------------- P O S T
@@ -111,6 +115,7 @@ class ImportDetailsHandler(MethodView):
         logging.info("Param formatting complete:\n{}".format(skiboard))
 
         profiles = SkiBoard.profile_types
+        session['import'] = {'skiboard': id}
 
         return render_template('imports/import_confirmation.html', page_name='import_conf', id=id, skiboard=skiboard, profiles=profiles, general_info=general_info)
 
@@ -157,6 +162,9 @@ class ImportConfirmationHandler(MethodView):
         
         logging.info("New Skiboard:\n{}".format(new_skiboard))
         logging.info("ElasticSearch Response:\n{}".format(es_resp))
+
+        if 'import' in session:
+            session.pop('import', None)
  
         return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, item_id=id)
 
@@ -167,9 +175,13 @@ class ImportConfirmationHandler(MethodView):
 class ImportCompleteHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, id):
+        if 'import' in session:
+            session.pop('import', None)
+
         skiboard = SkiBoard.get_item_by_id(id)
         if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
+        
 
         return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard)

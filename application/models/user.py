@@ -8,7 +8,7 @@ __author__ = 'liamkenny'
 # --------------------------------------------------
 # Get User                           F U N C T I O N
 # --------------------------------------------------
-def get_user(id, email):
+def get_user(id=None, email=None):
     if not id and not email:
         return False
 

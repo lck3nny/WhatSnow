@@ -6,7 +6,11 @@
         <div class="col-sm-6 offset-sm-3">
             <h1>Imports</h1>
             <br>
+            {% if active_import %}
+            <p>Would you like to continue importing <a href="/import/{{ active_import['id'] }}/{{ active_import['progress'] }}">{{ active_import['name'] }}</a>?</p>
+            {% else %}
             <p>Let's start with the basics. What would you like to import?</p>
+            {% endif %}
         </div>
         <div class="col-md-3 offset-md-3">
             <button class="btn btn-dark btn-block upload" onclick="startImport('ski')">Ski</button>
