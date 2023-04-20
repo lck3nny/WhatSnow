@@ -9,7 +9,7 @@
             <br>
         </div>
         <div class="col-auto">
-            <form id="import-conf-form" action="/import/{{ id }}/confirm" method="post" onsubmit="return validateImportConf();">
+            <form id="import-conf-form" action="/import/{{ slug }}/confirm" method="post" onsubmit="return validateImportConf();">
                 <label for="category"> Category: </label>
                 <select name="category" id="category">
                     {% if skiboard['category'] == "skis" %}

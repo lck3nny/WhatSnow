@@ -19,7 +19,7 @@ class NewImportHandler(MethodView):
     def get(r):
         active_import = {}
         if 'import' in session and 'skiboard' in session['import']:
-            skiboard = SkiBoard.get_item_by_id(session['import']['skiboard'])[0]
+            skiboard = SkiBoard.get_item_by_slug(session['import']['skiboard'])[0]
             if skiboard:
                 logging.info("Active import found in session: {}".format(skiboard))
                 active_import['id'] = session['import']['skiboard']
@@ -63,29 +63,29 @@ class NewImportHandler(MethodView):
             flash("We had a problem creating your new {}. Please try again.".format(category))
             return redirect('/import')
         
-        session['import'] = {'skiboard': id}
+        session['import'] = {'skiboard': skiboard['slug']}
 
-        return redirect('/import/{}/'.format(skiboard.id))
+        return redirect('/import/{}/'.format(skiboard['slug']))
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   D E T A I L S          H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportDetailsHandler(MethodView):
     # ---------------------------------------- G E T
-    def get(r, id):
-        skiboard = SkiBoard.get_item_by_id(id)
+    def get(r, slug):
+        skiboard, collections = SkiBoard.get_item_by_slug(slug)
         if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
 
-        return render_template('imports/import_details.html', page_name='import_details', id=id, skiboard=skiboard, profiles=SkiBoard.profile_types)
+        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=SkiBoard.profile_types)
 
     # -------------------------------------- P O S T
-    def post(r, id):
+    def post(r, slug):
         try:
-            skiboard = SkiBoard.get_item_by_id(id)[0]
+            skiboard = SkiBoard.get_item_by_slug(slug)[0]
         except:
-            logging.error("No SkiBoard found with id: {}".format(id))
+            logging.error("No SkiBoard found with slug: {}".format(slug))
             return redirect('/import')
         
         raw_input = request.form['data-table']
@@ -101,11 +101,11 @@ class ImportDetailsHandler(MethodView):
             return redirect("/import")
         elif not raw_input:
             flash("We could not process your import. Please try again.")
-            return redirect("/import/{}/".format(id))
+            return redirect("/import/{}/".format(slug))
         
         #skiboard = skiboard.to_dict()
         logging.info("SkiBoard: {}".format(skiboard))
-        logging.info("Size Chart Submitted for skiboard:{}\n{}".format(id, raw_input))
+        logging.info("Size Chart Submitted for skiboard:{}\n{}".format(slug, raw_input))
         params, units, sizes = SkiBoard.extract_params_from_text(raw_input)
         logging.info("Extracted params: {}\n\nExtracted units: {}".format(params, units))
 
@@ -115,22 +115,22 @@ class ImportDetailsHandler(MethodView):
         logging.info("Param formatting complete:\n{}".format(skiboard))
 
         profiles = SkiBoard.profile_types
-        session['import'] = {'skiboard': id}
+        session['import'] = {'skiboard': skiboard['slug']}
 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', id=id, skiboard=skiboard, profiles=profiles, general_info=general_info)
+        return render_template('imports/import_confirmation.html', page_name='import_conf', slug=slug, skiboard=skiboard, profiles=profiles, general_info=general_info)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportConfirmationHandler(MethodView):
     # ---------------------------------------- G E T
-    def get(r, id):
+    def get(r, slug):
         # Should not arrive here
         return redirect('/import')
 
     # -------------------------------------- P O S T
-    def post(r, id):
-        skiboard, collections = SkiBoard.get_item_by_id(id)
+    def post(r, slug):
+        skiboard, collections = SkiBoard.get_item_by_slug(slug)
         general_info = {
             'category': request.form.get('category').title(),
             'profile': request.form.get('profile').title(),
@@ -151,10 +151,10 @@ class ImportConfirmationHandler(MethodView):
         # Update general info for SkiBoard
         logging.info("Import Confirmation...\Category: {}\nProfile: {}\nAsym: {}\nFlex: {}\nParams:\n{}".format(general_info['category'], general_info['profile'], general_info['asym'], general_info['flex'], params))
         logging.info("SkiBoard: {}".format(skiboard))
-        success, es_resp, new_skiboard = SkiBoard.update_info(id, general_info, params)
+        success, es_resp, new_skiboard = SkiBoard.update_info(skiboard['id'], general_info, params)
         if not success:
             flash("We were unable to update this {}".format(general_info['category'].title))
-            return redirect('/import/{}'.format(id))
+            return redirect('/import/{}'.format(skiboard.slug))
         
         if not es_resp:
             flash("We could not add this {} to our ElasticSearch database.")
@@ -166,7 +166,7 @@ class ImportConfirmationHandler(MethodView):
         if 'import' in session:
             session.pop('import', None)
  
-        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, item_id=id)
+        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard)
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,11 +174,11 @@ class ImportConfirmationHandler(MethodView):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportCompleteHandler(MethodView):
     # ---------------------------------------- G E T
-    def get(r, id):
+    def get(r, slug):
         if 'import' in session:
             session.pop('import', None)
 
-        skiboard = SkiBoard.get_item_by_id(id)
+        skiboard = SkiBoard.get_item_by_slug(slug)
         if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')

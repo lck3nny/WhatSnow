@@ -138,7 +138,9 @@ def get_item_by_slug(slug):
         
         # Sort collections by size parameter
         collections = sorted(collections, key=itemgetter('size'))
-        return skiboard.to_dict(), collections
+        skiboard = skiboard.to_dict()
+        skiboard['id'] = skiboard_id
+        return skiboard, collections
 
     return None, None
 
@@ -243,6 +245,10 @@ def create(brand, model, year, category, author=None):
     except Exception as e:
         logging.error("Could not create SKiBoard:\n{}".format(e))
         return False, None
+    
+    id = skiboard.id
+    skiboard = skiboard.get().to_dict()
+    skiboard['id'] = id
     
     return True, skiboard
 

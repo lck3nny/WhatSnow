@@ -78,9 +78,9 @@ app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), 
 app.add_url_rule(rule='/update-user-details/', view_func=UpdateUserDetailsHandler.as_view('update_details'), methods=['POST'])
 
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
-app.add_url_rule(rule='/import/<id>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
-app.add_url_rule(rule='/import/<id>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
-app.add_url_rule(rule='/import/<id>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
+app.add_url_rule(rule='/import/<slug>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
+app.add_url_rule(rule='/import/<slug>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
+app.add_url_rule(rule='/import/<slug>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
 
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
 app.add_url_rule(rule='/view/<slug>/', view_func=ViewHandler.as_view('view'), methods=['GET'])
