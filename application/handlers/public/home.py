@@ -17,17 +17,17 @@ __author__ = 'liamkenny'
 def validate_query(query):
     return query
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# H O M E                              H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# H O M E                                        H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class HomePageHandler(MethodView):
     # ---------------------------------------- G E T
     def get(request):
-        return render_template('core/index.html', page_name='index')
+        return render_template('core/index.html', page_name='index', comparisons=SkiBoard.calc_comparisons())
     
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# S E A R C H                          H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# S E A R C H                                    H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class SearchHandler(MethodView):
     # ---------------------------------------- G E T
     def get(request):
@@ -46,13 +46,20 @@ class SearchHandler(MethodView):
                 'valid': 'Invalid Query'
             }
         
-        # Query ElasticSearch
-        results = SkiBoard.search(query)
-        logging.info("Search: {}\nResults: {}".format(query, results))
+        try:
+            # Query ElasticSearch
+            results = SkiBoard.search(query)
+            logging.info("Search: {}\nResults: {}".format(query, results))
+        except Exception as e:
+            logging.error("Problem searching for query: {}...{}".format(query, e))
+            return {
+                'success': False,
+                'msg': e
+            }
         
         return {
             'success': True,
-            'query': request.get_json(),
+            'query': r,
             'results': results,
             'valid': "Valid Query"
         }

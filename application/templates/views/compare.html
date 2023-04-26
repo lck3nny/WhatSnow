@@ -7,6 +7,13 @@
             <h1>Compare</h1>
             <h3>Let's get into the numbers</h3>
             <br><br>
+        </div>
+        {% if not skiboards %}
+        <div class="col-md-6 offset-md-3">
+            <p>Looks like you haven't selected any skis or snowboards to compare yet. Use our search to find something you're interested in and add it to your comparison list to see it here!</p>
+        </div>
+        {% else %}
+        <div class="col-md-6 offset-md-3">
             <table class='table table-dark'>
                 <tr>
                     <th>Name</th>
@@ -96,6 +103,21 @@
                 {% endif %}
             </table>
         </div>
+        <div class="col-md-2 offset-md-3">
+            <p id="selected-sizes">[ ]</p>
+        </div>
+        <div class="col-md-2 offset-md-2">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Update
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                    <li><input type="button" id="add-to-compare" value="Update Comparisons"></li>
+                    <li><input type="button" id="add-to-compare" value="Clear all Comparisons" onclick="clearComparisons()"></li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
     </div>
     <script src="/static/scripts/view_compare.js"></script>
 </div>

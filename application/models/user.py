@@ -1,9 +1,35 @@
 import pytz
+import json
 import logging
 from datetime import datetime
 from firebase_admin import firestore 
 
 __author__ = 'liamkenny'
+
+
+# --------------------------------------------------
+# Create New User                    F U N C T I O N
+# --------------------------------------------------
+def create(email, fname, lname, ski=None, snowboard=[None, None], permissions=[]):
+    # Creating a document using 'add'
+    db = firestore.client()
+    try:
+        create_time, user = db.collection('Users').add({
+            'email': email,
+            'fname': fname,
+            'lname': lname,
+            'ski': ski,
+            'snowboard': snowboard,
+            'created': datetime.now(pytz.timezone('Canada/Pacific')),
+            'updated': datetime.now(pytz.timezone('Canada/Pacific')),
+            'permissions': []
+        }) 
+        logging.info("New Firestore User Created: \n{}\n".format(json.dumps(user)))  
+    except Exception as e:
+        logging.error("Could not create new skiboard:\n{}".format(e))   
+        return e, None
+
+    return True, user
 
 # --------------------------------------------------
 # Get User                           F U N C T I O N
@@ -80,7 +106,29 @@ def is_admin(id):
     
     return True
     
-        
-    
 
+# --------------------------------------------------
+# Add To Quiver                      F U N C T I O N
+# --------------------------------------------------
+def add_to_quiver(id, skiboard, size):
+    if not id or not skiboard or not size:
+        return False
     
+    db = firestore.client()
+    col_ref = db.collection('Users')
+    doc_ref = col_ref.document(id)
+
+    logging.info("Adding skiboard to quiver: {}".format(skiboard))
+
+    try:
+        doc_ref.collection('Quiver').add({
+            'skiboard': skiboard['slug'],
+            'size': size,
+            'added': datetime.now(pytz.timezone('Canada/Pacific'))
+        })
+    except Exception as e:
+        logging.error("Could not add skiboard to quiver: {}".format(e))
+        return e
+    
+    logging.info("Added skiboard to {}'s quiver: {} - {}".format(id, skiboard, size))
+    return True    

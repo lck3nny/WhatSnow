@@ -13,6 +13,7 @@ from firebase_admin import firestore
 # Model Imports
 # --------------------------------------------------
 import application.models.user as User
+import application.models.skiboard as SkiBoard
 
 __author__ = 'liamkenny'
 
@@ -20,16 +21,16 @@ f = open('config/firebase_config.json')
 firebase_config = json.load(f)
 f.close()
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# L O G I N                            H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# L O G I N                                      H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class LoginHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
         if 'user' in session:
             return redirect('/account')
 
-        return render_template('accounts/login.html', session=session, page_name='login')
+        return render_template('accounts/login.html', session=session, page_name='login', comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(self):
@@ -77,9 +78,9 @@ class LoginHandler(MethodView):
         flash('You have been successfully logged in as {} {}'.format(session['user']['fname'], session['user']['lname']), 'info')
         return redirect('/account')
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# L O G O U T                          H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# L O G O U T                                    H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class LogoutHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
@@ -89,9 +90,9 @@ class LogoutHandler(MethodView):
 
         return redirect('/')
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# S I G N U P                          H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# S I G N U P                                    H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class SignupHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
@@ -100,7 +101,7 @@ class SignupHandler(MethodView):
             logging.info("Redirecting...\nUser already signed in: {}".format(session['user']['email']))
             return redirect('/account')
         
-        return render_template('accounts/signup.html', session=session, page_name='signup')
+        return render_template('accounts/signup.html', session=session, page_name='signup', comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(self):
@@ -151,21 +152,7 @@ class SignupHandler(MethodView):
             flash('There was an issue creating your account.', 'error')
             return redirect('/signup')
     
-        # Creating a document using 'add'
-        try:
-            create_time, user = db.collection('Users').add({
-                'email': email,
-                'fname': fname,
-                'lname': lname,
-                'ski': ski,
-                'snowboard': [snowboard, stance],
-                'created': datetime.now(pytz.timezone('Canada/Pacific')),
-                'updated': datetime.now(pytz.timezone('Canada/Pacific')),
-                'permissions': []
-            }) 
-            logging.info("New Firestore User Created: \n{}\n".format(json.dumps(user)))  
-        except Exception as e:
-            logging.error("Could not create new skiboard:\n{}".format(e))   
+        success, user = User.create(email, fname, lname, ski, [snowboard, stance], [])
 
         session['user'] = user.to_dict()
         session['user']['id'] = user.id
@@ -190,16 +177,16 @@ class SignupHandler(MethodView):
 
         return redirect('/account')
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# F O R G O T   P W D                  H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# F O R G O T   P W D                            H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ForgotPasswordHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
         if 'user' in session:
             return redirect('/account')
 
-        return render_template('accounts/password_reset.html', session=session, page_name='password_reset')
+        return render_template('accounts/password_reset.html', session=session, page_name='password_reset', comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(self):
@@ -227,9 +214,9 @@ class ForgotPasswordHandler(MethodView):
         flash('Check your email for a password reset link.', 'info')
         return redirect('/login')
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# A C C O U N T                        H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# A C C O U N T                                  H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class AccountHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self):
@@ -248,11 +235,11 @@ class AccountHandler(MethodView):
         session['user'] = user.to_dict()
         session['user']['id'] = user.id
 
-        return render_template('accounts/account.html', session=session, page_name='account')
+        return render_template('accounts/account.html', session=session, page_name='account', comparisons=SkiBoard.calc_comparisons())
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# U P D A T E   D E T A I L S          H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# U P D A T E   D E T A I L S                    H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class UpdateUserDetailsHandler(MethodView):
     # -------------------------------------- P O S T
     def post(self):

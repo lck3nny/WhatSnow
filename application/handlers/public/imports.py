@@ -11,9 +11,9 @@ import application.models.skiboard as SkiBoard
 
 __author__ = 'liamkenny'
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# N E W   I M P O R T                  H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# N E W   I M P O R T                            H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class NewImportHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r):
@@ -27,7 +27,7 @@ class NewImportHandler(MethodView):
             else:
                 session.pop('import', None)
 
-        return render_template('imports/import.html', page_name='imports', active_import=active_import)
+        return render_template('imports/import.html', page_name='imports', active_import=active_import, comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(r):
@@ -67,9 +67,9 @@ class NewImportHandler(MethodView):
 
         return redirect('/import/{}/'.format(skiboard['slug']))
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# I M P O R T   D E T A I L S          H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# I M P O R T   D E T A I L S                    H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportDetailsHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, slug):
@@ -78,7 +78,7 @@ class ImportDetailsHandler(MethodView):
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
 
-        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=SkiBoard.profile_types)
+        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=SkiBoard.profile_types, comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(r, slug):
@@ -117,11 +117,11 @@ class ImportDetailsHandler(MethodView):
         profiles = SkiBoard.profile_types
         session['import'] = {'skiboard': skiboard['slug']}
 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', slug=slug, skiboard=skiboard, profiles=profiles, general_info=general_info)
+        return render_template('imports/import_confirmation.html', page_name='import_conf', slug=slug, skiboard=skiboard, profiles=profiles, general_info=general_info, comparisons=SkiBoard.calc_comparisons())
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# I M P O R T   C O N F                H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# I M P O R T   C O N F                          H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportConfirmationHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, slug):
@@ -166,12 +166,12 @@ class ImportConfirmationHandler(MethodView):
         if 'import' in session:
             session.pop('import', None)
  
-        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard)
+        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# I M P O R T   C O M P L E T E        H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# I M P O R T   C O M P L E T E                  H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportCompleteHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, slug):
@@ -184,4 +184,4 @@ class ImportCompleteHandler(MethodView):
             return redirect('/import')
         
 
-        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard)
+        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())

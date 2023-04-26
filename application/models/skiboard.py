@@ -6,6 +6,9 @@ from datetime import datetime
 from operator import itemgetter
 from difflib import SequenceMatcher
 
+from flask import session
+
+
 # Infrastructure Imports
 # --------------------------------------------------
 from firebase_admin import firestore
@@ -356,18 +359,34 @@ def search(query, es_index='skiboards'):
             }
         }
     }
+    logging.info("Querying elasticsearch: {}".format(search_body))
     resp = es_client.search(index=active_index, body=search_body)
+    logging.info("ElasticSearch response: {}".format(resp))
     res = []
-    for hit in resp['hits']['hits']:
-        res.append({
-            'id': hit['_source']['id'],
-            'brand': hit['_source']['brand'],
-            'model': hit['_source']['model'],
-            'year': hit['_source']['year'],
-            'slug': hit['_source']['slug']
-        })
+    try:
+        for hit in resp['hits']['hits']:
+            res.append({
+                'id': hit['_id'],
+                'brand': hit['_source']['brand'],
+                'model': hit['_source']['model'],
+                'year': hit['_source']['year'],
+                'slug': hit['_source']['slug']
+            })
+    except Exception as e:
+        logging.error("Error extracting hits from ElasticSearch: {}".format(e))
         
     logging.info("ElasticSearch:\nQuery: {}\nResponse: {}".format(query, res))
 
     return res
 
+# --------------------------------------------------
+# Calculate Comparisons              F U N C T I O N
+# --------------------------------------------------
+def calc_comparisons():
+    total_comparisons = 0
+    logging.info("Session: {}".format(session))
+    if 'compare' in session and session['compare']:
+        for key in session['compare']:
+            total_comparisons += len(session['compare'][key])
+
+    return "[ {} ]".format(total_comparisons)
