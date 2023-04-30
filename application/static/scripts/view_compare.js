@@ -25,6 +25,35 @@ async function addToCompare(skiboard){
     }
 }
 
+async function removeComparison(skiboard, size){
+    console.log("Removing skiboard from comparison");
+    console.log(skiboard);
+    console.log(size);
+
+    var data = {
+        'skiboard': skiboard,
+        'size': size
+    }
+    try {
+        const response = await fetch("/remove-from-compare/", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(data)
+        });
+    
+        const result = await response.json();
+        console.log("Success:", result);
+
+        var compareNav = document.getElementById('compare-nav');
+        compareNav.innerHTML = "Compare " + result.comparisons;
+
+        window.location.href = '../';
+    } catch (error) {
+        console.error("Error:", error);
+        alert("There was an issue with your search query. Please try again.");
+    }
+}
+
 async function addToQuiver(skiboard){
     const selectedSizes = document.getElementById('selected-sizes');
     var selected = selectedSizes.innerHTML.replace('[', '').replace(']', '').trim().split(',');
@@ -95,3 +124,5 @@ function toggleSize(id){
 
     selectedSizes.innerHTML = `[ ${sizes.toString()} ]`;
 }
+
+

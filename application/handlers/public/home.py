@@ -43,7 +43,7 @@ class SearchHandler(MethodView):
         if not validate_query(query):
             return {
                 'success': False,
-                'valid': 'Invalid Query'
+                'valid': False
             }
         
         try:
@@ -51,7 +51,7 @@ class SearchHandler(MethodView):
             results = SkiBoard.search(query)
             logging.info("Search: {}\nResults: {}".format(query, results))
         except Exception as e:
-            logging.error("Problem searching for query: {}...{}".format(query, e))
+            logging.error("Problem searching for query: {}... {}".format(query, e))
             return {
                 'success': False,
                 'msg': e
@@ -61,6 +61,6 @@ class SearchHandler(MethodView):
             'success': True,
             'query': r,
             'results': results,
-            'valid': "Valid Query"
+            'valid': True
         }
     

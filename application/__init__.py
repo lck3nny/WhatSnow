@@ -12,7 +12,8 @@ import google.cloud.logging
 from .handlers.public.home import HomePageHandler, SearchHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler, UpdateUserDetailsHandler
 from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler
-from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompare, ClearComparisons, AddToQuiver
+from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompareHandler, RemoveComparisonHandler, ClearComparisonsHandler, AddToQuiverHandler
+
 from .handlers.public.learning import LearningHandler
 
 # Import Handlers                              Admin
@@ -86,9 +87,10 @@ app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), 
 app.add_url_rule(rule='/view/<slug>/', view_func=ViewHandler.as_view('view'), methods=['GET'])
 app.add_url_rule(rule='/compare/', view_func=StartCompareHandler.as_view('start_compare'), methods=['GET'])
 app.add_url_rule(rule='/compare/<slugs>/', view_func=CompareHandler.as_view('compare'), methods=['GET'])
-app.add_url_rule(rule='/add-to-compare/', view_func=AddToCompare.as_view('add-to-compare'), methods=['POST'])
-app.add_url_rule(rule='/clear-comparisons/', view_func=ClearComparisons.as_view('clear-comparisons'), methods=['POST'])
-app.add_url_rule(rule='/add-to-quiver/', view_func=AddToQuiver.as_view('add-to-quiver'), methods=['POST'])
+app.add_url_rule(rule='/add-to-compare/', view_func=AddToCompareHandler.as_view('add-to-compare'), methods=['POST'])
+app.add_url_rule(rule='/remove-from-compare/', view_func=RemoveComparisonHandler.as_view('remove-from-compare'), methods=['POST'])
+app.add_url_rule(rule='/clear-comparisons/', view_func=ClearComparisonsHandler.as_view('clear-comparisons'), methods=['POST'])
+app.add_url_rule(rule='/add-to-quiver/', view_func=AddToQuiverHandler.as_view('add-to-quiver'), methods=['POST'])
 
 
 

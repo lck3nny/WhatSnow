@@ -19,7 +19,7 @@
                     <th>Name</th>
                     {% for skiboard in skiboards %}
                     {% for size in skiboard['collections'] %}
-                    <td>{{ skiboard['name'] }}</td>
+                    <td><a class="dropdown-item" href="../../view/{{skiboard.slug}}">{{ skiboard['name'] }}</a></td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
@@ -101,21 +101,15 @@
                     {% endfor %}
                 </tr>
                 {% endif %}
+                <tr>
+                    <th></th>
+                    {% for skiboard in skiboards %}
+                    {% for collection in skiboard['collections'] %}
+                    <td><button type="button" class="btn btn-outline-danger" onclick="removeComparison('{{skiboard.id}}', '{{collection.size}}')">Remove</button></td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
             </table>
-        </div>
-        <div class="col-md-2 offset-md-3">
-            <p id="selected-sizes">[ ]</p>
-        </div>
-        <div class="col-md-2 offset-md-2">
-            <div class="dropdown">
-                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Update
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                    <li><input type="button" id="add-to-compare" value="Update Comparisons"></li>
-                    <li><input type="button" id="add-to-compare" value="Clear all Comparisons" onclick="clearComparisons()"></li>
-                </ul>
-            </div>
         </div>
         {% endif %}
     </div>

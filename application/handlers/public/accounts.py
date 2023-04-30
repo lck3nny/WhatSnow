@@ -156,24 +156,6 @@ class SignupHandler(MethodView):
 
         session['user'] = user.to_dict()
         session['user']['id'] = user.id
-        
-        # Creating document using a 'document reference'
-        '''
-        db.collection('Users').document().set({
-            'email': email,
-            'fname': user['f_name'],
-            'lname': user['l_name'],
-            'ski': ski,
-            'snowboard': [snowboard, stance]
-            })
-        '''
-
-        # Adding additional info at a later date
-        '''
-        id = 'abc'
-        db.collection('Users').document(id).set({'biker': True}, merge = True)
-        '''
-        
 
         return redirect('/account')
 

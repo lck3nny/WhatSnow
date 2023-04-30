@@ -64,7 +64,7 @@ class StartCompareHandler(MethodView):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # A D D  T O   C O M P A R E                     H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
-class AddToCompare(MethodView):
+class AddToCompareHandler(MethodView):
     # -------------------------------------- P O S T
     def post(self):
 
@@ -125,9 +125,64 @@ class AddToCompare(MethodView):
     
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# R E M O V E   C O M P A R I S O N              H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class RemoveComparisonHandler(MethodView):
+    # -------------------------------------- P O S T
+    def post(self):
+
+        r = request.get_json()
+        resp = {
+            'success': True,
+            'msg': 'madeit',
+            'request': r
+        }
+
+        # Collect skiboard data
+        skiboard_id = r['skiboard']
+        size_to_remove = r['size']
+        skiboard, sizes = SkiBoard.get_item_by_id(skiboard_id)
+        logging.info("Found skiboard: {}\n\n with sizes: {}".format(skiboard, sizes))
+
+        # Return if no matching firestore data
+        if not skiboard or not sizes:
+            resp['success'] = False
+            resp['msg'] = "Could not find sizes in firestore"
+            return resp
+        
+        found = False
+        for size in sizes:
+            if size['size'] == size_to_remove:
+                found = True
+                break
+
+        if not found:
+            resp['success'] = False
+            resp['msg'] = "Requested size not found in firestore"
+            return resp
+        
+        try:
+            if not 'compare' in session:
+                session['compare'] = {}
+
+            if skiboard_id in session['compare']:
+                session['compare'][skiboard_id].remove(size_to_remove)
+                logging.info("Comparisons: {}".format(session['compare']))
+        except Exception as e:
+            logging.error(e)
+
+        resp['compare'] = session['compare']
+        resp['comparisons'] = SkiBoard.calc_comparisons()
+
+        logging.info("Sessions Comparisions: {}".format(session['compare']))
+        session.modified = True
+
+        return resp
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # C L E A R   C O M P A R I S O N S              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class ClearComparisons(MethodView):
+class ClearComparisonsHandler(MethodView):
     # -------------------------------------- P O S T
     def post(self):    
         r = request.get_json()
@@ -146,7 +201,7 @@ class ClearComparisons(MethodView):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # A D D   T O   Q U I V E R                      H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class AddToQuiver(MethodView):
+class AddToQuiverHandler(MethodView):
     # -------------------------------------- P O S T
     def post(self):
 
@@ -236,7 +291,9 @@ class CompareHandler(MethodView):
     
         logging.info(msg)
         if not skiboards:
-            flash('We had trouble finding your comparisons.')
-            return redirect('/')
+            session['compare'] = {}
+            session.modified = True
+            return redirect('/compare')
         
         return render_template('views/compare.html', page_name='compare', skiboards=skiboards, comparisons=SkiBoard.calc_comparisons())
+    
