@@ -3,6 +3,7 @@ import json
 import logging
 from datetime import datetime
 from firebase_admin import firestore 
+from operator import itemgetter
 
 __author__ = 'liamkenny'
 
@@ -54,6 +55,17 @@ def get_user(id=None, email=None, quiver=False):
     
     if quiver:
         collection_docs = db.collection('Users').document(id).collection('Quiver').get()
+        collections = []
+        
+        for doc in collection_docs:
+            quiver_id = doc.id
+            skiboard = doc.to_dict()
+            skiboard['id'] = quiver_id
+            collections.append(skiboard)
+        
+        # Sort collections by size parameter
+        collections = sorted(collections, key=itemgetter('skiboard'))
+        return user, collections
 
     return user
 
@@ -132,3 +144,20 @@ def add_to_quiver(id, skiboard, size):
     
     logging.info("Added skiboard to {}'s quiver: {} - {}".format(id, skiboard, size))
     return True    
+
+def remove_from_quiver(user_id, quiver_id):
+    if not user_id or not quiver_id:
+        return False
+    db = firestore.client()
+    col_ref = db.collection('Users')
+    doc_ref = col_ref.document(user_id)
+
+    logging.info("Removing skiboard from quiver: {} / {}".format(user_id, quiver_id))
+
+    try:
+        doc_ref.collection('Quiver').document(quiver_id).delete()
+    except Exception as e:
+        logging.error(e)
+        return e
+    
+    return True

@@ -208,16 +208,18 @@ class AccountHandler(MethodView):
         # Initialize firestore client 
         # db = firestore.client()
         # user = db.collection('Users').document(session['user']['id']).get()
-        user = User.get_user(id=session['user']['id'])
+        user, quiver = User.get_user(id=session['user']['id'], quiver=True)
         if not user:
             logging.warning("User in session does not exist within Firestore: {}\n".format(session['user']['email']))
             session.pop('user', None)
             return redirect('/login')
+        
+        logging.info("Quiver: {}".format(quiver))
 
         session['user'] = user.to_dict()
         session['user']['id'] = user.id
 
-        return render_template('accounts/account.html', session=session, page_name='account', comparisons=SkiBoard.calc_comparisons())
+        return render_template('accounts/account.html', session=session, page_name='account', quiver=quiver, comparisons=SkiBoard.calc_comparisons())
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # U P D A T E   D E T A I L S                    H A N D L E R
@@ -265,3 +267,75 @@ class UpdateUserDetailsHandler(MethodView):
             flash('Details successfully updated')
             
         return redirect('/account')
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# A D D   T O   Q U I V E R                      H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class AddToQuiverHandler(MethodView):
+    # -------------------------------------- P O S T
+    def post(self):
+
+        if not 'user' in session:
+            return redirect('/login')
+        
+        r = request.get_json()
+        resp = {
+            'success': True,
+            'msg': 'madeit',
+            'request': r
+        }
+
+        # Collect skiboard data
+        skiboard_id = r['skiboard']
+        sizes_to_add = r['sizes']
+        skiboard, sizes = SkiBoard.get_item_by_id(skiboard_id)
+        logging.info("Found skiboard: {}\n\n with sizes: {}".format(skiboard, sizes))
+        
+        # Return if no matching firestore data
+        if not skiboard or not sizes:
+            resp['success'] = False
+            resp['msg'] = "Could not find sizes in firestore"
+            return resp
+        
+        # Compare requested sizes to those found in firestore
+        for i, s in enumerate(sizes_to_add):
+            found = False
+            for size in sizes:
+                if size['size'] == s:
+                    found = True
+                    break
+            if not found:
+                sizes_to_add.pop(i)
+
+        # Return if no matching sizes
+        if not sizes_to_add:
+            resp['success'] = False
+            resp['msg'] = "No sizes to add"
+            return resp
+        
+        # Iterate throguh sizes and add to user's quiver
+        for size in sizes_to_add:
+            User.add_to_quiver(session['user']['id'], skiboard, size)
+
+        return resp
+    
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# R E M O V E   F R O M   Q U I V E R            H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class RemoveFromQuiverHandler(MethodView):
+    # -------------------------------------- P O S T
+    def post(self):
+        if not 'user' in session:
+            return redirect('/login')
+        
+        r = request.get_json()
+        resp = {
+            'msg': 'madeit',
+            'request': r
+        }
+        
+        quiver_id = r['skiboard']
+        resp['success'] = User.remove_from_quiver(session['user']['id'], quiver_id)
+        return resp

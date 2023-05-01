@@ -197,58 +197,6 @@ class ClearComparisonsHandler(MethodView):
         logging.info("Clearing comparison from session: {}".format(session))
         return resp
 
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# A D D   T O   Q U I V E R                      H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class AddToQuiverHandler(MethodView):
-    # -------------------------------------- P O S T
-    def post(self):
-
-        if not 'user' in session:
-            return redirect('/login')
-        
-        r = request.get_json()
-        resp = {
-            'success': True,
-            'msg': 'madeit',
-            'request': r
-        }
-
-        # Collect skiboard data
-        skiboard_id = r['skiboard']
-        sizes_to_add = r['sizes']
-        skiboard, sizes = SkiBoard.get_item_by_id(skiboard_id)
-        logging.info("Found skiboard: {}\n\n with sizes: {}".format(skiboard, sizes))
-        
-        # Return if no matching firestore data
-        if not skiboard or not sizes:
-            resp['success'] = False
-            resp['msg'] = "Could not find sizes in firestore"
-            return resp
-        
-        # Compare requested sizes to those found in firestore
-        for i, s in enumerate(sizes_to_add):
-            found = False
-            for size in sizes:
-                if size['size'] == s:
-                    found = True
-                    break
-            if not found:
-                sizes_to_add.pop(i)
-
-        # Return if no matching sizes
-        if not sizes_to_add:
-            resp['success'] = False
-            resp['msg'] = "No sizes to add"
-            return resp
-        
-        # Iterate throguh sizes and add to user's quiver
-        for size in sizes_to_add:
-            User.add_to_quiver(session['user']['id'], skiboard, size)
-
-        return resp
-
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # C O M P A R E   I T E M                        H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -32,19 +32,26 @@
             </form>
         </div>
     </div>
+    {% if quiver %}
     <div id="quiver" class="row results main-banner-light">
         <div class="col-md-6 offset-md-3">
             <h1>My Quiver</h1>
             <p>Here's what you've got listed in your collection</p>
             <br>
-            <ul class="list-group-flush">
-                <li class="list-group-item">My Quiver Item<span class="badge badge-error badge-pill"> [ remove ] </span></li>
-                {% for skiboard in quiver %}
-                <li class="list-group-item">My Quiver Item<span class="badge badge-error badge-pill">-</span></li>
-                {% endfor %}
-            </ul>
         </div>
+        {% for skiboard in quiver %}
+        <div id="{{skiboard.id}}-label" class="col-md-2 offset-md-4">
+            <a href="/view/{{skiboard.skiboard}}">{{skiboard.skiboard}}: {{skiboard.size}}</a>
+        </div>
+        <div id="{{skiboard.id}}-button" class="col-md-2 offset-md-0">
+            <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeFromQuiver('{{skiboard.id}}')">Remove</button>
+        </div>
+        <div id="{{skiboard.id}}-filler"class="col-md-3">
+
+        </div>
+        {% endfor %}
     </div>
+    {% endif %}
     <script src="/static/scripts/accounts/account.js"></script>
 </div>
 {% endblock %}
