@@ -8,7 +8,7 @@ async function triggerSearch(event){
         }
 
         try {
-            const response = await fetch("/search/", {
+            const response = await fetch("/admin/search/", {
               method: "POST",
               headers: {"Content-Type": "application/json"},
               body: JSON.stringify(data)
@@ -31,6 +31,7 @@ async function triggerSearch(event){
 }
 
 function showResults(results) {
+
     let divResults = document.getElementById('div-results');
     divResults.removeAttribute("hidden");
     divResults.scrollIntoView();
@@ -43,19 +44,17 @@ function showResults(results) {
         let row = tbody.insertRow();
         row.setAttribute("onclick","followLink('/view/" + result.slug + "');");
 
-        let year = row.insertCell(0);
-        year.innerHTML = result.year;
+        let email = row.insertCell(0);
+        email.innerHTML = result.email;
 
-        let model = row.insertCell(0);
-        model.innerHTML = result.model;
+        let name = row.insertCell(0);
+        name.innerHTML = result.name;
         
-        let brand = row.insertCell(0);
-        brand.innerHTML = result.brand;
+        let id = row.insertCell(0);
+        id.innerHTML = result.id;
+
+        let username = row.insertCell(0);
+        username.innerHTML = result.username;
     })
 
-}
-
-
-function followLink(url){
-    window.location.href = url;
 }

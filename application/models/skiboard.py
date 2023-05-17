@@ -156,12 +156,17 @@ def extract_params_from_text(raw_input):
     params = {}
     param_units = {}
 
+    logging.info("Extracting params from raw input")
+
     # Itterate throguh each row
     for row in raw_input.split('\n'):
         split_row = row.split(" ")
 
         # Extract name from row
         row_name = " ".join(split_row[:-1])
+
+        logging.info("Split row: {}".format(split_row))
+        logging.info("Row name: {}".format(row_name))
 
         # Extract unit from row
         if '(' in str(row):

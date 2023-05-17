@@ -108,12 +108,27 @@ def is_admin(id):
     try:
         db = firestore.client()
         col_ref = db.collection('Users')
-        user = col_ref.document(id)
-    except:
+        doc_ref = col_ref.document(id)
+        user_doc = doc_ref.get()
+        user = user_doc.to_dict()
+        
+    except Exception as e:
+        logging.error(e)
         return False
+    
+    user['id'] = doc_ref.id
 
+    logging.info("User: {}".format(user))
     # Check for admin permissions
-    if not 'admin' in user.permissions:
+    if not 'permissions' in user:
+        logging.warning("Permissions not found for user")
+        user['permissions'] = []
+        user['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
+        user_doc.update(user)
+    
+    logging.info("User: {}".format(user))
+
+    if not 'admin' in user['permissions']:
         return False
     
     return True
@@ -145,6 +160,10 @@ def add_to_quiver(id, skiboard, size):
     logging.info("Added skiboard to {}'s quiver: {} - {}".format(id, skiboard, size))
     return True    
 
+
+# --------------------------------------------------
+# Remove From Quiver                 F U N C T I O N
+# --------------------------------------------------
 def remove_from_quiver(user_id, quiver_id):
     if not user_id or not quiver_id:
         return False
@@ -161,3 +180,5 @@ def remove_from_quiver(user_id, quiver_id):
         return e
     
     return True
+
+

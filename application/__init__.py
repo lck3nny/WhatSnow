@@ -77,8 +77,8 @@ app.add_url_rule(rule='/logout/', view_func=LogoutHandler.as_view('logout'), met
 app.add_url_rule(rule='/signup/', view_func=SignupHandler.as_view('signup'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), methods=['GET'])
 app.add_url_rule(rule='/update-user-details/', view_func=UpdateUserDetailsHandler.as_view('update_details'), methods=['POST'])
-app.add_url_rule(rule='/add-to-quiver/', view_func=AddToQuiverHandler.as_view('add-to-quiver'), methods=['POST'])
-app.add_url_rule(rule='/remove-from-quiver/', view_func=RemoveFromQuiverHandler.as_view('remove-from-quiver'), methods=['POST'])
+app.add_url_rule(rule='/add-to-quiver/', view_func=AddToQuiverHandler.as_view('add_to_quiver'), methods=['POST'])
+app.add_url_rule(rule='/remove-from-quiver/', view_func=RemoveFromQuiverHandler.as_view('remove_from_quiver'), methods=['POST'])
 
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<slug>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
@@ -99,4 +99,6 @@ app.add_url_rule(rule='/clear-comparisons/', view_func=ClearComparisonsHandler.a
 # --------------------------------------------------
 app.add_url_rule(rule='/admin/', view_func=AdminPortalHandler.as_view('admin_portal'), methods=['GET'])
 app.add_url_rule(rule='/admin/users/', view_func=AdminViewUsersHandler.as_view('adimin_view_users'), methods=['GET'])
+app.add_url_rule(rule='/admin/users/', view_func=AdminViewUsersHandler.as_view('adimin_view_users'), methods=['POST'])
 app.add_url_rule(rule='/admin/users/<id>/', view_func=AdminViewUsersHandler.as_view('adimin_view_user'), methods=['GET'])
+
