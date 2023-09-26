@@ -121,7 +121,7 @@ def is_admin(id):
     logging.info("User: {}".format(user))
     # Check for admin permissions
     if not 'permissions' in user:
-        logging.warning("Permissions not found for user")
+        logging.warning("Permissions not found for user fuck")
         user['permissions'] = []
         user['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
         user_doc.update(user)
