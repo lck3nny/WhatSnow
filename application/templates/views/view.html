@@ -3,10 +3,13 @@
 {% block top_content %}
 <div class="container">
     <div class="row banner">
-        <div class="col-md-6 offset-md-3">
+        <div id="title" class="col-md-6 offset-md-3">
             <h1>{{skiboard['brand']}} {{skiboard['model']}}</h1>
             <h3>{{skiboard['year']}}</h3>
             <br><br>
+        </div>
+        {% if 'collections' in skiboard %}
+        <div id="table" class="col-md-6 offset-md-3">
             <table class='table table-dark table-striped'>
                 <tr>
                     <th>Size</th>
@@ -86,6 +89,7 @@
                 </ul>
             </div>
         </div>
+        {% endif %}
     </div>
     <script src="/static/scripts/view_compare.js"></script>
 </div>

@@ -9,7 +9,7 @@ import google.cloud.logging
 
 # Import Handlers                             Public
 # --------------------------------------------------
-from .handlers.public.home import HomePageHandler, SearchHandler
+from .handlers.public.home import HomePageHandler, SearchHandler, ComingSoonHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler, UpdateUserDetailsHandler, AddToQuiverHandler, RemoveFromQuiverHandler
 from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler
 from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompareHandler, RemoveComparisonHandler, ClearComparisonsHandler
@@ -93,6 +93,7 @@ app.add_url_rule(rule='/add-to-compare/', view_func=AddToCompareHandler.as_view(
 app.add_url_rule(rule='/remove-from-compare/', view_func=RemoveComparisonHandler.as_view('remove-from-compare'), methods=['POST'])
 app.add_url_rule(rule='/clear-comparisons/', view_func=ClearComparisonsHandler.as_view('clear-comparisons'), methods=['POST'])
 
+app.add_url_rule(rule='/comingsoon', view_func=ComingSoonHandler.as_view('comingsoon'), methods=['GET'])
 
 
 # Define admin routes

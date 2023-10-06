@@ -7,7 +7,7 @@ from flask.views import MethodView
 
 # Model Imports
 # --------------------------------------------------
-import application.models.skiboard as SkiBoard
+from application.models.skiboard import SkiBoard
 
 __author__ = 'liamkenny'
 
@@ -63,4 +63,13 @@ class SearchHandler(MethodView):
             'results': results,
             'valid': True
         }
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# C O M I N G   S O O N                          H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class ComingSoonHandler(MethodView):
+    # ---------------------------------------- G E T
+    def get(request):
+        return render_template('core/coming_soon.html', page_name='comingsoon', comparisons=SkiBoard.calc_comparisons())
+
     

@@ -4,8 +4,8 @@ from flask.views import MethodView
 
 # Model Imports
 # --------------------------------------------------
-import application.models.skiboard as SkiBoard
-import application.models.user as User
+from application.models.skiboard import SkiBoard
+from application.models.user import User
 
 __author__ = 'liamkenny'
 

@@ -44,6 +44,19 @@ body{
     font-size: 150px;
 }
 
+.comingsoon{
+    color: var(--dark);
+    width: 100vw;
+    height: 100vh;
+    background: url('/static/img/comingsoon_background.webp');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+
 .index{
     color: var(--light);
     width: 100vw;

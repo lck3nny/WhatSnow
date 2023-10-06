@@ -7,7 +7,8 @@ from flask.views import MethodView
 
 # Model Imports
 # --------------------------------------------------
-import application.models.skiboard as SkiBoard
+from application.models.skiboard import SkiBoard
+from application.models.user import User
 
 __author__ = 'liamkenny'
 
@@ -17,6 +18,15 @@ __author__ = 'liamkenny'
 class NewImportHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r):
+        if not 'user' in session:
+            logging.info("No user in session")
+            return redirect('/comingsoon')
+        else:
+            if not User.is_admin(session['user']['id']):
+                logging.info("User not admin. Redirecting. {}".format(session['user']))
+                return redirect('/comingsoon')
+            
+
         active_import = {}
         if 'import' in session and 'skiboard' in session['import']:
             skiboard = SkiBoard.get_item_by_slug(session['import']['skiboard'])[0]
@@ -73,12 +83,21 @@ class NewImportHandler(MethodView):
 class ImportDetailsHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, slug):
+        if not 'user' in session:
+            logging.info("No user in session")
+            return redirect('/comingsoon')
+        else:
+            if not User.is_admin(session['user']['id']):
+                logging.info("User not admin. Redirecting. {}".format(session['user']))
+                return redirect('/comingsoon')
+
         skiboard, collections = SkiBoard.get_item_by_slug(slug)
         if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
 
-        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=SkiBoard.profile_types, comparisons=SkiBoard.calc_comparisons())
+        description = SkiBoard.describe()
+        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=description['profile_types'], comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(r, slug):
@@ -114,10 +133,11 @@ class ImportDetailsHandler(MethodView):
         skiboard['params'] = formatted_params
         logging.info("Param formatting complete:\n{}".format(skiboard))
 
-        profiles = SkiBoard.profile_types
+        description = SkiBoard.describe()
         session['import'] = {'skiboard': skiboard['slug']}
 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', slug=slug, skiboard=skiboard, profiles=profiles, general_info=general_info, comparisons=SkiBoard.calc_comparisons())
+
+        return render_template('imports/import_confirmation.html', page_name='import_conf', slug=slug, skiboard=skiboard, profiles=description['profile_types'], general_info=general_info, comparisons=SkiBoard.calc_comparisons())
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                          H A N D L E R
@@ -141,7 +161,8 @@ class ImportConfirmationHandler(MethodView):
 
         # Retreive hidden params from form
         params = {}
-        for key in SkiBoard.param_names:
+        description = SkiBoard.describe()
+        for key in description['param_names']:
             param_list = request.form.get(key+'-hidden-vals')
             if param_list:
                 params[key] = param_list.split(',')
@@ -175,6 +196,14 @@ class ImportConfirmationHandler(MethodView):
 class ImportCompleteHandler(MethodView):
     # ---------------------------------------- G E T
     def get(r, slug):
+        if not 'user' in session:
+            logging.info("No user in session")
+            return redirect('/comingsoon')
+        else:
+            if not User.is_admin(session['user']['id']):
+                logging.info("User not admin. Redirecting. {}".format(session['user']))
+                return redirect('/comingsoon')
+
         if 'import' in session:
             session.pop('import', None)
 

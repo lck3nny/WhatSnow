@@ -12,8 +12,8 @@ from firebase_admin import firestore
 
 # Model Imports
 # --------------------------------------------------
-import application.models.user as User
-import application.models.skiboard as SkiBoard
+from application.models.user import User
+from application.models.skiboard import SkiBoard
 
 __author__ = 'liamkenny'
 
@@ -62,13 +62,14 @@ class LoginHandler(MethodView):
  
         # Initialise firestore client
         db = firestore.client()
-        user = db.collection('Users').where('email', '==', email).get()[0]
+        user = db.collection('Users').where('email', '==', email).get()
 
         if not user:
             logging.warning("Logged in user does not exist in firestore: {}".format(email))
             flash('No users found with those credentials. Please try again.')
             return redirect('/login')
         else:
+            user = user[0]
             # Process successful sign in
             logging.info("User successfully logged in:\n{}".format(user))
             session['user'] = user.to_dict()
