@@ -181,6 +181,7 @@ class SkiBoard():
             collections = sorted(collections, key=itemgetter('size'))
             skiboard = skiboard.to_dict()
             skiboard['id'] = skiboard_id
+            
             return skiboard, collections
 
         return None, None

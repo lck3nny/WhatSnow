@@ -173,3 +173,7 @@ p{
 .search-bar{
     border-radius: 0px;
 }
+
+.ui-datepicker-calendar {
+    display: none;
+    }

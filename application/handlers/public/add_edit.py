@@ -29,7 +29,7 @@ class NewImportHandler(MethodView):
 
         active_import = {}
         if 'import' in session and 'skiboard' in session['import']:
-            skiboard = SkiBoard.get_item_by_slug(session['import']['skiboard'])[0]
+            skiboard , collections= SkiBoard.get_item_by_slug(session['import']['skiboard'])[0]
             if skiboard:
                 logging.info("Active import found in session: {}".format(skiboard))
                 active_import['id'] = session['import']['skiboard']
@@ -37,7 +37,7 @@ class NewImportHandler(MethodView):
             else:
                 session.pop('import', None)
 
-        return render_template('imports/import.html', page_name='imports', active_import=active_import, comparisons=SkiBoard.calc_comparisons())
+        return render_template('add-edit/import.html', page_name='imports', active_import=active_import, comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(r):
@@ -97,12 +97,12 @@ class ImportDetailsHandler(MethodView):
             return redirect('/import')
 
         description = SkiBoard.describe()
-        return render_template('imports/import_details.html', page_name='import_details', skiboard=skiboard, profiles=description['profile_types'], comparisons=SkiBoard.calc_comparisons())
+        return render_template('add-edit/import_details.html', page_name='import_details', skiboard=skiboard, profiles=description['profile_types'], comparisons=SkiBoard.calc_comparisons())
 
     # -------------------------------------- P O S T
     def post(r, slug):
         try:
-            skiboard = SkiBoard.get_item_by_slug(slug)[0]
+            skiboard , collections= SkiBoard.get_item_by_slug(slug)[0]
         except:
             logging.error("No SkiBoard found with slug: {}".format(slug))
             return redirect('/import')
@@ -137,7 +137,7 @@ class ImportDetailsHandler(MethodView):
         session['import'] = {'skiboard': skiboard['slug']}
 
 
-        return render_template('imports/import_confirmation.html', page_name='import_conf', slug=slug, skiboard=skiboard, profiles=description['profile_types'], general_info=general_info, comparisons=SkiBoard.calc_comparisons())
+        return render_template('add-edit/import_confirmation.html', page_name='import_conf', slug=slug, skiboard=skiboard, profiles=description['profile_types'], general_info=general_info, comparisons=SkiBoard.calc_comparisons())
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # I M P O R T   C O N F                          H A N D L E R
@@ -187,7 +187,7 @@ class ImportConfirmationHandler(MethodView):
         if 'import' in session:
             session.pop('import', None)
  
-        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
+        return render_template('add-edit/import_complete.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -207,10 +207,28 @@ class ImportCompleteHandler(MethodView):
         if 'import' in session:
             session.pop('import', None)
 
-        skiboard = SkiBoard.get_item_by_slug(slug)
+        skiboard , collections= SkiBoard.get_item_by_slug(slug)
         if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
         
+        return render_template('add-edit/import_complete.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
 
-        return render_template('imports/import_complete.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# I M P O R T   C O M P L E T E                  H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class EditSkiboard(MethodView):
+    # ---------------------------------------- G E T
+    def get(r, slug):
+        logging.info("EDIT SKIBOARD: {}".format(str(slug)))
+
+        skiboard , collections= SkiBoard.get_item_by_slug(slug)
+        if not skiboard:
+            flash('There was a problem with your request. Please try again later!')
+            return redirect('/view/slug/')
+
+        if collections:
+            skiboard['collections'] = collections
+                
+        return render_template('add-edit/edit_skiboard.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())

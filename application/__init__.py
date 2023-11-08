@@ -11,7 +11,8 @@ import google.cloud.logging
 # --------------------------------------------------
 from .handlers.public.home import HomePageHandler, SearchHandler, ComingSoonHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler, UpdateUserDetailsHandler, AddToQuiverHandler, RemoveFromQuiverHandler
-from .handlers.public.imports import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler
+from .handlers.public.add_edit import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler, EditSkiboard
+from .handlers.public.add_edit2 import NewImportHandler2
 from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompareHandler, RemoveComparisonHandler, ClearComparisonsHandler
 
 from .handlers.public.learning import LearningHandler
@@ -71,6 +72,7 @@ def page_not_found(e):
 app.add_url_rule(rule='/', view_func=HomePageHandler.as_view('home'), methods=['GET'])
 app.add_url_rule(rule='/search/', view_func=SearchHandler.as_view('search'), methods=['POST'])
 
+# Accounts
 app.add_url_rule(rule='/login/', view_func=LoginHandler.as_view('login'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/login/forgot/', view_func=ForgotPasswordHandler.as_view('forgot'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/logout/', view_func=LogoutHandler.as_view('logout'), methods=['GET'])
@@ -80,11 +82,15 @@ app.add_url_rule(rule='/update-user-details/', view_func=UpdateUserDetailsHandle
 app.add_url_rule(rule='/add-to-quiver/', view_func=AddToQuiverHandler.as_view('add_to_quiver'), methods=['POST'])
 app.add_url_rule(rule='/remove-from-quiver/', view_func=RemoveFromQuiverHandler.as_view('remove_from_quiver'), methods=['POST'])
 
+# Add / Edit
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
+app.add_url_rule(rule='/import2/', view_func=NewImportHandler2.as_view('new_import2'), methods=['GET'])
 app.add_url_rule(rule='/import/<slug>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<slug>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<slug>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
+app.add_url_rule(rule='/edit/<slug>/', view_func=EditSkiboard.as_view('edit-skiboard'), methods=['GET'])
 
+# View / Compare
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
 app.add_url_rule(rule='/view/<slug>/', view_func=ViewHandler.as_view('view'), methods=['GET'])
 app.add_url_rule(rule='/compare/', view_func=StartCompareHandler.as_view('start_compare'), methods=['GET'])
@@ -94,7 +100,6 @@ app.add_url_rule(rule='/remove-from-compare/', view_func=RemoveComparisonHandler
 app.add_url_rule(rule='/clear-comparisons/', view_func=ClearComparisonsHandler.as_view('clear-comparisons'), methods=['POST'])
 
 app.add_url_rule(rule='/comingsoon', view_func=ComingSoonHandler.as_view('comingsoon'), methods=['GET'])
-
 
 # Define admin routes
 # --------------------------------------------------
