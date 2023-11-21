@@ -40,7 +40,7 @@ class User():
     # --------------------------------------------------
     def get_user(id=None, email=None, quiver=False):
         if not id and not email:
-            return False
+            return None, None
 
         db = firestore.client()
         if id:
@@ -54,7 +54,7 @@ class User():
             user = col_ref.where('email', '==', email).get()[0]
 
         if not user.exists:
-            return False
+            return None, None
         
         if quiver:
             collection_docs = db.collection('Users').document(id).collection('Quiver').get()
@@ -70,7 +70,7 @@ class User():
             collections = sorted(collections, key=itemgetter('skiboard'))
             return user, collections
 
-        return user
+        return user, None
 
     # --------------------------------------------------
     # Update User                        F U N C T I O N
