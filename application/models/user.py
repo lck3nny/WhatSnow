@@ -26,10 +26,12 @@ class User():
                 'updated': datetime.now(pytz.timezone('Canada/Pacific')),
                 'permissions': permissions
             }) 
-            logging.info("New Firestore User Created: \n{}\n".format(json.dumps(user)))  
+             
         except Exception as e:
-            logging.error("Could not create new skiboard:\n{}".format(e))   
+            logging.error("Could not create new user:\n{}".format(e))   
             return e, None
+        user = user.get()
+        logging.info("New Firestore User Created: \n{}\n".format(user)) 
 
         return True, user
 

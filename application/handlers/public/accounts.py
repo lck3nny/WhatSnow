@@ -133,9 +133,10 @@ class SignupHandler(MethodView):
         logging.info("Checking if user exists: {}\n".format(email))
         db = firestore.client()
         existing_user = db.collection('Users').where('email', '==', email).get()
-        if existing_user.exists:
+        logging.info("Existing User: {}".format(existing_user))
+        if existing_user:
             flash('A user already exists with this email address.', 'error')
-            return redirect('/signup')
+            return redirect('/login')
 
         # Initialise firebase auth connection
         firebase = pyrebase.initialize_app(firebase_config)
@@ -154,6 +155,8 @@ class SignupHandler(MethodView):
             return redirect('/signup')
     
         success, user = User.create(email, fname, lname, ski, [snowboard, stance], [])
+
+        logging.info("Created new user: {}".format(user.to_dict()))
 
         session['user'] = user.to_dict()
         session['user']['id'] = user.id
