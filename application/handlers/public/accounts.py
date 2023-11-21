@@ -138,7 +138,7 @@ class SignupHandler(MethodView):
             return redirect('/signup')
 
         # Initialise firebase auth connection
-        firebase = pyrebase.initialize_app(firebase_config)
+        firebase = render_template('add-edit.initialize_app(firebase_config)
         auth = firebase.auth()
 
         # Create new user
