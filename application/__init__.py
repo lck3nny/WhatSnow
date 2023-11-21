@@ -12,7 +12,6 @@ import google.cloud.logging
 from .handlers.public.home import HomePageHandler, SearchHandler, ComingSoonHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler, UpdateUserDetailsHandler, AddToQuiverHandler, RemoveFromQuiverHandler
 from .handlers.public.add_edit import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler, EditSkiboard
-from .handlers.public.add_edit2 import NewImportHandler2
 from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompareHandler, RemoveComparisonHandler, ClearComparisonsHandler
 
 from .handlers.public.learning import LearningHandler
@@ -84,7 +83,6 @@ app.add_url_rule(rule='/remove-from-quiver/', view_func=RemoveFromQuiverHandler.
 
 # Add / Edit
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
-app.add_url_rule(rule='/import2/', view_func=NewImportHandler2.as_view('new_import2'), methods=['GET'])
 app.add_url_rule(rule='/import/<slug>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<slug>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<slug>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
