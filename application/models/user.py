@@ -12,7 +12,7 @@ class User():
     # --------------------------------------------------
     # Create New User                    F U N C T I O N
     # --------------------------------------------------
-    def create(fname, lanme, email, ski=None, snowboard=[None, None], permissions=[]):
+    def create(fname, lname, email, ski=None, snowboard=[None, None], permissions=[]):
         # Creating a document using 'add'
         db = firestore.client()
         try:
