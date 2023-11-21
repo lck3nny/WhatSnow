@@ -133,8 +133,9 @@ class SignupHandler(MethodView):
         logging.info("Checking if user exists: {}\n".format(email))
         db = firestore.client()
         existing_user = db.collection('Users').where('email', '==', email).get()
-        logging.info("Existing User: {}".format(existing_user))
+        
         if existing_user:
+            logging.info("Existing User: {}".format(existing_user))
             flash('A user already exists with this email address.', 'error')
             return redirect('/login')
 
@@ -154,7 +155,7 @@ class SignupHandler(MethodView):
             flash('There was an issue creating your account.', 'error')
             return redirect('/signup')
     
-        success, user = User.create(email, fname, lname, ski, [snowboard, stance], [])
+        success, user = User.create(fname, lname, email, ski, [snowboard, stance], [])
 
         logging.info("Created new user: {}".format(user.to_dict()))
 
