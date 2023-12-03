@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+{% block title %}My Account{% endblock %}
+{% block top_content %}
+<div class="container">
+    <div class="row banner">
+        <div class="col-md-6 offset-md-3">
+            <br><br>
+            <h1>Import Complete</h1>
+            <p>Thanks for adding to our growing library of skis and boards!</p>
+            <br>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <p>Check out your newly imported {{item_type}} <a href="/view/{{skiboard.slug}}" class="alert-link">here</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

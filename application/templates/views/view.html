@@ -1,0 +1,97 @@
+{% extends "core/base.html" %}
+{% block title %}{{skiboard['brand']}} {{skiboard['model']}}{% endblock %}
+{% block top_content %}
+<div class="container">
+    <div class="row banner">
+        <div id="title" class="col-md-6 offset-md-3">
+            <h1>{{skiboard['brand']}} {{skiboard['model']}}</h1>
+            <h3>{{skiboard['year']}}</h3>
+            <br><br>
+        </div>
+        {% if 'collections' in skiboard %}
+        <div id="table" class="col-md-6 offset-md-3">
+            <table class='table table-dark table-striped'>
+                <tr>
+                    <th>Size</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="size {{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['size'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% if 'nose_width' in skiboard['collections'][0] %}
+                <tr>
+                    <th>Nose Width</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['nose_width'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% if 'waist_width' in skiboard['collections'][0] %}
+                <tr>
+                    <th>Waist Width</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['waist_width'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% if 'tail_width' in skiboard['collections'][0] %}
+                <tr>
+                    <th>Tail Width</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['tail_width'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% if 'sidecut' in skiboard['collections'][0] %}
+                <tr>
+                    <th>Sidecut</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['sidecut'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% if 'effective_edge' in skiboard['collections'][0] %}
+                <tr>
+                    <th>Effective Edge</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['effective_edge'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% if 'setback' in skiboard['collections'][0] %}
+                <tr>
+                    <th>Setback</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['setback'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                {% if 'stance_width' in skiboard['collections'][0] %}
+                <tr>
+                    <th>Stance Width</th>
+                    {% for collection in skiboard['collections'] %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['stance_width'] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}          
+            </table>
+        </div>
+        <div class="col-md-2 offset-md-3">
+            <p id="selected-sizes">[ ]</p>
+        </div>
+        <div class="col-md-2 offset-md-2">
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Add
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                    <li><input class="btn btn-dark" type="button" id="add-to-compare" value="Add to Compare" onclick="addToCompare('{{ skiboard.id }}')"></li>
+                    <li><input class="btn btn-dark" type="button" id="add-to-quiver" value="Add to Quiver" onclick="addToQuiver('{{ skiboard.id }}')"></li>
+                    <li><a href="/edit/{{skiboard.slug}}/"><input class="btn btn-dark" type="button" id="edit-skiboard" value="Edit Details"></a></li>
+                </ul>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <script src="/static/scripts/view_compare.js"></script>
+</div>
+{% endblock %}

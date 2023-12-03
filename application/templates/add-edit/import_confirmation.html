@@ -1,0 +1,88 @@
+{% extends "core/base.html" %}
+{% block title %}Import Confirmation{% endblock %}
+{% block top_content %}
+<div class="container">
+    <div class="row banner justify-content-center">
+        <div class="col-auto">
+            <h1>Confirm your Import</h1>
+            <h2>{{ skiboard['brand'] }} {{ skiboard['model'] }} {{ skiboard['year'] }}</h2>
+            <br>
+        </div>
+        <div class="col-auto">
+            <form id="import-conf-form" action="/import/{{ slug }}/confirm" method="post" onsubmit="return validateImportConf();">
+                <label for="category"> Category: </label>
+                <select name="category" id="category">
+                    {% if skiboard['category'] == "skis" %}
+                    <option value="skis" selected>Ski</option>
+                    <option value="snowboard">Snowboard</option>
+                    {% else %}
+                    <option value="skis">Ski</option>
+                    <option value="snowboard" selected>Snowboard</option>
+                    {% endif %}
+                </select>
+                <label for="profile"> Profile: </label>
+                <select name="profile" id="profile">
+                    {% if 'profile' not in general_info %}
+                    <option selected>Select...</option>
+                    {% else %}
+                    <option>Select...</option>
+                    {% endif %}
+                    {% for profile in profiles %}
+                        {% if 'profile' in general_info and profile == general_info['profile'] %}
+                        <option selected>{{ profile.replace('_', ' ').title() }}</option>
+                        {% else %}
+                        <option>{{ profile.replace('_', ' ').title() }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="asym"> Asym: </label>
+                <select name="asym" id="asym">
+                    {% if 'asym' in general_info and general_info['asym'] %}
+                    <option selected>True</option>
+                    <option>False</option>
+                    {% else %}
+                    <option>True</option>
+                    <option selected>False</option>
+                    {% endif %}
+                </select>
+                <label for="flex"> Flex: </label>
+                {% if 'flex' in general_info and general_info['flex'] %}
+                <output id="flex-val">{{ general_info['flex'] }}</output>
+                <input type="range" value="{{ general_info['flex'] }}" class="form-range" id="flex-slider" name="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
+                {% else %}
+                <output id="flex-val">5</output>
+                <input type="range" class="form-range" id="flex-slider" name="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
+                {% endif %}
+                <br><br>
+                <table>
+                    {% for param in skiboard['params'] %}
+                    <th>
+                        <select id="{{loop.index}}-select" name="{{ param.replace(' ', '_') }}-select" onchange="changeColName(this);">
+                        <option>Select...</option>
+                        {% for option in skiboard['params'] %}
+                            {% if option == param %}
+                            <option selected>{{ option.replace('_', ' ').title() }}</option>
+                            {% else %}
+                            <option>{{ option.replace('_', ' ').title() }}</option>
+                            {% endif %}
+                        {% endfor %}
+                        </select>
+                    </th>
+                    <input hidden id="{{loop.index}}-hidden-vals" name="{{ param.replace(' ', '_') }}-hidden-vals" value="{{ ','.join(skiboard['params'][param]) }}">
+                    {% endfor %}
+                    {% for x in range(skiboard['params']['size']|length) %}
+                    <tr>
+                        {% for param in skiboard['params'] %}
+                        <td>{{ skiboard['params'][param][x] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+                <br>
+                <input class="btn btn-light" type="submit" value="Import">
+            </form>
+        </div>
+    </div>
+    <script src="/static/scripts/imports.js"></script>
+</div>
+{% endblock %}
