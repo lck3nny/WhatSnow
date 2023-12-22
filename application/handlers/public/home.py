@@ -10,6 +10,7 @@ from flask.views import MethodView
 # Model Imports
 # --------------------------------------------------
 from application.models.skiboard import SkiBoard
+from application.core import setupdb
 
 __author__ = 'liamkenny'
 
@@ -27,15 +28,7 @@ class HomePageHandler(MethodView):
     def get(request):
         # Database Setup
         # --------------------------------------------------
-        #db = pymysql.connect("localhost", "username", "password", "database")
-        f = open('./config/localdb_config.json')
-        dbconfig = json.loads(f.read())
-        for item in dbconfig:
-            logging.info("Param: {} Value: {}\n".format(item, dbconfig[item]))
-
-        db = pymysql.connect(host=dbconfig['localhost'], user=dbconfig['username'], password=dbconfig['password'], database=dbconfig['database'])
-        f.close()
-
+        db = setupdb()
         cursor = db.cursor()
         sql = "SELECT * FROM Users"
         cursor.execute(sql)
