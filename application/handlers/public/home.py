@@ -1,4 +1,6 @@
 import logging
+import json
+import pymysql
 
 # Infrastructure Imports
 # --------------------------------------------------
@@ -23,6 +25,23 @@ def validate_query(query):
 class HomePageHandler(MethodView):
     # ---------------------------------------- G E T
     def get(request):
+        # Database Setup
+        # --------------------------------------------------
+        #db = pymysql.connect("localhost", "username", "password", "database")
+        f = open('./config/localdb_config.json')
+        dbconfig = json.loads(f.read())
+        for item in dbconfig:
+            logging.info("Param: {} Value: {}\n".format(item, dbconfig[item]))
+
+        db = pymysql.connect(host=dbconfig['localhost'], user=dbconfig['username'], password=dbconfig['password'], database=dbconfig['database'])
+        f.close()
+
+        cursor = db.cursor()
+        sql = "SELECT * FROM Users"
+        cursor.execute(sql)
+        results = cursor.fetchall()
+        logging.info("MySQL Test:\n{}".format(results))
+
         return render_template('core/index.html', page_name='index', comparisons=SkiBoard.calc_comparisons())
     
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

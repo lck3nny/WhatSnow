@@ -3,9 +3,11 @@ from datetime import timedelta
 # Infrastructure Imports
 # --------------------------------------------------
 from flask import Flask, request, send_from_directory, render_template
+import pymysql
 import firebase_admin
 from firebase_admin import credentials
 import google.cloud.logging
+import json
 
 # Import Handlers                             Public
 # --------------------------------------------------
@@ -27,6 +29,24 @@ __author__ = 'liamkenny'
 app = Flask(__name__)
 app.secret_key = "3537251460"
 app.permanent_session_lifetime = timedelta(days=7)
+
+
+'''
+# Database Setup
+# --------------------------------------------------
+#db = pymysql.connect("localhost", "username", "password", "database")
+f = open('config/localdb_config.json')
+dbconfig = json.load(f)
+db = pymysql.connect(dbconfig['localhost'], dbconfig['username'], dbconfig['password'], dbconfig['database'])
+f.close()
+
+def someName():
+    cursor = db.cursor()
+    sql = "SELECT * FROM table"
+    cursor.execute(sql)
+    results = cursor.fetchall()
+    return render_template('index.html', results=results)
+'''
 
 #logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
