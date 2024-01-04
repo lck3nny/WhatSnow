@@ -5,137 +5,162 @@ from datetime import datetime
 from firebase_admin import firestore 
 from operator import itemgetter
 
+from application.core import setupdb
+
+
 __author__ = 'liamkenny'
 
 class User():
 
-    # --------------------------------------------------
-    # Create New User                    F U N C T I O N
-    # --------------------------------------------------
-    def create(fname, lname, email, ski=None, snowboard=[None, None], permissions=[]):
-        # Creating a document using 'add'
-        db = firestore.client()
-        try:
-            create_time, user = db.collection('Users').add({
-                'email': email,
-                'fname': fname,
-                'lname': lname,
-                'ski': ski,
-                'snowboard': snowboard,
-                'created': datetime.now(pytz.timezone('Canada/Pacific')),
-                'updated': datetime.now(pytz.timezone('Canada/Pacific')),
-                'permissions': permissions
-            }) 
-             
-        except Exception as e:
-            logging.error("Could not create new user:\n{}".format(e))   
-            return e, None
-        user = user.get()
-        logging.info("New Firestore User Created: \n{}\n".format(user)) 
+    # If a User has an ID of 0 it has not been saved in the database
+    def __init__(self, userid, fname, lname, email, ski=0, snowboard=0, stance=None, permissions=[], region=None, photo=None):
+        self.id = userid
+        self.fname = fname
+        self.lname = lname
+        self.email = email
+        self.ski = ski
+        self.snowboard = snowboard
+        self.stance = stance
+        self.permissions = permissions
+        self.region = region
+        self.photo = photo
 
-        return True, user
+
+    # --------------------------------------------------
+    # Save User                          F U N C T I O N
+    # --------------------------------------------------
+    def save(self):
+        db = setupdb()
+        cursor = db.cursor()
+
+        try:
+            sql = """REPLACE INTO 'Users' (user_id, fname, lname, email, ski, snowboard, stance, region, permissions, created, updated, photo)
+                values ({}, {}, {}, {}, {}, {}, {}, {}))
+            """.format(self.id, self.fname, self.lname, self.email, 
+                    self.ski, self.snowboard, self.stance, self.region, '~'.join(self.permissions), 
+                    datetime.now(pytz.timezone('Canada/Pacific')), datetime.now(pytz.timezone('Canada/Pacific')),
+                    self.photo)
+            cursor.execute(sql)
+            db.commit()
+            #self.id = cursor.execute("SELECT last_insert_rowid() FROM songs").fetchone()[0]
+            
+        except Exception as e:
+            logging.error("Could not save user:\n{}".format(e))   
+            return False
+
+        logging.info("Saved User:\n{} {} ~ {}\nPermissions: {}\nSki: {} Snowboard: ({})\n{}Region: {}"
+                    .format(self.fname, self.lname, self.email, ', '.join(self.permissions), self.ski, self.snowboard, self.stance, self.region))
+    
+        return True
+
+
+    
 
     # --------------------------------------------------
     # Get User                           F U N C T I O N
     # --------------------------------------------------
-    def get_user(id=None, email=None, quiver=False):
-        if not id and not email:
-            return None, None
+    @classmethod
+    def get(cls, id=None, email=None):
 
-        db = firestore.client()
+        db = setupdb()
+        cursor = db.cursor()
+
+        # Get user by ID
         if id:
-            # Get user by ID
-            col_ref = db.collection('Users')
-            doc_ref = col_ref.document(id)
-            user = doc_ref.get()
-        else:
-            # Get user by email
-            col_ref = db.collection('Users')
-            user = col_ref.where('email', '==', email).get()[0]
+            try:
+                logging.info("Getting user from ID: {}".format(id))
+                sql = """SELECT * FROM Users WHERE user_id = '{}'""".format(id)
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                logging.info("Result: {}".format(result))
+            
+            except Exception as e:
+                logging.error(e)
+                return None
 
-        if not user.exists:
-            return None, None
+        # Get user by email
+        elif email:
+            try:
+                logging.info("Getting user from EMAIL: {}".format(email))
+                sql = """SELECT * FROM Users WHERE email = '{}'""".format(email)
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                logging.info("Result: {}".format(result))
+
+            except Exception as e:
+                logging.error(e)
+                return None
+
+        if not result:
+            logging.error("No User Found")
+            return None
         
-        if quiver:
-            collection_docs = db.collection('Users').document(id).collection('Quiver').get()
-            collections = []
-            
-            for doc in collection_docs:
-                quiver_id = doc.id
-                skiboard = doc.to_dict()
-                skiboard['id'] = quiver_id
-                collections.append(skiboard)
-            
-            # Sort collections by size parameter
-            collections = sorted(collections, key=itemgetter('skiboard'))
-            return user, collections
+        # Map DB Result to User Object
+        user = User(
+            userid=result[0], 
+            fname=result[1], 
+            lname=result[2], 
+            email=result[3], 
+            ski=result[4], 
+            snowboard=result[5],
+            stance=result[6],
+            region=result[7],
+            permissions=result[8],
+            photo=result[9],
+        )
+        
+        if user.permissions:
+            user.permissions = user.permissions.split('~')
 
-        return user, None
+        return user
 
     # --------------------------------------------------
     # Update User                        F U N C T I O N
     # --------------------------------------------------
-    def update_user(id, obj={}):
-        if not id:
-            return None, "No ID"
+    def update_user(self, obj={}):
 
+        logging.info("Updating user params")
         # Remove non-editable params
-        update_params = ['fname', 'lname']
+        updatable_params = ['fname', 'lname', 'email', 'ski', 'snowboard', 'stance', 'region', 'photo']
         for key in obj:
-            if key not in update_params:
+            if key not in updatable_params:
                 obj.pop(key)
+
+        if len(obj)  == 0:
+            logging.info("No Updatable Params")
+            return False
 
         obj['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
 
-        # Collect and update user object
+        db = setupdb()
+        cursor = db.cursor()
+
+        # Collect and update db user
         try:
-            logging.info("update_user() - Object:\n{}\n".format(obj))
-            db = firestore.client()
-            col_ref = db.collection('Users')
-            user = col_ref.document(id)
-            user.update(obj)
+            logging.info("Updating DbUser Details - Object:\n{}\n".format(obj))
+            sql = """UPDATE Users SET """
+            for key in obj:
+                sql += """{} = '{}' """.format(key, obj[key])
+            sql += """WHERE user_id = '{}'""".format(self.id)
+            cursor.execute(sql)
+            db.commit()
         except Exception as e:
-            return None, e
+            return False, e
 
-        return user.get(), None
+        return True, "Updated user: {}".format(self.id)
 
+    
 
     # --------------------------------------------------
     # Is Admin User                      F U N C T I O N
     # --------------------------------------------------
-    def is_admin(id):
-        if not id:
-            return False
-        
-        # Collect user object
-        try:
-            db = firestore.client()
-            col_ref = db.collection('Users')
-            doc_ref = col_ref.document(id)
-            user_doc = doc_ref.get()
-            user = user_doc.to_dict()
-            
-        except Exception as e:
-            logging.error(e)
-            return False
-        
-        user['id'] = doc_ref.id
-
-        logging.info("User: {}".format(user))
-        # Check for admin permissions
-        if not 'permissions' in user:
-            logging.warning("Permissions not found for user")
-            user['permissions'] = []
-            user['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
-            user_doc.update(user)
-        
-        logging.info("User: {}".format(user))
-
-        if not 'admin' in user['permissions']:
+    def is_admin(self):
+        if not 'admin' in self.permissions:
             return False
         
         return True
         
+    # madeit
 
     # --------------------------------------------------
     # Add To Quiver                      F U N C T I O N

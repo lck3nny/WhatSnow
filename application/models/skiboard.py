@@ -8,6 +8,9 @@ from difflib import SequenceMatcher
 
 from flask import session
 
+from application.core import setupdb
+
+
 
 # Infrastructure Imports
 # --------------------------------------------------
@@ -105,163 +108,133 @@ def normaise_brand_model(s):
 
 class SkiBoard():
 
+    # If a SkiBoard has an ID of 0 it has not been saved in the database
+    def __init__(self, skiboard_id, brand, model, year, category, description=None, stiffness=None, family=None, flex_profile=None, camber_profile=None, camber_details=[], core=[], laminates=[], base=None, sidewall=None, weight=None, url=None):
+        self.id = skiboard_id
+        self.brand = brand
+        self.model = model
+        self.year = year
+        self.category = category
+        self.description = description
+        self.stiffness = stiffness
+        self.family = family
+        self.flex_profile = flex_profile
+        self.camber_profile = camber_profile
+        self.camber_details = camber_details
+        self.core = core
+        self.laminates = laminates
+        self.base = base
+        self.sidewall = sidewall
+        self.weight = weight
+        #self.url = url
+
     # --------------------------------------------------
     # Is Duplicate                       F U N C T I O N
     # --------------------------------------------------
-    def is_duplicate(category, brand, model, year):
+    def is_duplicate(self):
+        db = setupdb()
+        cursor = db.cursor()
 
-        slug = slugify([brand, model, str(year)])
+        # Search for SkiBoards with 
+        try:
+            logging.info("Checking for Duplicate SkiBoards: {}".format(self.id))
+            sql = """SELECT * FROM SkiBoards WHERE brand = '{}' AND model = '{}' AND year = '{}'""".format(self.brand, self.model, self.year)
+            cursor.execute(sql)
+            result = cursor.fetchone()
+            logging.info("Duplicate Found: {}".format(result))
+        except Exception as e:
+            logging.error(e)
 
-        # Check firestore for duplicate entries
-        db = firestore.client()
-        # skiboards = db.collection('SkiBoards').where('category', '==', category).where('brand', '==', brand).where('model', '==', model).where('year', '==', year)
-        skiboards = db.collection('SkiBoards').where('slug', '==', slug)
-        for skiboard in skiboards.stream():
-            # ToDo...
-            # Return existing skiboard ID???
-            return True, skiboard
-
-        return False, None
-
-    # --------------------------------------------------
-    # Get By Item ID                     F U N C T I O N
-    # --------------------------------------------------
-    def get_item_by_id(id):
-        if not id:
-            return False
-        
-        # Get firestore doc by ID
-        db = firestore.client()
-        skiboard = db.collection('SkiBoards').document(id).get()
-        collection_docs = db.collection('SkiBoards').document(id).collection('Sizes').get()
-        collections = []
-        if skiboard.exists:
-            for doc in collection_docs:
-                size = doc.id
-                size_details = doc.to_dict()
-                size_details['size'] = size
-                collections.append(size_details)
-            
-            # Sort collections by size parameter
-            collections = sorted(collections, key=itemgetter('size'))
-            return skiboard.to_dict(), collections
+        if result:
+            return True
 
         return False
 
     # --------------------------------------------------
-    # Get By Item Slug                   F U N C T I O N
+    # Get Item                           F U N C T I O N
     # --------------------------------------------------
-    def get_item_by_slug(slug):
-        if not slug:
-            return None, None
+    @classmethod
+    def get(cls, id=None, brand=None, model=None, year=None):
         
-        # Get firestore doc by slug
-        db = firestore.client()
-        skiboard = None
-        skiboard_id = None
-        skiboards = db.collection('SkiBoards').where('slug', '==', slug)
-        for doc in skiboards.stream():
-            skiboard_id = doc.id
-            skiboard = doc
-            break
+        db = setupdb()
+        cursor = db.cursor()
 
-        if not skiboard or not skiboard_id:
-            return None, None
-
-        collection_docs = db.collection('SkiBoards').document(skiboard_id).collection('Sizes').get()
-        collections = []
-        if skiboard.exists:
-            for doc in collection_docs:
-                size = doc.id
-                size_details = doc.to_dict()
-                size_details['size'] = size
-                collections.append(size_details)
+        if id:
+            try:
+                logging.info("Getting SkiBoard from ID: {}".format(id))
+                sql = """SELECT * FROM SkiBoards WHERE skiboard_id = '{}'""".format(id)
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                logging.info("Result: {}".format(result))
+            except Exception as e:
+                logging.error(e)
+                return None
             
-            # Sort collections by size parameter
-            collections = sorted(collections, key=itemgetter('size'))
-            skiboard = skiboard.to_dict()
-            skiboard['id'] = skiboard_id
+        elif brand and model and year:
+            try:
+                logging.info("Getting SkiBoard by B-M-Y: {} {} ({})".format(brand, model, year))
+                sql = """SELECT * FROM SkiBoards WHERE brand = '{}' AND model = '{}' AND year = '{}'""".format(brand, model, year)
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                logging.info("Result: {}".format(result))
+            except Exception as e:
+                logging.error(e)
+                return None
             
-            return skiboard, collections
+        if not result:
+            return None
+        
+        # Map DB Result to User Object
+        skiboard = SkiBoard(
+            skiboard_id=result[0], 
+            url=result[1], 
+            brand=result[2], 
+            model=result[3], 
+            year=result[4], 
+            category=result[5],
+            family=result[6],
+            description=result[7],
+            stiffness=result[8],
+            flex_profile=result[9],
+            camber_profile=result[10],
+            camber_details=result[11],
+            core=result[12],
+            laminates=result[13],
+            base=result[14],
+            sidewall=result[15],
+            weight=result[16]
+        )
+        
+        return skiboard
 
-        return None, None
-
-    
 
     # --------------------------------------------------
-    # Create SkiBoard                    F U N C T I O N
+    # Save SkiBoard                    F U N C T I O N
     # --------------------------------------------------
-    def create(brand, model, year, category, author=None):
-        if not brand or not model or not year or not category:
-            return False, None
+    def save(self):
+        db = setupdb()
+        cursor = db.cursor()
 
         try:
-            db = firestore.client()
-            create_time, skiboard = db.collection('SkiBoards').add({
-                'brand': brand,
-                'model': model,
-                'year': year,
-                'category': category,
-                'created': datetime.now(pytz.timezone('Canada/Pacific')),
-                'updated': datetime.now(pytz.timezone('Canada/Pacific')),
-                'author': author,
-                'slug': slugify([brand, model, str(year)]),
-                'name': nameify([brand, model, str(year)])
-            })
+            sql = """REPLACE INTO 'Users' (user_id, fname, lname, email, ski, snowboard, stance, region, permissions, created, updated, photo)
+                values ({}, {}, {}, {}, {}, {}, {}, {}))
+            """.format(self.id, self.fname, self.lname, self.email, 
+                       self.ski, self.snowboard, self.stance, self.region, '~'.join(self.permissions), 
+                       datetime.now(pytz.timezone('Canada/Pacific')), datetime.now(pytz.timezone('Canada/Pacific')),
+                       self.photo)
+            cursor.execute(sql)
+            db.commit()
+            #self.id = cursor.execute("SELECT last_insert_rowid() FROM songs").fetchone()[0]
+             
         except Exception as e:
-            logging.error("Could not create SKiBoard:\n{}".format(e))
-            return False, None
-        
-        id = skiboard.id
-        skiboard = skiboard.get().to_dict()
-        skiboard['id'] = id
-        
-        return True, skiboard
+            logging.error("Could not create new user:\n{}".format(e))   
+            return False
 
-    # --------------------------------------------------
-    # Update SkiBoard                    F U N C T I O N
-    # --------------------------------------------------
-    def update_info(id, update_params={}, size_params={}):
-        if not id and (not update_params or not size_params):
-            return False, None, None
-        
-        updatable_params = ['category', 'profile', 'flex','asym']
+        logging.info("Created New User:\n{} {} ~ {}\nPermissions: {}\nSki: {} Snowboard: ({})\n{}Region: {}"
+                     .format(self.fname, self.lname, self.email, ', '.join(self.permissions), self.ski, self.snowboard, self.stance, self.region))
 
-        # Check firestore for duplicate entries
-        db = firestore.client()
-        doc_ref = db.collection('SkiBoards').document(id)
-        skiboard = doc_ref.get()
-        # collection_docs = db.collection('SkiBoards').document(id).collection('Sizes').get()
-        # collections = []
-        if skiboard.exists:
-            skiboard = skiboard.to_dict()
-            for key in updatable_params:
-                skiboard[key] = update_params[key]
-            skiboard['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
+        return True
 
-            # Update firestore
-            doc_ref.update(skiboard)
-            sizes = []
-            for x in range(len(size_params['size'])):
-                size_id = size_params['size'][x]
-                size = {}
-                for param in size_params:
-                    if param != 'size':
-                        size[param] = size_params[param][x]
-
-                # Add size as collection in firestore
-                logging.info("Adding Size to SkiBoard:\n{}".format(size))
-                doc_ref.collection('Sizes').document(size_id).set(size)
-                size['size'] = size_id
-                sizes.append(size)
-            
-            # Update ElasticSearch with skiboard object
-            skiboard['sizes'] = sizes
-            resp = update_es(id, skiboard)
-
-            return True, resp, skiboard
-        
-        return False, None, None
 
     # --------------------------------------------------
     # Update ElasticSearch               F U N C T I O N

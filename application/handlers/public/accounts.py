@@ -50,30 +50,29 @@ class LoginHandler(MethodView):
     
         # Sign in user
         try:
-            user = auth.sign_in_with_email_and_password(email, password)
-            user_info = auth.get_account_info(user ['idToken'])
-            user['info'] = user_info
-            user['email'] = email
+            firebaseuser = auth.sign_in_with_email_and_password(email, password)
+            firebaseuser_info = auth.get_account_info(firebaseuser ['idToken'])
+            firebaseuser['info'] = firebaseuser_info
+            firebaseuser['email'] = email
+            logging.info("Firebase User Found: {}".format(firebaseuser))
         
         # Catch unsuccessful sign in 
         except:
             flash('No account found with this username and password.', 'error')
             return redirect('/login')         
  
-        # Initialise firestore client
-        db = firestore.client()
-        user = db.collection('Users').where('email', '==', email).get()
+        # Get User from DB
+        dbuser = User.get_user(id=firebaseuser['localId'], email=email)
 
-        if not user:
-            logging.warning("Logged in user does not exist in firestore: {}".format(email))
+        if not dbuser:
+            logging.warning("Logged in user does not exist in database: {}".format(email))
             flash('No users found with those credentials. Please try again.')
             return redirect('/login')
         else:
-            user = user[0]
             # Process successful sign in
-            logging.info("User successfully logged in:\n{}".format(user))
-            session['user'] = user.to_dict()
-            session['user']['id'] = user.id
+            logging.info("User successfully logged in:\n{}".format(dbuser))
+            session['user'] = dbuser.to_dict()
+            session['user']['id'] = dbuser.id
 
 
         flash('You have been successfully logged in as {} {}'.format(session['user']['fname'], session['user']['lname']), 'info')
@@ -155,7 +154,8 @@ class SignupHandler(MethodView):
             flash('There was an issue creating your account.', 'error')
             return redirect('/signup')
     
-        success, user = User.create(fname, lname, email, ski, [snowboard, stance], [])
+        new_user = User()
+        success, user = User.save(fname, lname, email, ski, [snowboard, stance], [])
 
         logging.info("Created new user: {}".format(user.to_dict()))
 
