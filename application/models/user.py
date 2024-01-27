@@ -54,8 +54,6 @@ class User():
         return True
 
 
-    
-
     # --------------------------------------------------
     # Get User                           F U N C T I O N
     # --------------------------------------------------
@@ -113,42 +111,6 @@ class User():
             user.permissions = user.permissions.split('~')
 
         return user
-
-    # --------------------------------------------------
-    # Update User                        F U N C T I O N
-    # --------------------------------------------------
-    def update_user(self, obj={}):
-
-        logging.info("Updating user params")
-        # Remove non-editable params
-        updatable_params = ['fname', 'lname', 'email', 'ski', 'snowboard', 'stance', 'region', 'photo']
-        for key in obj:
-            if key not in updatable_params:
-                obj.pop(key)
-
-        if len(obj)  == 0:
-            logging.info("No Updatable Params")
-            return False
-
-        obj['updated'] = datetime.now(pytz.timezone('Canada/Pacific'))
-
-        db = setupdb()
-        cursor = db.cursor()
-
-        # Collect and update db user
-        try:
-            logging.info("Updating DbUser Details - Object:\n{}\n".format(obj))
-            sql = """UPDATE Users SET """
-            for key in obj:
-                sql += """{} = '{}' """.format(key, obj[key])
-            sql += """WHERE user_id = '{}'""".format(self.id)
-            cursor.execute(sql)
-            db.commit()
-        except Exception as e:
-            return False, e
-
-        return True, "Updated user: {}".format(self.id)
-
     
 
     # --------------------------------------------------

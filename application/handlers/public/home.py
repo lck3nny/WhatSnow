@@ -26,14 +26,6 @@ def validate_query(query):
 class HomePageHandler(MethodView):
     # ---------------------------------------- G E T
     def get(request):
-        # Database Setup
-        # --------------------------------------------------
-        db = setupdb()
-        cursor = db.cursor()
-        sql = "SELECT * FROM Users"
-        cursor.execute(sql)
-        results = cursor.fetchall()
-        logging.info("MySQL Test:\n{}".format(results))
 
         return render_template('core/index.html', page_name='index', comparisons=SkiBoard.calc_comparisons())
     
@@ -58,8 +50,16 @@ class SearchHandler(MethodView):
                 'valid': False
             }
         
+        # Query DB
         try:
-            # Query ElasticSearch
+            results = SkiBoard.search_db(query)
+            logging.info(f"Search: {query}\nResults: {results}")
+        except Exception as e:
+            logging.error(f"Problem searching for query: {query}... {e}")
+
+        '''
+        # Query ElasticSearch
+        try: 
             results = SkiBoard.search(query)
             logging.info("Search: {}\nResults: {}".format(query, results))
         except Exception as e:
@@ -68,9 +68,10 @@ class SearchHandler(MethodView):
                 'success': False,
                 'msg': e
             }
-        
+        '''
+
         return {
-            'success': True,
+            'success': bool(results),
             'query': r,
             'results': results,
             'valid': True

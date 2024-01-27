@@ -53,25 +53,6 @@ f = open(os.path.dirname(__file__) + '/../config/bonsai_config.json')
 es_config = json.load(f)
 
 # --------------------------------------------------
-# Slugify                            F U N C T I O N
-# --------------------------------------------------
-def slugify(strings):
-    return '-'.join(strings).lower()
-
-# --------------------------------------------------
-# Nameify                            F U N C T I O N
-# --------------------------------------------------
-def nameify(strings):
-    for s in strings:
-        try:
-            s = normaise_brand_model(s)
-        except:
-            continue
-
-    return ' '.join(strings)
-
-
-# --------------------------------------------------
 # Match Param                        F U N C T I O N
 # --------------------------------------------------
 def match_param(param):
@@ -92,28 +73,16 @@ def match_param(param):
 
     return matched, confidence
 
-# --------------------------------------------------
-# Normalise Brand / Model Names      F U N C T I O N
-# --------------------------------------------------
-def normaise_brand_model(s):
-    normalised = ''
-    s_split = s.split(' ')
-    for word in s_split:
-        if len(word) > 1:
-            normalised += word[0].upper() + word[1:] + ''
-        else:
-            normalised += word.upper() + ''
-    
-    return normalised.strip()
 
 class SkiBoard():
 
     # If a SkiBoard has an ID of 0 it has not been saved in the database
-    def __init__(self, skiboard_id, brand, model, year, category, description=None, stiffness=None, family=None, flex_profile=None, camber_profile=None, camber_details=[], core=[], laminates=[], base=None, sidewall=None, weight=None, url=None):
+    def __init__(self, skiboard_id, brand, model, year, name, category, description=None, stiffness=None, family=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, laminates=[], base=None, sidewall=None, weight=0, youth=False, url=None, sizes=[]):
         self.id = skiboard_id
         self.brand = brand
         self.model = model
         self.year = year
+        self.name = name
         self.category = category
         self.description = description
         self.stiffness = stiffness
@@ -126,7 +95,9 @@ class SkiBoard():
         self.base = base
         self.sidewall = sidewall
         self.weight = weight
-        #self.url = url
+        self.youth = youth
+        self.url = url
+        self.sizes = sizes
 
     # --------------------------------------------------
     # Is Duplicate                       F U N C T I O N
@@ -137,8 +108,8 @@ class SkiBoard():
 
         # Search for SkiBoards with 
         try:
-            logging.info("Checking for Duplicate SkiBoards: {}".format(self.id))
-            sql = """SELECT * FROM SkiBoards WHERE brand = '{}' AND model = '{}' AND year = '{}'""".format(self.brand, self.model, self.year)
+            logging.info("Checking for Duplicate SkiBoards: {} {} ({})".format(self.brand, self.model, self.year))
+            sql = """SELECT skiboard_id FROM SkiBoards WHERE brand = '{}' AND model = '{}' AND year = '{}'""".format(self.brand, self.model, self.year)
             cursor.execute(sql)
             result = cursor.fetchone()
             logging.info("Duplicate Found: {}".format(result))
@@ -202,38 +173,151 @@ class SkiBoard():
             laminates=result[13],
             base=result[14],
             sidewall=result[15],
-            weight=result[16]
+            weight=result[16],
+            youth=result[18]
         )
         
         return skiboard
 
 
     # --------------------------------------------------
-    # Save SkiBoard                    F U N C T I O N
+    # Save SkiBoard                      F U N C T I O N
     # --------------------------------------------------
     def save(self):
         db = setupdb()
         cursor = db.cursor()
 
         try:
-            sql = """REPLACE INTO 'Users' (user_id, fname, lname, email, ski, snowboard, stance, region, permissions, created, updated, photo)
-                values ({}, {}, {}, {}, {}, {}, {}, {}))
-            """.format(self.id, self.fname, self.lname, self.email, 
-                       self.ski, self.snowboard, self.stance, self.region, '~'.join(self.permissions), 
-                       datetime.now(pytz.timezone('Canada/Pacific')), datetime.now(pytz.timezone('Canada/Pacific')),
-                       self.photo)
+            if self.id:
+                print("Updating SkiBoard...")
+                sql = f"""REPLACE INTO SkiBoards (skiboard_id, url, brand, model, year, name, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, updated) 
+                values(
+                '{str(self.id)}'
+                '{str(self.url)}', 
+                '{str(self.brand)}', 
+                '{str(self.model)}', 
+                '{str(self.year)}',
+                '{str(self.brand)} {str(self.model)} {str(self.year)}',
+                '{str(self.category)}', 
+                '{str(self.family)}', 
+                '{str(self.description)}', 
+                {float(self.stiffness)}, 
+                '{str(self.flex_profile)}', 
+                '{str(self.camber_profile)}', 
+                '{'~'.join(str(i) for i in self.camber_details)}', 
+                '{str(self.core)}', 
+                '{'~'.join(str(i) for i in self.laminates)}', 
+                '{str(self.base)}', 
+                '{str(self.sidewall)}', 
+                {float(self.weight)}, 
+                {bool(self.youth)}, 
+                '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}' )"""
+                
+            else:
+                print("Creating SkiBoard...")
+                sql = f"""INSERT INTO SkiBoards (url, brand, model, year, name, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, created, updated) 
+                values(
+                '{str(self.url)}', 
+                '{str(self.brand)}', 
+                '{str(self.model)}', 
+                '{str(self.year)}', 
+                '{str(self.brand)} {str(self.model)} {str(self.year)}',
+                '{str(self.category)}', 
+                '{str(self.family)}', 
+                '{str(self.description)}', 
+                {float(self.stiffness)}, 
+                '{str(self.flex_profile)}', 
+                '{str(self.camber_profile)}', 
+                '{'~'.join(str(i) for i in self.camber_details)}', 
+                '{str(self.core)}', 
+                '{'~'.join(str(i) for i in self.laminates)}', 
+                '{str(self.base)}', 
+                '{str(self.sidewall)}', 
+                {float(self.weight)}, 
+                {int(bool(self.youth))}, 
+                '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}',
+                '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}')"""
+                
+            
+            print(f"About to execute SQL: {sql}")
             cursor.execute(sql)
             db.commit()
-            #self.id = cursor.execute("SELECT last_insert_rowid() FROM songs").fetchone()[0]
              
         except Exception as e:
-            logging.error("Could not create new user:\n{}".format(e))   
+            logging.error("Could not create new SkiBoard:\n{}".format(e))
+            print("Could not create new SkiBoard: {}".format(e))
             return False
 
-        logging.info("Created New User:\n{} {} ~ {}\nPermissions: {}\nSki: {} Snowboard: ({})\n{}Region: {}"
-                     .format(self.fname, self.lname, self.email, ', '.join(self.permissions), self.ski, self.snowboard, self.stance, self.region))
+        logging.info("Saved SkiBoard:\nBrand: {}\nModel: {} Year: ({})".format(self.brand, self.model, self.year))
+
+        # ToDo...
+        # Update ElasticSearch
+        '''
+        successes = 0
+        logging.info("Uploading SkiBoard to ElasticSearch")
+        es.update(
+            id=self.id,
+            index='SkiBoards',
+            document=self.__dict__
+        )   
+        '''
+        
 
         return True
+    
+    # --------------------------------------------------
+    # Search Database                    F U N C T I O N
+    # -------------------------------------------------- 
+    @classmethod
+    def search_db(cls, query_string):
+        
+        db = setupdb()
+        cursor = db.cursor()
+
+        try:
+            #logging.info("Searching for SkiBoard: {}".format(query_string))
+            print(f"Searching for SkiBoard: {query_string}")
+            sql = f"SELECT * FROM SkiBoards WHERE MATCH(name) AGAINST('{query_string}' IN NATURAL LANGUAGE MODE)"
+            # sql = f"SELECT * FROM SkiBoards WHERE MATCH(name) AGAINST('{query_string}' WITH QUERY EXPANSION)"
+            cursor.execute(sql)
+            response = cursor.fetchall()
+            logging.info("Response: {}".format(response))
+            print(f"Response: {response}")
+        except Exception as e:
+            logging.error(e)
+            return None
+        
+        results = []
+        for r in response:
+            # Map DB Result to User Object
+            result = SkiBoard(
+                skiboard_id=r[0], 
+                url=r[1], 
+                brand=r[2], 
+                model=r[3], 
+                year=r[4], 
+                name=r[5],
+                category=r[6],
+                family=r[7],
+                description=r[8],
+                stiffness=r[9],
+                flex_profile=r[10],
+                camber_profile=r[11],
+                camber_details=r[12],
+                core=r[13],
+                laminates=r[14],
+                base=r[15],
+                sidewall=r[16],
+                weight=r[17],
+                youth=r[18]
+            )
+            try:
+                sql = f"SELECT * FROM Sizes WHERE skiboard_id = {result[0]}"
+            except Exception as e:
+                logging.error("Unable to retreive sizes for skiboard")
+
+        return results
+    
 
 
     # --------------------------------------------------
@@ -251,17 +335,16 @@ class SkiBoard():
 
         # Create or Update document
         if not es_client.exists(index=es_index, id=id):
-            return es_client.index(index=active_index, id=id, body=skiboard)
+            return es_client.index(index=active_index, id=id, body=skiboard.__dict__)
 
         return es_client.update(index=active_index, id=id, document=skiboard)
-
-
+       
+    
     # --------------------------------------------------
-    # Search                             F U N C T I O N
+    # Search ElasticSearch               F U N C T I O N
     # --------------------------------------------------
-    def search(query, es_index='skiboards'):
-        
-        # Connect to ElasticSearch
+    def search_es(query, es_index='skiboards'):
+         # Connect to ElasticSearch
         es_client = Elasticsearch([es_config['url']], basic_auth=(es_config['key'], es_config['secret']))
         idx_manager = IndicesClient(es_client)
         active_index = list(idx_manager.get(es_index).keys())[0]
