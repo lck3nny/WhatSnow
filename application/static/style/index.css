@@ -60,7 +60,6 @@ body{
 .index{
     color: var(--light);
     width: 100vw;
-    height: 100vh;
     background: url('/static/img/dark_snow_background.webp');
     background-position: center;
     background-size: cover;
@@ -134,6 +133,8 @@ nav{
 .banner{
     margin-top: 10%;
     transform: translateY(-10%);
+    height: 70vh;
+
 }
 
 
@@ -148,7 +149,7 @@ nav{
 }
 
 .results{
-    padding-top: 50vh;
+    padding-top: 20vh;
     padding-bottom: 20vh;
 }
 

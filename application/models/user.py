@@ -10,6 +10,9 @@ from application.core import setupdb
 
 __author__ = 'liamkenny'
 
+# ==================================================
+# U S E R                                  C L A S S
+# ==================================================
 class User():
 
     # If a User has an ID of 0 it has not been saved in the database
@@ -103,7 +106,7 @@ class User():
             snowboard=result[5],
             stance=result[6],
             region=result[7],
-            permissions=result[8],
+            permissions=result[8].split('~'),
             photo=result[9],
         )
         
@@ -123,52 +126,5 @@ class User():
         return True
         
     # madeit
-
-    # --------------------------------------------------
-    # Add To Quiver                      F U N C T I O N
-    # --------------------------------------------------
-    def add_to_quiver(id, skiboard, size):
-        if not id or not skiboard or not size:
-            return False
-        
-        db = firestore.client()
-        col_ref = db.collection('Users')
-        doc_ref = col_ref.document(id)
-
-        logging.info("Adding skiboard to quiver: {}".format(skiboard))
-
-        try:
-            doc_ref.collection('Quiver').add({
-                'skiboard': skiboard['slug'],
-                'size': size,
-                'added': datetime.now(pytz.timezone('Canada/Pacific'))
-            })
-        except Exception as e:
-            logging.error("Could not add skiboard to quiver: {}".format(e))
-            return e
-        
-        logging.info("Added skiboard to {}'s quiver: {} - {}".format(id, skiboard, size))
-        return True    
-
-
-    # --------------------------------------------------
-    # Remove From Quiver                 F U N C T I O N
-    # --------------------------------------------------
-    def remove_from_quiver(user_id, quiver_id):
-        if not user_id or not quiver_id:
-            return False
-        db = firestore.client()
-        col_ref = db.collection('Users')
-        doc_ref = col_ref.document(user_id)
-
-        logging.info("Removing skiboard from quiver: {} / {}".format(user_id, quiver_id))
-
-        try:
-            doc_ref.collection('Quiver').document(quiver_id).delete()
-        except Exception as e:
-            logging.error(e)
-            return e
-        
-        return True
 
 

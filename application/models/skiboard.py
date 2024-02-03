@@ -6,14 +6,13 @@ from datetime import datetime
 from operator import itemgetter
 from difflib import SequenceMatcher
 
-from flask import session
-
+# Application Imports
+# --------------------------------------------------
 from application.core import setupdb
-
-
 
 # Infrastructure Imports
 # --------------------------------------------------
+from flask import session
 from firebase_admin import firestore
 from elasticsearch import Elasticsearch
 from elasticsearch.client import IndicesClient
@@ -73,16 +72,19 @@ def match_param(param):
 
     return matched, confidence
 
-
+# ==================================================
+# S K I B O A R D                          C L A S S
+# ==================================================
 class SkiBoard():
 
     # If a SkiBoard has an ID of 0 it has not been saved in the database
-    def __init__(self, skiboard_id, brand, model, year, name, category, description=None, stiffness=None, family=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, laminates=[], base=None, sidewall=None, weight=0, youth=False, url=None, sizes=[]):
+    def __init__(self, skiboard_id, brand, model, year, name, slug, category, description=None, stiffness=None, family=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, laminates=[], base=None, sidewall=None, weight=0, youth=False, url=None):
         self.id = skiboard_id
         self.brand = brand
         self.model = model
         self.year = year
         self.name = name
+        self.slug = slug
         self.category = category
         self.description = description
         self.stiffness = stiffness
@@ -97,7 +99,6 @@ class SkiBoard():
         self.weight = weight
         self.youth = youth
         self.url = url
-        self.sizes = sizes
 
     # --------------------------------------------------
     # Is Duplicate                       F U N C T I O N
@@ -125,7 +126,7 @@ class SkiBoard():
     # Get Item                           F U N C T I O N
     # --------------------------------------------------
     @classmethod
-    def get(cls, id=None, brand=None, model=None, year=None):
+    def get(cls, id=None, brand=None, model=None, year=None, slug=None):
         
         db = setupdb()
         cursor = db.cursor()
@@ -133,7 +134,7 @@ class SkiBoard():
         if id:
             try:
                 logging.info("Getting SkiBoard from ID: {}".format(id))
-                sql = """SELECT * FROM SkiBoards WHERE skiboard_id = '{}'""".format(id)
+                sql = f"""SELECT * FROM SkiBoards WHERE skiboard_id = '{id}'"""
                 cursor.execute(sql)
                 result = cursor.fetchone()
                 logging.info("Result: {}".format(result))
@@ -144,12 +145,20 @@ class SkiBoard():
         elif brand and model and year:
             try:
                 logging.info("Getting SkiBoard by B-M-Y: {} {} ({})".format(brand, model, year))
-                sql = """SELECT * FROM SkiBoards WHERE brand = '{}' AND model = '{}' AND year = '{}'""".format(brand, model, year)
+                sql = f"""SELECT * FROM SkiBoards WHERE brand = '{brand}' AND model = '{model}' AND year = '{year}'"""
                 cursor.execute(sql)
                 result = cursor.fetchone()
                 logging.info("Result: {}".format(result))
             except Exception as e:
                 logging.error(e)
+                return None
+        elif slug:
+            try:
+                sql = f"""SELECT * FROM SkiBoards WHERE slug = '{slug}'"""
+                cursor.execute(sql)
+                result = cursor.fetchone()
+            except Exception as e:
+                logging.error(f"Could not get SkiBoard from Slug:\n{e}")
                 return None
             
         if not result:
@@ -162,19 +171,21 @@ class SkiBoard():
             brand=result[2], 
             model=result[3], 
             year=result[4], 
-            category=result[5],
-            family=result[6],
-            description=result[7],
-            stiffness=result[8],
-            flex_profile=result[9],
-            camber_profile=result[10],
-            camber_details=result[11],
-            core=result[12],
-            laminates=result[13],
-            base=result[14],
-            sidewall=result[15],
-            weight=result[16],
-            youth=result[18]
+            name=result[5],
+            slug=result[6],
+            category=result[7],
+            family=result[8],
+            description=result[9],
+            stiffness=result[10],
+            flex_profile=result[11],
+            camber_profile=result[12],
+            camber_details=result[13],
+            core=result[14],
+            laminates=result[15],
+            base=result[16],
+            sidewall=result[17],
+            weight=result[18],
+            youth=result[19]
         )
         
         return skiboard
@@ -190,7 +201,7 @@ class SkiBoard():
         try:
             if self.id:
                 print("Updating SkiBoard...")
-                sql = f"""REPLACE INTO SkiBoards (skiboard_id, url, brand, model, year, name, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, updated) 
+                sql = f"""REPLACE INTO SkiBoards (skiboard_id, url, brand, model, year, name, slug, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, updated) 
                 values(
                 '{str(self.id)}'
                 '{str(self.url)}', 
@@ -198,6 +209,7 @@ class SkiBoard():
                 '{str(self.model)}', 
                 '{str(self.year)}',
                 '{str(self.brand)} {str(self.model)} {str(self.year)}',
+                '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
                 '{str(self.category)}', 
                 '{str(self.family)}', 
                 '{str(self.description)}', 
@@ -215,13 +227,14 @@ class SkiBoard():
                 
             else:
                 print("Creating SkiBoard...")
-                sql = f"""INSERT INTO SkiBoards (url, brand, model, year, name, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, created, updated) 
+                sql = f"""INSERT INTO SkiBoards (url, brand, model, year, name, slug, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, created, updated) 
                 values(
                 '{str(self.url)}', 
                 '{str(self.brand)}', 
                 '{str(self.model)}', 
                 '{str(self.year)}', 
                 '{str(self.brand)} {str(self.model)} {str(self.year)}',
+                '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
                 '{str(self.category)}', 
                 '{str(self.family)}', 
                 '{str(self.description)}', 
@@ -286,9 +299,10 @@ class SkiBoard():
         except Exception as e:
             logging.error(e)
             return None
-        
+    
         results = []
         for r in response:
+            logging.info(f"Extracting skiboard from result: \n{r}")
             # Map DB Result to User Object
             result = SkiBoard(
                 skiboard_id=r[0], 
@@ -297,24 +311,24 @@ class SkiBoard():
                 model=r[3], 
                 year=r[4], 
                 name=r[5],
-                category=r[6],
-                family=r[7],
-                description=r[8],
-                stiffness=r[9],
-                flex_profile=r[10],
-                camber_profile=r[11],
-                camber_details=r[12],
-                core=r[13],
-                laminates=r[14],
-                base=r[15],
-                sidewall=r[16],
-                weight=r[17],
-                youth=r[18]
+                slug=r[6],
+                category=r[7],
+                family=r[8],
+                description=r[9],
+                stiffness=r[10],
+                flex_profile=r[11],
+                camber_profile=r[12],
+                camber_details=r[13],
+                core=r[14],
+                laminates=r[15],
+                base=r[16],
+                sidewall=r[17],
+                weight=r[18],
+                youth=r[19]
             )
-            try:
-                sql = f"SELECT * FROM Sizes WHERE skiboard_id = {result[0]}"
-            except Exception as e:
-                logging.error("Unable to retreive sizes for skiboard")
+
+            logging.info(f"Results: \n{results}")
+            results.append(result.__dict__)
 
         return results
     

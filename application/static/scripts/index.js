@@ -1,7 +1,7 @@
 async function triggerSearch(event){
     if (event.keyCode == 13) {
         var query = document.getElementById("search_bar").value;
-        console.log(query);
+        console.log("Searching for: " + query);
 
         let data = {
             "query": query
@@ -15,7 +15,7 @@ async function triggerSearch(event){
             });
         
             const result = await response.json();
-            console.log("Success:", result);
+            console.log("Results:", result);
 
             let results = result.results;
             if (results.length > 0){

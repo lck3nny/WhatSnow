@@ -5,7 +5,7 @@ from flask.views import MethodView
 # Model Imports
 # --------------------------------------------------
 from application.models.skiboard import SkiBoard
-from application.models.user import User
+from application.models.size import Size
 
 __author__ = 'liamkenny'
 
@@ -17,18 +17,23 @@ item_names = ['asym']
 class ViewHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self, slug):
-        skiboard, collections = SkiBoard.get_item_by_slug(slug)
+        skiboard = SkiBoard.get(slug=slug)
         if not skiboard:
-            logging.error("Could not collect SkiBoard: {}".format(id))
-            flash('We could not find a ski or board with that ID. Please try again.')
-
+            logging.error("Could not collect SkiBoard: {}".format(slug))
+            flash('We could not find the ski or snowboard that you were looking for. Please try again later.')
             return redirect('/')
-        
-        if collections:
-            skiboard['collections'] = collections
+    
+        try:
+            sizes = Size.get(skiboard.id)
+            for x, size in enumerate(sizes):
+                sizes[x] = size.__dict__
+
+            logging.info(f"Sizes for {skiboard.name}:\n{sizes}")
+        except Exception as e:
+            logging.error(f"Could not get sizes for skiboard ({skiboard.name}): \n{e}")
 
         logging.info("Collecting SkiBoard Data:\n{}".format(skiboard))
-        return render_template('views/view.html', page_name='view', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
+        return render_template('views/view.html', page_name='view', skiboard=skiboard.__dict__, sizes=sizes, comparisons=SkiBoard.calc_comparisons())
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # S T A R T   C O M P A R E                      H A N D L E R

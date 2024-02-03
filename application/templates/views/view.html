@@ -8,73 +8,75 @@
             <h3>{{skiboard['year']}}</h3>
             <br><br>
         </div>
-        {% if 'collections' in skiboard %}
+        {% if sizes %}
         <div id="table" class="col-md-6 offset-md-3">
             <table class='table table-dark table-striped'>
                 <tr>
                     <th>Size</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="size {{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['size'] }}</td>
+                    {% for size in sizes %}
+                    <td class="size {{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size.size }}</td>
                     {% endfor %}
                 </tr>
-                {% if 'nose_width' in skiboard['collections'][0] %}
+                {% if 'nose_width' in sizes[0] %}
                 <tr>
                     <th>Nose Width</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['nose_width'] }}</td>
+                    {% for size in sizes %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['nose_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'waist_width' in skiboard['collections'][0] %}
+                {% if 'waist_width' in sizes[0] %}
                 <tr>
                     <th>Waist Width</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['waist_width'] }}</td>
+                    {% for size in sizes %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['waist_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'tail_width' in skiboard['collections'][0] %}
+                {% if 'tail_width' in sizes[0] %}
                 <tr>
                     <th>Tail Width</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['tail_width'] }}</td>
+                    {% for size in sizes %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['tail_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'sidecut' in skiboard['collections'][0] %}
+                {% if 'sidecut' in sizes[0] %}
                 <tr>
                     <th>Sidecut</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['sidecut'] }}</td>
+                    {% for size in sizes %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['sidecut'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'effective_edge' in skiboard['collections'][0] %}
+                {% if 'effective_edge' in sizes[0] %}
                 <tr>
                     <th>Effective Edge</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['effective_edge'] }}</td>
+                    {% for size in sizes %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['effective_edge'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'setback' in skiboard['collections'][0] %}
+                {% if 'setback' in sizes[0] %}
                 <tr>
                     <th>Setback</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['setback'] }}</td>
+                    {% for size in sizes %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['setback'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'stance_width' in skiboard['collections'][0] %}
+                {% if 'stance_width' in sizes[0] %}
                 <tr>
                     <th>Stance Width</th>
-                    {% for collection in skiboard['collections'] %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ collection['stance_width'] }}</td>
+                    {% for size in sizes %}
+                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['stance_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}          
             </table>
         </div>
+        <!--
+
         <div class="col-md-2 offset-md-3">
             <p id="selected-sizes">[ ]</p>
         </div>
@@ -90,6 +92,8 @@
                 </ul>
             </div>
         </div>
+        -->
+        
         {% endif %}
     </div>
     <script src="/static/scripts/view_compare.js"></script>
