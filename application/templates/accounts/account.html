@@ -6,52 +6,9 @@
         <div class="col-md-6 offset-md-3">
             <h1>Hello {{ session.user.fname}}</h1>
             <p>Welcome to your What Snow account</p>
-            <p>Here you can view or update your personal information and access your quiver</p>
-            <div class="row">
-                <div class="col">
-                    <button class="btn btn-dark" id="btn_update_details" onclick="showDetails()">Update Details</button>
-                </div>
-            </div>
         </div>
     </div>
-    <div id="update_details" class="row results main-banner-light" hidden>
-        <div class="col-md-6 offset-md-3">
-            <h1>Update Details</h1>
-            <p>Let's make sure we're on the same page</p>
-            <br>
-            <form id="user_details" action="/update-user-details" method="post">
-                <div class="row">
-                    <div class="col">
-                        <input type="text" id="fname" name="fname" placeholder="First Name" value="{{ session.user.fname }}">
-                    </div>
-                    <div class="col">
-                        <input type="text" id="lname" name="lname" placeholder="Last Name" value="{{ session.user.lname }}">
-                    </div>
-                </div>
-                <input class="btn btn-light" type="submit" value="Update">
-            </form>
-        </div>
-    </div>
-    {% if quiver %}
-    <div id="quiver" class="row results main-banner-light">
-        <div class="col-md-6 offset-md-3">
-            <h1>My Quiver</h1>
-            <p>Here's what you've got listed in your collection</p>
-            <br>
-        </div>
-        {% for skiboard in quiver %}
-        <div id="{{skiboard.id}}-label" class="col-md-2 offset-md-4">
-            <a href="/view/{{skiboard.skiboard}}">{{skiboard.skiboard}}: {{skiboard.size}}</a>
-        </div>
-        <div id="{{skiboard.id}}-button" class="col-md-2 offset-md-0">
-            <button type="button" class="btn btn-sm btn-outline-danger" onclick="removeFromQuiver('{{skiboard.id}}')">Remove</button>
-        </div>
-        <div id="{{skiboard.id}}-filler"class="col-md-3">
-
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
+    
     <script src="/static/scripts/accounts/account.js"></script>
 </div>
 {% endblock %}

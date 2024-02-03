@@ -12,7 +12,7 @@ import json
 # Import Handlers                             Public
 # --------------------------------------------------
 from .handlers.public.home import HomePageHandler, SearchHandler, ComingSoonHandler
-from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler, UpdateUserDetailsHandler, AddToQuiverHandler, RemoveFromQuiverHandler
+from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
 from .handlers.public.add_edit import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler, EditSkiboard
 from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompareHandler, RemoveComparisonHandler, ClearComparisonsHandler
 
@@ -29,24 +29,6 @@ __author__ = 'liamkenny'
 app = Flask(__name__)
 app.secret_key = "3537251460"
 app.permanent_session_lifetime = timedelta(days=7)
-
-
-'''
-# Database Setup
-# --------------------------------------------------
-#db = pymysql.connect("localhost", "username", "password", "database")
-f = open('config/localdb_config.json')
-dbconfig = json.load(f)
-db = pymysql.connect(dbconfig['localhost'], dbconfig['username'], dbconfig['password'], dbconfig['database'])
-f.close()
-
-def someName():
-    cursor = db.cursor()
-    sql = "SELECT * FROM table"
-    cursor.execute(sql)
-    results = cursor.fetchall()
-    return render_template('index.html', results=results)
-'''
 
 #logging.basicConfig(filename='record.log', level=logging.DEBUG)
 
@@ -97,9 +79,6 @@ app.add_url_rule(rule='/login/forgot/', view_func=ForgotPasswordHandler.as_view(
 app.add_url_rule(rule='/logout/', view_func=LogoutHandler.as_view('logout'), methods=['GET'])
 app.add_url_rule(rule='/signup/', view_func=SignupHandler.as_view('signup'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), methods=['GET'])
-app.add_url_rule(rule='/update-user-details/', view_func=UpdateUserDetailsHandler.as_view('update_details'), methods=['POST'])
-app.add_url_rule(rule='/add-to-quiver/', view_func=AddToQuiverHandler.as_view('add_to_quiver'), methods=['POST'])
-app.add_url_rule(rule='/remove-from-quiver/', view_func=RemoveFromQuiverHandler.as_view('remove_from_quiver'), methods=['POST'])
 
 # Add / Edit
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])

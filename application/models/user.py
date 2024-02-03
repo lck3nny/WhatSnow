@@ -106,12 +106,14 @@ class User():
             snowboard=result[5],
             stance=result[6],
             region=result[7],
-            permissions=result[8].split('~'),
+            permissions=result[8],
             photo=result[9],
         )
         
         if user.permissions:
             user.permissions = user.permissions.split('~')
+        else:
+            user.permissions = []
 
         return user
     
