@@ -37,12 +37,25 @@ class User():
         cursor = db.cursor()
 
         try:
-            sql = """REPLACE INTO 'Users' (user_id, fname, lname, email, ski, snowboard, stance, region, permissions, created, updated, photo)
-                values ({}, {}, {}, {}, {}, {}, {}, {}))
-            """.format(self.id, self.fname, self.lname, self.email, 
-                    self.ski, self.snowboard, self.stance, self.region, '~'.join(self.permissions), 
-                    datetime.now(pytz.timezone('Canada/Pacific')), datetime.now(pytz.timezone('Canada/Pacific')),
-                    self.photo)
+            now = datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")
+            permissions = None
+            if self.permissions:
+                permissions = '~'.join(self.permissions)
+            sql = f"""REPLACE INTO Users (user_id, fname, lname, email, ski, snowboard, stance, region, permissions, updated, photo) 
+                    values (
+                        '{str(self.id)}', 
+                        '{str(self.fname)}', 
+                        '{str(self.lname)}', 
+                        '{str(self.email)}', 
+                        {self.ski}, 
+                        {self.snowboard}, 
+                        '{self.stance}', 
+                        '{str(self.region)}', 
+                        '{str(permissions)}', 
+                        '{now}', 
+                        '{str(self.photo)}'
+                    )"""
+            logging.info(f"SQL: {sql}")
             cursor.execute(sql)
             db.commit()
             #self.id = cursor.execute("SELECT last_insert_rowid() FROM songs").fetchone()[0]
