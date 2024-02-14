@@ -205,7 +205,7 @@ class SkiBoard():
                 values(
                 '{str(self.id)}'
                 '{str(self.url)}', 
-                '{str(self.brand)}', 
+                '{str(self.brand)}',  
                 '{str(self.model)}', 
                 '{str(self.year)}',
                 '{str(self.brand)} {str(self.model)} {str(self.year)}',

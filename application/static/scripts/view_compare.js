@@ -34,6 +34,7 @@ async function removeComparison(skiboard, size){
         'skiboard': skiboard,
         'size': size
     }
+    console.log("Removing Skiboard ~" + skiboard + ": " + size)
     try {
         const response = await fetch("/remove-from-compare/", {
           method: "POST",
@@ -104,16 +105,24 @@ async function clearComparisons(){
 }
 
 function toggleSize(id){
+    colorToggleVals = ['white', 'blue'];
     //alert("Selected: " + id);
     var col = [].slice.call(document.getElementsByClassName(id));
     console.log(col)
 
     col.forEach(function(item){
         console.log(item);
-        item.classList.toggle('primary');
+        item.classList.toggle('selected');
+        if (item.classList.contains('selected')){
+            item.style.color = '#658eff';
+            //item.style.color = '#FABF2A';
+        }else{
+            item.style.color = "white";
+        }
+        
     });
 
-    const selectedCols = [].slice.call(document.getElementsByClassName('size primary'));
+    const selectedCols = [].slice.call(document.getElementsByClassName('size selected'));
     var sizes = [];
     selectedCols.forEach(function(col){
         sizes.push(col.innerHTML);

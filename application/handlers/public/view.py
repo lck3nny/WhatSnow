@@ -48,12 +48,14 @@ class StartCompareHandler(MethodView):
         comparisons = session['compare']
         logging.info("Getting comparisons from session: {}".format(comparisons))
         suffix = ''
-        for comparison in comparisons.keys():
-            skiboard, sizes = SkiBoard.get_item_by_id(comparison)
+        for skiboard_id in comparisons.keys():
+            skiboard = SkiBoard.get(id=skiboard_id)
+            logging.info(f"Found SkiBoard:\n{skiboard.__dict__}")
+            sizes = Size.get(skiboard_id=skiboard_id)
 
-            suffix += skiboard['slug']
+            suffix += skiboard.slug
             suffix += '['
-            for size in session['compare'][comparison]:
+            for size in session['compare'][skiboard_id]:
                 suffix += size + ','
             suffix = suffix[:-1]
             suffix += ']'
@@ -80,33 +82,44 @@ class AddToCompareHandler(MethodView):
             'request': r
         }
 
-        # Collect skiboard data
-        skiboard_id = r['skiboard']
-        sizes_to_add = r['sizes']
-        skiboard, sizes = SkiBoard.get_item_by_id(skiboard_id)
-        logging.info("Found skiboard: {}\n\n with sizes: {}".format(skiboard, sizes))
+        try:
+            logging.info(f"Adding skiboard sizes to comparisons:\n{r}")
+            # Collect skiboard data
+            skiboard_id = r['skiboard']
+            sizes_to_add = r['sizes']
 
-        # Return if no matching firestore data
-        if not skiboard or not sizes:
-            resp['success'] = False
-            resp['msg'] = "Could not find sizes in firestore"
-            return resp
+            skiboard = SkiBoard.get(id=skiboard_id)
+            sizes = Size.get(skiboard_id=skiboard_id)
+            logging.info("Found skiboard: {}\n\n with sizes: {}".format(skiboard, sizes))
+        except Exception as e:
+            logging.error(f"ERROR: {e}")
         
-        # Compare requested sizes to those found in firestore
-        for i, s in enumerate(sizes_to_add):
-            found = False
-            for size in sizes:
-                if size['size'] == s:
-                    found = True
-                    break
-            if not found:
-                sizes_to_add.pop(i)
+        try:
+            # Return if no matching firestore data
+            if not skiboard or not sizes:
+                resp['success'] = False
+                resp['msg'] = "Could not find sizes in firestore"
+                logging.error("Could not find sizes for skiboard")
+                return resp
+            
+            # Compare requested sizes to those found in firestore
+            for i, s in enumerate(sizes_to_add):
+                found = False
+                for size in sizes:
+                    if size['size'] == s:
+                        found = True
+                        break
+                if not found:
+                    sizes_to_add.pop(i)
+        except Exception as e:
+            logging.error(f"ERROR: {e}")
             
 
         # Return if no matching sizes
         if not sizes_to_add:
             resp['success'] = False
             resp['msg'] = "No sizes to add"
+            logging.error("No sizes to add")
             return resp
         
         try:
@@ -135,36 +148,18 @@ class AddToCompareHandler(MethodView):
 class RemoveComparisonHandler(MethodView):
     # -------------------------------------- P O S T
     def post(self):
-
+        
         r = request.get_json()
         resp = {
             'success': True,
             'msg': 'madeit',
             'request': r
         }
-
         # Collect skiboard data
         skiboard_id = r['skiboard']
         size_to_remove = r['size']
-        skiboard, sizes = SkiBoard.get_item_by_id(skiboard_id)
-        logging.info("Found skiboard: {}\n\n with sizes: {}".format(skiboard, sizes))
 
-        # Return if no matching firestore data
-        if not skiboard or not sizes:
-            resp['success'] = False
-            resp['msg'] = "Could not find sizes in firestore"
-            return resp
-        
-        found = False
-        for size in sizes:
-            if size['size'] == size_to_remove:
-                found = True
-                break
-
-        if not found:
-            resp['success'] = False
-            resp['msg'] = "Requested size not found in firestore"
-            return resp
+        logging.info(f"Removing SkiBoard from comparisons list: {skiboard_id}: {size_to_remove}")
         
         try:
             if not 'compare' in session:
@@ -227,16 +222,19 @@ class CompareHandler(MethodView):
             sizes = sizes.split(',')
             logging.info("Slug: {}".format(slug))
             logging.info("Sizes: {}".format(sizes))
-            skiboard, collections = SkiBoard.get_item_by_slug(slug)
+            skiboard = SkiBoard.get(slug=slug)
+            all_sizes = Size.get(skiboard_id=skiboard.id)
+            #skiboard, collections = SkiBoard.get_item_by_slug(slug)
 
             if not skiboard:
                 continue
             else:
-                if collections:
-                    skiboard['collections'] = []
-                    for collection in collections:
-                        if 'size' in collection.keys() and collection['size'] in sizes:
-                            skiboard['collections'].append(collection)
+                logging.info(f"Filtering sizes by: {sizes}")
+                skiboard.sizes = []
+                for s in all_sizes:
+                    if s.size in sizes:
+                        logging.info(f"Adding size to skibaord ({skiboard.name})\n{s.__dict__}")
+                        skiboard.sizes.append(s.__dict__)
 
                 skiboards.append(skiboard)
 

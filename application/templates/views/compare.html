@@ -6,19 +6,19 @@
         <div class="col-md-6 offset-md-3">
             <h1>Compare</h1>
             <h3>Let's get into the numbers</h3>
-            <br><br>
         </div>
         {% if not skiboards %}
         <div class="col-md-6 offset-md-3">
             <p>Looks like you haven't selected any skis or snowboards to compare yet. Use our search to find something you're interested in and add it to your comparison list to see it here!</p>
         </div>
         {% else %}
+        <br><br>
         <div class="col-md-6 offset-md-3">
             <table class='table table-dark table-striped'>
                 <tr>
                     <th>Name</th>
                     {% for skiboard in skiboards %}
-                    {% for size in skiboard['collections'] %}
+                    {% for size in skiboard.sizes %}
                     <td><a class="dropdown-item" href="../../view/{{skiboard.slug}}">{{ skiboard['name'] }}</a></td>
                     {% endfor %}
                     {% endfor %}
@@ -26,77 +26,77 @@
                 <tr>
                     <th>Size</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['size'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.size }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% if 'nose_width' in skiboards[0]['collections'][0] %}
+                {% if 'nose_width' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Nose Width</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['nose_width'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.nose_width }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'waist_width' in skiboards[0]['collections'][0] %}
+                {% if 'waist_width' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Waist Width</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['waist_width'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.waist_width }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'tail_width' in skiboards[0]['collections'][0] %}
+                {% if 'tail_width' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Tail Width</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['tail_width'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.tail_width }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'sidecut' in skiboards[0]['collections'][0] %}
+                {% if 'sidecut' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Sidecut</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['sidecut'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.sidecut }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'effective_edge' in skiboards[0]['collections'][0] %}
+                {% if 'effective_edge' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Effective Edge</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['effective_edge'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.effective_edge }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'setback' in skiboards[0]['collections'][0] %}
+                {% if 'setback' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Setback</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['setback'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.setback }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
                 {% endif %}
-                {% if 'stance_width' in skiboards[0]['collections'][0] %}
+                {% if 'stance_width' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Stance Width</th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td>{{ collection['stance_width'] }}</td>
+                    {% for size in skiboard.sizes %}
+                    <td>{{ size.stance_width }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
@@ -104,8 +104,8 @@
                 <tr>
                     <th></th>
                     {% for skiboard in skiboards %}
-                    {% for collection in skiboard['collections'] %}
-                    <td><button type="button" class="btn btn-outline-danger" onclick="removeComparison('{{skiboard.id}}', '{{collection.size}}')">Remove</button></td>
+                    {% for size in skiboard.sizes %}
+                    <td><button type="button" class="btn btn-outline-danger" onclick="removeComparison('{{skiboard.id}}', '{{size.size}}')">Remove</button></td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
