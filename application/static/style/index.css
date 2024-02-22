@@ -6,7 +6,11 @@
     --mid: rgb(70, 70, 70);
     --light: rgb(233, 233, 233);
     --v-light: rgb(245, 245, 245);
-    --trans: rgba(255, 255, 255, 0)
+    --trans: rgba(255, 255, 255, 0);
+    --primary: rgba(42, 98, 250, 1);
+    --primary-light: rgb(101, 142, 255);
+    --secondary: rgba(250, 191, 42, 1);
+    --secondary-light: rgb(254, 210, 98);
 }
 
 html{

@@ -49,7 +49,7 @@ class Size():
                 tail_width=r[4],
                 sidecut=r[5],
                 setback=r[6],
-                effective_edge=r[7]
+                effective_edge=r[9]
             )
             sizes.append(size)
 
