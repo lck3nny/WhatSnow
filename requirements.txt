@@ -1,0 +1,8 @@
+elasticsearch==7.10.0
+firebase_admin==6.1.0
+Flask==3.0.2
+protobuf==4.25.2
+PyMySQL==1.1.0
+Pyrebase4==4.6.0
+pytz==2022.7
+mysqlclient
