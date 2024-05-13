@@ -3,12 +3,125 @@
 {% block top_content %}
 <div class="container">
     <div class="row banner">
+
+        <!-- SkiBoard Title -->
         <div id="title" class="col-md-6 offset-md-3">
             <h1>{{skiboard['brand']}} {{skiboard['model']}}</h1>
             <h3>{{skiboard['year']}}</h3>
-            <br><br>
+            <br>
         </div>
-        {% if sizes %}
+
+        <!-- SkiBoard Description -->
+        {% if skiboard['description'] %}
+        <div class="col-md-8 offset-md-2">
+            <p>{{skiboard['description']}}</p>
+        </div>
+        {% endif %}
+
+        <!-- SkiBoard Stiffness -->
+        {% if skiboard['stiffness'] %}
+        <div class="slidecontainer col-md-6 offset-md-3">
+            <label for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
+            <br>
+            <input disabled name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" class="slider" id="stiffnessSlider">
+        </div>
+        {% endif %}
+
+        <!-- SkiBoard Shape / Camber Profile -->
+        {% if skiboard['shape'] or skiboard['camber_profile'] %}
+        <div class="col-md-6 offset-md-3">
+            {% if skiboard['shape'] %}
+            <label for="shape">Shape:</label>
+            <input disabled name="shape" value="{{ skiboard['shape']}}">
+            {% endif %}
+            
+            {% if skiboard['camber_profile'] %}
+            <label for="camberprofile">Camber Profile:</label>
+            {% if skiboard['camber_details'] %}
+            <input disabled name="camberprofile" value="{{ skiboard['camber_profile']}} [ {{ skiboard['camber_details'] }} ]">
+            {% else %}
+            <input disabled name="camberprofile" value="{{ skiboard['camber_profile']}}">
+            {% endif %}
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <!-- SkiBoard Core / Core Profiling -->
+        {% if skiboard['core'] or skiboard['core_profiling'] %}
+        <div class="col-md-6 offset-md-3">
+            {% if skiboard['core'] %}
+            <label for="core">Core:</label>
+            <input disabled name="core" value="{{ skiboard['core']}}">
+            {% endif %}
+            
+            {% if skiboard['core_profiling'] %}
+            <label for="coreprofiling">Core Profiling:</label>
+            <input disabled name="coreprofiling" value="{{ skiboard['core_profiling']}}">
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <!-- SkiBoard Edges / Edge Tech -->
+        {% if skiboard['edges'] or skiboard['edge_tech'] %}
+        <div class="col-md-6 offset-md-3">
+            {% if skiboard['edges'] %}
+            <label for="edges">Edges:</label>
+            <input disabled name="edges" value="{{ skiboard['edges']}}">
+            {% endif %}
+            
+            {% if skiboard['edge_tech'] %}
+            <label for="edgetech">Edge Tech:</label>
+            <input disabled name="edgetech" value="{{ skiboard['edge_tech']}}">
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <!-- SkiBoard Laminates / Fibreglass / Resin -->
+        {% if skiboard['laminates'] or skiboard['fibreglass'] or skiboard['resin'] %}
+        <div class="col-md-6 offset-md-3">
+            {% if skiboard['fibreglass'] %}
+            <label for="fibreglass">Fibreglass:</label>
+            <input disabled name="fibreglass" value="{{ skiboard['fibreglass']}}">
+            {% endif %}
+            
+            {% if skiboard['laminates'] %}
+            <label for="laminates">Laminates:</label>
+            <input disabled name="laminates" value="{{ skiboard['laminates']}}">
+            {% endif %}
+
+            {% if skiboard['resin'] %}
+            <label for="resin">Resin:</label>
+            <input disabled name="resin" value="{{ skiboard['resin']}}">
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <!-- SkiBoard Base / Topsheet / Sidewall -->
+        {% if skiboard['base'] or skiboard['topsheet'] or skiboard['sidewall'] %}
+        <div class="col-md-6 offset-md-3">
+            {% if skiboard['base'] %}
+            <label for="base">Base:</label>
+            <input disabled name="base" value="{{ skiboard['base']}}">
+            {% endif %}
+            
+            {% if skiboard['topsheet'] %}
+            <label for="topsheet">Topsheet:</label>
+            <input disabled name="topsheet" value="{{ skiboard['topsheet']}}">
+            {% endif %}
+
+            {% if skiboard['sidewall'] %}
+            <label for="sidewall">Sidewall:</label>
+            <input disabled name="sidewall" value="{{ skiboard['sidewall']}}">
+            {% endif %}
+        </div>
+        {% endif %}
+        
+    </div>
+    
+    <!-- SkiBoard Data Table -->
+    {% if sizes %}
+    <div class="row datatable">
+        <br><p></p><br><p></p><br>
         <div id="table" class="col-md-6 offset-md-3">
             <table class='table table-dark table-striped'>
                 <tr>

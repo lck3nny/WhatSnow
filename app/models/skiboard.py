@@ -83,7 +83,7 @@ class SkiBoard():
 
 
     # If a SkiBoard has an ID of 0 it has not been saved in the database
-    def __init__(self, skiboard_id, brand, model, year, name, slug, category, family=None, description=None, stiffness=None, shape=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, core_profiling=None, fibreglass=None, laminates=[], resin=None, base=None, edge_tech=None, topsheet=None, sidewall=None, inserts=None, asym=False, weight=0, womens=False, youth=False, url=None):
+    def __init__(self, skiboard_id, brand, model, year, name, slug, category, family=None, description=None, stiffness=None, shape=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, core_profiling=None, fibreglass=None, laminates=[], resin=None, base=None, edges=None, edge_tech=None, topsheet=None, sidewall=None, inserts=None, asym=False, weight=0, womens=False, youth=False, url=None):
         self.id = skiboard_id
         self.brand = brand
         self.model = model
@@ -104,6 +104,7 @@ class SkiBoard():
         self.laminates = laminates
         self.resin = resin
         self.base = base
+        self.edges = edges
         self.edge_tech = edge_tech
         self.topsheet = topsheet
         self.sidewall = sidewall
@@ -191,23 +192,25 @@ class SkiBoard():
             family=result[8],
             description=result[9],
             stiffness=result[10],
-            flex_profile=result[11],
-            camber_profile=result[12],
-            camber_details=result[13],
-            core=result[14],
-            core_profiling=result[15],
-            fibreglass=result[16],
-            laminates=result[17],
-            resin=result[18],
-            base=result[19],
-            edge_tech=result[20],
-            topsheet=result[21],
-            sidewall=result[22],
-            inserts=result[23],
-            asym=result[24],
-            weight=result[25],
-            womens=result[26],
-            youth=result[27]
+            shape=result[11],
+            flex_profile=result[12],
+            camber_profile=result[13],
+            camber_details=result[14],
+            core=result[15],
+            core_profiling=result[16],
+            fibreglass=result[17],
+            laminates=result[18],
+            resin=result[19],
+            base=result[20],
+            edges=result[21],
+            edge_tech=result[22],
+            topsheet=result[23],
+            sidewall=result[24],
+            inserts=result[25],
+            asym=result[26],
+            weight=result[27],
+            womens=result[28],
+            youth=result[29]
         )
         
         return skiboard
