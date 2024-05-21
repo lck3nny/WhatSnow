@@ -17,6 +17,13 @@ item_names = ['asym']
 class ViewHandler(MethodView):
     # ---------------------------------------- G E T
     def get(self, slug):
+
+        user=None
+        if 'user' in session:
+            user = session['user']
+            logging.info(f"User: {user}")
+            logging.info(f"User permissions: {user['permissions']}")
+        
         skiboard = SkiBoard.get(slug=slug)
         if not skiboard:
             logging.error("Could not collect SkiBoard: {}".format(slug))
@@ -33,7 +40,7 @@ class ViewHandler(MethodView):
             logging.error(f"Could not get sizes for skiboard ({skiboard.name}): \n{e}")
 
         logging.info("Collecting SkiBoard Data:\n{}".format(skiboard))
-        return render_template('views/view.html', page_name='view', skiboard=skiboard.__dict__, sizes=sizes, comparisons=SkiBoard.calc_comparisons())
+        return render_template('views/view.html', user=user, page_name='view', skiboard=skiboard.__dict__, sizes=sizes, comparisons=SkiBoard.calc_comparisons(), )
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # S T A R T   C O M P A R E                      H A N D L E R

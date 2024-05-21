@@ -198,7 +198,7 @@
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Add
                 </a>
-                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                <ul class="dropdown-menu dropdown-menu-light dropdown-menu-end">
                     <li><input class="btn btn-dark" type="button" id="add-to-compare" value="Add to Comparisons" onclick="addToCompare('{{ skiboard.id }}')"></li>
                     <!--<li><input class="btn btn-dark" type="button" id="add-to-quiver" value="Add to Quiver" onclick="addToQuiver('{{ skiboard.id }}')"></li>-->
                     <!--<li><a href="/edit/{{skiboard.slug}}/"><input class="btn btn-dark" type="button" id="edit-skiboard" value="Edit Details"></a></li>-->
@@ -206,9 +206,14 @@
             </div>
         </div>
         
-        
+        {% if 'admin' in user['permissions'] %}
+        <div>
+            <a role="button" href="/edit/{{skiboard.slug}}/">Edit</a>
+        </div>
+        <br>
         {% endif %}
     </div>
+    {% endif %}
     <script src="/static/scripts/view_compare.js"></script>
 </div>
 {% endblock %}

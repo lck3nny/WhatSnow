@@ -2,21 +2,166 @@
 {% block title %}{{skiboard['brand']}} {{skiboard['model']}}{% endblock %}
 {% block top_content %}
 <div class="container">
-    <div class="row banner">
-        <div id="title" class="col-md-6 offset-md-3">
-            <h1>Edit {{skiboard['category']}}</h1>
-            <h3>{{skiboard['brand']}} {{skiboard['model']}} - {{skiboard['year']}}</h3>
-            <br><br>
+    <form id="edit-form" name="editForm" action="#" method="post" onsubmit="return validateNewImport('skiForm');">
+        <div class="row banner">
+
+            <!-- SkiBoard Title -->
+            <div id="title" class="col-md-6 offset-md-3">
+                <h1>{{skiboard['brand']}} {{skiboard['model']}}</h1>
+                <h3>{{skiboard['year']}}</h3>
+                <br>
+            </div>
+
+            <!-- SkiBoard Description -->
+            <div class="col-md-8 offset-md-2">
+                <textarea placeholder="Enter a description here..." name="description" cols="40" rows="5">{{skiboard['description']}}</textarea>
+            </div>
+            
+
+            <!-- SkiBoard Stiffness -->
+            <div class="slidecontainer col-md-6 offset-md-3">
+                <label for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
+                <br>
+                <input placeholder="5" name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" class="slider" id="stiffnessSlider">
+            </div>
+
+            <!-- SkiBoard Shape / Camber Profile -->
+            <div class="col-md-6 offset-md-3">
+                <label for="shape">Shape:</label>
+                <input placeholder="Directional" name="shape" value="{{ skiboard['shape']}}">
+                
+                <label for="camberprofile">Camber Profile:</label>
+                <input placeholder="Full Camber" name="camberprofile" value="{{ skiboard['camber_profile']}}">
+
+                <label for="camberdetails">Camber Details:</label>
+                <input placeholder="PurePop Camber" name="camberdetails" value="{{ skiboard['camber_details'] }}">
+
+                <label for="flexprofile">Flex Profile:</label>
+                <input placeholder="Twin Flex" name="flexprofile" value="{{ skiboard['flex_profile'] }}">
+            </div>
+
+            <!-- SkiBoard Core / Core Profiling -->
+            <div class="col-md-6 offset-md-3">
+                <label for="core">Core:</label>
+                <input placeholder="Poplar" name="core" value="{{ skiboard['core']}}">
+                
+                <label for="coreprofiling">Core Profiling:</label>
+                <input placeholder="Squeezebox" name="coreprofiling" value="{{ skiboard['core_profiling']}}">
+            </div>
+
+            <!-- SkiBoard Edges / Edge Tech -->
+            <div class="col-md-6 offset-md-3">
+                <label for="edges">Edges:</label>
+                <input placeholder="Steel" name="edges" value="{{ skiboard['edges']}}">
+                
+                <label for="edgetech">Edge Tech:</label>
+                <input placeholder="Magne Traction" name="edgetech" value="{{ skiboard['edge_tech']}}">
+            </div>
+
+            <!-- SkiBoard Laminates / Fibreglass / Resin -->
+            <div class="col-md-6 offset-md-3">
+                <label for="fibreglass">Fibreglass:</label>
+                <input placeholder="Biax / Triax" name="fibreglass" value="{{ skiboard['fibreglass']}}">
+                
+                <label for="laminates">Laminates:</label>
+                <input placeholder="Carbon" name="laminates" value="{{ skiboard['laminates']}}">
+
+                <label for="resin">Resin:</label>
+                <input placeholder="SuperSap Epoxy" name="resin" value="{{ skiboard['resin']}}">
+            </div>
+
+            <!-- SkiBoard Base / Topsheet / Sidewall -->
+            <div class="col-md-6 offset-md-3">
+                <label for="base">Base:</label>
+                <input placeholder="Sintered" name="base" value="{{ skiboard['base']}}">
+                
+                <label for="topsheet">Topsheet:</label>
+                <input placeholder="Real Wood Vaneer" name="topsheet" value="{{ skiboard['topsheet']}}">
+
+                <label for="sidewall">Sidewall:</label>
+                <input placeholder="ABS Sidewall" name="sidewall" value="{{ skiboard['sidewall']}}">
+            </div>
+            
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2 offset-md-3">
-            <p>IMAGE</p>
+        
+        <!-- SkiBoard Data Table -->
+        {% if sizes %}
+        <div class="row datatable">
+            <br><p></p><br><p></p><br>
+            <div id="table" class="col-md-6 offset-md-3">
+                <table class='table table-dark table-striped'>
+                    <tr>
+                        <th>Size</th>
+                        {% for size in sizes %}
+                        <td name="size_{{loop.index}}" contenteditable='true' class="size {{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size.size }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Nose Width</th>
+                        {% for size in sizes %}
+                        <td name="nose_width_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['nose_width'] }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Waist Width</th>
+                        {% for size in sizes %}
+                        <td name="waist_width_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['waist_width'] }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Tail Width</th>
+                        {% for size in sizes %}
+                        <td name="tail_width_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['tail_width'] }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Sidecut</th>
+                        {% for size in sizes %}
+                        <td name="sidecut_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['sidecut'] }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Effective Edge</th>
+                        {% for size in sizes %}
+                        <td name="effective_edge_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['effective_edge'] }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Setback</th>
+                        {% for size in sizes %}
+                        <td name="setback_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['setback'] }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Factory Mounting Point</th>
+                        {% for size in sizes %}
+                        <td name="factory_mounting_point_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['factory_mounting_point'] }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <th>Freestyle Mounting Point</th>
+                        {% for size in sizes %}
+                        <td name="freestyle_mounting_point_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['freestyle_mounting_point'] }}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+            </div>
+            
+            
         </div>
-        <div class="col-md-3 offset-md-1" id="details">
-            <h4>DETAILS</h4>
+        {% else %}
+        <div class="row datatable">
+            <div id="table" class="col-md-6 offset-md-3">
+                <textarea name="raw-data" placeholder="Please enter a data table for this Ski / Snowboard" cols="100" rows="20"></textarea>
+            </div>
+            <br>
         </div>
-    </div>
-    
+        <br>
+        <div id="save">
+            <input class="btn btn-light" type="submit" value="Save">
+        </div>
+    </form>
+    {% endif %}
+    <script src="/static/scripts/add_edit.js"></script>
 </div>
 {% endblock %}

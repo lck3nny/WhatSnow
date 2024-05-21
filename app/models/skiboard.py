@@ -223,67 +223,91 @@ class SkiBoard():
         db = setupdb()
         cursor = db.cursor()
 
-        try:
-            if self.id:
-                print("Updating SkiBoard...")
-                sql = f"""REPLACE INTO SkiBoards (skiboard_id, url, brand, model, year, name, slug, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, updated) 
-                values(
-                '{str(self.id)}'
-                '{str(self.url)}', 
-                '{str(self.brand)}',  
-                '{str(self.model)}', 
-                '{str(self.year)}',
-                '{str(self.brand)} {str(self.model)} {str(self.year)}',
-                '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
-                '{str(self.category)}', 
-                '{str(self.family)}', 
-                '{str(self.description)}', 
-                {float(self.stiffness)}, 
-                '{str(self.flex_profile)}', 
-                '{str(self.camber_profile)}', 
-                '{'~'.join(str(i) for i in self.camber_details)}', 
-                '{str(self.core)}', 
-                '{'~'.join(str(i) for i in self.laminates)}', 
-                '{str(self.base)}', 
-                '{str(self.sidewall)}', 
-                {float(self.weight)}, 
-                {bool(self.youth)}, 
-                '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}' )"""
-                
-            else:
-                print("Creating SkiBoard...")
-                sql = f"""INSERT INTO SkiBoards (url, brand, model, year, name, slug, category, family, description, stiffness, flex_profile, camber_profile, camber_details, core, laminates, base, sidewall, weight, youth, created, updated) 
-                values(
-                '{str(self.url)}', 
-                '{str(self.brand)}', 
-                '{str(self.model)}', 
-                '{str(self.year)}', 
-                '{str(self.brand)} {str(self.model)} {str(self.year)}',
-                '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
-                '{str(self.category)}', 
-                '{str(self.family)}', 
-                '{str(self.description)}', 
-                {float(self.stiffness)}, 
-                '{str(self.flex_profile)}', 
-                '{str(self.camber_profile)}', 
-                '{'~'.join(str(i) for i in self.camber_details)}', 
-                '{str(self.core)}', 
-                '{'~'.join(str(i) for i in self.laminates)}', 
-                '{str(self.base)}', 
-                '{str(self.sidewall)}', 
-                {float(self.weight)}, 
-                {int(bool(self.youth))}, 
-                '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}',
-                '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}')"""
-                
+        if not self.stiffness:
+            self.stiffness = 0
+
+        if not self.weight:
+            self.weight = 0
+
+        if self.id:
+            logging.info("Updating existing skiboard")
+            sql = f"""REPLACE INTO SkiBoards (skiboard_id, url, brand, model, year, name, slug, category, family, description, stiffness, shape, flex_profile, camber_profile, camber_details, core, core_profiling, fibreglass, laminates, resin, base, edges, edge_tech, topsheet, sidewall, inserts, asym, weight, womens, youth, updated) 
+            values(
+            '{str(self.id)}',
+            '{str(self.url)}', 
+            '{str(self.brand)}',  
+            '{str(self.model)}', 
+            '{str(self.year)}',
+            '{str(self.brand)} {str(self.model)} {str(self.year)}',
+            '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
+            '{str(self.category)}', 
+            '{str(self.family)}', 
+            '{str(self.description)}', 
+            {float(self.stiffness)}, 
+            '{str(self.shape)}', 
+            '{str(self.flex_profile)}', 
+            '{str(self.camber_profile)}',  
+            '{str(self.camber_details)}', 
+            '{str(self.core)}', 
+            '{str(self.core_profiling)}', 
+            '{str(self.fibreglass)}', 
+            '{str(self.laminates)}', 
+            '{str(self.resin)}', 
+            '{str(self.base)}', 
+            '{str(self.edges)}', 
+            '{str(self.edge_tech)}', 
+            '{str(self.topsheet)}', 
+            '{str(self.sidewall)}', 
+            '{str(self.inserts)}', 
+            {bool(self.asym)}, 
+            {float(self.weight)}, 
+            {bool(self.womens)}, 
+            {bool(self.youth)}, 
+            '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}' )"""
             
-            print(f"About to execute SQL: {sql}")
+        else:
+            logging.info("Creating new skiboard")
+            sql = f"""INSERT INTO SkiBoards (skiboard_id, url, brand, model, year, name, slug, category, family, description, stiffness, shape, flex_profile, camber_profile, camber_details, core, core_profiling, fibreglass, laminates, resin, base, edges, edge_tech, topsheet, sidewall, inserts, asym, weight, womens, youth, updated) 
+            values(
+            '{str(self.id)}'
+            '{str(self.url)}', 
+            '{str(self.brand)}',  
+            '{str(self.model)}', 
+            '{str(self.year)}',
+            '{str(self.brand)} {str(self.model)} {str(self.year)}',
+            '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
+            '{str(self.category)}', 
+            '{str(self.family)}', 
+            '{str(self.description)}', 
+            {float(self.stiffness)}, 
+            '{str(self.shape)}', 
+            '{str(self.flex_profile)}', 
+            '{str(self.camber_profile)}',  
+            '{str(self.camber_details)}', 
+            '{str(self.core)}', 
+            '{str(self.core_profiling)}', 
+            '{str(self.fibreglass)}', 
+            '{str(self.laminates)}', 
+            '{str(self.resin)}', 
+            '{str(self.base)}', 
+            '{str(self.edges)}', 
+            '{str(self.edge_tech)}', 
+            '{str(self.topsheet)}', 
+            '{str(self.sidewall)}', 
+            '{str(self.inserts)}', 
+            {bool(self.asym)}, 
+            {float(self.weight)}, 
+            {bool(self.womens)}, 
+            {bool(self.youth)}, 
+            '{datetime.now(pytz.timezone('Canada/Pacific')).strftime("%Y/%m/%d %H:%M:%S")}' )"""
+
+        
+        try:
+            logging.info(f"About to execute SQL: {sql}")
             cursor.execute(sql)
             db.commit()
-             
         except Exception as e:
-            logging.error("Could not create new SkiBoard:\n{}".format(e))
-            print("Could not create new SkiBoard: {}".format(e))
+            logging.error("Could not save SkiBoard:\n{}".format(e))
             return False
 
         logging.info("Saved SkiBoard:\nBrand: {}\nModel: {} Year: ({})".format(self.brand, self.model, self.year))

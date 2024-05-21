@@ -91,7 +91,7 @@ class ImportDetailsHandler(MethodView):
                 logging.info("User not admin. Redirecting. {}".format(session['user']))
                 return redirect('/comingsoon')
 
-        skiboard, collections = SkiBoard.get_item_by_slug(slug)
+        skiboard = SkiBoard.get(slug=slug)
         if not skiboard:
             flash('There was a problem with your connection. Please restart the import process.')
             return redirect('/import')
@@ -216,19 +216,70 @@ class ImportCompleteHandler(MethodView):
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# I M P O R T   C O M P L E T E                  H A N D L E R
+# E D I T    S K I B O A R D                     H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class EditSkiboard(MethodView):
     # ---------------------------------------- G E T
     def get(r, slug):
         logging.info("EDIT SKIBOARD: {}".format(str(slug)))
 
-        skiboard , collections= SkiBoard.get_item_by_slug(slug)
+        skiboard = SkiBoard.get(slug=slug)
         if not skiboard:
             flash('There was a problem with your request. Please try again later!')
             return redirect('/view/slug/')
-
-        if collections:
-            skiboard['collections'] = collections
                 
         return render_template('add-edit/edit_skiboard.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
+    
+    def post(r, slug):
+        logging.info(f"Submitting new edit for skiboard {slug}")
+
+        skiboard = SkiBoard.get(slug=slug)
+        if not skiboard:
+            flash('There was a problem with your request. Please try again later!')
+            return redirect('/view/slug/')
+        
+
+        #raw_input = request.form['raw-data']
+        update_params = {
+            'description': request.form.get('description'),
+            'family': request.form.get('family'),
+            'stiffness': request.form.get('stiffness'),
+            'shape': request.form.get('shape'),
+            'flex_profile': request.form.get('flex_profile'),
+            'camber_profile': request.form.get('camberprofile'),
+            'camber_details': request.form.get('camberdetails'),
+            'core': request.form.get('core'),
+            'core_profiling': request.form.get('coreprofiling'),
+            'fibreglass': request.form.get('fibreglass'),
+            'laminates': request.form.get('laminates'),
+            'resin': request.form.get('resin'),
+            'base': request.form.get('base'),
+            'edges': request.form.get('edges'),
+            'edge_tech': request.form.get('edge_tech'),            
+            'topsheet': request.form.get('topsheet'),
+            'sidewall': request.form.get('sidewall'),
+            'inserts': request.form.get('inserts'),
+            'asym': request.form.get('asym'),
+            'weight': request.form.get('weight'),
+            'womens': request.form.get('womens'),
+            'youth': request.form.get('youth')
+        }
+
+        logging.info("Updating params one at a time")
+        for p in update_params:
+            try:
+                setattr(skiboard, p, update_params[p])
+            except Exception as e:
+                logging.error(f"Untable to update {p} in SkiBoard: {slug}... {e}")
+
+        logging.info("Saving new params to skiboard")
+        try:
+            skiboard.save()
+        except Exception as e:
+            logging.error(f"Could not save SkiBoard: {slug}... {e}")
+            flash('There was a problem with your request. Please try again later!')
+            return redirect('/view/slug/')
+        
+        flash('Ski / Snowboard successfully updated.')
+        return redirect(f'/view/{slug}/')
+

@@ -107,7 +107,7 @@ app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import
 app.add_url_rule(rule='/import/<slug>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<slug>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
 app.add_url_rule(rule='/import/<slug>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
-app.add_url_rule(rule='/edit/<slug>/', view_func=EditSkiboard.as_view('edit-skiboard'), methods=['GET'])
+app.add_url_rule(rule='/edit/<slug>/', view_func=EditSkiboard.as_view('edit-skiboard'), methods=['GET', 'POST'])
 
 # View / Compare
 app.add_url_rule(rule='/learn/', view_func=LearningHandler.as_view('learning'), methods=['GET'])
