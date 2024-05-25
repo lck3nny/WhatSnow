@@ -1,0 +1,97 @@
+{% extends "core/base.html" %}
+{% block title %}Advanced Search{% endblock %}
+{% block top_content %}
+<div class="container">
+    
+    <div class="row banner">
+
+        <!-- Title -->
+        <div id="title" class="col-md-6 offset-md-3">
+            <h1>Advanced Search</h1>
+            <p>Filter using technical stats for a more specific search.</p>
+            <br>
+        </div>
+
+        <!-- Search Params -->
+        <div class="col-md-3 offset-md-2">
+            <form id="edit-form" name="editForm" action="#" method="post" onsubmit="return validateASearch('searchParams');"></form>
+                <!-- Attributes -->
+                <label for="year">Year:</label>
+                <input placeholder="2020" name="year">
+                <br>
+                <label for="category">Category:</label>
+                <input placeholder="Snowboard" name="categroy">
+                <br>
+                <label for="stiffness">Stiffness:</label>
+                <input placeholder="5-7" name="stiffness">
+                <br>
+                <label for="shape">Shape:</label>
+                <input placeholder="Directional" name="shape">
+                <br>
+                <label for="camber_profile">Camber Profile:</label>
+                <input placeholder="Directional Camber" name="camber_profile">
+                <br>
+                <!-- Measurements -->
+                <label for="length">Length:</label>
+                <input placeholder="160" name="length">
+                <br>
+                <label for="nose_width">Nose Width:</label>
+                <input placeholder="300" name="nose_width">
+                <br>
+                <label for="waist_width">Waist Width:</label>
+                <input placeholder="255" name="waist_width">
+                <br>
+                <label for="tail_width">Tail Width:</label>
+                <input placeholder="300" name="tail_width">
+                <br>
+                <label for="effective_edge">Effective Edge:</label>
+                <input placeholder="1110" name="effective_edge">
+                
+                <div id="search">
+                    <br>
+                    <input class="btn btn-light" type="submit" value="Search">
+                </div>
+            </form>
+        </div>
+
+        <!-- Search Tutorial -->
+        <div class="col-md-4 offset-md-1">
+            <p>Here is how to use the Advanced Search. It might seem a little confusing at first but I'm sure you'll get the hang of it!</p>
+        </div>
+        
+    </div>
+    <!-- Search Results -->
+    <div id="div-results" class="row results" hidden>
+        <div class="col-md-6 offset-md-3">
+            <h1>Advanced Search Results</h1>
+            <p>Here's what we found</p>
+            <br>
+            <table id="tbl-results" class="table table-dark table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                    <tr>
+                        <td>Burton</td>
+                        <td>Custom</td>
+                        <td>2020</td>
+                        <td>156</td>
+                    </tr>
+                    <tr>
+                        <td>Jones</td>
+                        <td>Flagship</td>
+                        <td>2022</td>
+                        <td>160</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

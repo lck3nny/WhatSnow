@@ -12,6 +12,7 @@ from app.core import db
 # Import Handlers                             Public
 # --------------------------------------------------
 from .handlers.public.home import HomePageHandler, SearchHandler, ComingSoonHandler
+from .handlers.public.advanced_search import AdvancedSearchHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
 from .handlers.public.add_edit import NewImportHandler, ImportDetailsHandler, ImportConfirmationHandler, ImportCompleteHandler, EditSkiboard
 from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompareHandler, RemoveComparisonHandler, ClearComparisonsHandler
@@ -94,6 +95,9 @@ def page_not_found(e):
 # --------------------------------------------------
 app.add_url_rule(rule='/', view_func=HomePageHandler.as_view('home'), methods=['GET'])
 app.add_url_rule(rule='/search/', view_func=SearchHandler.as_view('search'), methods=['POST'])
+
+# Advanced Search
+app.add_url_rule(rule='/advanced-search/', view_func=AdvancedSearchHandler.as_view('advanced-search'), methods=['GET', 'POST'])
 
 # Accounts
 app.add_url_rule(rule='/login/', view_func=LoginHandler.as_view('login'), methods=['GET', 'POST'])
