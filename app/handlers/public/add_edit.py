@@ -1,12 +1,12 @@
 import logging
 
 # Infrastructure Imports
-# --------------------------------------------------
+# ------------------------------------------------------------
 from flask import render_template, redirect, flash, request, session
 from flask.views import MethodView
 
 # Model Imports
-# --------------------------------------------------
+# ------------------------------------------------------------
 from app.models.skiboard import SkiBoard
 from app.models.user import User
 
@@ -16,7 +16,7 @@ __author__ = 'liamkenny'
 # N E W   I M P O R T                            H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class NewImportHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(r):
         if not 'user' in session:
             logging.info("No user in session")
@@ -39,7 +39,7 @@ class NewImportHandler(MethodView):
 
         return render_template('add-edit/import.html', page_name='imports', active_import=active_import, comparisons=SkiBoard.calc_comparisons())
 
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(r):
         category = request.form.get('category').title()
         brand = request.form.get('brand')
@@ -81,7 +81,7 @@ class NewImportHandler(MethodView):
 # I M P O R T   D E T A I L S                    H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportDetailsHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(r, slug):
         if not 'user' in session:
             logging.info("No user in session")
@@ -99,7 +99,7 @@ class ImportDetailsHandler(MethodView):
         description = SkiBoard.describe()
         return render_template('add-edit/import_details.html', page_name='import_details', skiboard=skiboard, profiles=description['profile_types'], comparisons=SkiBoard.calc_comparisons())
 
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(r, slug):
         try:
             skiboard , collections= SkiBoard.get_item_by_slug(slug)[0]
@@ -143,12 +143,12 @@ class ImportDetailsHandler(MethodView):
 # I M P O R T   C O N F                          H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportConfirmationHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(r, slug):
         # Should not arrive here
         return redirect('/import')
 
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(r, slug):
         skiboard, collections = SkiBoard.get_item_by_slug(slug)
         general_info = {
@@ -194,7 +194,7 @@ class ImportConfirmationHandler(MethodView):
 # I M P O R T   C O M P L E T E                  H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ImportCompleteHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(r, slug):
         if not 'user' in session:
             logging.info("No user in session")
@@ -219,7 +219,7 @@ class ImportCompleteHandler(MethodView):
 # E D I T    S K I B O A R D                     H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class EditSkiboard(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(r, slug):
         logging.info("EDIT SKIBOARD: {}".format(str(slug)))
 

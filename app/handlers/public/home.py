@@ -3,21 +3,21 @@ import json
 import pymysql
 
 # Infrastructure Imports
-# --------------------------------------------------
+# ------------------------------------------------------------
 from flask import render_template, request
 from flask.views import MethodView
 
 # Model Imports
-# --------------------------------------------------
+# ------------------------------------------------------------
 from app.models.skiboard import SkiBoard
 from app.core import setupdb
 
 
 __author__ = 'liamkenny'
 
-# --------------------------------------------------
-# Validate Query                     F U N C T I O N
-# --------------------------------------------------
+# ------------------------------------------------------------
+# Validate Query                               F U N C T I O N
+# ------------------------------------------------------------
 def validate_query(query):
     return query
 
@@ -25,7 +25,7 @@ def validate_query(query):
 # H O M E                                        H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class HomePageHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(request):
 
         return render_template('core/index.html', page_name='index', comparisons=SkiBoard.calc_comparisons())
@@ -34,12 +34,12 @@ class HomePageHandler(MethodView):
 # S E A R C H                                    H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class SearchHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(request):
 
         return True
     
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(self):
         r = request.get_json()
         query = r['query']
@@ -74,7 +74,7 @@ class SearchHandler(MethodView):
 # C O M I N G   S O O N                          H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ComingSoonHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(request):
         return render_template('core/coming_soon.html', page_name='comingsoon', comparisons=SkiBoard.calc_comparisons())
 

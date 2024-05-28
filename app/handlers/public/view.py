@@ -3,7 +3,7 @@ from flask import render_template, redirect, flash, session, request
 from flask.views import MethodView
 
 # Model Imports
-# --------------------------------------------------
+# ------------------------------------------------------------
 from app.models.skiboard import SkiBoard
 from app.models.size import Size
 
@@ -15,7 +15,7 @@ item_names = ['asym']
 # V I E W   I T E M                              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ViewHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self, slug):
 
         user=None
@@ -46,7 +46,7 @@ class ViewHandler(MethodView):
 # S T A R T   C O M P A R E                      H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
 class StartCompareHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self):
         if not 'compare' in session:
             return render_template('views/compare.html', page_name='compare', comparisons=SkiBoard.calc_comparisons())
@@ -79,7 +79,7 @@ class StartCompareHandler(MethodView):
 # A D D  T O   C O M P A R E                     H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
 class AddToCompareHandler(MethodView):
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(self):
 
         r = request.get_json()
@@ -153,7 +153,7 @@ class AddToCompareHandler(MethodView):
 # R E M O V E   C O M P A R I S O N              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class RemoveComparisonHandler(MethodView):
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(self):
         
         r = request.get_json()
@@ -190,7 +190,7 @@ class RemoveComparisonHandler(MethodView):
 # C L E A R   C O M P A R I S O N S              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ClearComparisonsHandler(MethodView):
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(self):    
         r = request.get_json()
         resp = {
@@ -208,7 +208,7 @@ class ClearComparisonsHandler(MethodView):
 # C O M P A R E   I T E M                        H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class CompareHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self, slugs):
 
         logging.info("Session data: {}".format(session))

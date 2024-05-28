@@ -4,14 +4,14 @@ from datetime import datetime
 import logging
 
 # Infrastructure Imports
-# --------------------------------------------------
+# ------------------------------------------------------------
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
 import pyrebase
 from firebase_admin import firestore 
 
 # Model Imports
-# --------------------------------------------------
+# ------------------------------------------------------------
 from app.models.user import User
 from app.models.skiboard import SkiBoard
 
@@ -25,14 +25,14 @@ f.close()
 # L O G I N                                      H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class LoginHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self):
         if 'user' in session:
             return redirect('/account')
 
         return render_template('accounts/login.html', session=session, page_name='login', comparisons=SkiBoard.calc_comparisons())
 
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(self):
         if 'user' in session:
             return redirect('/account')
@@ -81,7 +81,7 @@ class LoginHandler(MethodView):
 # L O G O U T                                    H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class LogoutHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self):
         if 'user' in session: 
             flash('You have been successfully logged out.', 'info')
@@ -93,7 +93,7 @@ class LogoutHandler(MethodView):
 # S I G N U P                                    H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class SignupHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self):
         if 'user' in session:
             msg = "User already in session - redirecting}"
@@ -102,7 +102,7 @@ class SignupHandler(MethodView):
         
         return render_template('accounts/signup.html', session=session, page_name='signup', comparisons=SkiBoard.calc_comparisons())
 
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(self):
         if 'user' in session:
             return redirect('/account')
@@ -169,14 +169,14 @@ class SignupHandler(MethodView):
 # F O R G O T   P W D                            H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ForgotPasswordHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self):
         if 'user' in session:
             return redirect('/account')
 
         return render_template('accounts/password_reset.html', session=session, page_name='password_reset', comparisons=SkiBoard.calc_comparisons())
 
-    # -------------------------------------- P O S T
+    # ------------------------------------------------ P O S T
     def post(self):
         if 'user' in session:
             return redirect('/account')
@@ -206,7 +206,7 @@ class ForgotPasswordHandler(MethodView):
 # A C C O U N T                                  H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class AccountHandler(MethodView):
-    # ---------------------------------------- G E T
+    # -------------------------------------------------- G E T
     def get(self):
         if not 'user' in session:
             return redirect('/login')
