@@ -30,6 +30,8 @@ def extract_param(param):
         return {'type': 'range', 'val': params}
     
     # Split open range of params
+    # This can be done better!
+    # Let's look at where the comparitave sits for cases like: 2020> vs <2020
     if '<=' in param:
         return {'type': 'lessthaninclusive', 'val': param.replace('<=', '')}
     if '<' in param:
@@ -41,7 +43,7 @@ def extract_param(param):
         return {'type': 'greaterthan', 'val': param.replace('>', '')}
     
     
-    return {'type': 'error', 'val': None}
+    return {'type': 'single', 'val': param}
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,8 +62,10 @@ class AdvancedSearchHandler(MethodView):
     
     # -------------------------------------- P O S T
     def post(self):
+        logging.info("Advanced Search...")
+        logging.info("FUCK YOUR COOKIES")
         r = request.get_json()
-        query = r['query']
+        logging.info(f"Request: \n {r}")
 
         '''
         # Check input for XSS
@@ -71,14 +75,19 @@ class AdvancedSearchHandler(MethodView):
                 'valid': False
             }
         '''
-
-        skiboard_params = {
-            'year': {extract_param(r['year'])},
-            'category': extract_param(r['category']),
-            'stiffness': extract_param(r['stiffness']),
-            'shape': extract_param(r['shape']),
-            'camber_profile': extract_param(r['camber_profile'])
-        }
+        logging.info("Searching Using Numbers...")
+        try:
+            skiboard_params = {
+                'year': extract_param(r['year']),
+                'category': extract_param(r['category']),
+                'stiffness': extract_param(r['stiffness']),
+                'shape': extract_param(r['shape']),
+                'camber_profile': extract_param(r['camber_profile'])
+            }
+        except Exception as e:
+            logging.error(f"Could not extract SkiBoard Params: \n{e}")
+    
+        logging.info(f"Skiboard Params: {skiboard_params}")
 
         size_params = {
             'length': extract_param(r['length']),
@@ -87,6 +96,7 @@ class AdvancedSearchHandler(MethodView):
             'tail_width': extract_param(r['tail_width']),
             'effective_edge': extract_param(r['effective_edge'])
         }
+        logging.info(f"Size Params: {size_params}")
 
         # madeit
         # Generate SQL string for querying based on param and param type
@@ -100,7 +110,13 @@ class AdvancedSearchHandler(MethodView):
         except Exception as e:
             logging.error(f"Problem searching for query: {query}... {e}")
         
-
+        return{
+            'success': None,
+            'query': None,
+            'results': [None],
+            'valid': False
+        }
+    
         return {
             'success': bool(results),
             'query': r,

@@ -14,43 +14,42 @@
 
         <!-- Search Params -->
         <div class="col-md-3 offset-md-2">
-            <form id="edit-form" name="editForm" action="#" method="post" onsubmit="return validateASearch('searchParams');"></form>
+            <form id="edit-form" name="editForm" onsubmit="event.preventDefault();  triggerSearch();">
                 <!-- Attributes -->
                 <label for="year">Year:</label>
-                <input placeholder="2020" name="year">
+                <input placeholder="2020" name="year" id="year">
                 <br>
                 <label for="category">Category:</label>
-                <input placeholder="Snowboard" name="categroy">
+                <input placeholder="Snowboard" name="categroy" id=category>
                 <br>
                 <label for="stiffness">Stiffness:</label>
-                <input placeholder="5-7" name="stiffness">
+                <input placeholder="5-7" name="stiffness" id="stiffness">
                 <br>
                 <label for="shape">Shape:</label>
-                <input placeholder="Directional" name="shape">
+                <input placeholder="Directional" name="shape" id="shape">
                 <br>
                 <label for="camber_profile">Camber Profile:</label>
-                <input placeholder="Directional Camber" name="camber_profile">
+                <input placeholder="Directional Camber" name="camber_profile" id="camber_profile">
                 <br>
                 <!-- Measurements -->
                 <label for="length">Length:</label>
-                <input placeholder="160" name="length">
+                <input placeholder="160" name="length" id="length">
                 <br>
                 <label for="nose_width">Nose Width:</label>
-                <input placeholder="300" name="nose_width">
+                <input placeholder="300" name="nose_width" id="nose_width">
                 <br>
                 <label for="waist_width">Waist Width:</label>
-                <input placeholder="255" name="waist_width">
+                <input placeholder="255" name="waist_width" id="waist_width">
                 <br>
                 <label for="tail_width">Tail Width:</label>
-                <input placeholder="300" name="tail_width">
+                <input placeholder="300" name="tail_width" id="tail_width">
                 <br>
                 <label for="effective_edge">Effective Edge:</label>
-                <input placeholder="1110" name="effective_edge">
+                <input placeholder="1110" name="effective_edge" id="effective_edge">
                 
-                <div id="search">
-                    <br>
-                    <input class="btn btn-light" type="submit" value="Search">
-                </div>
+                
+                <input class="btn btn-light" type="submit" value="Search">
+                
             </form>
         </div>
 
@@ -92,6 +91,7 @@
             </table>
         </div>
     </div>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="/static/scripts/a_search.js"></script>
 </div>
 {% endblock %}
