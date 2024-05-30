@@ -1,14 +1,14 @@
 import logging
 
-# Infrastructure Imports
-# ------------------------------------------------------------
-from flask import render_template, redirect, flash, request, session
-from flask.views import MethodView
-
-# Model Imports
+# A P P L I C A T I O N                          I M P O R T S
 # ------------------------------------------------------------
 from app.models.skiboard import SkiBoard
 from app.models.user import User
+
+# F R A M E W O R K                              I M P O R T S
+# ------------------------------------------------------------
+from flask import render_template, redirect, flash, request, session
+from flask.views import MethodView
 
 __author__ = 'liamkenny'
 

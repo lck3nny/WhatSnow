@@ -1,14 +1,15 @@
 import logging
 
-# Infrastructure Imports
+# A P P L I C A T I O N                          I M P O R T S
+# ------------------------------------------------------------
+from app.models.skiboard import SkiBoard
+from app.models.user import User
+
+# F R A M E W O R K                              I M P O R T S
 # ------------------------------------------------------------
 from flask import render_template, redirect, flash, request, session
 from flask.views import MethodView
 
-# Model Imports
-# ------------------------------------------------------------
-from app.models.skiboard import SkiBoard
-from app.models.user import User
 
 __author__ = 'liamkenny'
 
@@ -156,10 +157,3 @@ class AdvancedSearchHandler(MethodView):
             'valid': True
         }
     
-        # Return results in JSON format
-        return {
-            'success': bool(results),
-            'query': query,
-            'results': [r.__dict__ for r in results],
-            'valid': True
-        }

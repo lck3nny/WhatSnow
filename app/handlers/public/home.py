@@ -2,12 +2,14 @@ import logging
 import json
 import pymysql
 
-# Infrastructure Imports
+# F R A M E W O R K                              I M P O R T S
 # ------------------------------------------------------------
+from flask import render_template, redirect, flash, request, session
+from flask.views import MethodView
 from flask import render_template, request
 from flask.views import MethodView
 
-# Model Imports
+# A P P L I C A T I O N                          I M P O R T S
 # ------------------------------------------------------------
 from app.models.skiboard import SkiBoard
 from app.core import setupdb
@@ -15,8 +17,7 @@ from app.core import setupdb
 
 __author__ = 'liamkenny'
 
-# ------------------------------------------------------------
-# Validate Query                               F U N C T I O N
+# V A L I D A T E   Q U E R Y                  F U N C T I O N
 # ------------------------------------------------------------
 def validate_query(query):
     return query

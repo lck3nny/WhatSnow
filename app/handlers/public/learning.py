@@ -1,3 +1,6 @@
+
+# F R A M E W O R K                              I M P O R T S
+# ------------------------------------------------------------
 from flask import render_template, redirect
 from flask.views import MethodView
 

@@ -6,13 +6,13 @@ from datetime import datetime
 from operator import itemgetter
 from difflib import SequenceMatcher
 
-# Application Imports
-# --------------------------------------------------
+# A P P L I C A T I O N                          I M P O R T S
+# ------------------------------------------------------------
 from app.core import setupdb, db
 
 
-# Infrastructure Imports
-# --------------------------------------------------
+# F R A M E W O R K                              I M P O R T S
+# ------------------------------------------------------------
 from flask import session
 from firebase_admin import firestore
 #from elasticsearch import Elasticsearch
@@ -71,7 +71,7 @@ def build_advanced_search_query(data):
         for table in data:
             for param in data[table]:
                 if data[table][param]['val']:
-                    if not validate_param(data[table][param]):
+                    if not validate_param(param, data[table][param]):
                         continue
 
                     # Append 'AND' for additional clauses
@@ -95,20 +95,12 @@ def build_advanced_search_query(data):
                     else:
                         query += f" {param} {data[table][param]['operator']} '{data[table][param]['val']}'"
                     
-                    
-                
+                            
         # Example Query String:
         # ....................................................
-        # SELECT SkiBoards.skiboard_id, brand, model, year, size
+        # SSELECT SkiBoards.skiboard_id, brand, model, year, name, slug, category, size 
         # FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id 
-        # WHERE model = 'Custom'AND waist_width > 250;
-        # ....................................................
-
-        # Problem Query String:
-        # ....................................................
-        # SELECT SkiBoards.skiboard_id, SkiBoards.brand, SkiBoards.model, SkiBoards.year Sizes.size 
-        # FROM SkiBoards INNER JOIN SkiBoards ON SkiBoards.skiboard_id = Sizes.skiboard_id 
-        # WHERE  SkiBoards.year = custom
+        # WHERE category = 'Splitboard' AND  shape IN ('Directional', 'Directional Twin') AND  waist_width > '255';
         # ....................................................
 
 
@@ -122,13 +114,26 @@ def build_advanced_search_query(data):
 # ------------------------------------------------------------
 # Type Check / XSS Check
 # ------------------------------------------------------------
-def validate_param(param):
+def validate_param(key, param):
+    try:
+        if str(key) in ['year']:
+            return int(param)
+        elif str(key) in ['stiffness', 'length', 'nose_width', 'waist_width', 'tail_width', 'effective_edge']:
+            return float(param)
+        else:
+            return str(param)
+            
+    except Exception as e:
+        logging.error(f"Param failed validation: {param}")
+        return False
+    
+    '''
     valid_param_types = {
         'brand': type("Burton"),
         'model': type("Hometown Hero"),
         'year': type(2020),
         'family': type("Family Tree"),
-        'stiffness': type(6),
+        'stiffness': type(6.0),
         'shape': type("Directional"),
         'flex_profile': type("Directional"),
         'camber_profile': type("Directional Camber"),
@@ -139,13 +144,7 @@ def validate_param(param):
         'waist_width': type(258.0),
         'tail_width': type(295.7),
         'effective_edge': type(1217.0)
-    }
-
-    # madeit
-    # how do we get the name of the param from the passsed object?
-    # do we need to send both the key and data seperately as vars?
-
-    return "Testing"
+    }'''
 
 
 # M A T C H   P A R A M                        F U N C T I O N

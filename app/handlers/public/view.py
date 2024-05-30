@@ -1,8 +1,11 @@
 import logging
+
+# F R A M E W O R K                              I M P O R T S
+# ------------------------------------------------------------
 from flask import render_template, redirect, flash, session, request
 from flask.views import MethodView
 
-# Model Imports
+# A P P L I C A T I O N                          I M P O R T S
 # ------------------------------------------------------------
 from app.models.skiboard import SkiBoard
 from app.models.size import Size
@@ -43,7 +46,7 @@ class ViewHandler(MethodView):
         return render_template('views/view.html', user=user, page_name='view', skiboard=skiboard.__dict__, sizes=sizes, comparisons=SkiBoard.calc_comparisons(), )
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# S T A R T   C O M P A R E                      H A N D L E R
+# S T A R T   C O M P A R I S O N                H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
 class StartCompareHandler(MethodView):
     # -------------------------------------------------- G E T
@@ -76,7 +79,7 @@ class StartCompareHandler(MethodView):
         return redirect('/compare/{}'.format(suffix))
     
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# A D D  T O   C O M P A R E                     H A N D L E R
+# A D D  T O   C O M P A R I S O N               H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
 class AddToCompareHandler(MethodView):
     # ------------------------------------------------ P O S T

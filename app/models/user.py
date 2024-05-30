@@ -5,14 +5,20 @@ from datetime import datetime
 from firebase_admin import firestore 
 from operator import itemgetter
 
+# A P P L I C A T I O N                          I M P O R T S
+# ------------------------------------------------------------
 from app.core import setupdb
 
 
 __author__ = 'liamkenny'
 
-# ==================================================
-# U S E R                                  C L A S S
-# ==================================================
+# ------------------------------------------------------------
+# / / / / / / / / / / / / / / /  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+# ============================================================
+# U S E R                                            C L A S S
+# ============================================================
+# \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  / / / / / / / / / / / / / / /
+# ------------------------------------------------------------
 class User():
 
     # If a User has an ID of 0 it has not been saved in the database
@@ -29,9 +35,8 @@ class User():
         self.photo = photo
 
 
-    # --------------------------------------------------
-    # Save User                          F U N C T I O N
-    # --------------------------------------------------
+    # S A V E                                  F U N C T I O N
+    # --------------------------------------------------------
     def save(self):
         db = setupdb()
         cursor = db.cursor()
@@ -70,9 +75,8 @@ class User():
         return True
 
 
-    # --------------------------------------------------
-    # Get User                           F U N C T I O N
-    # --------------------------------------------------
+    # G E T   U S E R                          F U N C T I O N
+    # --------------------------------------------------------
     @classmethod
     def get(cls, id=None, email=None):
 
@@ -131,15 +135,11 @@ class User():
         return user
     
 
-    # --------------------------------------------------
-    # Is Admin User                      F U N C T I O N
-    # --------------------------------------------------
+    # I S   A D M I N                          F U N C T I O N
+    # --------------------------------------------------------
     def is_admin(self):
         if not 'admin' in self.permissions:
             return False
         
         return True
-        
-    # madeit
-
 

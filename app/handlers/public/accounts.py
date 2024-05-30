@@ -3,17 +3,19 @@ import pytz
 from datetime import datetime
 import logging
 
-# Infrastructure Imports
+# A P P L I C A T I O N                          I M P O R T S
+# ------------------------------------------------------------
+from app.models.user import User
+from app.models.skiboard import SkiBoard
+
+# F R A M E W O R K                              I M P O R T S
 # ------------------------------------------------------------
 from flask import render_template, redirect, session, flash, request
 from flask.views import MethodView
 import pyrebase
 from firebase_admin import firestore 
 
-# Model Imports
-# ------------------------------------------------------------
-from app.models.user import User
-from app.models.skiboard import SkiBoard
+
 
 __author__ = 'liamkenny'
 
