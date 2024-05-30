@@ -55,11 +55,98 @@ f = open(os.path.dirname(__file__) + '/../config/bonsai_config.json')
 es_config = json.load(f)
 
 
-# --------------------------------------------------
-# Match Param                        F U N C T I O N
-# --------------------------------------------------
-def match_param(param):
+# A D V A N C E D   S E A R C H
+# B U I L D   Q U E R Y                        F U N C T I O N   
+# ------------------------------------------------------------
+# Generates the SQL query for 
+# querying using advanced search params
+# ------------------------------------------------------------
+def build_advanced_search_query(data):
+    empty = True
+    query = "SELECT SkiBoards.skiboard_id, brand, model, year, name, slug, category, size FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id"
+    if data['SkiBoards'] or data['Sizes']:
+        first = True
+        query += " WHERE "
+        # Loop through each table to query (SkiBoards, Sizes)
+        for table in data:
+            for param in data[table]:
+                if data[table][param]['val']:
+                    if not validate_param(data[table][param]):
+                        continue
 
+                    empty = False
+                    # Append list of filters
+                    # WHERE camber_profile IN (Full Camber, Hybrid Camber, Directional Camber)
+                    if data[table][param]['operator'] == "IN":
+                        s = ", ".join(data[table][param]['val'])
+                        query += f" {param} {data[table][param]['operator']} ({s})"
+
+                    # Append a range of filters
+                    # WHERE waist_width BETWEEN 250 AND 260
+                    elif data[table][param]['operator'] == "BETWEEN":
+                        query += f" {param} {data[table][param]['operator']} {data[table][param]['val'][0]} AND {data[table][param]['val'][-1]}"
+                    
+                    # Append specific value filters
+                    # WHERE model = Deep Thinker
+                    else:
+                        query += f" {param} {data[table][param]['operator']} '{data[table][param]['val']}'"
+            if not first:
+                query += " AND "    
+                
+        # Example Query String:
+        # ....................................................
+        # SELECT SkiBoards.skiboard_id, brand, model, year, size
+        # FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id 
+        # WHERE model = 'Custom'AND waist_width > 250;
+        # ....................................................
+
+        # Problem Query String:
+        # ....................................................
+        # SELECT SkiBoards.skiboard_id, SkiBoards.brand, SkiBoards.model, SkiBoards.year Sizes.size 
+        # FROM SkiBoards INNER JOIN SkiBoards ON SkiBoards.skiboard_id = Sizes.skiboard_id 
+        # WHERE  SkiBoards.year = custom
+        # ....................................................
+
+
+    if not empty:
+        return f"{query};"
+    else:
+        return ""
+    
+
+# V A L I D A T E   Q U E R Y                  F U N C T I O N   
+# ------------------------------------------------------------
+# Type Check / XSS Check
+# ------------------------------------------------------------
+def validate_param(param):
+    valid_param_types = {
+        'brand': type("Burton"),
+        'model': type("Hometown Hero"),
+        'year': type(2020),
+        'family': type("Family Tree"),
+        'stiffness': type(6),
+        'shape': type("Directional"),
+        'flex_profile': type("Directional"),
+        'camber_profile': type("Directional Camber"),
+        'inserts': type("channel"),
+        'category': type("Snowboard"),
+        'length': type(160.0),
+        'nose_width': type(307.7),
+        'waist_width': type(258.0),
+        'tail_width': type(295.7),
+        'effective_edge': type(1217.0)
+    }
+
+    # madeit
+    # how do we get the name of the param from the passsed object?
+    # do we need to send both the key and data seperately as vars?
+
+    return "Testing"
+
+
+# M A T C H   P A R A M                        F U N C T I O N
+# ------------------------------------------------------------
+def match_param(param):
     # Calculate best similarity score for each unit name
     match_scores = {}
     for unit in unit_names:
@@ -76,9 +163,62 @@ def match_param(param):
 
     return matched, confidence
 
-# ==================================================
-# S K I B O A R D                          C L A S S
-# ==================================================
+
+# E X T R A C T   R E S U L T S                F U N C T I O N
+# ------------------------------------------------------------
+# This only works for extracting complete result sets
+# is it worth fixing before migrating to SQLAlchemy?
+def extract_results(response):
+    results = []
+    for r in response:
+        logging.info(f"Extracting skiboard from result: \n{r}")
+        # Map DB Result to User Object
+        try:
+            result = SkiBoard(
+                skiboard_id=r[0], 
+                url=r[1], 
+                brand=r[2], 
+                model=r[3], 
+                year=r[4], 
+                name=r[5],
+                slug=r[6],
+                category=r[7],
+                family=r[8],
+                description=r[9],
+                stiffness=r[10],
+                flex_profile=r[11],
+                camber_profile=r[12],
+                camber_details=r[13],
+                core=r[14],
+                core_profiling=r[15],
+                fibreglass=r[16],
+                laminates=r[17],
+                resin=r[18],
+                base=r[19],
+                edge_tech=r[20],
+                topsheet=r[21],
+                sidewall=r[22],
+                inserts=r[23],
+                asym=r[24],
+                weight=r[25],
+                womens=r[26],
+                youth=r[27]
+            )
+
+            logging.info(f"Results: \n{result.__dict__}")
+            results.append(result)
+        except Exception as e:
+            logging.error(f"Unable to extract result from response: {r}")
+
+    return results
+
+# ------------------------------------------------------------
+# / / / / / / / / / / / / / / /  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+# ============================================================
+# S K I B O A R D                                    C L A S S
+# ============================================================
+# \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  / / / / / / / / / / / / / / /
+# ------------------------------------------------------------
 class SkiBoard():
 
 
@@ -115,9 +255,8 @@ class SkiBoard():
         self.youth = youth
         self.url = url
 
-    # --------------------------------------------------
-    # Is Duplicate                       F U N C T I O N
-    # --------------------------------------------------
+    # I S   D U P L I C A T E                  F U N C T I O N
+    # --------------------------------------------------------
     def is_duplicate(self):
         db = setupdb()
         cursor = db.cursor()
@@ -137,9 +276,8 @@ class SkiBoard():
 
         return False
 
-    # --------------------------------------------------
-    # Get Item                           F U N C T I O N
-    # --------------------------------------------------
+    # G E T   S K I B O A R D                  F U N C T I O N
+    # --------------------------------------------------------
     @classmethod
     def get(cls, id=None, brand=None, model=None, year=None, slug=None):
         
@@ -171,54 +309,20 @@ class SkiBoard():
             try:
                 sql = f"""SELECT * FROM SkiBoards WHERE slug = '{slug}'"""
                 cursor.execute(sql)
-                result = cursor.fetchone()
+                response = cursor.fetchone()
             except Exception as e:
                 logging.error(f"Could not get SkiBoard from Slug:\n{e}")
                 return None
             
-        if not result:
+        if not response:
             return None
         
-        # Map DB Result to User Object
-        skiboard = SkiBoard(
-            skiboard_id=result[0], 
-            url=result[1], 
-            brand=result[2], 
-            model=result[3], 
-            year=result[4], 
-            name=result[5],
-            slug=result[6],
-            category=result[7],
-            family=result[8],
-            description=result[9],
-            stiffness=result[10],
-            shape=result[11],
-            flex_profile=result[12],
-            camber_profile=result[13],
-            camber_details=result[14],
-            core=result[15],
-            core_profiling=result[16],
-            fibreglass=result[17],
-            laminates=result[18],
-            resin=result[19],
-            base=result[20],
-            edges=result[21],
-            edge_tech=result[22],
-            topsheet=result[23],
-            sidewall=result[24],
-            inserts=result[25],
-            asym=result[26],
-            weight=result[27],
-            womens=result[28],
-            youth=result[29]
-        )
-        
+        skiboard = extract_results([response])[0]
         return skiboard
 
 
-    # --------------------------------------------------
-    # Save SkiBoard                      F U N C T I O N
-    # --------------------------------------------------
+    # S A V E                                  F U N C T I O N
+    # --------------------------------------------------------
     def save(self):
         db = setupdb()
         cursor = db.cursor()
@@ -327,9 +431,8 @@ class SkiBoard():
 
         return True
     
-    # --------------------------------------------------
-    # Search Database                    F U N C T I O N
-    # -------------------------------------------------- 
+    # S E A R C H                              F U N C T I O N
+    # --------------------------------------------------------
     @classmethod
     def search_db(cls, query_string):
         
@@ -349,51 +452,65 @@ class SkiBoard():
             logging.error(e)
             return None
     
+        results = extract_results(response)
+        return results
+    
+    # A D V A N C E D   S E A R C H            F U N C T I O N
+    # --------------------------------------------------------
+    @classmethod
+    def advanced_search(cls, params):
+        db = setupdb()
+        cursor = db.cursor()
+
+        # Build query from provided param in/equalities 
+        try:
+            query = build_advanced_search_query(params)
+            logging.info(f"Advanced Search Query: {query}")
+        except Exception as e:
+            logging.error(f"Unable to generate SQL query: {e}")
+
+        # Break function if query is empty
+        # Query builder will return an empty query if no valid params are passed
+        if not query:
+            logging.info("Empty query, not executing")
+            return [], None
+
+        # Exceute query on database
+        try:
+            logging.info(f"Exceputing query on Databse: {query}")
+            cursor.execute(query)
+            response = cursor.fetchall()
+        except Exception as e:
+            logging.error(f"There was a problem executing query: {e}")
+
         results = []
         for r in response:
             logging.info(f"Extracting skiboard from result: \n{r}")
             # Map DB Result to User Object
-            result = SkiBoard(
-                skiboard_id=r[0], 
-                url=r[1], 
-                brand=r[2], 
-                model=r[3], 
-                year=r[4], 
-                name=r[5],
-                slug=r[6],
-                category=r[7],
-                family=r[8],
-                description=r[9],
-                stiffness=r[10],
-                flex_profile=r[11],
-                camber_profile=r[12],
-                camber_details=r[13],
-                core=r[14],
-                core_profiling=r[15],
-                fibreglass=r[16],
-                laminates=r[17],
-                resin=r[18],
-                base=r[19],
-                edge_tech=r[20],
-                topsheet=r[21],
-                sidewall=r[22],
-                inserts=r[23],
-                asym=r[24],
-                weight=r[25],
-                womens=r[26],
-                youth=r[27]
-            )
+            try:
+                result = SkiBoard(
+                    skiboard_id=r[0], 
+                    brand=r[1], 
+                    model=r[2], 
+                    year=r[3], 
+                    name=r[4],
+                    slug=r[5],
+                    category=r[6]
+                )
+                
+                size = r[7]
 
-            logging.info(f"Results: \n{result.__dict__}")
-            results.append(result)
+                logging.info(f"Results: \n{result.__dict__}")
+                results.append({'skiboard': result, 'size': size})
+            except Exception as e:
+                logging.error(f"Unable to extract result from response: {r}")
 
-        return results
-    
+        logging.info("Advanced Search Complete")
+        return results, query
 
 
-    # --------------------------------------------------
-    # Update ElasticSearch               F U N C T I O N
-    # --------------------------------------------------
+    # Update ElasticSearch                     F U N C T I O N
+    # --------------------------------------------------------
     def update_es(id, skiboard, es_index='skiboards'):
 
         if not skiboard:
@@ -411,9 +528,8 @@ class SkiBoard():
         return es_client.update(index=active_index, id=id, document=skiboard)
        
     
-    # --------------------------------------------------
-    # Search ElasticSearch               F U N C T I O N
-    # --------------------------------------------------
+    # Search ElasticSearch                     F U N C T I O N
+    # --------------------------------------------------------
     @classmethod
     def search_es(query, es_index='skiboards'):
          # Connect to ElasticSearch
@@ -487,9 +603,9 @@ class SkiBoard():
         
         return res
 
-    # --------------------------------------------------
-    # Calculate Comparisons              F U N C T I O N
-    # --------------------------------------------------
+    # C A L C U L A T E
+    # C O M P A R I S O N S                    F U N C T I O N
+    # --------------------------------------------------------
     def calc_comparisons():
         total_comparisons = 0
         logging.info("Session: {}".format(session))
@@ -500,9 +616,9 @@ class SkiBoard():
         return "[ {} ]".format(total_comparisons)
 
 
-    # --------------------------------------------------
-    # Extract Params from Text           F U N C T I O N
-    # --------------------------------------------------
+    # E X T R A C T   P A R A M S
+    # F R O M   T E X T                        F U N C T I O N
+    # --------------------------------------------------------
     def extract_params_from_text(raw_input):
         # Initialise empty dictionaries
         sizes = 0
@@ -543,9 +659,8 @@ class SkiBoard():
         return params, param_units, sizes
 
 
-    # --------------------------------------------------
-    # Format Params                      F U N C T I O N
-    # --------------------------------------------------
+    # F O R M A T   P A R A M S                F U N C T I O N
+    # --------------------------------------------------------
     def format_params(unformatted, units):
         formatted_data = {}
         formatted_units = {}
@@ -563,8 +678,7 @@ class SkiBoard():
         return formatted_data, formatted_units
 
 
-    # --------------------------------------------------
-    # Describe                           F U N C T I O N
-    # --------------------------------------------------
+    # D E S C R I B E                          F U N C T I O N
+    # --------------------------------------------------------
     def describe():
         return {'profile_types': profile_types, 'unit_names': unit_names, 'param_names': param_names}

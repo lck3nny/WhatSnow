@@ -58,29 +58,84 @@ def extract_param(param):
 # ------------------------------------------------------------
 def build_query(data):
     empty = True
-    query = "SELECT SkiBoards.skiboard_id, SkiBoards.brand, SkiBoards.model, SkiBoards.year Sizes.size FROM SkiBoards INNER JOIN SkiBoards ON SkiBoards.skiboard_id = Sizes.skiboard_id"
+    query = "SELECT SkiBoards.skiboard_id, brand, model, year, size FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id"
     if data['SkiBoards'] or data['Sizes']:
+        first = True
         query += " WHERE "
         # Loop through each table to query (SkiBoards, Sizes)
         for table in data:
             for param in data[table]:
                 if data[table][param]['val']:
+                    if not validate_param(data[table][param]):
+                        continue
+
                     empty = False
                     # Append list of filters
+                    # WHERE camber_profile IN (Full Camber, Hybrid Camber, Directional Camber)
                     if data[table][param]['operator'] == "IN":
                         s = ", ".join(data[table][param]['val'])
-                        query += f" {table}.{param} {data[table][param]['operator']} ({s})"
+                        query += f" {param} {data[table][param]['operator']} ({s})"
+
                     # Append a range of filters
+                    # WHERE waist_width BETWEEN 250 AND 260
                     elif data[table][param]['operator'] == "BETWEEN":
-                        query += f" {table}.{param} {data[table][param]['operator']} {data[table][param]['val'][0]} AND {data[table][param]['val'][-1]}"
+                        query += f" {param} {data[table][param]['operator']} {data[table][param]['val'][0]} AND {data[table][param]['val'][-1]}"
+                    
                     # Append specific value filters
+                    # WHERE model = Deep Thinker
                     else:
-                        query += f" {table}.{param} {data[table][param]['operator']} {data[table][param]['val']}"
-    
+                        query += f" {param} {data[table][param]['operator']} '{data[table][param]['val']}'"
+            if not first:
+                query += " AND "    
+                
+        # Example Query String:
+        # ....................................................
+        # SELECT SkiBoards.skiboard_id, brand, model, year, size
+        # FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id 
+        # WHERE model = 'Custom'AND waist_width > 250;
+        # ....................................................
+
+        # Problem Query String:
+        # ....................................................
+        # SELECT SkiBoards.skiboard_id, SkiBoards.brand, SkiBoards.model, SkiBoards.year Sizes.size 
+        # FROM SkiBoards INNER JOIN SkiBoards ON SkiBoards.skiboard_id = Sizes.skiboard_id 
+        # WHERE  SkiBoards.year = custom
+        # ....................................................
+
+
     if not empty:
-        return query
+        return f"{query};"
     else:
         return ""
+    
+# V A L I D A T E   Q U E R Y                  F U N C T I O N   
+# ------------------------------------------------------------
+# Type Check / XSS Check
+# ------------------------------------------------------------
+def validate_param(param):
+    valid_param_types = {
+        'brand': type("Burton"),
+        'model': type("Hometown Hero"),
+        'year': type(2020),
+        'family': type("Family Tree"),
+        'stiffness': type(6),
+        'shape': type("Directional"),
+        'flex_profile': type("Directional"),
+        'camber_profile': type("Directional Camber"),
+        'inserts': type("channel"),
+        'category': type("Snowboard"),
+        'length': type(160.0),
+        'nose_width': type(307.7),
+        'waist_width': type(258.0),
+        'tail_width': type(295.7),
+        'effective_edge': type(1217.0)
+    }
+
+    # madeit
+    # how do we get the name of the param from the passsed object?
+    # do we need to send both the key and data seperately as vars?
+
+    return "Testing"
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,19 +155,15 @@ class AdvancedSearchHandler(MethodView):
     # ------------------------------------------------ P O S T
     def post(self):
         logging.info("Advanced Search...")
-        logging.info("FUCK YOUR COOKIES")
+        params = {"SkiBoards": None, "Sizes": None}
         r = request.get_json()
         logging.info(f"Request: \n {r}")
-
-        '''
-        # Check input for XSS
-        if not validate_query(query):
-            return {
-                'success': False,
-                'valid': False
-            }
-        '''
-        params = {"SkiBoards": None, "Sizes": None}
+        
+        # Return unsuccessful query for invalid params
+        # Invalid params will be removed from object. Empty object indicates no queryable params.
+        if not params:
+            return {'success': False, 'query': f"No params provided", 'results': [], 'valid': False}
+        
 
         # Extract SkiBoard params from equalities provided in form
         try:
@@ -142,33 +193,27 @@ class AdvancedSearchHandler(MethodView):
             logging.error(f"Could not extract Size Params: \n{e}")
             return  {'success': False, 'query': {"skiboard_params": params['SkiBoards'], "size_params": params['Sizes']}, 'results': [None], 'valid': True}
 
-
-        # Build query from provided param in/equalities 
-        logging.info("Querying Database...") 
-        logging.info(f"Params: {params}")  
+        # Search for results using extracted params
         try:
-            query = build_query(params)
-            logging.info(f"Query: {query}")
+            logging.info("Querying Database...") 
+            logging.info(f"Params: {params}")  
+            results, query = SkiBoard.advanced_search(params)
         except Exception as e:
-            logging.error(f"Unable to generate SQL query: {e}")
-
-        if not query:
-            logging.info("Empty query, not executing")
-            return{
-                'success': False,
-                'query': query,
-                'results': [],
-                'valid': True
-            }
+            logging.error(f"There was a problem running the Advanced Search: {e}")
         
-        # Execute database query
-        try:
-            results = SkiBoard.search_db(query)
-            logging.info(f"Search: {query}\nResults: {results}")
-        except Exception as e:
-            logging.error(f"Problem searching for query: {query}... {e}")
-            return  {'success': False, 'query': params, 'results': [None], 'valid': True}
+        skiboards = [res['skiboard'].__dict__ for res in results]
+        sizes = [res['size'] for res in results]
+        for x, skiboard in enumerate(skiboards):
+            skiboard['size'] = sizes[x]
 
+        # Return results in JSON format
+        return {
+            'success': bool(skiboards),
+            'query': query,
+            'results': skiboards,
+            'valid': True
+        }
+    
         # Return results in JSON format
         return {
             'success': bool(results),

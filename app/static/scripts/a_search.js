@@ -82,7 +82,7 @@ function showResults(results) {
         row.setAttribute("onclick","followLink('/view/" + result.slug + "');");
 
         let size = row.insertCell(0);
-        size.innerHTML = result.year;
+        size.innerHTML = result.size;
         
         let year = row.insertCell(0);
         year.innerHTML = result.year;
