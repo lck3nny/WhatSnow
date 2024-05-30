@@ -65,8 +65,8 @@ def build_advanced_search_query(data):
     empty = True
     query = "SELECT SkiBoards.skiboard_id, brand, model, year, name, slug, category, size FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id"
     if data['SkiBoards'] or data['Sizes']:
-        first = True
-        query += " WHERE "
+        empty = True
+        query += " WHERE"
         # Loop through each table to query (SkiBoards, Sizes)
         for table in data:
             for param in data[table]:
@@ -74,12 +74,16 @@ def build_advanced_search_query(data):
                     if not validate_param(data[table][param]):
                         continue
 
+                    # Append 'AND' for additional clauses
+                    if not empty:
+                        query += " AND "    
+
                     empty = False
                     # Append list of filters
                     # WHERE camber_profile IN (Full Camber, Hybrid Camber, Directional Camber)
                     if data[table][param]['operator'] == "IN":
-                        s = ", ".join(data[table][param]['val'])
-                        query += f" {param} {data[table][param]['operator']} ({s})"
+                        s = "', '".join(data[table][param]['val'])
+                        query += f" {param} {data[table][param]['operator']} ('{s}')"
 
                     # Append a range of filters
                     # WHERE waist_width BETWEEN 250 AND 260
@@ -90,8 +94,8 @@ def build_advanced_search_query(data):
                     # WHERE model = Deep Thinker
                     else:
                         query += f" {param} {data[table][param]['operator']} '{data[table][param]['val']}'"
-            if not first:
-                query += " AND "    
+                    
+                    
                 
         # Example Query String:
         # ....................................................
@@ -485,7 +489,7 @@ class SkiBoard():
 
         results = []
         for r in response:
-            logging.info(f"Extracting skiboard from result: \n{r}")
+            #logging.info(f"Extracting skiboard from result: \n{r}")
             # Map DB Result to User Object
             try:
                 result = SkiBoard(
@@ -500,7 +504,7 @@ class SkiBoard():
                 
                 size = r[7]
 
-                logging.info(f"Results: \n{result.__dict__}")
+                #logging.info(f"Results: \n{result.__dict__}")
                 results.append({'skiboard': result, 'size': size})
             except Exception as e:
                 logging.error(f"Unable to extract result from response: {r}")

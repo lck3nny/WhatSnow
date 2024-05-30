@@ -25,7 +25,7 @@ def extract_param(param):
     params = []
     # Split list of params 
     if ',' in param:
-        params = param.split(',')
+        params = param.replace(', ', ',').split(',')
         return {'operator': 'IN', 'val': params, 'delimiter': "IN"}
 
     # Split closed range of params
@@ -49,64 +49,6 @@ def extract_param(param):
     
     return {'operator': '=', 'val': param}
 
-
-
-# B U I L D   Q U E R Y                        F U N C T I O N   
-# ------------------------------------------------------------
-# Generates the SQL query for 
-# querying using advanced search params
-# ------------------------------------------------------------
-def build_query(data):
-    empty = True
-    query = "SELECT SkiBoards.skiboard_id, brand, model, year, size FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id"
-    if data['SkiBoards'] or data['Sizes']:
-        first = True
-        query += " WHERE "
-        # Loop through each table to query (SkiBoards, Sizes)
-        for table in data:
-            for param in data[table]:
-                if data[table][param]['val']:
-                    if not validate_param(data[table][param]):
-                        continue
-
-                    empty = False
-                    # Append list of filters
-                    # WHERE camber_profile IN (Full Camber, Hybrid Camber, Directional Camber)
-                    if data[table][param]['operator'] == "IN":
-                        s = ", ".join(data[table][param]['val'])
-                        query += f" {param} {data[table][param]['operator']} ({s})"
-
-                    # Append a range of filters
-                    # WHERE waist_width BETWEEN 250 AND 260
-                    elif data[table][param]['operator'] == "BETWEEN":
-                        query += f" {param} {data[table][param]['operator']} {data[table][param]['val'][0]} AND {data[table][param]['val'][-1]}"
-                    
-                    # Append specific value filters
-                    # WHERE model = Deep Thinker
-                    else:
-                        query += f" {param} {data[table][param]['operator']} '{data[table][param]['val']}'"
-            if not first:
-                query += " AND "    
-                
-        # Example Query String:
-        # ....................................................
-        # SELECT SkiBoards.skiboard_id, brand, model, year, size
-        # FROM SkiBoards INNER JOIN Sizes ON SkiBoards.skiboard_id = Sizes.skiboard_id 
-        # WHERE model = 'Custom'AND waist_width > 250;
-        # ....................................................
-
-        # Problem Query String:
-        # ....................................................
-        # SELECT SkiBoards.skiboard_id, SkiBoards.brand, SkiBoards.model, SkiBoards.year Sizes.size 
-        # FROM SkiBoards INNER JOIN SkiBoards ON SkiBoards.skiboard_id = Sizes.skiboard_id 
-        # WHERE  SkiBoards.year = custom
-        # ....................................................
-
-
-    if not empty:
-        return f"{query};"
-    else:
-        return ""
     
 # V A L I D A T E   Q U E R Y                  F U N C T I O N   
 # ------------------------------------------------------------
