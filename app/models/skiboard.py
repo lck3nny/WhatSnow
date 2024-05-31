@@ -71,7 +71,8 @@ def build_advanced_search_query(data):
         for table in data:
             for param in data[table]:
                 if data[table][param]['val']:
-                    if not validate_param(param, data[table][param]):
+                    data[table][param]['val'] = validate_param(param, data[table][param])
+                    if not data[table][param]['val']:
                         continue
 
                     # Append 'AND' for additional clauses
@@ -117,14 +118,29 @@ def build_advanced_search_query(data):
 def validate_param(key, param):
     try:
         if str(key) in ['year']:
-            return int(param)
+            if isinstance(param['val'], list):
+                for i, p in enumerate(param['val']):
+                    param['val'][i] = int(p)
+                return param['val']
+
+            return int(param['val'])
         elif str(key) in ['stiffness', 'length', 'nose_width', 'waist_width', 'tail_width', 'effective_edge']:
-            return float(param)
+            if isinstance(param['val'], list):
+                for i, p in enumerate(param['val']):
+                    param['val'][i] = float(p)
+                return param['val']
+            
+            return float(param['val'])
         else:
-            return str(param)
+            if isinstance(param['val'], list):
+                for i, p in enumerate(param['val']):
+                    param['val'][i] = str(p)
+                return param['val']
+            
+            return str(param['val'])
             
     except Exception as e:
-        logging.error(f"Param failed validation: {param}")
+        logging.error(f"Param failed validation: {param} - ERROR - {e}")
         return False
     
     '''
