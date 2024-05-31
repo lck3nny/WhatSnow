@@ -1,2 +1,6 @@
 logs.txt
 config/
+__pycache__/
+/pycache/
+*.pyo
+*.pyc
