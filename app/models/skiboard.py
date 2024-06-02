@@ -328,15 +328,15 @@ class SkiBoard():
             try:
                 sql = f"""SELECT * FROM SkiBoards WHERE slug = '{slug}'"""
                 cursor.execute(sql)
-                response = cursor.fetchone()
+                result = cursor.fetchone()
             except Exception as e:
                 logging.error(f"Could not get SkiBoard from Slug:\n{e}")
                 return None
             
-        if not response:
+        if not result:
             return None
         
-        skiboard = extract_results([response])[0]
+        skiboard = extract_results([result])[0]
         return skiboard
 
 

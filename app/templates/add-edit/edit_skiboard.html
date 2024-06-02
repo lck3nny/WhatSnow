@@ -2,7 +2,7 @@
 {% block title %}{{skiboard['brand']}} {{skiboard['model']}}{% endblock %}
 {% block top_content %}
 <div class="container">
-    <form id="edit-form" name="editForm" action="#" method="post" onsubmit="return validateNewImport('skiForm');">
+    <form class="form-inline" id="edit-form" name="editForm" action="#" method="post" onsubmit="return validateNewImport('skiForm');">
         <div class="row banner">
 
             <!-- SkiBoard Title -->
@@ -14,72 +14,101 @@
 
             <!-- SkiBoard Description -->
             <div class="col-md-8 offset-md-2">
-                <textarea placeholder="Enter a description here..." name="description" cols="40" rows="5">{{skiboard['description']}}</textarea>
+                <textarea class="form-control" placeholder="Enter a description here..." name="description" cols="40" rows="4">{{skiboard['description']}}</textarea>
             </div>
             
 
             <!-- SkiBoard Stiffness -->
-            <div class="slidecontainer col-md-6 offset-md-3">
+            <div class="slidecontainer col-md-8 offset-md-2">
                 <label for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
                 <br>
-                <input placeholder="5" name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" class="slider" id="stiffnessSlider">
+                <input class="form-control" placeholder="5" name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" class="slider" id="stiffnessSlider">
             </div>
 
             <!-- SkiBoard Shape / Camber Profile -->
-            <div class="col-md-6 offset-md-3">
-                <label for="shape">Shape:</label>
-                <input placeholder="Directional" name="shape" value="{{ skiboard['shape']}}">
-                
-                <label for="camberprofile">Camber Profile:</label>
-                <input placeholder="Full Camber" name="camberprofile" value="{{ skiboard['camber_profile']}}">
-
-                <label for="camberdetails">Camber Details:</label>
-                <input placeholder="PurePop Camber" name="camberdetails" value="{{ skiboard['camber_details'] }}">
-
-                <label for="flexprofile">Flex Profile:</label>
-                <input placeholder="Twin Flex" name="flexprofile" value="{{ skiboard['flex_profile'] }}">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="shape">Shape:</label>
+                        <input class="form-control" placeholder="Directional" name="shape" value="{{ skiboard['shape']}}">
+                    </div>
+                    <div class="col">
+                        <label for="camberprofile">Camber Profile:</label>
+                        <input class="form-control" placeholder="Full Camber" name="camberprofile" value="{{ skiboard['camber_profile']}}">
+                    </div>
+                    <div class="col">
+                        <label for="camberdetails">Camber Details:</label>
+                        <input class="form-control" placeholder="PurePop Camber" name="camberdetails" value="{{ skiboard['camber_details'] }}">
+                    </div>
+                    <div class="col">
+                        <label for="flexprofile">Flex Profile:</label>
+                        <input class="form-control" placeholder="Twin Flex" name="flexprofile" value="{{ skiboard['flex_profile'] }}">
+                    </div>
+                </div>
             </div>
 
             <!-- SkiBoard Core / Core Profiling -->
-            <div class="col-md-6 offset-md-3">
-                <label for="core">Core:</label>
-                <input placeholder="Poplar" name="core" value="{{ skiboard['core']}}">
-                
-                <label for="coreprofiling">Core Profiling:</label>
-                <input placeholder="Squeezebox" name="coreprofiling" value="{{ skiboard['core_profiling']}}">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="core">Core:</label>
+                        <input class="form-control" placeholder="Poplar" name="core" value="{{ skiboard['core']}}">
+                    </div>
+                    <div class="col">
+                        <label for="coreprofiling">Core Profiling:</label>
+                        <input class="form-control" placeholder="Squeezebox" name="coreprofiling" value="{{ skiboard['core_profiling']}}">
+                    </div>
+                </div>
             </div>
 
             <!-- SkiBoard Edges / Edge Tech -->
-            <div class="col-md-6 offset-md-3">
-                <label for="edges">Edges:</label>
-                <input placeholder="Steel" name="edges" value="{{ skiboard['edges']}}">
-                
-                <label for="edgetech">Edge Tech:</label>
-                <input placeholder="Magne Traction" name="edgetech" value="{{ skiboard['edge_tech']}}">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="edges">Edges:</label>
+                        <input class="form-control" placeholder="Steel" name="edges" value="{{ skiboard['edges']}}">
+                    </div>
+                    <div class="col">
+                        <label for="edgetech">Edge Tech:</label>
+                        <input class="form-control" placeholder="Magne Traction" name="edgetech" value="{{ skiboard['edge_tech']}}">
+                    </div>
+                </div>
             </div>
 
             <!-- SkiBoard Laminates / Fibreglass / Resin -->
-            <div class="col-md-6 offset-md-3">
-                <label for="fibreglass">Fibreglass:</label>
-                <input placeholder="Biax / Triax" name="fibreglass" value="{{ skiboard['fibreglass']}}">
-                
-                <label for="laminates">Laminates:</label>
-                <input placeholder="Carbon" name="laminates" value="{{ skiboard['laminates']}}">
-
-                <label for="resin">Resin:</label>
-                <input placeholder="SuperSap Epoxy" name="resin" value="{{ skiboard['resin']}}">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="fibreglass">Fibreglass:</label>
+                        <input class="form-control" placeholder="Biax / Triax" name="fibreglass" value="{{ skiboard['fibreglass']}}">
+                    </div>
+                    <div class="col">
+                        <label for="laminates">Laminates:</label>
+                        <input class="form-control" placeholder="Carbon" name="laminates" value="{{ skiboard['laminates']}}">
+                    </div>
+                    <div class="col">
+                        <label for="resin">Resin:</label>
+                        <input class="form-control" placeholder="SuperSap Epoxy" name="resin" value="{{ skiboard['resin']}}">
+                    </div>
+                </div>
             </div>
 
             <!-- SkiBoard Base / Topsheet / Sidewall -->
-            <div class="col-md-6 offset-md-3">
-                <label for="base">Base:</label>
-                <input placeholder="Sintered" name="base" value="{{ skiboard['base']}}">
-                
-                <label for="topsheet">Topsheet:</label>
-                <input placeholder="Real Wood Vaneer" name="topsheet" value="{{ skiboard['topsheet']}}">
-
-                <label for="sidewall">Sidewall:</label>
-                <input placeholder="ABS Sidewall" name="sidewall" value="{{ skiboard['sidewall']}}">
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="base">Base:</label>
+                        <input class="form-control" placeholder="Sintered" name="base" value="{{ skiboard['base']}}">
+                    </div>
+                    <div class="col">
+                        <label for="topsheet">Topsheet:</label>
+                        <input class="form-control" placeholder="Real Wood Vaneer" name="topsheet" value="{{ skiboard['topsheet']}}">
+                    </div>
+                    <div class="col">
+                        <label for="sidewall">Sidewall:</label>
+                        <input class="form-control" placeholder="ABS Sidewall" name="sidewall" value="{{ skiboard['sidewall']}}">
+                    </div>
+                </div>   
             </div>
             
         </div>
@@ -150,15 +179,23 @@
             
         </div>
         {% else %}
-        <div class="row datatable">
-            <div id="table" class="col-md-6 offset-md-3">
-                <textarea name="raw-data" placeholder="Please enter a data table for this Ski / Snowboard" cols="100" rows="20"></textarea>
+        <div class="datatable">
+            <br>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div id="table">
+                        <!-- Find a way to centralise this input box-->
+                        <textarea class="form-control" name="raw-data" placeholder="Please enter a data table for this Ski / Snowboard" cols="100" rows="20"></textarea>
+                    </div>
+                </div>
             </div>
             <br>
-        </div>
-        <br>
-        <div id="save">
-            <input class="btn btn-light" type="submit" value="Save">
+            <div class="row">
+                <div class="col-md-4 offset-md-4" id="save">
+                    <input class="form-control btn btn-light" type="submit" value="Save">
+                </div>
+            </div>
+            <br>
         </div>
     </form>
     {% endif %}

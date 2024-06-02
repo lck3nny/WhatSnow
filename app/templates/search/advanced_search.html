@@ -13,48 +13,77 @@
         </div>
 
         <!-- Search Params -->
-        <div class="col-md-3 offset-md-2">
-            <form id="edit-form" name="editForm" onsubmit="event.preventDefault();  triggerSearch();">
+        <div class="col-md-4 offset-md-2">
+            <form class="form-inline" id="edit-form" name="editForm" onsubmit="event.preventDefault();  triggerSearch();">
                 <!-- Attributes -->
-                <label for="year">Year:</label>
-                <input placeholder="2020" name="year" id="year">
-                <br>
-                <label for="category">Category:</label>
-                <input placeholder="Snowboard" name="categroy" id=category>
-                <br>
-                <label for="stiffness">Stiffness:</label>
-                <input placeholder="5-7" name="stiffness" id="stiffness">
-                <br>
-                <label for="shape">Shape:</label>
-                <input placeholder="Directional" name="shape" id="shape">
-                <br>
-                <label for="camber_profile">Camber Profile:</label>
-                <input placeholder="Directional Camber" name="camber_profile" id="camber_profile">
-                <br>
+                <div class="row">
+                    <div class="col">
+                        <label for="year">Year:</label>
+                        <input class="form-control" placeholder="2020" name="year" id="year">
+                    </div>
+                    <div class="col">
+                        <label for="category">Category:</label>
+                        <input class="form-control" placeholder="Snowboard" name="categroy" id=category>
+                    </div>
+                    
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <label for="stiffness">Stiffness:</label>
+                        <input class="form-control" placeholder="5-7" name="stiffness" id="stiffness">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="shape">Shape:</label>
+                        <input class="form-control" placeholder="Directional" name="shape" id="shape">
+                    </div>
+                    <div class="col">
+                        <label for="camber_profile">Camber Profile:</label>
+                        <input class="form-control" placeholder="Directional Camber" name="camber_profile" id="camber_profile">
+                    </div>
+                </div>
                 <!-- Measurements -->
-                <label for="length">Length:</label>
-                <input placeholder="160" name="length" id="length">
+                <div class="row">
+                    <div class="col">
+                        <label for="length">Length:</label>
+                        <input class="form-control" placeholder="160" name="length" id="length">
+                    </div>
+                    <div class="col">
+                        <label for="effective_edge">Effective Edge:</label>
+                        <input class="form-control" placeholder="1110" name="effective_edge" id="effective_edge">
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="nose_width">Nose Width:</label>
+                        <input class="form-control" placeholder="300" name="nose_width" id="nose_width">
+                    </div>
+                    <div class="col">
+                        <label for="waist_width">Waist Width:</label>
+                        <input class="form-control" placeholder="255" name="waist_width" id="waist_width">
+                    </div>
+                    <div class="col">
+                        <label for="tail_width">Tail Width:</label>
+                        <input class="form-control" placeholder="300" name="tail_width" id="tail_width">
+                    </div>
+                </div>
                 <br>
-                <label for="nose_width">Nose Width:</label>
-                <input placeholder="300" name="nose_width" id="nose_width">
-                <br>
-                <label for="waist_width">Waist Width:</label>
-                <input placeholder="255" name="waist_width" id="waist_width">
-                <br>
-                <label for="tail_width">Tail Width:</label>
-                <input placeholder="300" name="tail_width" id="tail_width">
-                <br>
-                <label for="effective_edge">Effective Edge:</label>
-                <input placeholder="1110" name="effective_edge" id="effective_edge">
+                <div class="row">
+                    <div class="col">
+                        <input class="btn btn-light form-control" type="submit" value="Search">
+                    </div>
+                </div>
+
                 
-                
-                <input class="btn btn-light" type="submit" value="Search">
                 
             </form>
         </div>
 
         <!-- Search Tutorial -->
-        <div class="col-md-4 offset-md-1">
+        <div class="col-md-3 offset-md-1">
             <p>Here is how to use the Advanced Search. It might seem a little confusing at first but I'm sure you'll get the hang of it!</p>
         </div>
         
