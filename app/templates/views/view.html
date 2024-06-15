@@ -12,107 +12,147 @@
         </div>
 
         <!-- SkiBoard Description -->
-        {% if skiboard['description'] %}
-        <div class="col-md-8 offset-md-2">
-            <p>{{skiboard['description']}}</p>
+        {% if skiboard['description'] != 'None' %}
+        <div class="col-md-6 offset-md-3">
+            <div class="row">
+                <p>{{skiboard['description']}}</p>
+            </div>
         </div>
         {% endif %}
 
         <!-- SkiBoard Stiffness -->
-        {% if skiboard['stiffness'] %}
+        {% if skiboard['stiffness'] != 'None' %}
         <div class="slidecontainer col-md-6 offset-md-3">
-            <label for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
-            <br>
-            <input disabled name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" class="slider" id="stiffnessSlider">
+            <div class="row">
+                <div class="col">
+                    <label for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
+                    <br>
+                    <input disabled name="stiffness" class="form-control stiffnessSlider slider" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" class="slider" id="stiffnessSlider">
+                </div>
+            </div>
         </div>
         {% endif %}
 
         <!-- SkiBoard Shape / Camber Profile -->
-        {% if skiboard['shape'] or skiboard['camber_profile'] %}
+        {% if skiboard['shape'] != 'None' or skiboard['camber_profile'] != 'None' %}
         <div class="col-md-6 offset-md-3">
-            {% if skiboard['shape'] %}
-            <label for="shape">Shape:</label>
-            <input disabled name="shape" value="{{ skiboard['shape']}}">
-            {% endif %}
-            
-            {% if skiboard['camber_profile'] %}
-            <label for="camberprofile">Camber Profile:</label>
-            {% if skiboard['camber_details'] %}
-            <input disabled name="camberprofile" value="{{ skiboard['camber_profile']}} [ {{ skiboard['camber_details'] }} ]">
-            {% else %}
-            <input disabled name="camberprofile" value="{{ skiboard['camber_profile']}}">
-            {% endif %}
-            {% endif %}
+            <div class="row">
+                {% if skiboard['shape'] != 'None' %}
+                <div class="col">
+                    <label for="shape">Shape:</label>
+                    <input disabled name="shape" class="form-control" value="{{ skiboard['shape']}}">
+                </div>
+                {% endif %}
+                
+                {% if skiboard['camber_profile'] != 'None' %}
+                <div class="col">
+                    <label for="camberprofile">Camber Profile:</label>
+                    {% if skiboard['camber_details'] %}
+                    <input disabled name="camberprofile" class="form-control" value="{{ skiboard['camber_profile']}} [ {{ skiboard['camber_details'] }} ]">
+                    {% else %}
+                    <input disabled name="camberprofile" class="form-control" value="{{ skiboard['camber_profile']}}">
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
         </div>
         {% endif %}
 
         <!-- SkiBoard Core / Core Profiling -->
-        {% if skiboard['core'] or skiboard['core_profiling'] %}
+        {% if skiboard['core'] != 'None' or skiboard['core_profiling'] != 'None' %}
         <div class="col-md-6 offset-md-3">
-            {% if skiboard['core'] %}
-            <label for="core">Core:</label>
-            <input disabled name="core" value="{{ skiboard['core']}}">
-            {% endif %}
+            <div class="row">
+                {% if skiboard['core'] != 'None' %}
+                <div class="col">
+                    <label for="core">Core:</label>
+                    <input disabled name="core" class="form-control" value="{{ skiboard['core']}}">
+                </div>
+                {% endif %}
+                {% if skiboard['core_profiling'] != 'None' %}
+                <div class="col">
+                    <label for="coreprofiling">Core Profiling:</label>
+                    <input disabled name="coreprofiling" class="form-control" value="{{ skiboard['core_profiling']}}">
+                </div>
+                {% endif %}
+            </div>
             
-            {% if skiboard['core_profiling'] %}
-            <label for="coreprofiling">Core Profiling:</label>
-            <input disabled name="coreprofiling" value="{{ skiboard['core_profiling']}}">
-            {% endif %}
+            
+            
         </div>
         {% endif %}
 
         <!-- SkiBoard Edges / Edge Tech -->
-        {% if skiboard['edges'] or skiboard['edge_tech'] %}
+        {% if skiboard['edges'] != 'None' or skiboard['edge_tech'] != 'None' %}
         <div class="col-md-6 offset-md-3">
-            {% if skiboard['edges'] %}
-            <label for="edges">Edges:</label>
-            <input disabled name="edges" value="{{ skiboard['edges']}}">
-            {% endif %}
-            
-            {% if skiboard['edge_tech'] %}
-            <label for="edgetech">Edge Tech:</label>
-            <input disabled name="edgetech" value="{{ skiboard['edge_tech']}}">
-            {% endif %}
+            <div class="row">
+                {% if skiboard['edges'] != 'None' %}
+                <div class="col">
+                    <label for="edges">Edges:</label>
+                    <input disabled name="edges" class="form-control" value="{{ skiboard['edges']}}">
+                </div>
+                {% endif %}
+                {% if skiboard['edge_tech']!= 'None'  %}
+                <div class="col">
+                    <label for="edgetech">Edge Tech:</label>
+                    <input disabled name="edgetech" class="form-control" value="{{ skiboard['edge_tech']}}">
+                </div>
+                {% endif %}
+            </div>
         </div>
         {% endif %}
 
         <!-- SkiBoard Laminates / Fibreglass / Resin -->
-        {% if skiboard['laminates'] or skiboard['fibreglass'] or skiboard['resin'] %}
+        {% if skiboard['laminates'] != 'None' or skiboard['fibreglass'] != 'None' or skiboard['resin'] != 'None' %}
         <div class="col-md-6 offset-md-3">
-            {% if skiboard['fibreglass'] %}
-            <label for="fibreglass">Fibreglass:</label>
-            <input disabled name="fibreglass" value="{{ skiboard['fibreglass']}}">
-            {% endif %}
-            
-            {% if skiboard['laminates'] %}
-            <label for="laminates">Laminates:</label>
-            <input disabled name="laminates" value="{{ skiboard['laminates']}}">
-            {% endif %}
-
-            {% if skiboard['resin'] %}
-            <label for="resin">Resin:</label>
-            <input disabled name="resin" value="{{ skiboard['resin']}}">
-            {% endif %}
+            <div class="row">
+                {% if skiboard['fibreglass'] != 'None' %}
+                <div class="col">
+                    <label for="fibreglass">Fibreglass:</label>
+                    <input disabled name="fibreglass" class="form-control" value="{{ skiboard['fibreglass']}}">
+                </div>
+                {% endif %}
+                {% if skiboard['laminates'] != 'None' %}
+                <div class="col">
+                    <label for="laminates">Laminates:</label>
+                    <input disabled name="laminates" class="form-control" value="{{ skiboard['laminates']}}">
+                </div>
+                {% endif %}
+                {% if skiboard['resin'] != 'None' %}
+                <div class="col">
+                    <label for="resin">Resin:</label>
+                    <input disabled name="resin" class="form-control" value="{{ skiboard['resin']}}">
+                </div>
+                {% endif %}
+            </div>
         </div>
         {% endif %}
 
         <!-- SkiBoard Base / Topsheet / Sidewall -->
-        {% if skiboard['base'] or skiboard['topsheet'] or skiboard['sidewall'] %}
+        {% if skiboard['base'] != 'None' or skiboard['topsheet'] != 'None' or skiboard['sidewall'] != None %}
         <div class="col-md-6 offset-md-3">
-            {% if skiboard['base'] %}
-            <label for="base">Base:</label>
-            <input disabled name="base" value="{{ skiboard['base']}}">
-            {% endif %}
-            
-            {% if skiboard['topsheet'] %}
-            <label for="topsheet">Topsheet:</label>
-            <input disabled name="topsheet" value="{{ skiboard['topsheet']}}">
-            {% endif %}
+            <div class="row">
+                {% if skiboard['base'] != 'None' %}
+                <div class="col">
+                    <label for="base">Base:</label>
+                    <input disabled name="base" class="form-control" value="{{ skiboard['base']}}">
+                </div>
+                {% endif %}
+                
+                {% if skiboard['topsheet'] != 'None' %}
+                <div class="col">
+                    <label for="topsheet">Topsheet:</label>
+                    <input disabled name="topsheet" class="form-control" value="{{ skiboard['topsheet']}}">
+                </div>
+                {% endif %}
 
-            {% if skiboard['sidewall'] %}
-            <label for="sidewall">Sidewall:</label>
-            <input disabled name="sidewall" value="{{ skiboard['sidewall']}}">
-            {% endif %}
+                {% if skiboard['sidewall'] != 'None' %}
+                <div class="col">
+                    <label for="sidewall">Sidewall:</label>
+                    <input disabled name="sidewall" class="form-control" value="{{ skiboard['sidewall']}}">
+                </div>
+                {% endif %}
+            </div>
+            
         </div>
         {% endif %}
         
@@ -207,12 +247,16 @@
         </div>
         
         {% if 'admin' in user['permissions'] %}
-        <div>
-            <a role="button" href="/edit/{{skiboard.slug}}/">Edit</a>
+        <div class="col-md-4 offset-md-4">
+            <row>
+                <a role="button" class="form-control btn btn-light" href="/edit/{{skiboard.slug}}/">Edit</a>
+            </row>
         </div>
-        <br>
         {% endif %}
     </div>
+    <row>
+        <br>
+    </row>
     {% endif %}
     <script src="/static/scripts/view_compare.js"></script>
 </div>
