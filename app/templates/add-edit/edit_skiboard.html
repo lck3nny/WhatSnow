@@ -20,9 +20,9 @@
 
             <!-- SkiBoard Stiffness -->
             <div class="slidecontainer col-md-8 offset-md-2">
-                <label for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
+                <label id="stiffnessLabel" for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
                 <br>
-                <input class="form-control" placeholder="5" name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" class="slider" id="stiffnessSlider">
+                <input id="stiffnessSlider" class="form-control stiffnessSlider slider" placeholder="5" name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" onchange="updateStiffness()">
             </div>
 
             <!-- SkiBoard Shape / Camber Profile -->
@@ -199,6 +199,8 @@
         </div>
     </form>
     {% endif %}
-    <script src="/static/scripts/add_edit.js"></script>
+    <div class="row">
+        <script src="/static/scripts/add_edit.js"></script>
+    </div>
 </div>
 {% endblock %}

@@ -10,3 +10,10 @@ function validateNewEdit(form_name){
     }
     return true;
 }
+
+// Update the listed value of stiffness in label when slider is moved
+function updateStiffness(){
+    stiffness = document.getElementById('stiffnessSlider').value;
+    stiffnessLabel = document.getElementById('stiffnessLabel');
+    stiffnessLabel.value = 'Stiffness: ' + stiffness;
+}
