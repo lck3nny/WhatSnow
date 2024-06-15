@@ -530,6 +530,98 @@ class SkiBoard():
 
         logging.info("Advanced Search Complete")
         return results, query
+    
+    # C A L C U L A T E
+    # C O M P A R I S O N S                    F U N C T I O N
+    # --------------------------------------------------------
+    def calc_comparisons():
+        total_comparisons = 0
+        logging.info("Session: {}".format(session))
+        if 'compare' in session and session['compare']:
+            for key in session['compare']:
+                total_comparisons += len(session['compare'][key])
+
+        return "[ {} ]".format(total_comparisons)
+    
+    # E X T R A C T   P A R A M S
+    # F R O M   T E X T                        F U N C T I O N
+    # --------------------------------------------------------
+    def extract_params_from_text(raw_input):
+        # Initialise empty dictionaries
+        sizes = 0
+        params = {}
+        param_units = {}
+
+        logging.info("Extracting params from raw input")
+
+        # Itterate throguh each row
+        for row in raw_input.split('\n'):
+            split_row = row.split(" ")
+
+            # Extract name from row
+            row_name = " ".join(split_row[:-1])
+
+            logging.info("Split row: {}".format(split_row))
+            logging.info("Row name: {}".format(row_name))
+
+            # Extract unit from row
+            if '(' in str(row):
+                units = str(row)[row.find('(') +1:row.find(')')]
+            else:
+                units = None
+
+            # Extract values from row
+            values = split_row[-1].split('\t')[1:]
+
+            # Remove rogue characters
+            for x, v in enumerate(values):
+                values[x] = v.replace('\r', '')
+
+            # Create dict for params and units
+            params[row_name.replace(' ', '_').lower()] = values
+            param_units[row_name.replace(' ', '_').lower()] = units
+
+            sizes += 1
+            
+        return params, param_units, sizes
+
+
+    # F O R M A T   P A R A M S                F U N C T I O N
+    # --------------------------------------------------------
+    def format_params(unformatted, units):
+        formatted_data = {}
+        formatted_units = {}
+        data_confidence = {}
+
+        # Populate formatted dictionaries with given data
+        for key in unformatted:
+            matched, confidence = match_param(key)
+            if matched not in data_confidence or (matched in data_confidence and confidence > data_confidence[matched]):
+                #logging.info("Updating param matching...\nKey: {} - Confidence: {}\nDict: {}".format(matched, confidence, data_confidence))
+                data_confidence[matched] = confidence
+                formatted_data[matched] = unformatted[key]
+                formatted_units[matched] = units[key]
+
+        return formatted_data, formatted_units
+
+
+    # D E S C R I B E                          F U N C T I O N
+    # --------------------------------------------------------
+    def describe():
+        return {'profile_types': profile_types, 'unit_names': unit_names, 'param_names': param_names}
+
+
+
+
+    # --------------------------------------------------------
+    # XX X X X X X X X X X X X X XX X X X X X X X X X X X X XX 
+
+    #      I N C O M P E T E   F U N C T I O N A L I T Y
+    #      ---------------------------------------------
+
+    # XX X X X X X X X X X X X X XX X X X X X X X X X X X X XX
+    # --------------------------------------------------------
+
 
 
     # Update ElasticSearch                     F U N C T I O N
@@ -626,82 +718,7 @@ class SkiBoard():
         
         return res
 
-    # C A L C U L A T E
-    # C O M P A R I S O N S                    F U N C T I O N
-    # --------------------------------------------------------
-    def calc_comparisons():
-        total_comparisons = 0
-        logging.info("Session: {}".format(session))
-        if 'compare' in session and session['compare']:
-            for key in session['compare']:
-                total_comparisons += len(session['compare'][key])
-
-        return "[ {} ]".format(total_comparisons)
+    
 
 
-    # E X T R A C T   P A R A M S
-    # F R O M   T E X T                        F U N C T I O N
-    # --------------------------------------------------------
-    def extract_params_from_text(raw_input):
-        # Initialise empty dictionaries
-        sizes = 0
-        params = {}
-        param_units = {}
-
-        logging.info("Extracting params from raw input")
-
-        # Itterate throguh each row
-        for row in raw_input.split('\n'):
-            split_row = row.split(" ")
-
-            # Extract name from row
-            row_name = " ".join(split_row[:-1])
-
-            logging.info("Split row: {}".format(split_row))
-            logging.info("Row name: {}".format(row_name))
-
-            # Extract unit from row
-            if '(' in str(row):
-                units = str(row)[row.find('(') +1:row.find(')')]
-            else:
-                units = None
-
-            # Extract values from row
-            values = split_row[-1].split('\t')[1:]
-
-            # Remove rogue characters
-            for x, v in enumerate(values):
-                values[x] = v.replace('\r', '')
-
-            # Create dict for params and units
-            params[row_name.replace(' ', '_').lower()] = values
-            param_units[row_name.replace(' ', '_').lower()] = units
-
-            sizes += 1
-            
-        return params, param_units, sizes
-
-
-    # F O R M A T   P A R A M S                F U N C T I O N
-    # --------------------------------------------------------
-    def format_params(unformatted, units):
-        formatted_data = {}
-        formatted_units = {}
-        data_confidence = {}
-
-        # Populate formatted dictionaries with given data
-        for key in unformatted:
-            matched, confidence = match_param(key)
-            if matched not in data_confidence or (matched in data_confidence and confidence > data_confidence[matched]):
-                #logging.info("Updating param matching...\nKey: {} - Confidence: {}\nDict: {}".format(matched, confidence, data_confidence))
-                data_confidence[matched] = confidence
-                formatted_data[matched] = unformatted[key]
-                formatted_units[matched] = units[key]
-
-        return formatted_data, formatted_units
-
-
-    # D E S C R I B E                          F U N C T I O N
-    # --------------------------------------------------------
-    def describe():
-        return {'profile_types': profile_types, 'unit_names': unit_names, 'param_names': param_names}
+    
