@@ -8,12 +8,11 @@
         <div id="title" class="col-md-6 offset-md-3">
             <h1>{{skiboard['brand']}} {{skiboard['model']}}</h1>
             <h3>{{skiboard['year']}}</h3>
-            <br>
         </div>
 
         <!-- SkiBoard Description -->
-        {% if skiboard['description'] != 'None' %}
-        <div class="col-md-6 offset-md-3">
+        {% if skiboard['description'] not in ['None', None] %}
+        <div class="col-md-8 offset-md-2">
             <div class="row">
                 <p>{{skiboard['description']}}</p>
             </div>
@@ -21,7 +20,7 @@
         {% endif %}
 
         <!-- SkiBoard Stiffness -->
-        {% if skiboard['stiffness'] != 'None' %}
+        {% if skiboard['stiffness'] not in ['None', None] %}
         <div class="slidecontainer col-md-6 offset-md-3">
             <div class="row">
                 <div class="col">
@@ -34,17 +33,17 @@
         {% endif %}
 
         <!-- SkiBoard Shape / Camber Profile -->
-        {% if skiboard['shape'] != 'None' or skiboard['camber_profile'] != 'None' %}
+        {% if skiboard['shape'] not in ['None', None] or skiboard['camber_profile'] not in ['None', None] %}
         <div class="col-md-6 offset-md-3">
             <div class="row">
-                {% if skiboard['shape'] != 'None' %}
+                {% if skiboard['shape'] not in ['None', None] %}
                 <div class="col">
                     <label for="shape">Shape:</label>
                     <input disabled name="shape" class="form-control" value="{{ skiboard['shape']}}">
                 </div>
                 {% endif %}
                 
-                {% if skiboard['camber_profile'] != 'None' %}
+                {% if skiboard['camber_profile'] not in ['None', None] %}
                 <div class="col">
                     <label for="camberprofile">Camber Profile:</label>
                     {% if skiboard['camber_details'] %}
@@ -59,16 +58,16 @@
         {% endif %}
 
         <!-- SkiBoard Core / Core Profiling -->
-        {% if skiboard['core'] != 'None' or skiboard['core_profiling'] != 'None' %}
+        {% if skiboard['core'] not in ['None', None] or skiboard['core_profiling'] not in ['None', None] %}
         <div class="col-md-6 offset-md-3">
             <div class="row">
-                {% if skiboard['core'] != 'None' %}
+                {% if skiboard['core'] not in ['None', None] %}
                 <div class="col">
                     <label for="core">Core:</label>
                     <input disabled name="core" class="form-control" value="{{ skiboard['core']}}">
                 </div>
                 {% endif %}
-                {% if skiboard['core_profiling'] != 'None' %}
+                {% if skiboard['core_profiling'] not in ['None', None] %}
                 <div class="col">
                     <label for="coreprofiling">Core Profiling:</label>
                     <input disabled name="coreprofiling" class="form-control" value="{{ skiboard['core_profiling']}}">
@@ -82,16 +81,16 @@
         {% endif %}
 
         <!-- SkiBoard Edges / Edge Tech -->
-        {% if skiboard['edges'] != 'None' or skiboard['edge_tech'] != 'None' %}
+        {% if skiboard['edges'] not in ['None', None] or skiboard['edge_tech'] not in ['None', None] %}
         <div class="col-md-6 offset-md-3">
             <div class="row">
-                {% if skiboard['edges'] != 'None' %}
+                {% if skiboard['edges'] not in ['None', None] %}
                 <div class="col">
                     <label for="edges">Edges:</label>
                     <input disabled name="edges" class="form-control" value="{{ skiboard['edges']}}">
                 </div>
                 {% endif %}
-                {% if skiboard['edge_tech']!= 'None'  %}
+                {% if skiboard['edge_tech'] not in ['None', None]  %}
                 <div class="col">
                     <label for="edgetech">Edge Tech:</label>
                     <input disabled name="edgetech" class="form-control" value="{{ skiboard['edge_tech']}}">
@@ -102,22 +101,22 @@
         {% endif %}
 
         <!-- SkiBoard Laminates / Fibreglass / Resin -->
-        {% if skiboard['laminates'] != 'None' or skiboard['fibreglass'] != 'None' or skiboard['resin'] != 'None' %}
+        {% if skiboard['laminates'] not in ['None', None] or skiboard['fibreglass'] not in ['None', None] or skiboard['resin'] not in ['None', None] %}
         <div class="col-md-6 offset-md-3">
             <div class="row">
-                {% if skiboard['fibreglass'] != 'None' %}
+                {% if skiboard['fibreglass'] not in ['None', None] %}
                 <div class="col">
                     <label for="fibreglass">Fibreglass:</label>
                     <input disabled name="fibreglass" class="form-control" value="{{ skiboard['fibreglass']}}">
                 </div>
                 {% endif %}
-                {% if skiboard['laminates'] != 'None' %}
+                {% if skiboard['laminates'] not in ['None', None] %}
                 <div class="col">
                     <label for="laminates">Laminates:</label>
                     <input disabled name="laminates" class="form-control" value="{{ skiboard['laminates']}}">
                 </div>
                 {% endif %}
-                {% if skiboard['resin'] != 'None' %}
+                {% if skiboard['resin'] not in ['None', None] %}
                 <div class="col">
                     <label for="resin">Resin:</label>
                     <input disabled name="resin" class="form-control" value="{{ skiboard['resin']}}">
@@ -128,7 +127,7 @@
         {% endif %}
 
         <!-- SkiBoard Base / Topsheet / Sidewall -->
-        {% if skiboard['base'] != 'None' or skiboard['topsheet'] != 'None' or skiboard['sidewall'] != None %}
+        {% if skiboard['base'] not in ['None', None] or skiboard['topsheet'] not in ['None', None] or skiboard['sidewall'] not in ['None', None] %}
         <div class="col-md-6 offset-md-3">
             <div class="row">
                 {% if skiboard['base'] != 'None' %}
@@ -138,14 +137,14 @@
                 </div>
                 {% endif %}
                 
-                {% if skiboard['topsheet'] != 'None' %}
+                {% if skiboard['topsheet'] not in ['None', None] %}
                 <div class="col">
                     <label for="topsheet">Topsheet:</label>
                     <input disabled name="topsheet" class="form-control" value="{{ skiboard['topsheet']}}">
                 </div>
                 {% endif %}
 
-                {% if skiboard['sidewall'] != 'None' %}
+                {% if skiboard['sidewall'] not in ['None', None] %}
                 <div class="col">
                     <label for="sidewall">Sidewall:</label>
                     <input disabled name="sidewall" class="form-control" value="{{ skiboard['sidewall']}}">

@@ -137,7 +137,7 @@ nav{
 .banner{
     margin-top: 10%;
     transform: translateY(-10%);
-    height: 70vh;
+    min-height: 70vh;
 }
 
 
