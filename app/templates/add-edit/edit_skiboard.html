@@ -22,7 +22,7 @@
             <div class="slidecontainer col-md-8 offset-md-2">
                 <label id="stiffnessLabel" for="stiffness">Stiffness: {{ skiboard['stiffness']}}</label>
                 <br>
-                <input id="stiffnessSlider" class="form-control stiffnessSlider slider" placeholder="5" name="stiffness" type="range" min="0" max="10" value="{{ skiboard['stiffness']}}" onchange="updateStiffness()">
+                <input id="stiffnessSlider" class="form-control stiffnessSlider slider" placeholder="5" name="stiffness" type="range" min="0" max="10" step="0.5" value="{{ skiboard['stiffness']}}" onchange="updateStiffness()">
             </div>
 
             <!-- SkiBoard Shape / Camber Profile -->
@@ -114,92 +114,97 @@
         </div>
         
         <!-- SkiBoard Data Table -->
-        {% if sizes %}
-        <div class="row datatable">
-            <br><p></p><br><p></p><br>
+        <div class="row banner">
+            {% if sizes %}
+            <input hidden name="num_sizes" value="{{sizes|length}}">
+            {% for size in sizes %}
+            <input hidden name="size_{{loop.index}}" id="size_hidden_{{loop.index}}" value="{{size.size}}">
+            <input hidden name="nose_width_{{loop.index}}"  id="nose_width_hidden_{{loop.index}}" value="{{size['nose_width']}}">
+            <input hidden name="waist_width_{{loop.index}}"  id="waist_width_hidden_{{loop.index}}" value="{{size['waist_width']}}">
+            <input hidden name="tail_width_{{loop.index}}"  id="tail_width_hidden_{{loop.index}}" value="{{size['tail_width']}}">
+            <input hidden name="sidecut_{{loop.index}}"  id="sidecut_hidden_{{loop.index}}" value="{{size['sidecut']}}">
+            <input hidden name="effective_edge_{{loop.index}}"  id="effective_edge_hidden{{loop.index}}" value="{{size['effective_edge']}}">
+            <input hidden name="setback_{{loop.index}}"  id="setback_hidden_{{loop.index}}" value="{{size['setback']}}">
+
+            {% if skiboard['category'] == 'ski' %}
+            <input hidden name="factory_mounting_point_{{loop.index}}" id="factory_mounting_point_hidden_{{loop.index}}" value="{{size['factory_mounting_point']}}">
+            <input hidden name="freestyle_mounting_point_{{loop.index}}" id="freestyle_mounting_point_hidden_{{loop.index}}" value="{{size['freestyle_mounting_point']}}">
+            {% endif %}
+
+
+            {% endfor %}
             <div id="table" class="col-md-6 offset-md-3">
                 <table class='table table-dark table-striped'>
                     <tr>
                         <th>Size</th>
                         {% for size in sizes %}
-                        <td name="size_{{loop.index}}" contenteditable='true' class="size {{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size.size }}</td>
+                        <td contenteditable='true' id="size_{{loop.index}}" class="size {{loop.index}}" onkeyup="updateHiddenVals('size/{{loop.index}}')">{{ size.size }}</td>
                         {% endfor %}
                     </tr>
                     <tr>
                         <th>Nose Width</th>
                         {% for size in sizes %}
-                        <td name="nose_width_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['nose_width'] }}</td>
+                        <td contenteditable='true' id="nose_width_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('nose_width/{{loop.index}}')">{{ size['nose_width'] }}</td>
                         {% endfor %}
                     </tr>
                     <tr>
                         <th>Waist Width</th>
                         {% for size in sizes %}
-                        <td name="waist_width_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['waist_width'] }}</td>
+                        <td contenteditable='true' id="waist_width_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('waist_width/{{loop.index}}')">{{ size['waist_width'] }}</td>
                         {% endfor %}
                     </tr>
                     <tr>
                         <th>Tail Width</th>
                         {% for size in sizes %}
-                        <td name="tail_width_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['tail_width'] }}</td>
+                        <td contenteditable='true' id="tail_width_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('tail_width/{{loop.index}}')">{{ size['tail_width'] }}</td>
                         {% endfor %}
                     </tr>
                     <tr>
                         <th>Sidecut</th>
                         {% for size in sizes %}
-                        <td name="sidecut_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['sidecut'] }}</td>
+                        <td contenteditable='true' id="sidecut_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('sidecut/{{loop.index}}')">{{ size['sidecut'] }}</td>
                         {% endfor %}
                     </tr>
                     <tr>
                         <th>Effective Edge</th>
                         {% for size in sizes %}
-                        <td name="effective_edge_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['effective_edge'] }}</td>
+                        <td contenteditable='true' id="effective_edge_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('effective_edge/{{loop.index}}')">{{ size['effective_edge'] }}</td>
                         {% endfor %}
                     </tr>
                     <tr>
                         <th>Setback</th>
                         {% for size in sizes %}
-                        <td name="setback_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['setback'] }}</td>
+                        <td contenteditable='true' id="setback_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('setback/{{loop.index}}')">{{ size['setback'] }}</td>
                         {% endfor %}
                     </tr>
+                    {% if skiboard['category'] == 'ski' %}
                     <tr>
                         <th>Factory Mounting Point</th>
                         {% for size in sizes %}
-                        <td name="factory_mounting_point_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['factory_mounting_point'] }}</td>
+                        <td contenteditable='true' id="factory_mounting_point_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('factory_mounting_point/{{loop.index}}')">{{ size['factory_mounting_point'] }}</td>
                         {% endfor %}
                     </tr>
                     <tr>
                         <th>Freestyle Mounting Point</th>
                         {% for size in sizes %}
-                        <td name="freestyle_mounting_point_{{loop.index}}" contenteditable='true' class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['freestyle_mounting_point'] }}</td>
+                        <td contenteditable='true' id="freestyle_mounting_point_{{loop.index}}" class="{{loop.index}}" onkeyup="updateHiddenVals('freestyle_mounting_point/{{loop.index}}')">{{ size['freestyle_mounting_point'] }}</td>
                         {% endfor %}
                     </tr>
+                    {% endif %}
                 </table>
             </div>
-            
-            
-        </div>
-        {% else %}
-        <div class="datatable">
-            <br>
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div id="table">
-                        <!-- Find a way to centralise this input box-->
-                        <textarea class="form-control" name="raw-data" placeholder="Please enter a data table for this Ski / Snowboard" cols="100" rows="20"></textarea>
-                    </div>
-                </div>
+            {% else %}
+            <div class="col-md-6 offset-md-3" id="table">
+                <!-- Find a way to centralise this input box-->
+                <textarea class="form-control" name="raw-data" placeholder="Please enter a data table for this Ski / Snowboard"  rows="15"></textarea>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-md-4 offset-md-4" id="save">
-                    <input class="form-control btn btn-light" type="submit" value="Save">
-                </div>
+            {% endif %}
+            <div class="col-md-4 offset-md-4" id="save">
+                <input class="form-control btn btn-light" type="submit" value="Save">
             </div>
-            <br>
         </div>
     </form>
-    {% endif %}
-    <div class="row">
+    <div>
         <script src="/static/scripts/add_edit.js"></script>
     </div>
 </div>

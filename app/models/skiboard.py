@@ -305,11 +305,11 @@ class SkiBoard():
 
         if id:
             try:
-                logging.info("Getting SkiBoard from ID: {}".format(id))
+                logging.info(f"Getting SkiBoard from ID: {id}")
                 sql = f"""SELECT * FROM SkiBoards WHERE skiboard_id = '{id}'"""
                 cursor.execute(sql)
                 result = cursor.fetchone()
-                logging.info("Result: {}".format(result))
+                logging.info(f"Result: {result}")
             except Exception as e:
                 logging.error(e)
                 return None
@@ -320,7 +320,7 @@ class SkiBoard():
                 sql = f"""SELECT * FROM SkiBoards WHERE brand = '{brand}' AND model = '{model}' AND year = '{year}'"""
                 cursor.execute(sql)
                 result = cursor.fetchone()
-                logging.info("Result: {}".format(result))
+                logging.info(f"Result: {result}")
             except Exception as e:
                 logging.error(e)
                 return None
@@ -345,6 +345,8 @@ class SkiBoard():
     def save(self):
         db = setupdb()
         cursor = db.cursor()
+
+        logging.info(f"Self: {self.id}")
 
         if not self.stiffness:
             self.stiffness = 0
@@ -392,7 +394,7 @@ class SkiBoard():
             logging.info("Creating new skiboard")
             sql = f"""INSERT INTO SkiBoards (skiboard_id, url, brand, model, year, name, slug, category, family, description, stiffness, shape, flex_profile, camber_profile, camber_details, core, core_profiling, fibreglass, laminates, resin, base, edges, edge_tech, topsheet, sidewall, inserts, asym, weight, womens, youth, updated) 
             values(
-            '{str(self.id)}'
+            '{str(self.id)}',
             '{str(self.url)}', 
             '{str(self.brand)}',  
             '{str(self.model)}', 
@@ -430,10 +432,10 @@ class SkiBoard():
             cursor.execute(sql)
             db.commit()
         except Exception as e:
-            logging.error("Could not save SkiBoard:\n{}".format(e))
+            logging.error(f"Could not save SkiBoard:\n{e}")
             return False
 
-        logging.info("Saved SkiBoard:\nBrand: {}\nModel: {} Year: ({})".format(self.brand, self.model, self.year))
+        logging.info(f"Saved SkiBoard:\nBrand: {self.brand}\nModel: {self.model} Year: ({self.year})")
 
         # ToDo...
         # Update ElasticSearch

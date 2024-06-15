@@ -13,7 +13,17 @@ function validateNewEdit(form_name){
 
 // Update the listed value of stiffness in label when slider is moved
 function updateStiffness(){
-    stiffness = document.getElementById('stiffnessSlider').value;
-    stiffnessLabel = document.getElementById('stiffnessLabel');
-    stiffnessLabel.value = 'Stiffness: ' + stiffness;
+    var stiffness = document.getElementById('stiffnessSlider').value;
+    var stiffnessLabel = document.getElementById('stiffnessLabel');
+    stiffnessLabel.innerHTML = 'Stiffness: ' + stiffness;
+    console.log("Stiffness: " + stiffness);
+}
+
+// Update hidden form values from data table 
+function updateHiddenVals(v){
+    var paramName = v.split("/")[0];
+    var itteration = v.split("/")[1];
+    var newValue = document.getElementById(paramName + "_" + itteration).innerHTML;
+    var hiddenElement = document.getElementById(paramName + "_hidden_" + itteration);
+    hiddenElement.setAttribute('value', newValue);
 }

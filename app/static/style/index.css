@@ -138,7 +138,6 @@ nav{
     margin-top: 10%;
     transform: translateY(-10%);
     height: 70vh;
-
 }
 
 
@@ -165,6 +164,11 @@ h1{
 p{
     text-transform: lowercase;
 }
+
+.lighttext{
+    color: var(--light);
+}
+
 
 .submit{
     text-transform: uppercase;

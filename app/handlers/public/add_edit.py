@@ -4,6 +4,7 @@ import logging
 # ------------------------------------------------------------
 from app.models.skiboard import SkiBoard
 from app.models.user import User
+from app.models.size import Size
 
 # F R A M E W O R K                              I M P O R T S
 # ------------------------------------------------------------
@@ -227,9 +228,19 @@ class EditSkiboard(MethodView):
         if not skiboard:
             flash('There was a problem with your request. Please try again later!')
             return redirect('/view/slug/')
+        
+        try:
+            sizes = Size.get(skiboard.id)
+            for x, size in enumerate(sizes):
+                sizes[x] = size.__dict__
+
+            logging.info(f"Sizes for {skiboard.name}:\n{sizes}")
+        except Exception as e:
+            logging.error(f"Could not get sizes for skiboard ({skiboard.name}): \n{e}")
                 
-        return render_template('add-edit/edit_skiboard.html', page_name='import_complete', skiboard=skiboard, comparisons=SkiBoard.calc_comparisons())
+        return render_template('add-edit/edit_skiboard.html', page_name='import_complete', skiboard=skiboard, sizes=sizes, comparisons=SkiBoard.calc_comparisons())
     
+    # ------------------------------------------------ P O S T
     def post(r, slug):
         logging.info(f"Submitting new edit for skiboard {slug}")
 
@@ -239,8 +250,8 @@ class EditSkiboard(MethodView):
             return redirect('/view/slug/')
         
 
-        #raw_input = request.form['raw-data']
-        update_params = {
+        # Collect list of params for general SkiBoard data
+        skiboard_update_params = {
             'description': request.form.get('description'),
             'family': request.form.get('family'),
             'stiffness': request.form.get('stiffness'),
@@ -265,13 +276,15 @@ class EditSkiboard(MethodView):
             'youth': request.form.get('youth')
         }
 
+        # Apply param updates to local SkiBoard object
         logging.info("Updating params one at a time")
-        for p in update_params:
+        for p in skiboard_update_params:
             try:
-                setattr(skiboard, p, update_params[p])
+                setattr(skiboard, p, skiboard_update_params[p])
             except Exception as e:
                 logging.error(f"Untable to update {p} in SkiBoard: {slug}... {e}")
 
+        # Update DB with new params
         logging.info("Saving new params to skiboard")
         try:
             skiboard.save()
@@ -279,6 +292,43 @@ class EditSkiboard(MethodView):
             logging.error(f"Could not save SkiBoard: {slug}... {e}")
             flash('There was a problem with your request. Please try again later!')
             return redirect('/view/slug/')
+        
+
+        logging.info(" ------------------------- ")
+        logging.info(f"Form Values: {request.form.to_dict()}")
+        # Collect list of params for Size data
+        num_sizes = request.form.get('num_sizes')
+        if num_sizes:
+            for x in range(1, int(num_sizes)+1):
+                try:
+                    single_size = Size(
+                        skiboard_id = skiboard.id,
+                        size = request.form.get(f'size_{x}'),
+                        nose_width = request.form.get(f'nose_width_{x}'),
+                        waist_width = request.form.get(f'waist_width_{x}'),
+                        tail_width = request.form.get(f'tail_width_{x}'),
+                        sidecut = request.form.get(f'sidecut_{x}'),
+                        setback = request.form.get(f'setback_{x}'),
+                        effective_edge = request.form.get(f'effective_edge_{x}')
+                    )
+                    logging.info(f"Extracted Single Size: {single_size.__dict__}")
+
+                    '''
+                    if skiboard['category'].lower() == 'ski':
+                        single_size['factory_mounting_point'] = request.form.get(f'factory_mounting_point_{x}')
+                        single_size['freestyle_mounting_point'] = request.form.get(f'freestyle_mounting_point_{x}')
+                    '''
+                    # Save each size provided in
+                    success = single_size.save()
+                    if not success:
+                        logging.warning(f"Unable to save size: x = {x}")
+            
+
+                except Exception as e:
+                    logging.info(f"Breaking size loop at x = {x} /// {e}")
+                    break            
+        elif request.form.get('raw_data'):
+            logging.info("Must have a raw data input")
         
         flash('Ski / Snowboard successfully updated.')
         return redirect(f'/view/{slug}/')

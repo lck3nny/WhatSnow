@@ -29,7 +29,7 @@ class ViewHandler(MethodView):
         
         skiboard = SkiBoard.get(slug=slug)
         if not skiboard:
-            logging.error("Could not collect SkiBoard: {}".format(slug))
+            logging.error(f"Could not collect SkiBoard: {slug}")
             flash('We could not find the ski or snowboard that you were looking for. Please try again later.')
             return redirect('/')
     
