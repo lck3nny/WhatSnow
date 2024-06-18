@@ -1,33 +1,48 @@
-function showDetails() {
-    let details = document.getElementById('update_details');
-    details.removeAttribute("hidden");
-    details.scrollIntoView();
-}
+// Basic Info
 
 
-async function removeFromQuiver(skiboard, size){
-    var data = {
-        'skiboard': skiboard,
-        'size': size
-    }
+// Rider Info
 
-    console.log("Removing skiboard from quiver")
-    console.log(data);
-    try {
-        const response = await fetch("/remove-from-quiver/", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(data)
-        });
-    
-        const result = await response.json();
-        console.log("Success:", result);
+var btnRiderInfoEdit = document.getElementById('btn-edit-rider-info');
+var btnRiderInfoBack = document.getElementById('btn-rider-info-back');
+var btnRiderInfoSave = document.getElementById('btn-rider-info-save');
 
-        document.getElementById(skiboard + '-label').remove();
-        document.getElementById(skiboard + '-button').remove();
-        document.getElementById(skiboard + '-filler').remove();
-    } catch (error) {
-        console.error("Error:", error);
-        alert("There was an issue with your search query. Please try again.");
+btnRiderInfoEdit.addEventListener('click', triggerRiderInfoEdit);
+btnRiderInfoBack.addEventListener('click', triggerRiderInfoBack);
+btnRiderInfoSave.addEventListener('click', saveRiderInfo);
+
+// Rider Info -> Edit
+function triggerRiderInfoEdit(){
+    console.log("Edit Rider Info");
+
+    var hiddenButtons = document.getElementById('btns-submit-rider-info');
+    var visabeButtons = document.getElementById('btn-edit-rider-info');
+    hiddenButtons.hidden = false;
+    visabeButtons.hidden = true;
+
+    var inputs = document.getElementsByClassName('rider-info-param');
+    for (var i = 0; i < inputs.length; i++){
+        inputs[i].disabled = false;
     }
 }
+
+// Rider Info -> Back
+function triggerRiderInfoBack(){
+
+    var visableButtons = document.getElementById('btns-submit-rider-info');
+    var hiddenButtons = document.getElementById('btn-edit-rider-info');
+    visableButtons.hidden = true;
+    hiddenButtons.hidden = false;
+
+    var inputs = document.getElementsByClassName('rider-info-param');
+    for (var i = 0; i < inputs.length; i++){
+        inputs[i].disabled = true;
+    }
+}
+
+// Rider Info -> Save
+function saveRiderInfo(){
+    console.log("Saving Rider info");
+    // Make ASYNC request to save info
+}
+

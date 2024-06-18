@@ -2,12 +2,108 @@
 {% block title %}My Account{% endblock %}
 {% block top_content %}
 <div class="container fullscreen">
-    <div class="row banner">
+    <div id="title" class="row banner">
         <div class="col-md-6 offset-md-3">
             <h1>Hello {{ session.user.fname}}</h1>
             <p>Welcome to your What Snow account</p>
         </div>
+        <div class="col-md-8 offset-md-2">
+
+        </div>
     </div>
+    <div id="rider_info" class="row banner">
+        
+        <!-- Rider Info -->
+        <div class="row">
+            <div class="col-md-3 offset-md-1">
+                <h2 class="lighttext">Rider Info</h2>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-md-3 offset-md-2">
+                    <h3 class="lighttext">Ski Info:</h3>
+                    <br>
+                </div>
+                <div class="col-md-3 offset-md-2">
+                    <h3 class="lighttext">Snowboard Info:</h3>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Ski Info -->
+                <div class="col-md-3 offset-md-2">
+                    <div class="row">
+                        <label class="lighttext" for="ski-experience">Experience Level:</label>
+                        {% if session.user['ski-experience'] not in [None, 'None'] %}
+                        <input disabled class="rider-info-param form-control" value="{{session.user['ski-experience']}}" placeholder="Blue" >
+                        {% else %}
+                        <input disabled class="rider-info-param form-control" value="" placeholder="Blue" >
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <label class="lighttext" for="ski-terrain">Terrain Preference:</label>
+                        {% if session.user['ski-terrain'] not in [None, 'None'] %}
+                        <input disabled class="rider-info-param form-control" value="{{session.user['ski-terrain']}}" placeholder="Freeride" >
+                        {% else %}
+                        <input disabled class="rider-info-param form-control" value="" placeholder="Freeride">
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Snowboard Info -->
+                <div class="col-md-3 offset-md-2">
+                    <div class="row">
+                        
+                        <label class="lighttext" for="snowboard-experience">Experience Level:</label>
+                        {% if session.user['snowboard-experience'] not in [None, 'None'] %}
+                        <input disabled class="rider-info-param form-control" value="{{session.user['snowboard-experience']}}" placeholder="Blue" >
+                        {% else %}
+                        <input disabled class="rider-info-param form-control" value="" placeholder="Blue" >
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <label class="lighttext" for="snowboard-terrain">Terrain Preference:</label>
+                        {% if session.user['snowboard-terrain'] not in [None, 'None'] %}
+                        <input disabled class="rider-info-param form-control" value="{{session.user['snowboard-terrain']}}" placeholder="Freeride" >
+                        {% else %}
+                        <input disabled class="rider-info-param form-control" value="" placeholder="Freeride">
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        <label class="lighttext" for="snowboard-stance">Stance Preference:</label>
+                        {% if session.user['snowboard-stance'] not in [None, 'None'] %}
+                        <input disabled class="rider-info-param form-control" value="{{session.user['snowboard-stance']}}" placeholder="Goofy" >
+                        {% else %}
+                        <input disabled class="rider-info-param form-control" value="" placeholder="Goofy">
+                        {% endif %}
+                    </div>
+                </div>  
+            </div>
+            <div class="row">
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="row">
+                <div id="btn-edit-rider-info" class="col-md-2 offset-md-5">
+                    <input class="form-control btn btn-light" value="Edit">
+                </div>
+                <div hidden id="btns-submit-rider-info" class="col-md-4 offset-md-4">
+                    <div class="row">
+                        <div class="col">
+                            <input id="btn-rider-info-back" class="form-control btn btn-light" value="Back">
+                        </div>
+                        <div class="col">
+                            <input id="btn-rider-info-save"  class="form-control btn btn-light" type="submit" value="Save">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
     
     <script src="/static/scripts/accounts/account.js"></script>
 </div>
