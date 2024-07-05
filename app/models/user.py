@@ -138,7 +138,7 @@ class User():
     # I S   A D M I N                          F U N C T I O N
     # --------------------------------------------------------
     def is_admin(self):
-        if not 'admin' in self.permissions:
+        if not 'admin' in self['permissions']:
             return False
         
         return True

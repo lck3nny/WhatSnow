@@ -1,4 +1,4 @@
-// Display import options for user
+// Display import category for user
 function startImport(type) {
     if(type == "board"){
         let p1 = document.getElementById('board_import_1');

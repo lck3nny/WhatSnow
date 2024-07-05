@@ -187,6 +187,7 @@ def match_param(param):
 # ------------------------------------------------------------
 # This only works for extracting complete result sets
 # is it worth fixing before migrating to SQLAlchemy?
+# ------------------------------------------------------------
 def extract_results(response):
     results = []
     for r in response:
@@ -199,8 +200,6 @@ def extract_results(response):
                 brand=r[2], 
                 model=r[3], 
                 year=r[4], 
-                name=r[5],
-                slug=r[6],
                 category=r[7],
                 family=r[8],
                 description=r[9],
@@ -244,13 +243,13 @@ class SkiBoard():
 
 
     # If a SkiBoard has an ID of 0 it has not been saved in the database
-    def __init__(self, skiboard_id, brand, model, year, name, slug, category, family=None, description=None, stiffness=None, shape=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, core_profiling=None, fibreglass=None, laminates=[], resin=None, base=None, edges=None, edge_tech=None, topsheet=None, sidewall=None, inserts=None, asym=False, weight=0, womens=False, youth=False, url=None):
+    def __init__(self, skiboard_id, brand, model, year, category, family=None, description=None, stiffness=None, shape=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, core_profiling=None, fibreglass=None, laminates=[], resin=None, base=None, edges=None, edge_tech=None, topsheet=None, sidewall=None, inserts=None, asym=False, weight=0, womens=False, youth=False, url=None):
         self.id = skiboard_id
         self.brand = brand
         self.model = model
         self.year = year
-        self.name = name
-        self.slug = slug
+        self.name = f"{str(brand).capitalize()} {str(model).capitalize} {str(year)}"
+        self.slug = f"{str(brand).lower()}-{str(model).lower()}-{str(year)}"
         self.category = category
         self.description = description
         self.stiffness = stiffness
@@ -348,7 +347,6 @@ class SkiBoard():
         db = setupdb()
         cursor = db.cursor()
 
-        logging.info(f"Self: {self.id}")
 
         if not self.stiffness:
             self.stiffness = 0
@@ -356,7 +354,7 @@ class SkiBoard():
         if not self.weight:
             self.weight = 0
 
-        if self.id:
+        if self.id and self.id != -1:
             logging.info("Updating existing skiboard")
             sql = f"""REPLACE INTO SkiBoards (skiboard_id, url, brand, model, year, name, slug, category, family, description, stiffness, shape, flex_profile, camber_profile, camber_details, core, core_profiling, fibreglass, laminates, resin, base, edges, edge_tech, topsheet, sidewall, inserts, asym, weight, womens, youth, updated) 
             values(
@@ -394,9 +392,8 @@ class SkiBoard():
             
         else:
             logging.info("Creating new skiboard")
-            sql = f"""INSERT INTO SkiBoards (skiboard_id, url, brand, model, year, name, slug, category, family, description, stiffness, shape, flex_profile, camber_profile, camber_details, core, core_profiling, fibreglass, laminates, resin, base, edges, edge_tech, topsheet, sidewall, inserts, asym, weight, womens, youth, updated) 
+            sql = f"""INSERT INTO SkiBoards (url, brand, model, year, name, slug, category, family, description, stiffness, shape, flex_profile, camber_profile, camber_details, core, core_profiling, fibreglass, laminates, resin, base, edges, edge_tech, topsheet, sidewall, inserts, asym, weight, womens, youth, updated) 
             values(
-            '{str(self.id)}',
             '{str(self.url)}', 
             '{str(self.brand)}',  
             '{str(self.model)}', 
@@ -477,6 +474,42 @@ class SkiBoard():
     
         results = extract_results(response)
         return results
+    
+    # S A V E   S I Z E   V A L U E S          F U N C T I O N
+    # --------------------------------------------------------
+    def save_values(self, values):
+        #print(f"Importing...\n{str(skiboard['brand']).capitalize()} {str(skiboard['model']).capitalize()} {str(skiboard['year'])}\nValues:\n{values}")
+        for x in range(len(values['size'])):
+            try:
+                sql = f"""REPLACE INTO sizes (
+                    skiboard_id,
+                    size,
+                    nose_width,
+                    waist_width,
+                    tail_width,
+                    sidecut,
+                    setback,
+                    effective_edge
+                ) VALUES (
+                    '{str(self['id'])}',
+                    '{str(values['size'][x])}',
+                    '{float(values['nose width'][x])}',
+                    '{float(values['waist width'][x])}',
+                    '{float(values['tail width'][x])}',
+                    '{str(values['sidecut'][x])}',
+                    '{float(values['setback'][x])}',
+                    '{float(values['effective edge'][x])}'
+                )"""
+
+                db = setupdb()
+                cursor = db.cursor()
+                cursor.execute(sql)
+                db.commit()
+            except Exception as e:
+                print(f"ERROR: size ({values['size'][x]})\n{e}\n")
+                print(f"SQL:\n{sql}\n\n")
+        
+        return True
     
     # A D V A N C E D   S E A R C H            F U N C T I O N
     # --------------------------------------------------------

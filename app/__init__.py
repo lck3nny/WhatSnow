@@ -14,7 +14,7 @@ from app.core import db
 from .handlers.public.home import HomePageHandler, SearchHandler, ComingSoonHandler
 from .handlers.public.advanced_search import AdvancedSearchHandler
 from .handlers.public.accounts import LoginHandler, LogoutHandler, SignupHandler, AccountHandler, ForgotPasswordHandler
-from .handlers.public.add_edit import NewImportHandler, EditSkiboard
+from .handlers.public.add_edit import NewImportHandler, CompleteImportHandler, EditSkiboard
 from .handlers.public.view import ViewHandler, StartCompareHandler, CompareHandler, AddToCompareHandler, RemoveComparisonHandler, ClearComparisonsHandler
 
 from .handlers.public.learning import LearningHandler
@@ -108,9 +108,7 @@ app.add_url_rule(rule='/account/', view_func=AccountHandler.as_view('account'), 
 
 # Add / Edit
 app.add_url_rule(rule='/import/', view_func=NewImportHandler.as_view('new_import'), methods=['GET', 'POST'])
-#app.add_url_rule(rule='/import/<slug>/', view_func=ImportDetailsHandler.as_view('import_details'), methods=['GET', 'POST'])
-#app.add_url_rule(rule='/import/<slug>/confirm/', view_func=ImportConfirmationHandler.as_view('import_conf'), methods=['GET', 'POST'])
-#app.add_url_rule(rule='/import/<slug>/complete/', view_func=ImportCompleteHandler.as_view('import_complete'), methods=['GET'])
+app.add_url_rule(rule='/import/complete/', view_func=CompleteImportHandler.as_view('import_details'), methods=['POST'])
 app.add_url_rule(rule='/edit/<slug>/', view_func=EditSkiboard.as_view('edit-skiboard'), methods=['GET', 'POST'])
 
 # View / Compare

@@ -1,33 +1,139 @@
 {% extends "core/base.html" %}
-{% block title %}Import Details{% endblock %}
+{% block title %}{{basic_info['brand']}} {{basic_info['model']}}{% endblock %}
 {% block top_content %}
 <div class="container">
-    <div class="row banner">
-        <div class="col-md-6 offset-md-3">
-            <h1>Import Details</h1>
-            <p>{{skiboard.brand}} {{skiboard.model}} {{skiboard.year}}</p>
-        </div>
-        <div class="col-md-6 offset-md-3">
-            <form id="import-details-form" action="" method="post" onsubmit="return validateImportDetails();">
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label" for="snowboard">Asym</label>
-                    <input class="form-check-input" type="checkbox" id="asym-check" name="asym" value="Asym">
-                </div>
-                <label for="flex" class="form-label">Flex: </label>
-                <output>5</output>
-                <input type="range" class="form-range" id="flex" name="flex" min="0" max="10" step="0.5" oninput="this.previousElementSibling.value = this.value">
-                <select class="form-control" name="profile" id="profile">
-                    <option value="" disabled selected>Profile...</option>
-                    {% for profile in profiles %}
-                    <option value="{{ profile }}">{{ profile.replace('_', ' ').title() }}</option>
-                    {% endfor %}
-                </select>   
-                <p>Paste your size chart below</p>
-                <textarea id="data" name="data-table"class="form-control" rows="12"></textarea>
+    <form class="form-inline" id="edit-form" name="editForm" action="/import/complete/" method="post" onsubmit="return validateNewImport('skiForm');">
+        <div class="row banner">
+
+            <!-- SkiBoard Title -->
+            <div id="title" class="col-md-6 offset-md-3">
+                <h1>{{basic_info['brand']}} {{basic_info['model']}}</h1>
+                <h3>{{basic_info['year']}}</h3>
                 <br>
-                <input class="btn btn-dark" type="submit" value="Upload">
-            </form>
+            </div>
+            
+            <div>
+                <input hidden name="brand" value="{{basic_info['brand']}}">
+                <input hidden name="model" value="{{basic_info['model']}}">
+                <input hidden name="year" value="{{basic_info['year']}}">
+                <input hidden name="category" value="{{basic_info['category']}}">
+            </div>
+
+            <!-- SkiBoard Description -->
+            <div class="col-md-8 offset-md-2">
+                <textarea class="form-control" placeholder="Enter a description here..." name="description" cols="40" rows="4"></textarea>
+            </div>
+            
+
+            <!-- SkiBoard Stiffness -->
+            <div class="slidecontainer col-md-8 offset-md-2">
+                <label id="stiffnessLabel" for="stiffness">Stiffness: </label>
+                <br>
+                <input id="stiffnessSlider" class="form-control stiffnessSlider slider" placeholder="5" name="stiffness" type="range" min="0" max="10" step="0.5"  onchange="updateStiffness()">
+            </div>
+
+            <!-- SkiBoard Shape / Camber Profile -->
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="shape">Shape:</label>
+                        <input class="form-control" placeholder="Directional" name="shape">
+                    </div>
+                    <div class="col">
+                        <label for="camberprofile">Camber Profile:</label>
+                        <input class="form-control" placeholder="Full Camber" name="camberprofile">
+                    </div>
+                    <div class="col">
+                        <label for="camberdetails">Camber Details:</label>
+                        <input class="form-control" placeholder="PurePop Camber" name="camberdetails">
+                    </div>
+                    <div class="col">
+                        <label for="flexprofile">Flex Profile:</label>
+                        <input class="form-control" placeholder="Twin Flex" name="flexprofile" >
+                    </div>
+                </div>
+            </div>
+
+            <!-- SkiBoard Core / Core Profiling -->
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="core">Core:</label>
+                        <input class="form-control" placeholder="Poplar" name="core" >
+                    </div>
+                    <div class="col">
+                        <label for="coreprofiling">Core Profiling:</label>
+                        <input class="form-control" placeholder="Squeezebox" name="coreprofiling">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SkiBoard Edges / Edge Tech -->
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="edges">Edges:</label>
+                        <input class="form-control" placeholder="Steel" name="edges" >
+                    </div>
+                    <div class="col">
+                        <label for="edgetech">Edge Tech:</label>
+                        <input class="form-control" placeholder="Magne Traction" name="edgetech" >
+                    </div>
+                </div>
+            </div>
+
+            <!-- SkiBoard Laminates / Fibreglass / Resin -->
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="fibreglass">Fibreglass:</label>
+                        <input class="form-control" placeholder="Biax / Triax" name="fibreglass" >
+                    </div>
+                    <div class="col">
+                        <label for="laminates">Laminates:</label>
+                        <input class="form-control" placeholder="Carbon" name="laminates" >
+                    </div>
+                    <div class="col">
+                        <label for="resin">Resin:</label>
+                        <input class="form-control" placeholder="SuperSap Epoxy" name="resin" >
+                    </div>
+                </div>
+            </div>
+
+            <!-- SkiBoard Base / Topsheet / Sidewall -->
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="col">
+                        <label for="base">Base:</label>
+                        <input class="form-control" placeholder="Sintered" name="base">
+                    </div>
+                    <div class="col">
+                        <label for="topsheet">Topsheet:</label>
+                        <input class="form-control" placeholder="Real Wood Vaneer" name="topsheet">
+                    </div>
+                    <div class="col">
+                        <label for="sidewall">Sidewall:</label>
+                        <input class="form-control" placeholder="ABS Sidewall" name="sidewall">
+                    </div>
+                </div>   
+            </div>
+            
         </div>
+        
+        <!-- SkiBoard Data Table -->
+        <div class="row banner">
+            <div class="col-md-6 offset-md-3" id="table">
+                <!-- Find a way to centralise this input box-->
+                <textarea class="form-control" name="raw_data" placeholder="Please enter a data table for this Ski / Snowboard"  rows="15"></textarea>
+            </div>
+
+            <div class="col-md-4 offset-md-4" id="save">
+                <input class="form-control btn btn-light" type="submit" value="Save">
+            </div>
+        </div>
+    </form>
+    <div>
+        <script src="/static/scripts/add_edit.js"></script>
     </div>
 </div>
 {% endblock %}
