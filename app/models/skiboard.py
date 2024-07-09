@@ -287,7 +287,7 @@ class SkiBoard():
         self.model = model
         self.year = year
         self.name = f"{str(brand).capitalize().replace(' ', '-')} {str(model).capitalize} {str(year)}"
-        self.slug = f"{str(brand).lower()}-{str(model).lower()}-{str(year)}"
+        self.slug = f"{str(brand).lower().replace(' ', '-')}-{str(model).lower().replace(' ', '-')}-{str(year)}"
         self.category = category
         self.description = description
         self.stiffness = stiffness
@@ -402,7 +402,7 @@ class SkiBoard():
             '{str(self.model)}', 
             '{str(self.year)}',
             '{str(self.brand)} {str(self.model)} {str(self.year)}',
-            '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
+            '{str(self.brand).lower().replace(' ', '-')}-{str(self.model).lower().replace(' ', '-')}-{str(self.year)}',
             '{str(self.category)}', 
             '{str(self.family)}', 
             '{str(self.description)}', 
@@ -437,7 +437,7 @@ class SkiBoard():
             '{str(self.model)}', 
             '{str(self.year)}',
             '{str(self.brand)} {str(self.model)} {str(self.year)}',
-            '{str(self.brand).lower()}-{str(self.model).lower()}-{str(self.year)}',
+            '{str(self.brand).lower().replace(' ', '-')}-{str(self.model).lower().replace(' ', '-')}-{str(self.year)}',
             '{str(self.category)}', 
             '{str(self.family)}', 
             '{str(self.description)}', 

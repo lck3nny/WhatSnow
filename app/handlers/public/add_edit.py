@@ -109,7 +109,7 @@ class CompleteImportHandler(MethodView):
         try:
             logging.info(f"Saving new skiboard: {new_skiboard}")
             success = new_skiboard.save()
-            skiboard = SkiBoard.get(slug=new_skiboard['slug'])
+            skiboard = SkiBoard.get(slug=new_skiboard.slug)
 
             if not success:
                 flash("Something went wrong with your import, please try again")
@@ -120,15 +120,15 @@ class CompleteImportHandler(MethodView):
 
         # Extract RAW Table Data from String
         try:
-            extracted_params = Size.extract_raw_data(request.form.get('raw_data'))
+            extracted_params = Size.extract_raw_size_data(request.form.get('raw_data'))
             logging.info(f"Extracted Params: {extracted_params}")
 
             success, msg = Size.save_batch_data(skiboard, extracted_params)
             if not success:
                 logging.error(f"Unable to save sizes using raw data: {msg}")
         except Exception as e:
-            logging.error(f"Failed to extract raw data values: {e}")
-        
+            logging.error(f"Could not successfully add size data using raw input: {e}")
+    
 
         return redirect(f'/view/{new_skiboard.slug}/')
 
@@ -247,14 +247,16 @@ class EditSkiboard(MethodView):
                     break            
         elif request.form.get('raw_data'):
             # Extract RAW Table Data from String
-            
-            extracted_params = Size.extract_raw_size_data(request.form.get('raw_data'))
-            logging.info(f"Extracted Params: {extracted_params}")
+            try:
+                extracted_params = Size.extract_raw_size_data(request.form.get('raw_data'))
+                logging.info(f"Extracted Params: {extracted_params}")
 
-            success, msg = Size.save_batch_data(skiboard, extracted_params)
-            if not success:
-                logging.error(f"Unable to save sizes using raw data: {msg}")
-            
+                success, msg = Size.save_batch_data(skiboard, extracted_params)
+                if not success:
+                    logging.error(f"Unable to save sizes using raw data: {msg}")
+            except Exception as e:
+                logging.error(f"Could not successfully add size data using raw input: {e}")
+                
         
         flash('Ski / Snowboard successfully updated.')
         return redirect(f'/view/{slug}/')
