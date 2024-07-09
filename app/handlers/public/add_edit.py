@@ -13,109 +13,6 @@ from flask.views import MethodView
 
 __author__ = 'liamkenny'
 
-default_params = {
-    'size': ['size', 'length'],
-    'nose width': ['nose width', 'tip width'],
-    'waist width': ['waist width'],
-    'tail width': ['tail width'],
-    'sidecut': ['sidecut radius', 'turning radius', 'radius', 'sidecut'],
-    'setback': ['stance setback', 'setback'],
-    'effective edge': ['effective edge', 'running length']
-}
-
-# I M P O R T S
-# E X T R A C T   R A W   D A T A              F U N C T I O N   
-# ------------------------------------------------------------
-# Extraction of data 
-# from string format to a tabular structure
-# ------------------------------------------------------------
-def extract_raw_data(table):
-    values = {
-        'size': '',
-        'nose width': '',
-        'waist width': '',
-        'tail width': '',
-        'sidecut': '',
-        'setback': '',
-        'effective edge': ''
-    }
-    
-    # Remove units from headings
-    while re.search(r'\(([a-zA-Z]+)\)', table) != None:
-        match = re.search(r'\(([a-zA-Z]+)\)', table)
-        substr = table[match.start():match.end()]
-        table = table.replace(substr, '')
-    '''    
-    while ')' in table:
-        table = table[:table.find('(')] + table[table.find(')') + 1:]
-    '''    
-        
-    breakpoints = []
-    
-    # Find location of headings in table
-    for i in default_params:
-        # Check each param alias
-        for j in default_params[i]:
-            if j in table:
-                breakpoints.append(table.find(j))
-                break
-        
-        values[i] = []
-        
-    # Extract table data into rows
-    rows = []
-    breakpoints.sort()
-    for i, b in enumerate(breakpoints):
-        if i > 0:
-            rows.append(table[breakpoints[i-1]:b])
-            print(f"Row: {table[breakpoints[i-1]:b]}")
-        if i == len(breakpoints) -1:
-            rows.append(table[b:])
-    
-    
-    # Remove lables from rows
-    for row in rows:
-        for i in default_params:
-            for j in default_params[i]:
-                if j in row:
-                    values[i] = row.replace(j, '')
-                    break
-                    
-    
-    # Format table rows as lists
-    for val in values:
-        try:
-            # \u0020\u200b\u002f\u0020
-            # \u0020\u002f\u0020
-            values[val] = values[val].strip()
-            values[val] = values[val].replace('\u0020\u002f\u0020', '/')
-            values[val] = values[val].replace('\u0020\u200b\u002f\u0020', '/')
-            values[val] = values[val].replace('\u0020\u200b\u200b\u002f\u0020', '/')
-            values[val] = values[val].split() 
-            
-        except Exception as e:
-            x = e
-            
-    
-    # Truncate long rows to the correct size
-    num_sizes = len(values['size'])
-    for val in values:
-        # Sidecuts can have more than one radius
-        if val != "sidecut":
-            values[val] = values[val][:num_sizes]
-
-        # Remove rogue characters from row values
-        if len(values[val]) > 0 and type(values[val][0]) == str:
-            for x, v in enumerate(values[val]):
-                values[val][x] = values[val][x].replace('\u200b', '')
-        
-        
-        # Fill empty or missing data with null values
-        for x in range(num_sizes - len(values[val])):
-            values[val].append(0)
-            
-
-    return values
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -212,6 +109,7 @@ class CompleteImportHandler(MethodView):
         try:
             logging.info(f"Saving new skiboard: {new_skiboard}")
             success = new_skiboard.save()
+            skiboard = SkiBoard.get(slug=new_skiboard['slug'])
 
             if not success:
                 flash("Something went wrong with your import, please try again")
@@ -219,12 +117,15 @@ class CompleteImportHandler(MethodView):
         except Exception as e:
             logging.error(f"Unable to save new skiboard to DB: {e}")
 
+
+        # Extract RAW Table Data from String
         try:
-            values = extract_raw_data(request.form.get('raw_data'))
-            if values:
-                new_skiboard.save_values(values)
-            else:
-                logging.info("No values provided for import")
+            extracted_params = Size.extract_raw_data(request.form.get('raw_data'))
+            logging.info(f"Extracted Params: {extracted_params}")
+
+            success, msg = Size.save_batch_data(skiboard, extracted_params)
+            if not success:
+                logging.error(f"Unable to save sizes using raw data: {msg}")
         except Exception as e:
             logging.error(f"Failed to extract raw data values: {e}")
         
@@ -345,7 +246,15 @@ class EditSkiboard(MethodView):
                     logging.info(f"Breaking size loop at x = {x} /// {e}")
                     break            
         elif request.form.get('raw_data'):
-            logging.info("Must have a raw data input")
+            # Extract RAW Table Data from String
+            
+            extracted_params = Size.extract_raw_size_data(request.form.get('raw_data'))
+            logging.info(f"Extracted Params: {extracted_params}")
+
+            success, msg = Size.save_batch_data(skiboard, extracted_params)
+            if not success:
+                logging.error(f"Unable to save sizes using raw data: {msg}")
+            
         
         flash('Ski / Snowboard successfully updated.')
         return redirect(f'/view/{slug}/')

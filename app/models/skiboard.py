@@ -24,18 +24,47 @@ from firebase_admin import firestore
 
 __author__ = 'liamkenny'
 
-unit_names = {
-    'size':             ['size', 'length'],
-    'nose_width':       ['nose width', 'tip width'],
-    'waist_width':      ['waist width'],
-    'tail_width':       ['tail width'],
-    'sidecut':          ['sidecut', 'sidecut radius', 'turning radius'],
-    'effective_edge':   ['effective edge', 'running length'],
-    'setback':          ['stance setback'],
-    'stance width':     ['stance width', 'stance range'],
-    'profile':          ['bend', 'profile'],
-    'flex':             ['flex', 'stiffness'],
-    'asym':             ['asym', 'asymetric']
+default_size_units = {
+    'size':             {'aliases': ['size', 'length'], 'list': False},
+    'nose_width':       {'aliases': ['nose width', 'tip width'], 'list': False},
+    'waist_width':      {'aliases': ['waist width'], 'list': False},
+    'tail_width':       {'aliases': ['tail width'], 'list': False},
+    'sidecut':          {'aliases': ['sidecut', 'sidecut radius', 'turning radius'], 'list': False},
+    'effective_edge':   {'aliases': ['effective edge', 'running length'], 'list': False},
+    'setback':          {'aliases': ['stance setback'], 'list': True},
+    'stance width':     {'aliases': ['stance width', 'stance range'], 'list': False},
+    'profile':          {'aliases': ['bend', 'profile'], 'list': False},
+    'flex':             {'aliases': ['flex', 'stiffness'], 'list': False},
+    'asym':             {'aliases': ['asym', 'asymetric'], 'list': False}
+}
+
+default_skiboard_units = {
+    'brand':            {'aliases': ['brand', 'manufacturer', 'company'], 'list': False},
+    'model':            {'aliases': ['model'], 'list': False},
+    'year':             {'aliases': ['year'], 'list': False},
+    'name':             {'aliases': ['name'], 'list': False},
+    'slug':             {'aliases': ['slug'], 'list': False},
+    'family':           {'aliases': ['family'], 'list': False},
+    'stiffness':        {'aliases': ['stiffness', 'flex'], 'list': False},
+    'shape':            {'aliases': ['shape'], 'list': False},
+    'flex_profile':     {'aliases': ['flex profile'], 'list': False},
+    'camber_profile':   {'aliases': ['camber profile', 'camber'], 'list': False},
+    'camber_details':   {'aliases': ['camber details'], 'list': False},
+    'core':             {'aliases': ['core'], 'list': False},
+    'core_profiling':   {'aliases': ['core profile', 'core profiling'], 'list': False},
+    'fibreglass':       {'aliases': ['fibreglass', 'glass'], 'list': False},
+    'laminates':        {'aliases': ['laminates'], 'list': False},
+    'resin':            {'aliases': ['resin', 'epoxy'], 'list': False},
+    'base':             {'aliases': ['base', 'base material'], 'list': False},
+    'edges':            {'aliases': ['edges', 'edge material'], 'list': False},
+    'edge_tech':        {'aliases': ['edge tech', 'edge technology', 'disrupted sidecut', 'traction tech'], 'list': False},
+    'topsheet':         {'aliases': ['topsheet'], 'list': False},
+    'sidewall':         {'aliases': ['sidewall'], 'list': False},
+    'inserts':          {'aliases': ['inserts', 'insert pattern', 'mounting hardwear', 'mounting pattern'], 'list': False},
+    'asym':             {'aliases': ['asym', 'asymetric'], 'list': False},
+    'weight':           {'aliases': ['weight'], 'list': False},
+    'womens':           {'aliases': ['womens', 'ladies', 'female'], 'list': False},
+    'youth':            {'aliases': ['youth', 'kids'], 'list': False}
 }
 
 profile_types = {
@@ -168,9 +197,9 @@ def validate_param(key, param):
 def match_param(param):
     # Calculate best similarity score for each unit name
     match_scores = {}
-    for unit in unit_names:
+    for unit in default_size_units['aliases']:
         match_scores[unit] = 0
-        for option in unit_names[unit]:
+        for option in default_size_units['aliases'][unit]:
             similarity = SequenceMatcher(None, param.replace('_', ' '), option).ratio()
             #logging.info("param: {} - comparedto: {} - score: {}".format(param, option, similarity))
             if similarity > match_scores[unit]:
@@ -225,10 +254,19 @@ def extract_results(response):
                 youth=r[29]
             )
 
+            for key, unit in default_skiboard_units.items():
+                if unit['list']:
+                    if not result[key] or result[key] != '[]':
+                        result[key] = []
+                    else:
+                        result[key] = result[key].strip('[').strip(']').replace(', ', ',').split(',')
+        
+                
+
             logging.info(f"Results: \n{result.__dict__}")
             results.append(result)
         except Exception as e:
-            logging.error(f"Unable to extract result from response: {r}")
+            logging.error(f"Unable to extract result from response: {r} / / / {e}")
 
     return results
 
@@ -248,7 +286,7 @@ class SkiBoard():
         self.brand = brand
         self.model = model
         self.year = year
-        self.name = f"{str(brand).capitalize()} {str(model).capitalize} {str(year)}"
+        self.name = f"{str(brand).capitalize().replace(' ', '-')} {str(model).capitalize} {str(year)}"
         self.slug = f"{str(brand).lower()}-{str(model).lower()}-{str(year)}"
         self.category = category
         self.description = description
@@ -641,7 +679,7 @@ class SkiBoard():
     # D E S C R I B E                          F U N C T I O N
     # --------------------------------------------------------
     def describe():
-        return {'profile_types': profile_types, 'unit_names': unit_names, 'param_names': param_names}
+        return {'profile_types': profile_types, 'default_size_units': default_size_units['aliases'], 'param_names': param_names}
 
 
 

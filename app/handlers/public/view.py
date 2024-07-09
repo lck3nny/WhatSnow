@@ -23,6 +23,7 @@ class ViewHandler(MethodView):
 
         user=None
         if 'user' in session:
+            logging.info("View SkiBoard User")
             user = session['user']
             logging.info(f"User: {user}")
             logging.info(f"User permissions: {user['permissions']}")

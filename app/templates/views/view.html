@@ -154,6 +154,14 @@
             
         </div>
         {% endif %}
+        {% if not sizes and 'admin' in user['permissions'] %}
+        <div class="col-md-4 offset-md-4">
+            <row><br></row>
+            <row>
+                <a role="button" class="form-control btn btn-light" href="/edit/{{skiboard.slug}}/">Edit</a>
+            </row>
+        </div>
+        {% endif %}
         
     </div>
     
