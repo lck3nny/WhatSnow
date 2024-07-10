@@ -3,9 +3,48 @@
 {% block top_content %}
 <div class="container fullscreen">
     <div class="row banner">
+        <row>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="col-md-6 offset-md-3">
+                <h1>Hello {{ session.user.fname}}</h1>
+                <p>Welcome to your What Snow account</p>
+            </div>
+        </row>
+       
+    </div>
+    <div class="row results">
         <div class="col-md-6 offset-md-3">
-            <h1>Hello {{ session.user.fname}}</h1>
-            <p>Welcome to your What Snow account</p>
+            <h2 class="lighttext">My Quiver</h2>
+            <br>
+            {% if not quiver %}
+            <table id="tbl-quiver" class="table table-dark table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Size</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                    {% for skiboard in quiver %}
+                    <tr>
+                        <td>skiboard['brand']</td>
+                        <td>skiboard['model']</td>
+                        <td>skiboard['size']</td>
+                        <td>skiboard['year']</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <p class="lighttext">It looks like you have am empty quiver. Search for boards and add them to your quiver if you have owned them.</p>
+            {% endif %}
         </div>
     </div>
     

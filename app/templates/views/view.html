@@ -47,7 +47,7 @@
                 <div class="col">
                     <label for="camberprofile">Camber Profile:</label>
                     {% if skiboard['camber_details'] %}
-                    <input disabled name="camberprofile" class="form-control" value="{{ skiboard['camber_profile']}} [ {{ skiboard['camber_details'] }} ]">
+                    <input disabled name="camberprofile" class="form-control" value="{{ skiboard['camber_profile']}} ( {{ skiboard['camber_details'] }} )">
                     {% else %}
                     <input disabled name="camberprofile" class="form-control" value="{{ skiboard['camber_profile']}}">
                     {% endif %}
