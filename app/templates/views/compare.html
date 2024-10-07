@@ -19,7 +19,7 @@
                     <th>Name</th>
                     {% for skiboard in skiboards %}
                     {% for size in skiboard.sizes %}
-                    <td><a class="dropdown-item" href="../../view/{{skiboard.slug}}">{{ skiboard['name'] }}</a></td>
+                    <td><a class="dropdown-item" href="../../view/{{skiboard.slug}}">{{ skiboard.slug }}</a></td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
