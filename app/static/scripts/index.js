@@ -8,8 +8,12 @@ async function triggerSearch(event){
     if (event.keyCode == 13) {
         // Fetch search query and store in variable
         var query = document.getElementById("search_bar").value;
-        console.log("Searching for: " + query);
+        if ( query == " "){
+            return false;
+        }
 
+
+        // console.log("Searching for: " + query);
         // Restructure variable as an object
         let data = {
             "query": query
@@ -25,7 +29,7 @@ async function triggerSearch(event){
         
             // Fetch results from request
             const result = await response.json();
-            console.log("Results:", result);
+            // console.log("Results:", result);
 
             let results = result.results;
             if (results.length > 0){

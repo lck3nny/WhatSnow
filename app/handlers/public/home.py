@@ -20,7 +20,13 @@ __author__ = 'liamkenny'
 # V A L I D A T E   Q U E R Y                  F U N C T I O N
 # ------------------------------------------------------------
 def validate_query(query):
-    return query
+
+    checks = ["http", "fuck"]
+    for check in checks:
+        if check in query:
+            return False
+    
+    return True
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # H O M E                                        H A N D L E R

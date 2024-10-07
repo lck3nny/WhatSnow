@@ -1,10 +1,28 @@
 async function addToCompare(skiboard){
     const selectedSizes = document.getElementById('selected-sizes');
     var selected = selectedSizes.innerHTML.replace('[', '').replace(']', '').trim().split(',');
+    
+    const comparisons = document.getElementById('compare-nav');
+    var numCompasisons = comparisons.innerHTML.replace(/^\D+/g, '');
+
     var data = {
         'skiboard': skiboard,
         'sizes': selected
     }
+
+    // missing data
+    if ( selected == "" || skiboard == ""){
+        alert("Please select a size of Ski or Snowboard to compare.");
+        return false;
+    }
+
+    // max comparisons
+    if ( numCompasisons >= 10 ){
+        alert("You have reached the maximum of 10 comparisons.");
+        return false;
+    }
+
+
 
     console.log(data);
     try {

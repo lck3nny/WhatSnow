@@ -23,6 +23,27 @@ f = open('config/firebase_config.json')
 firebase_config = json.load(f)
 f.close()
 
+
+
+# V A L I D A T E   E M A I L                  F U N C T I O N
+# ------------------------------------------------------------
+def validateEmail(email):
+    email_chars = ['@', '.']
+    for char in email_chars:
+        if not char in email:
+            return False
+        
+    return True
+
+
+# V A L I D A T E   P A S S W O R D            F U N C T I O N
+# ------------------------------------------------------------
+def validatePassword(password):
+    if len(password) < 1:
+        return False
+    
+    return True
+
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # L O G I N                                      H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,7 +63,7 @@ class LoginHandler(MethodView):
         # Get user info
         email = request.form.get('email', 'error@problem.com')
         password = request.form.get('password', 'password')
-        if not email or not password:
+        if not validateEmail(email) or not validatePassword(password):
             flash('You must provide an email and password to sign in!', 'error')
             return redirect('/login')
 
