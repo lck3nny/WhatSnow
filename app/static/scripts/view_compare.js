@@ -3,7 +3,7 @@ async function addToCompare(skiboard){
     var selected = selectedSizes.innerHTML.replace('[', '').replace(']', '').trim().split(',');
     
     const comparisons = document.getElementById('compare-nav');
-    var numCompasisons = comparisons.innerHTML.replace(/^\D+/g, '');
+    var numCompasisons = comparisons.innerHTML.match(/\d+/)[0];
 
     var data = {
         'skiboard': skiboard,
@@ -16,8 +16,9 @@ async function addToCompare(skiboard){
         return false;
     }
 
+    // console.log("Number of Comparisons: " + numCompasisons);
     // max comparisons
-    if ( numCompasisons >= 10 ){
+    if ( numCompasisons > 9 ){
         alert("You have reached the maximum of 10 comparisons.");
         return false;
     }

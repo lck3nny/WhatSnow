@@ -93,6 +93,12 @@ class AddToCompareHandler(MethodView):
             'request': r
         }
 
+        # Check if comparisons are maxxed out
+        if SkiBoard.calc_comparisons() >= 10:
+            resp['success'] = False
+            resp['msg'] = "Compasison max reached"
+            return resp
+
         try:
             logging.info(f"Adding skiboard sizes to comparisons:\n{r}")
             # Collect skiboard data
