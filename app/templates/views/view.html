@@ -174,14 +174,14 @@
                 <tr>
                     <th>Size</th>
                     {% for size in sizes %}
-                    <td class="size {{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size.size }}</td>
+                    <td class="size {{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size.size }}</td>
                     {% endfor %}
                 </tr>
                 {% if 'nose_width' in sizes[0] %}
                 <tr>
                     <th>Nose Width</th>
                     {% for size in sizes %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['nose_width'] }}</td>
+                    <td class="{{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size['nose_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
@@ -189,7 +189,7 @@
                 <tr>
                     <th>Waist Width</th>
                     {% for size in sizes %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['waist_width'] }}</td>
+                    <td class="{{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size['waist_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
@@ -197,7 +197,7 @@
                 <tr>
                     <th>Tail Width</th>
                     {% for size in sizes %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['tail_width'] }}</td>
+                    <td class="{{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size['tail_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
@@ -205,7 +205,7 @@
                 <tr>
                     <th>Sidecut</th>
                     {% for size in sizes %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['sidecut'] }}</td>
+                    <td class="{{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size['sidecut'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
@@ -213,7 +213,7 @@
                 <tr>
                     <th>Effective Edge</th>
                     {% for size in sizes %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['effective_edge'] }}</td>
+                    <td class="{{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size['effective_edge'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
@@ -221,7 +221,7 @@
                 <tr>
                     <th>Setback</th>
                     {% for size in sizes %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['setback'] }}</td>
+                    <td class="{{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size['setback'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}
@@ -229,7 +229,7 @@
                 <tr>
                     <th>Stance Width</th>
                     {% for size in sizes %}
-                    <td class="{{loop.index}}" onclick="toggleSize('{{loop.index}}')">{{ size['stance_width'] }}</td>
+                    <td class="{{loop.index}} col-item" onclick="toggleSize('{{loop.index}}')">{{ size['stance_width'] }}</td>
                     {% endfor %}
                 </tr>
                 {% endif %}          
