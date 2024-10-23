@@ -1,9 +1,11 @@
 import json
 import pymysql
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 
 
-db = SQLAlchemy()
+#db = SQLAlchemy()
+
+
 
 # Database Setup
 # --------------------------------------------------
@@ -13,3 +15,6 @@ def setupdb():
     db = pymysql.connect(host=dbconfig['localhost'], user=dbconfig['username'], password=dbconfig['password'], database=dbconfig['database'])
     f.close()
     return db
+
+
+db = setupdb()

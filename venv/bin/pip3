@@ -1,4 +1,4 @@
-#!/Users/liamkenny/Documents/Programming/WhatSnow/venv/bin/python3
+#!/Users/macbookpro/Documents/Programming/WhatSnow/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys
