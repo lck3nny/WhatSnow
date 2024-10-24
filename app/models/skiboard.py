@@ -229,6 +229,7 @@ def extract_results(response):
                 brand=r[2], 
                 model=r[3], 
                 year=r[4], 
+                name=r[5],
                 category=r[7],
                 family=r[8],
                 description=r[9],
@@ -281,12 +282,15 @@ class SkiBoard():
 
 
     # If a SkiBoard has an ID of 0 it has not been saved in the database
-    def __init__(self, skiboard_id, brand, model, year, category, family=None, description=None, stiffness=None, shape=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, core_profiling=None, fibreglass=None, laminates=[], resin=None, base=None, edges=None, edge_tech=None, topsheet=None, sidewall=None, inserts=None, asym=False, weight=0, womens=False, youth=False, url=None):
+    def __init__(self, skiboard_id, brand, model, year, category, name=None, family=None, description=None, stiffness=None, shape=None, flex_profile=None, camber_profile=None, camber_details=[], core=None, core_profiling=None, fibreglass=None, laminates=[], resin=None, base=None, edges=None, edge_tech=None, topsheet=None, sidewall=None, inserts=None, asym=False, weight=0, womens=False, youth=False, url=None):
         self.id = skiboard_id
         self.brand = brand
         self.model = model
         self.year = year
-        self.name = f"{str(brand).capitalize().replace(' ', '-')} {str(model).capitalize} {str(year)}"
+        if not name:
+            self.name = f"{str(brand).capitalize().replace(' ', '-')} {str(model).capitalize} {str(year)}"
+        else:
+            self.name = name
         self.slug = f"{str(brand).lower().replace(' ', '-')}-{str(model).lower().replace(' ', '-')}-{str(year)}"
         self.category = category
         self.description = description

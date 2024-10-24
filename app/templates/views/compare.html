@@ -12,14 +12,17 @@
             <p>Looks like you haven't selected any skis or snowboards to compare yet. Use our search to find something you're interested in and add it to your comparison list to see it here!</p>
         </div>
         {% else %}
-        <br><br>
-        <div class="col-md-6 offset-md-3">
-            <table class='table table-dark table-striped'>
+        <div>
+            <br><br>
+        </div>
+        
+        <div class="col-md-8 offset-md-2">
+            <table id="comparison-table" class='table table-dark table-striped center'>
                 <tr>
                     <th>Name</th>
                     {% for skiboard in skiboards %}
                     {% for size in skiboard.sizes %}
-                    <td><a class="dropdown-item" href="../../view/{{skiboard.slug}}">{{ skiboard.slug }}</a></td>
+                    <td><a class="dropdown-item" href="../../view/{{skiboard.slug}}">{{ skiboard.name }}</a></td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
@@ -31,7 +34,6 @@
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% if 'nose_width' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Nose Width</th>
                     {% for skiboard in skiboards %}
@@ -40,8 +42,6 @@
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% endif %}
-                {% if 'waist_width' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Waist Width</th>
                     {% for skiboard in skiboards %}
@@ -50,8 +50,6 @@
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% endif %}
-                {% if 'tail_width' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Tail Width</th>
                     {% for skiboard in skiboards %}
@@ -60,8 +58,6 @@
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% endif %}
-                {% if 'sidecut' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Sidecut</th>
                     {% for skiboard in skiboards %}
@@ -70,8 +66,6 @@
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% endif %}
-                {% if 'effective_edge' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Effective Edge</th>
                     {% for skiboard in skiboards %}
@@ -80,8 +74,6 @@
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% endif %}
-                {% if 'setback' in skiboards[0].sizes[0] %}
                 <tr>
                     <th>Setback</th>
                     {% for skiboard in skiboards %}
@@ -90,22 +82,68 @@
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% endif %}
-                {% if 'stance_width' in skiboards[0].sizes[0] %}
                 <tr>
-                    <th>Stance Width</th>
+                    <th>Stiffness</th>
                     {% for skiboard in skiboards %}
                     {% for size in skiboard.sizes %}
-                    <td>{{ size.stance_width }}</td>
+                    <td>{{ skiboard.stiffness }}</td>
                     {% endfor %}
                     {% endfor %}
                 </tr>
-                {% endif %}
+                <tr>
+                    <th>Shape</th>
+                    {% for skiboard in skiboards %}
+                    {% for size in skiboard.sizes %}
+                    <td>{{ skiboard.shape }}</td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th>Camber Profile</th>
+                    {% for skiboard in skiboards %}
+                    {% for size in skiboard.sizes %}
+                    <td>{{ skiboard.camber_profile }}</td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th>Core</th>
+                    {% for skiboard in skiboards %}
+                    {% for size in skiboard.sizes %}
+                    <td>{{ skiboard.core }}</td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th>Laminates</th>
+                    {% for skiboard in skiboards %}
+                    {% for size in skiboard.sizes %}
+                    <td>{{ skiboard.laminates }}</td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th>Resin</th>
+                    {% for skiboard in skiboards %}
+                    {% for size in skiboard.sizes %}
+                    <td>{{ skiboard.resin }}</td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <th>Base</th>
+                    {% for skiboard in skiboards %}
+                    {% for size in skiboard.sizes %}
+                    <td>{{ skiboard.base }}</td>
+                    {% endfor %}
+                    {% endfor %}
+                </tr>
+                
                 <tr>
                     <th></th>
                     {% for skiboard in skiboards %}
                     {% for size in skiboard.sizes %}
-                    <td><button type="button" class="btn btn-outline-danger" onclick="removeComparison('{{skiboard.id}}', '{{size.size}}')">Remove</button></td>
+                    <td><button id="btn-remove" type="button" class="btn btn-outline-danger" onclick="removeComparison('{{skiboard.id}}', '{{size.size}}')">Remove</button></td>
                     {% endfor %}
                     {% endfor %}
                 </tr>

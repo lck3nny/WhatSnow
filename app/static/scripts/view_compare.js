@@ -1,15 +1,39 @@
+function compareCheck(direction, size){
+    var numComparisons = document.getElementById('num-comparisons').innerHTML.match(/\d+/)[0];
+
+    if((direction == 'up' && Number(numComparisons) > 8) || (direction == 'down' && numComparisons > 0)){
+        return 'reset'
+    }else if(String(direction) == 'up' && (Number(numComparisons) + Number(size)) > 8 ){
+        return 'stop'
+    }else if(String(direction) == 'down' && Number(numComparisons) == 0){
+        return 'stop'
+    }else{
+        return 'success'
+    }
+}
+
 async function addToCompare(skiboard){
+
+    console.log('adding new sizes to comparisons...');
+
     const selectedSizes = document.getElementById('selected-sizes');
     var selected = selectedSizes.innerHTML.replace('[', '').replace(']', '').trim().split(',');
+<<<<<<< HEAD
     
     const comparisons = document.getElementById('compare-nav');
     var numCompasisons = comparisons.innerHTML.match(/\d+/)[0];
 
+=======
+    if(selected[0] == ''){
+        selected = [];
+    }
+>>>>>>> addtoquiver
     var data = {
         'skiboard': skiboard,
         'sizes': selected
     }
 
+<<<<<<< HEAD
     // missing data
     if ( selected == "" || skiboard == ""){
         alert("Please select a size of Ski or Snowboard to compare.");
@@ -25,6 +49,25 @@ async function addToCompare(skiboard){
 
 
 
+=======
+    console.log(selected);
+    console.log('Number of additions: ' + String(selected.length));
+    if (selected.length < 1){
+        alert('Please select a size to compare.');
+        return
+    }
+    const checkMsg = compareCheck('up', selected.length);
+    console.log('Check Message:');
+    console.log(checkMsg);
+    if (checkMsg == 'stop'){
+        alert('You can add a maximum of 8 comparisons');
+        return
+    }else if(checkMsg == 'reset'){
+        clearComparisons();
+        return
+    }
+
+>>>>>>> addtoquiver
     console.log(data);
     try {
         const response = await fetch("/add-to-compare/", {
@@ -42,9 +85,12 @@ async function addToCompare(skiboard){
         console.error("Error:", error);
         alert("There was an issue with your search query. Please try again.");
     }
+
+   // clearComparisons();
 }
 
 async function removeComparison(skiboard, size){
+
     console.log("Removing skiboard from comparison");
     console.log(skiboard);
     console.log(size);
@@ -121,6 +167,19 @@ async function clearComparisons(){
         console.error("Error:", error);
         alert("There was an issue with your search query. Please try again.");
     }
+    emptySelection();
+}
+
+
+function emptySelection(){
+    var col = [].slice.call(document.getElementsByClassName('col-item'));
+    console.log(col)
+
+    col.forEach(function(item){
+        console.log(item);
+        item.classList.remove('selected');
+        item.style.color = '#white';
+    });
 }
 
 function toggleSize(id){

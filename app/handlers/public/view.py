@@ -17,6 +17,9 @@ item_names = ['asym']
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # V I E W   I T E M                              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# A simple way to view a single ski or snowboard's data set
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 class ViewHandler(MethodView):
     # -------------------------------------------------- G E T
     def get(self, slug):
@@ -48,7 +51,10 @@ class ViewHandler(MethodView):
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # S T A R T   C O M P A R I S O N                H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+# A pre handler to collect the ski or snowboard data before
+# viewing the main comparison page
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 class StartCompareHandler(MethodView):
     # -------------------------------------------------- G E T
     def get(self):
@@ -81,7 +87,10 @@ class StartCompareHandler(MethodView):
     
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # A D D  T O   C O M P A R I S O N               H A N D L E R
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# JS activated handler to interface between user selection
+# of comparison items and their cache
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class AddToCompareHandler(MethodView):
     # ------------------------------------------------ P O S T
     def post(self):
@@ -100,14 +109,14 @@ class AddToCompareHandler(MethodView):
             return resp
 
         try:
-            logging.info(f"Adding skiboard sizes to comparisons:\n{r}")
+            logging.info(f"Adding skiboard sizes to list of comparisons:\n{r}")
             # Collect skiboard data
             skiboard_id = r['skiboard']
             sizes_to_add = r['sizes']
 
             skiboard = SkiBoard.get(id=skiboard_id)
             sizes = Size.get(skiboard_id=skiboard_id)
-            logging.info("Found skiboard: {}\n\n with sizes: {}".format(skiboard, sizes))
+            logging.info("Found data collected: {}\n\n with sizes: {}".format(skiboard, sizes))
         except Exception as e:
             logging.error(f"ERROR: {e}")
         
@@ -162,6 +171,9 @@ class AddToCompareHandler(MethodView):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # R E M O V E   C O M P A R I S O N              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# JS activated handler to remove a ski or snowboard from the
+# cached list of skis and boards
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class RemoveComparisonHandler(MethodView):
     # ------------------------------------------------ P O S T
     def post(self):
@@ -199,6 +211,9 @@ class RemoveComparisonHandler(MethodView):
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # C L E A R   C O M P A R I S O N S              H A N D L E R
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# JS activated handler to completely wipe the cached list of
+# skis and snowboards to compare
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ClearComparisonsHandler(MethodView):
     # ------------------------------------------------ P O S T
     def post(self):    
@@ -215,7 +230,10 @@ class ClearComparisonsHandler(MethodView):
         return resp
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# C O M P A R E   I T E M                        H A N D L E R
+# C O M P A R E   I T E M S                      H A N D L E R
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Handler for displaying cached list of comparisons to the 
+# user view
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class CompareHandler(MethodView):
     # -------------------------------------------------- G E T
@@ -234,14 +252,19 @@ class CompareHandler(MethodView):
         for slug in slugs:
             if '[' not in slug or '[' not in slug:
                 continue
-            sizes = slug[slug.index('[') +1 : slug.index(']')]
-            slug = slug.replace('[{}]'.format(sizes), '')
-            sizes = sizes.split(',')
-            logging.info("Slug: {}".format(slug))
-            logging.info("Sizes: {}".format(sizes))
-            skiboard = SkiBoard.get(slug=slug)
-            all_sizes = Size.get(skiboard_id=skiboard.id)
-            #skiboard, collections = SkiBoard.get_item_by_slug(slug)
+
+            try:
+                sizes = slug[slug.index('[') +1 : slug.index(']')]
+                slug = slug.replace('[{}]'.format(sizes), '')
+                sizes = sizes.split(',')
+                logging.info("Slug: {}".format(slug))
+                logging.info("Sizes: {}".format(sizes))
+                skiboard = SkiBoard.get(slug=slug)
+                all_sizes = Size.get(skiboard_id=skiboard.id)
+                #skiboard, collections = SkiBoard.get_item_by_slug(slug)
+            except Exception as e:
+                skiboard = None
+                logging.error(f'Exception: {e}')
 
             if not skiboard:
                 continue
